@@ -104,6 +104,7 @@
     <Compile Include="Clases\cMensajesCuotas.cs" />
     <Compile Include="Clases\cMensajesPrestamo.cs" />
     <Compile Include="Clases\cMensajesVentas.cs" />
+    <Compile Include="Clases\cModelo.cs" />
     <Compile Include="Clases\cMovimiento.cs" />
     <Compile Include="Clases\cPagoCheque.cs" />
     <Compile Include="Clases\cPagoIntereses.cs" />
@@ -195,6 +196,12 @@
     </Compile>
     <Compile Include="FrmAbmMarca.Designer.cs">
       <DependentUpon>FrmAbmMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMaBMmODELO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMaBMmODELO.Designer.cs">
+      <DependentUpon>FRMaBMmODELO.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAbmPapeles.cs">
       <SubType>Form</SubType>
@@ -767,6 +774,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAbmMarca.resx">
       <DependentUpon>FrmAbmMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMaBMmODELO.resx">
+      <DependentUpon>FRMaBMmODELO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAbmPapeles.resx">
       <DependentUpon>FrmAbmPapeles.cs</DependentUpon>

@@ -63,12 +63,13 @@ namespace Concesionaria
             // fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
             //fun.LlenarCombo(CmbCategoriaGasto, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
             fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
-            fun.LlenarCombo(CmbTipoCombustible, "TipoCombustible", "Nombre", "Codigo");
+          //  fun.LlenarCombo(CmbTipoCombustible, "TipoCombustible", "Nombre", "Codigo");
             fun.LlenarCombo(CmbBanco, "Banco", "Nombre", "CodBanco");
             fun.LlenarCombo(cmbTipoUtilitario, "TipoUtilitario", "Nombre", "CodTipo");
             fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");
             fun.LlenarCombo(cmbProvincia, "Provincia", "Nombre", "CodProvincia");
             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
+            fun.LlenarCombo(CmbModelo, "Modelo", "Nombre", "CodModelo");
             cPapeles papel = new cPapeles();
             DataTable tbPapeles = papel.GetPapeles();
             Lista.DataSource = tbPapeles;
@@ -106,6 +107,7 @@ namespace Concesionaria
             Int32? CodTipoUtilitario = null;
             Int32? CodSucursal = null;
             string RutaImagen = "";
+            Int32? CodModelo = null;
 
             Patente = txtPatente.Text;
             Color = txtColor.Text;
@@ -140,8 +142,7 @@ namespace Concesionaria
             Motor = txtMotor.Text;
             Chasis = txtChasis.Text;
             Int32? CodTipoCombustible = null;
-            if (CmbTipoCombustible.SelectedIndex > 0)
-                CodTipoCombustible = Convert.ToInt32(CmbTipoCombustible.SelectedValue);
+        
 
             if (cmbSucursal.SelectedIndex > 0)
                 CodSucursal = Convert.ToInt32(cmbSucursal.SelectedValue);
@@ -151,6 +152,9 @@ namespace Concesionaria
             if (txtRuta.Text != "")
                 RutaImagen = txtRuta.Text;
 
+            if (CmbModelo.SelectedIndex > 0)
+                CodModelo = Convert.ToInt32(CmbModelo.SelectedValue);
+
             Clases.cAuto auto = new Clases.cAuto();
             Boolean Graba = true;
             if (txtCodAuto.Text != "")
@@ -159,7 +163,7 @@ namespace Concesionaria
             {
                 //inserto el auto
                 auto.AgregarAutoTransaccion(con, Transaccion, Patente, CodMarca, Descripcion,
-                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible, CodSucursal, CodTipoUtilitario, RutaImagen);
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible, CodSucursal, CodTipoUtilitario, RutaImagen,CodModelo);
                 CodAuto = auto.GetMaxCodAutoTransaccion(con, Transaccion);
                 txtCodAuto.Text = CodAuto.ToString();
 
@@ -168,7 +172,7 @@ namespace Concesionaria
             else
             {
                 auto.ModificarAutoTransaccion(con, Transaccion, Patente, CodMarca, Descripcion,
-                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodSucursal, CodTipoUtilitario, RutaImagen);
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodSucursal, CodTipoUtilitario, RutaImagen, CodModelo);
             }
             if (txtCodStock.Text == "")
             {
@@ -213,6 +217,26 @@ namespace Concesionaria
             {
                 Mensaje("Debe ingresar un cliente para continuar");
                 return;
+            }
+
+            if (cmb_CodMarca.SelectedIndex<1)
+            {
+                Mensaje("Debe seleccionar una Marca");
+                return;
+            }
+
+            if (CmbModelo.SelectedIndex<1)
+            {
+                Mensaje("Debe seleccionar un modelo ");
+                return;
+            }
+            else
+            {
+                //coip la descripcion
+                int CodModelo = Convert.ToInt32(CmbModelo.SelectedValue);
+                cModelo modelo = new cModelo();
+                string NombreModelo = modelo.GetNombreModelo(CodModelo);
+                txtDescripcion.Text = NombreModelo;
             }
 
             Int32 Concesion = 0;
@@ -512,6 +536,9 @@ namespace Concesionaria
             txtCodStock.Text = "";
             if (cmb_CodMarca.Items.Count > 0)
                 cmb_CodMarca.SelectedIndex = 0;
+             
+            if (CmbModelo.Items.Count > 0)
+                CmbModelo.SelectedIndex = 0;
             txtDescripcion.Text = "";
             txtAnio.Text = "";
             txtKilometros.Text = "";
@@ -681,6 +708,10 @@ namespace Concesionaria
                     case "Marca":
                         fun.LlenarCombo(cmb_CodMarca, "Marca", "Nombre", "CodMarca");
                         cmb_CodMarca.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                        break;
+                    case "Modelo": 
+                        fun.LlenarCombo(CmbModelo, "Modelo", "Nombre", "CodModelo");
+                        CmbModelo.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         break;
                     case "Barrio":
                         Int32 CodCity = Convert.ToInt32(cmbCiudad2.SelectedValue);
@@ -2428,6 +2459,17 @@ namespace Concesionaria
         {
             Int32 CodCliente = Convert.ToInt32(Principal.CodigoPrincipalAbm);
             BuscarClientexCodigo(CodCliente);
+        }
+
+        private void btnAltaModelo_Click(object sender, EventArgs e)
+        {
+            Principal.CampoIdSecundario = "CodModelo";
+            Principal.CampoNombreSecundario = "Nombre";
+            Principal.NombreTablaSecundario = "Modelo";
+            Principal.CampoIdSecundarioGenerado = "";
+            FrmAltaBasica form = new FrmAltaBasica();
+            form.FormClosing += new FormClosingEventHandler(form_FormClosing);
+            form.ShowDialog();
         }
     }
 }

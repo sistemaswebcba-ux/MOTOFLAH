@@ -735,6 +735,10 @@ namespace Concesionaria
             }
         }
 
-        
+        private void modeloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMaBMmODELO frm = new FRMaBMmODELO();
+            frm.Show();
+        }
     }
 }
