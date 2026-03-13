@@ -149,6 +149,7 @@ namespace Concesionaria
 
         {
             //CodUsuarioLogueado = "1";
+            /*
             Clases.cAlarma alarma = new Clases.cAlarma();
             DataTable trdo = alarma.GetAlarmasxFecha(DateTime.Now);
             if (trdo.Rows.Count > 0)
@@ -167,6 +168,7 @@ namespace Concesionaria
             DateTime Fut = Hoy.AddDays(3);
             //busca los cumpleaños y vencimiento prendas
             GetInfo(Ant, Fut);
+            */
            
         }
 
