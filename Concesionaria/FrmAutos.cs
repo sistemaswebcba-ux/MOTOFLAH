@@ -59,7 +59,7 @@ namespace Concesionaria
             fun.LlenarCombo(cmbDocumento, "TipoDocumento", "Nombre", "CodTipoDoc");
             if (cmbDocumento.Items.Count > 0)
                 cmbDocumento.SelectedIndex = 1;
-            cmbDocumento.Enabled = false;
+           // cmbDocumento.Enabled = false;
             // fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
             //fun.LlenarCombo(CmbCategoriaGasto, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
             fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
@@ -68,7 +68,8 @@ namespace Concesionaria
             fun.LlenarCombo(cmbTipoUtilitario, "TipoUtilitario", "Nombre", "CodTipo");
             fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");
             fun.LlenarCombo(cmbProvincia, "Provincia", "Nombre", "CodProvincia");
-            fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
+            fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");  
+            fun.LlenarCombo(CmbCategoriaIva, "CategoriaIva", "Nombre", "Codigo");
             fun.LlenarCombo(CmbModelo, "Modelo", "Nombre", "CodModelo");
             cPapeles papel = new cPapeles();
             DataTable tbPapeles = papel.GetPapeles();
@@ -596,6 +597,20 @@ namespace Concesionaria
                     DateTime FechaNac = Convert.ToDateTime(trdo.Rows[0]["FechaNacimiento"].ToString());
                     txtFechaNacimiento.Text = FechaNac.ToShortDateString();
                 }
+
+                if (trdo.Rows[0]["CodCategoriaIva"].ToString() != "")
+                {
+                    int CodCategoriaIva = Convert.ToInt32(trdo.Rows[0]["CodCategoriaIva"].ToString());
+                    CmbCategoriaIva.SelectedValue = CodCategoriaIva.ToString();
+                }
+
+                if (trdo.Rows[0]["CodTipoDoc"].ToString() != "")
+                { 
+                    cmbDocumento.SelectedValue = CodTipoDoc.ToString();
+                }
+
+                
+
                 if (trdo.Rows[0]["CodBarrio"].ToString() != "")
                 {
                     Int32 CodBarrio = Convert.ToInt32(trdo.Rows[0]["CodBarrio"].ToString());
@@ -810,17 +825,21 @@ namespace Concesionaria
             if (CmbBarrio.SelectedIndex > 0)
                 CodBarrio = Convert.ToInt32(CmbBarrio.SelectedValue);
 
+            int? CodCategoriaIva = null;
+            if (CmbCategoriaIva.SelectedIndex > 0)
+                CodCategoriaIva = Convert.ToInt32(CmbCategoriaIva.SelectedValue);
+
             if (Nuevo == true)
             {
                 cliente.InsertarClienteTransaccion(con, Transaccion, CodTipoDoc, NroDocumento, Nombre,
-                    Apellido, Telefono, Celular, Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion);
+                    Apellido, Telefono, Celular, Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva);
                 txtCodCLiente.Text = cliente.GetMaxClientetTransaccion(con, Transaccion).ToString();
             }
             else
             {
                 cliente.ModificarClientetTransaccion(con, Transaccion, Convert.ToInt32(txtCodCLiente.Text), CodTipoDoc, NroDocumento, Nombre,
                     Apellido, Telefono, Celular,
-                    Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion);
+                    Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva );
             }
             return true;
         }

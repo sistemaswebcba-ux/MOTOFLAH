@@ -209,12 +209,12 @@ namespace Concesionaria.Clases
         public void InsertarClienteTransaccion(SqlConnection con, SqlTransaction Transaccion, Int32? CodTipoDoc, string NroDocumento,
             string Nombre, string Apellido, string Telefono, string Celular,
             string Calle, string Altura, Int32? CodBarrio,
-            DateTime? FechaNacimiento,string Email,string Observacion
+            DateTime? FechaNacimiento,string Email,string Observacion , int? CodCategoriaIva
             )
         {
             string sql = "Insert into Cliente(CodTipoDoc,NroDocumento,Nombre,Apellido";
             sql = sql + ",Telefono,Celular, Calle,  Numero, CodBarrio";
-            sql = sql + ",FechaNacimiento,Email,Observacion)";
+            sql = sql + ",FechaNacimiento,Email,Observacion,CodCategoriaIva)";
             sql = sql + "Values(";
             if (CodTipoDoc == null)
                 sql = sql + "null";
@@ -237,6 +237,10 @@ namespace Concesionaria.Clases
                 sql = sql + "," + "'" + FechaNacimiento.ToString() + "'";
             sql = sql + "," + "'" + Email + "'";
             sql = sql + ","  +"'" + Observacion + "'";
+            if (CodCategoriaIva != null)
+                sql = sql + "," + CodCategoriaIva.ToString();
+            else
+                sql = sql + ",null";
             sql = sql + ")";
             SqlCommand comand = new SqlCommand();
             comand.Connection = con;
@@ -259,7 +263,7 @@ namespace Concesionaria.Clases
 
         public void ModificarClientetTransaccion(SqlConnection con,SqlTransaction Transaccion,Int32 CodCliente, Int32? CodTipoDoc, string NroDocumento,
            string Nombre, string Apellido, string Telefono, string Celular,
-           string Calle, string Numero, Int32? CodBarrio, DateTime? FechaNacimiento, string Email, string Observacion)
+           string Calle, string Numero, Int32? CodBarrio, DateTime? FechaNacimiento, string Email, string Observacion, int? CodCategoriaIva)
         {
             string sql = "Update Cliente ";
 
@@ -286,8 +290,18 @@ namespace Concesionaria.Clases
             else
             {
                 sql = sql + ",FechaNacimiento =" + "'" + FechaNacimiento.ToString() + "'";
+            }
+            
+            if (CodCategoriaIva == null)
+            {
+                sql = sql + ",CodCategoriaIva=null";
+            }
+            else
+            {
+                sql = sql + ",CodCategoriaIva =" + "'" + CodCategoriaIva.ToString() + "'";
 
             }
+
             sql = sql + ",Email =" + "'" + Email + "'";
             sql = sql + ",Observacion =" + "'" + Observacion + "'";
 
