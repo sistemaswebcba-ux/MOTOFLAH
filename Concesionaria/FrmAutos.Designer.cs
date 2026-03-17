@@ -35,6 +35,8 @@
             this.cmbDocumento = new System.Windows.Forms.ComboBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.CmbCategoriaIva = new System.Windows.Forms.ComboBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
@@ -182,8 +184,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.txtTotalGasto = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.CmbCategoriaIva = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
@@ -299,6 +299,24 @@
             this.groupBox2.Text = "Información del Cliente";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(393, 22);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(67, 16);
+            this.label16.TabIndex = 79;
+            this.label16.Text = "Categoría";
+            // 
+            // CmbCategoriaIva
+            // 
+            this.CmbCategoriaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbCategoriaIva.FormattingEnabled = true;
+            this.CmbCategoriaIva.Location = new System.Drawing.Point(461, 17);
+            this.CmbCategoriaIva.Name = "CmbCategoriaIva";
+            this.CmbCategoriaIva.Size = new System.Drawing.Size(131, 24);
+            this.CmbCategoriaIva.TabIndex = 78;
+            // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Image = global::Concesionaria.Properties.Resources.carpeta;
@@ -342,7 +360,7 @@
             // txtEmail
             // 
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.Location = new System.Drawing.Point(461, 67);
+            this.txtEmail.Location = new System.Drawing.Point(86, 120);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(276, 22);
             this.txtEmail.TabIndex = 39;
@@ -350,7 +368,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(399, 67);
+            this.label41.Location = new System.Drawing.Point(16, 123);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(42, 16);
             this.label41.TabIndex = 38;
@@ -378,7 +396,7 @@
             // 
             this.CmbBarrio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbBarrio.FormattingEnabled = true;
-            this.CmbBarrio.Location = new System.Drawing.Point(462, 115);
+            this.CmbBarrio.Location = new System.Drawing.Point(461, 120);
             this.CmbBarrio.Name = "CmbBarrio";
             this.CmbBarrio.Size = new System.Drawing.Size(275, 24);
             this.CmbBarrio.TabIndex = 34;
@@ -386,7 +404,7 @@
             // btnNuevoBarrio
             // 
             this.btnNuevoBarrio.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnNuevoBarrio.Location = new System.Drawing.Point(754, 115);
+            this.btnNuevoBarrio.Location = new System.Drawing.Point(743, 114);
             this.btnNuevoBarrio.Name = "btnNuevoBarrio";
             this.btnNuevoBarrio.Size = new System.Drawing.Size(40, 28);
             this.btnNuevoBarrio.TabIndex = 35;
@@ -396,16 +414,16 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(16, 118);
+            this.label38.Location = new System.Drawing.Point(393, 92);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(51, 16);
+            this.label38.Size = new System.Drawing.Size(68, 16);
             this.label38.TabIndex = 26;
-            this.label38.Text = "Ciudad";
+            this.label38.Text = "Localidad";
             // 
             // btnAgregarCiudad2
             // 
             this.btnAgregarCiudad2.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarCiudad2.Location = new System.Drawing.Point(337, 115);
+            this.btnAgregarCiudad2.Location = new System.Drawing.Point(743, 88);
             this.btnAgregarCiudad2.Name = "btnAgregarCiudad2";
             this.btnAgregarCiudad2.Size = new System.Drawing.Size(40, 28);
             this.btnAgregarCiudad2.TabIndex = 32;
@@ -415,7 +433,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(399, 91);
+            this.label37.Location = new System.Drawing.Point(393, 70);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(64, 16);
             this.label37.TabIndex = 32;
@@ -425,16 +443,16 @@
             // 
             this.cmbCiudad2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCiudad2.FormattingEnabled = true;
-            this.cmbCiudad2.Location = new System.Drawing.Point(86, 118);
+            this.cmbCiudad2.Location = new System.Drawing.Point(461, 92);
             this.cmbCiudad2.Name = "cmbCiudad2";
-            this.cmbCiudad2.Size = new System.Drawing.Size(246, 24);
+            this.cmbCiudad2.Size = new System.Drawing.Size(276, 24);
             this.cmbCiudad2.TabIndex = 33;
             this.cmbCiudad2.SelectedIndexChanged += new System.EventHandler(this.cmbCiudad2_SelectedIndexChanged);
             // 
             // btnAgregarProvincia2
             // 
             this.btnAgregarProvincia2.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarProvincia2.Location = new System.Drawing.Point(750, 85);
+            this.btnAgregarProvincia2.Location = new System.Drawing.Point(743, 64);
             this.btnAgregarProvincia2.Name = "btnAgregarProvincia2";
             this.btnAgregarProvincia2.Size = new System.Drawing.Size(40, 28);
             this.btnAgregarProvincia2.TabIndex = 26;
@@ -445,7 +463,7 @@
             // 
             this.cmbProvincia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia2.FormattingEnabled = true;
-            this.cmbProvincia2.Location = new System.Drawing.Point(462, 91);
+            this.cmbProvincia2.Location = new System.Drawing.Point(461, 70);
             this.cmbProvincia2.Name = "cmbProvincia2";
             this.cmbProvincia2.Size = new System.Drawing.Size(275, 24);
             this.cmbProvincia2.TabIndex = 31;
@@ -455,7 +473,7 @@
             // 
             this.txtCelular.Location = new System.Drawing.Point(232, 70);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(99, 22);
+            this.txtCelular.Size = new System.Drawing.Size(130, 22);
             this.txtCelular.TabIndex = 30;
             // 
             // txtTelefono
@@ -467,7 +485,7 @@
             // 
             // txtCodCLiente
             // 
-            this.txtCodCLiente.Location = new System.Drawing.Point(337, 48);
+            this.txtCodCLiente.Location = new System.Drawing.Point(165, 0);
             this.txtCodCLiente.Name = "txtCodCLiente";
             this.txtCodCLiente.Size = new System.Drawing.Size(50, 22);
             this.txtCodCLiente.TabIndex = 29;
@@ -476,7 +494,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(402, 115);
+            this.label14.Location = new System.Drawing.Point(393, 115);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(44, 16);
             this.label14.TabIndex = 23;
@@ -486,7 +504,7 @@
             // 
             this.txtAltura.Location = new System.Drawing.Point(279, 94);
             this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(53, 22);
+            this.txtAltura.Size = new System.Drawing.Size(83, 22);
             this.txtAltura.TabIndex = 18;
             // 
             // label13
@@ -539,7 +557,7 @@
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Location = new System.Drawing.Point(85, 47);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(246, 22);
+            this.txtNombre.Size = new System.Drawing.Size(277, 22);
             this.txtNombre.TabIndex = 13;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -548,7 +566,7 @@
             // 
             this.txtNroDoc.Location = new System.Drawing.Point(220, 22);
             this.txtNroDoc.Name = "txtNroDoc";
-            this.txtNroDoc.Size = new System.Drawing.Size(112, 22);
+            this.txtNroDoc.Size = new System.Drawing.Size(142, 22);
             this.txtNroDoc.TabIndex = 12;
             this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
             this.txtNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDoc_KeyPress);
@@ -792,15 +810,15 @@
             // 
             // txtColor
             // 
-            this.txtColor.Location = new System.Drawing.Point(675, 18);
+            this.txtColor.Location = new System.Drawing.Point(659, 21);
             this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(91, 22);
+            this.txtColor.Size = new System.Drawing.Size(107, 22);
             this.txtColor.TabIndex = 8;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(613, 24);
+            this.label23.Location = new System.Drawing.Point(613, 28);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(40, 16);
             this.label23.TabIndex = 36;
@@ -849,7 +867,7 @@
             // 
             // txtCodStock
             // 
-            this.txtCodStock.Location = new System.Drawing.Point(305, 25);
+            this.txtCodStock.Location = new System.Drawing.Point(316, 28);
             this.txtCodStock.Name = "txtCodStock";
             this.txtCodStock.Size = new System.Drawing.Size(50, 22);
             this.txtCodStock.TabIndex = 28;
@@ -954,7 +972,7 @@
             // 
             // txtAnio
             // 
-            this.txtAnio.Location = new System.Drawing.Point(520, 21);
+            this.txtAnio.Location = new System.Drawing.Point(520, 27);
             this.txtAnio.MaxLength = 4;
             this.txtAnio.Name = "txtAnio";
             this.txtAnio.Size = new System.Drawing.Size(83, 22);
@@ -964,7 +982,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(430, 18);
+            this.label3.Location = new System.Drawing.Point(432, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 16);
             this.label3.TabIndex = 6;
@@ -1013,7 +1031,7 @@
             // 
             this.txtPatente.BackColor = System.Drawing.Color.White;
             this.txtPatente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPatente.Location = new System.Drawing.Point(120, 25);
+            this.txtPatente.Location = new System.Drawing.Point(120, 28);
             this.txtPatente.Name = "txtPatente";
             this.txtPatente.Size = new System.Drawing.Size(100, 22);
             this.txtPatente.TabIndex = 1;
@@ -1023,7 +1041,7 @@
             // 
             // lblPatente
             // 
-            this.lblPatente.Location = new System.Drawing.Point(26, 25);
+            this.lblPatente.Location = new System.Drawing.Point(26, 31);
             this.lblPatente.Name = "lblPatente";
             this.lblPatente.Size = new System.Drawing.Size(80, 30);
             this.lblPatente.TabIndex = 0;
@@ -1769,24 +1787,6 @@
             this.label44.Size = new System.Drawing.Size(53, 17);
             this.label44.TabIndex = 53;
             this.label44.Text = "Gastos";
-            // 
-            // CmbCategoriaIva
-            // 
-            this.CmbCategoriaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbCategoriaIva.FormattingEnabled = true;
-            this.CmbCategoriaIva.Location = new System.Drawing.Point(461, 17);
-            this.CmbCategoriaIva.Name = "CmbCategoriaIva";
-            this.CmbCategoriaIva.Size = new System.Drawing.Size(131, 24);
-            this.CmbCategoriaIva.TabIndex = 78;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(393, 22);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 16);
-            this.label16.TabIndex = 79;
-            this.label16.Text = "Categoría";
             // 
             // FrmAutos
             // 
