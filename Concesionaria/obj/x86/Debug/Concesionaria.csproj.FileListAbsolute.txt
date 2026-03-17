@@ -364,3 +364,5 @@ D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\bin\Debug\ru\Microsoft.SqlSer
 D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\obj\x86\Debug\Concesionaria.FRMaBMmODELO.resources
+D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\obj\x86\Debug\Concesionaria.FrmAbmTipoUtilitario.resources
+D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\obj\x86\Debug\Concesionaria.FrmAbmSucursal.resources

@@ -742,5 +742,17 @@ namespace Concesionaria
             FRMaBMmODELO frm = new FRMaBMmODELO();
             frm.Show();
         }
+
+        private void tipoDeUtilitarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAbmTipoUtilitario frm = new FrmAbmTipoUtilitario();
+            frm.Show();
+        }
+
+        private void ubicacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAbmSucursal frm = new Concesionaria.FrmAbmSucursal();
+            frm.Show();
+        }
     }
 }

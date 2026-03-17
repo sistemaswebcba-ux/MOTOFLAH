@@ -209,11 +209,23 @@
     <Compile Include="FrmAbmPapeles.Designer.cs">
       <DependentUpon>FrmAbmPapeles.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAbmSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbmSucursal.Designer.cs">
+      <DependentUpon>FrmAbmSucursal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAbmTarjeta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAbmTarjeta.Designer.cs">
       <DependentUpon>FrmAbmTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAbmTipoUtilitario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbmTipoUtilitario.Designer.cs">
+      <DependentUpon>FrmAbmTipoUtilitario.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAlertas.cs">
       <SubType>Form</SubType>
@@ -781,8 +793,14 @@
     <EmbeddedResource Include="FrmAbmPapeles.resx">
       <DependentUpon>FrmAbmPapeles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbmSucursal.resx">
+      <DependentUpon>FrmAbmSucursal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAbmTarjeta.resx">
       <DependentUpon>FrmAbmTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbmTipoUtilitario.resx">
+      <DependentUpon>FrmAbmTipoUtilitario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAlertas.resx">
       <DependentUpon>FrmAlertas.cs</DependentUpon>

@@ -109,6 +109,7 @@ namespace Concesionaria
             Int32? CodSucursal = null;
             string RutaImagen = "";
             Int32? CodModelo = null;
+            string Certificado = "";
 
             Patente = txtPatente.Text;
             Color = txtColor.Text;
@@ -143,6 +144,8 @@ namespace Concesionaria
             Motor = txtMotor.Text;
             Chasis = txtChasis.Text;
             Int32? CodTipoCombustible = null;
+
+            
         
 
             if (cmbSucursal.SelectedIndex > 0)
@@ -156,6 +159,8 @@ namespace Concesionaria
             if (CmbModelo.SelectedIndex > 0)
                 CodModelo = Convert.ToInt32(CmbModelo.SelectedValue);
 
+            Certificado = txtCertificado.Text;
+
             Clases.cAuto auto = new Clases.cAuto();
             Boolean Graba = true;
             if (txtCodAuto.Text != "")
@@ -164,7 +169,7 @@ namespace Concesionaria
             {
                 //inserto el auto
                 auto.AgregarAutoTransaccion(con, Transaccion, Patente, CodMarca, Descripcion,
-                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible, CodSucursal, CodTipoUtilitario, RutaImagen,CodModelo);
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible, CodSucursal, CodTipoUtilitario, RutaImagen,CodModelo, Certificado);
                 CodAuto = auto.GetMaxCodAutoTransaccion(con, Transaccion);
                 txtCodAuto.Text = CodAuto.ToString();
 
@@ -173,7 +178,7 @@ namespace Concesionaria
             else
             {
                 auto.ModificarAutoTransaccion(con, Transaccion, Patente, CodMarca, Descripcion,
-                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodSucursal, CodTipoUtilitario, RutaImagen, CodModelo);
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodSucursal, CodTipoUtilitario, RutaImagen, CodModelo, Certificado);
             }
             if (txtCodStock.Text == "")
             {
