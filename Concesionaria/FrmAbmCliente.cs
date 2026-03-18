@@ -23,7 +23,7 @@ namespace Concesionaria
             fun.LlenarCombo(cmb_CodTipoDoc, "TipoDocumento", "Nombre", "CodTipoDoc");
             if (cmb_CodTipoDoc.Items.Count > 0)
                 cmb_CodTipoDoc.SelectedIndex = 1;
-            cmb_CodTipoDoc.Enabled = false;  
+           // cmb_CodTipoDoc.Enabled = false;  
             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
         }
 

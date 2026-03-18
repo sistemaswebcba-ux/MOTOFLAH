@@ -754,5 +754,11 @@ namespace Concesionaria
             FrmAbmSucursal frm = new Concesionaria.FrmAbmSucursal();
             frm.Show();
         }
+
+        private void colorVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAbmColor frm = new FrmAbmColor();
+            frm.Show();
+        }
     }
 }

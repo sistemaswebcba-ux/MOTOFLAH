@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Concesionaria
 {
-    public partial class FrmAbmSucursal : FrmBase
+    public partial class FrmAbmColor : FrmBase
     {
-        public FrmAbmSucursal()
+        public FrmAbmColor()
         {
             InitializeComponent();
         }
@@ -52,7 +52,7 @@ namespace Concesionaria
 
         }
 
-        private void FrmAbmSucursal_Load(object sender, EventArgs e)
+        private void FrmAbmColor_Load(object sender, EventArgs e)
         {
             Botonera(1);
             Grupo.Enabled = false;
@@ -77,28 +77,14 @@ namespace Concesionaria
         {
             Clases.cFunciones fun = new Clases.cFunciones();
             if (txtCodigo.Text == "")
-                fun.GuardarNuevoGenerico(this, "Sucursal");
+                fun.GuardarNuevoGenerico(this, "Color");
             else
-                fun.ModificarGenerico(this, "Sucursal", "CodSucursal", txtCodigo.Text);
+                fun.ModificarGenerico(this, "Color", "CodColor", txtCodigo.Text);
             MessageBox.Show("Datos grabados Correctamente", Clases.cMensaje.Mensaje());
             Botonera(1);
             fun.LimpiarGenerico(this);
             txtCodigo.Text = "";
             Grupo.Enabled = false;
-        }
-
-        private void btnAbrir_Click(object sender, EventArgs e)
-        {
-            //nombre de los camposa buscar, se llaman igual que en la base de datos
-            Principal.OpcionesdeBusqueda = "Nombre";
-            //nombre de la tabla, 
-            Principal.TablaPrincipal = "Sucursal";
-            Principal.OpcionesColumnasGrilla = "CodSucursal; Nombre";
-            Principal.ColumnasVisibles = "0;1";
-            Principal.ColumnasAncho = "100;580";
-            FrmBuscadorGenerico form = new FrmBuscadorGenerico();
-            form.FormClosing += new FormClosingEventHandler(form_FormClosing);
-            form.ShowDialog();
         }
 
         private void form_FormClosing(object sender, FormClosingEventArgs e)
@@ -113,7 +99,7 @@ namespace Concesionaria
                     txtCodigo.Text = Principal.CodigoPrincipalAbm.ToString();
 
                     if (Principal.CodigoPrincipalAbm != "")
-                        fun.CargarControles(this, "Sucursal", "CodSucursal", txtCodigo.Text);
+                        fun.CargarControles(this, "Color", "CodColor", txtCodigo.Text);
                     Grupo.Enabled = false;
                     return;
                 }
@@ -121,14 +107,23 @@ namespace Concesionaria
             }
         }
 
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            //nombre de los camposa buscar, se llaman igual que en la base de datos
+            Principal.OpcionesdeBusqueda = "Nombre";
+            //nombre de la tabla, 
+            Principal.TablaPrincipal = "Color";
+            Principal.OpcionesColumnasGrilla = "CodColor; Nombre";
+            Principal.ColumnasVisibles = "0;1";
+            Principal.ColumnasAncho = "100;580";
+            FrmBuscadorGenerico form = new FrmBuscadorGenerico();
+            form.FormClosing += new FormClosingEventHandler(form_FormClosing);
+            form.ShowDialog();
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

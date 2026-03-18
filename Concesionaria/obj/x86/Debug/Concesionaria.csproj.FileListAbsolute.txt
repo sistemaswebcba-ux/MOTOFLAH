@@ -366,3 +366,4 @@ D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\bin\Debug\zh-Hant\Microsoft.S
 D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\obj\x86\Debug\Concesionaria.FRMaBMmODELO.resources
 D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\obj\x86\Debug\Concesionaria.FrmAbmTipoUtilitario.resources
 D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\obj\x86\Debug\Concesionaria.FrmAbmSucursal.resources
+D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\obj\x86\Debug\Concesionaria.FrmAbmColor.resources

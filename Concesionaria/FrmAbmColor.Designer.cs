@@ -1,6 +1,6 @@
 ﻿namespace Concesionaria
 {
-    partial class FrmAbmSucursal
+    partial class FrmAbmColor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmSucursal));
-            this.Grupo = new System.Windows.Forms.GroupBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txt_Nombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmColor));
             this.BarraBotones = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
@@ -42,46 +38,13 @@
             this.btnAbrir = new System.Windows.Forms.ToolStripButton();
             this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.Grupo.SuspendLayout();
+            this.Grupo = new System.Windows.Forms.GroupBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txt_Nombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.BarraBotones.SuspendLayout();
+            this.Grupo.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Grupo
-            // 
-            this.Grupo.Controls.Add(this.txtCodigo);
-            this.Grupo.Controls.Add(this.txt_Nombre);
-            this.Grupo.Controls.Add(this.label1);
-            this.Grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grupo.Location = new System.Drawing.Point(12, 51);
-            this.Grupo.Name = "Grupo";
-            this.Grupo.Size = new System.Drawing.Size(368, 76);
-            this.Grupo.TabIndex = 1;
-            this.Grupo.TabStop = false;
-            this.Grupo.Text = "Información de la Sucursall";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(238, 0);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(57, 22);
-            this.txtCodigo.TabIndex = 2;
-            this.txtCodigo.Visible = false;
-            // 
-            // txt_Nombre
-            // 
-            this.txt_Nombre.Location = new System.Drawing.Point(59, 30);
-            this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(299, 22);
-            this.txt_Nombre.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre";
             // 
             // BarraBotones
             // 
@@ -97,8 +60,8 @@
             this.btnSalir});
             this.BarraBotones.Location = new System.Drawing.Point(0, 0);
             this.BarraBotones.Name = "BarraBotones";
-            this.BarraBotones.Size = new System.Drawing.Size(380, 39);
-            this.BarraBotones.TabIndex = 15;
+            this.BarraBotones.Size = new System.Drawing.Size(363, 39);
+            this.BarraBotones.TabIndex = 17;
             this.BarraBotones.Text = "toolStrip1";
             // 
             // btnNuevo
@@ -151,7 +114,6 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(36, 36);
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAbrir
             // 
@@ -183,20 +145,57 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // FrmAbmSucursal
+            // Grupo
+            // 
+            this.Grupo.Controls.Add(this.txtCodigo);
+            this.Grupo.Controls.Add(this.txt_Nombre);
+            this.Grupo.Controls.Add(this.label1);
+            this.Grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Grupo.Location = new System.Drawing.Point(0, 51);
+            this.Grupo.Name = "Grupo";
+            this.Grupo.Size = new System.Drawing.Size(363, 76);
+            this.Grupo.TabIndex = 16;
+            this.Grupo.TabStop = false;
+            this.Grupo.Text = "Color del Vehículo";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(238, 0);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(57, 22);
+            this.txtCodigo.TabIndex = 2;
+            this.txtCodigo.Visible = false;
+            // 
+            // txt_Nombre
+            // 
+            this.txt_Nombre.Location = new System.Drawing.Point(59, 30);
+            this.txt_Nombre.Name = "txt_Nombre";
+            this.txt_Nombre.Size = new System.Drawing.Size(299, 22);
+            this.txt_Nombre.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre";
+            // 
+            // FrmAbmColor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 141);
+            this.ClientSize = new System.Drawing.Size(363, 303);
             this.Controls.Add(this.BarraBotones);
             this.Controls.Add(this.Grupo);
-            this.Name = "FrmAbmSucursal";
-            this.Text = "FrmAbmSucursal";
-            this.Load += new System.EventHandler(this.FrmAbmSucursal_Load);
-            this.Grupo.ResumeLayout(false);
-            this.Grupo.PerformLayout();
+            this.Name = "FrmAbmColor";
+            this.Text = "FrmAbmColor";
+            this.Load += new System.EventHandler(this.FrmAbmColor_Load);
             this.BarraBotones.ResumeLayout(false);
             this.BarraBotones.PerformLayout();
+            this.Grupo.ResumeLayout(false);
+            this.Grupo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,10 +203,6 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox Grupo;
-        private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.TextBox txt_Nombre;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip BarraBotones;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnEditar;
@@ -217,5 +212,9 @@
         private System.Windows.Forms.ToolStripButton btnAbrir;
         private System.Windows.Forms.ToolStripButton btnImprimir;
         private System.Windows.Forms.ToolStripButton btnSalir;
+        private System.Windows.Forms.GroupBox Grupo;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txt_Nombre;
+        private System.Windows.Forms.Label label1;
     }
 }

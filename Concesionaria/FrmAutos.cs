@@ -71,6 +71,7 @@ namespace Concesionaria
             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");  
             fun.LlenarCombo(CmbCategoriaIva, "CategoriaIva", "Nombre", "Codigo");
             fun.LlenarCombo(CmbModelo, "Modelo", "Nombre", "CodModelo");
+            fun.LlenarCombo(cMBcOLOR, "Color", "Nombre", "CodColor");
             cPapeles papel = new cPapeles();
             DataTable tbPapeles = papel.GetPapeles();
             Lista.DataSource = tbPapeles;
@@ -110,6 +111,14 @@ namespace Concesionaria
             string RutaImagen = "";
             Int32? CodModelo = null;
             string Certificado = "";
+            Int32? CodColor = null;
+
+            if (cMBcOLOR.SelectedIndex > 0)
+            {  
+                 CodColor = Convert.ToInt32(cMBcOLOR.SelectedValue);
+                string NombreColor = cColor.GetColorxId(Convert.ToInt32(CodColor));
+                txtColor.Text = NombreColor;
+            }
 
             Patente = txtPatente.Text;
             Color = txtColor.Text;
@@ -145,6 +154,7 @@ namespace Concesionaria
             Chasis = txtChasis.Text;
             Int32? CodTipoCombustible = null;
 
+          
             
         
 
@@ -169,7 +179,7 @@ namespace Concesionaria
             {
                 //inserto el auto
                 auto.AgregarAutoTransaccion(con, Transaccion, Patente, CodMarca, Descripcion,
-                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible, CodSucursal, CodTipoUtilitario, RutaImagen,CodModelo, Certificado);
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible, CodSucursal, CodTipoUtilitario, RutaImagen,CodModelo, Certificado, CodColor );
                 CodAuto = auto.GetMaxCodAutoTransaccion(con, Transaccion);
                 txtCodAuto.Text = CodAuto.ToString();
 
@@ -178,7 +188,7 @@ namespace Concesionaria
             else
             {
                 auto.ModificarAutoTransaccion(con, Transaccion, Patente, CodMarca, Descripcion,
-                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodSucursal, CodTipoUtilitario, RutaImagen, CodModelo, Certificado);
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodSucursal, CodTipoUtilitario, RutaImagen, CodModelo, Certificado, CodColor);
             }
             if (txtCodStock.Text == "")
             {
@@ -439,6 +449,7 @@ namespace Concesionaria
                     txtChasis.Text = trdo.Rows[0]["Chasis"].ToString();
                     txtColor.Text = trdo.Rows[0]["Color"].ToString();
                     txtMotor.Text = trdo.Rows[0]["Motor"].ToString();
+                    txtCertificado.Text = trdo.Rows[0]["Certificado"].ToString();
                     Clases.cFunciones fun = new Clases.cFunciones();
                     if (txtKilometros.Text != "")
                     {
@@ -471,6 +482,11 @@ namespace Concesionaria
                     if (trdo.Rows[0]["CodSucursal"].ToString() != "")
                     {
                         cmbSucursal.SelectedValue = trdo.Rows[0]["CodSucursal"].ToString();
+                    }
+
+                    if (trdo.Rows[0]["CodColor"].ToString() != "")
+                    {
+                        cMBcOLOR.SelectedValue = trdo.Rows[0]["CodColor"].ToString();
                     }
 
                     if (trdo.Rows[0]["CodTipoUtilitario"].ToString() != "")
@@ -545,6 +561,10 @@ namespace Concesionaria
              
             if (CmbModelo.Items.Count > 0)
                 CmbModelo.SelectedIndex = 0;
+             
+            if (cMBcOLOR.Items.Count > 0)
+                cMBcOLOR.SelectedIndex = 0;
+
             txtDescripcion.Text = "";
             txtAnio.Text = "";
             txtKilometros.Text = "";
