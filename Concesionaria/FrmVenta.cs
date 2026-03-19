@@ -4835,6 +4835,26 @@ namespace Concesionaria
 
                 }
 
+                if (trdo.Rows[0]["CodMarca"].ToString() != "")
+                {
+                    cmbMarca.SelectedValue = trdo.Rows[0]["CodMarca"].ToString();
+                    Int32 CodMarca = Convert.ToInt32(cmbMarca.SelectedValue);
+                    cModelo modelo = new cModelo();
+                    DataTable tbModel = modelo.GetModelosxMarca(CodMarca);
+                    //cFunciones fun = new Clases.cFunciones();
+                    fun.LlenarComboDatatable(cmbModelo, tbModel, "Nombre", "CodModelo");
+                }
+
+                if (trdo.Rows[0]["CodModelo"].ToString() != "")
+                {
+                    cmbModelo.SelectedValue = trdo.Rows[0]["CodModelo"].ToString();
+                }
+
+                if (trdo.Rows[0]["CodColor"].ToString() != "")
+                {
+                    cmbColor.SelectedValue = trdo.Rows[0]["CodColor"].ToString();
+                }
+
                 if (txtCodStock.Text != "")
                 {
                     GetCostos(Convert.ToInt32(txtCodStock.Text));

@@ -766,7 +766,6 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -778,15 +777,17 @@
             // button5
             // 
             this.button5.Image = global::Concesionaria.Properties.Resources.tv;
-            this.button5.Location = new System.Drawing.Point(826, 9);
+            this.button5.Location = new System.Drawing.Point(760, -1);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(34, 28);
             this.button5.TabIndex = 70;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
             this.groupBox1.Controls.Add(this.txtRutaImagenCliente);
             this.groupBox1.Controls.Add(this.imgFotoCliente);
@@ -824,7 +825,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(15, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(826, 179);
+            this.groupBox1.Size = new System.Drawing.Size(845, 159);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -833,14 +834,14 @@
             this.btnBuscarCliente.Image = global::Concesionaria.Properties.Resources.carpeta;
             this.btnBuscarCliente.Location = new System.Drawing.Point(373, 1);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(40, 27);
+            this.btnBuscarCliente.Size = new System.Drawing.Size(30, 26);
             this.btnBuscarCliente.TabIndex = 76;
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // txtRutaImagenCliente
             // 
-            this.txtRutaImagenCliente.Location = new System.Drawing.Point(567, 0);
+            this.txtRutaImagenCliente.Location = new System.Drawing.Point(669, 131);
             this.txtRutaImagenCliente.Name = "txtRutaImagenCliente";
             this.txtRutaImagenCliente.Size = new System.Drawing.Size(96, 22);
             this.txtRutaImagenCliente.TabIndex = 69;
@@ -848,27 +849,29 @@
             // 
             // imgFotoCliente
             // 
-            this.imgFotoCliente.Location = new System.Drawing.Point(729, 3);
+            this.imgFotoCliente.Location = new System.Drawing.Point(781, 43);
             this.imgFotoCliente.Name = "imgFotoCliente";
-            this.imgFotoCliente.Size = new System.Drawing.Size(82, 99);
+            this.imgFotoCliente.Size = new System.Drawing.Size(55, 50);
             this.imgFotoCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgFotoCliente.TabIndex = 68;
             this.imgFotoCliente.TabStop = false;
+            this.imgFotoCliente.Visible = false;
             // 
             // btnSubirFotoCliente
             // 
-            this.btnSubirFotoCliente.Location = new System.Drawing.Point(669, -4);
+            this.btnSubirFotoCliente.Location = new System.Drawing.Point(781, 99);
             this.btnSubirFotoCliente.Name = "btnSubirFotoCliente";
             this.btnSubirFotoCliente.Size = new System.Drawing.Size(75, 29);
             this.btnSubirFotoCliente.TabIndex = 67;
             this.btnSubirFotoCliente.Text = "Abrir";
             this.btnSubirFotoCliente.UseVisualStyleBackColor = true;
+            this.btnSubirFotoCliente.Visible = false;
             this.btnSubirFotoCliente.Click += new System.EventHandler(this.btnSubirFotoCliente_Click);
             // 
             // txtEmail
             // 
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.Location = new System.Drawing.Point(484, 136);
+            this.txtEmail.Location = new System.Drawing.Point(121, 106);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(246, 22);
             this.txtEmail.TabIndex = 47;
@@ -876,7 +879,7 @@
             // label76
             // 
             this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(417, 140);
+            this.label76.Location = new System.Drawing.Point(19, 105);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(42, 16);
             this.label76.TabIndex = 46;
@@ -885,16 +888,16 @@
             // label75
             // 
             this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(417, 114);
+            this.label75.Location = new System.Drawing.Point(409, 29);
             this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(51, 16);
+            this.label75.Size = new System.Drawing.Size(68, 16);
             this.label75.TabIndex = 43;
-            this.label75.Text = "Ciudad";
+            this.label75.Text = "Localidad";
             // 
             // btnAgregarCiudad2
             // 
             this.btnAgregarCiudad2.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarCiudad2.Location = new System.Drawing.Point(736, 103);
+            this.btnAgregarCiudad2.Location = new System.Drawing.Point(729, 27);
             this.btnAgregarCiudad2.Name = "btnAgregarCiudad2";
             this.btnAgregarCiudad2.Size = new System.Drawing.Size(25, 25);
             this.btnAgregarCiudad2.TabIndex = 44;
@@ -905,7 +908,7 @@
             // 
             this.CmbCiudadCliente2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbCiudadCliente2.FormattingEnabled = true;
-            this.CmbCiudadCliente2.Location = new System.Drawing.Point(481, 111);
+            this.CmbCiudadCliente2.Location = new System.Drawing.Point(477, 26);
             this.CmbCiudadCliente2.Name = "CmbCiudadCliente2";
             this.CmbCiudadCliente2.Size = new System.Drawing.Size(246, 24);
             this.CmbCiudadCliente2.TabIndex = 45;
@@ -914,7 +917,7 @@
             // label74
             // 
             this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(19, 107);
+            this.label74.Location = new System.Drawing.Point(409, 7);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(64, 16);
             this.label74.TabIndex = 42;
@@ -923,7 +926,7 @@
             // btnAgregarProvincia2
             // 
             this.btnAgregarProvincia2.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarProvincia2.Location = new System.Drawing.Point(373, 99);
+            this.btnAgregarProvincia2.Location = new System.Drawing.Point(729, -2);
             this.btnAgregarProvincia2.Name = "btnAgregarProvincia2";
             this.btnAgregarProvincia2.Size = new System.Drawing.Size(25, 25);
             this.btnAgregarProvincia2.TabIndex = 40;
@@ -934,7 +937,7 @@
             // 
             this.cmbProvincia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia2.FormattingEnabled = true;
-            this.cmbProvincia2.Location = new System.Drawing.Point(121, 107);
+            this.cmbProvincia2.Location = new System.Drawing.Point(477, -1);
             this.cmbProvincia2.Name = "cmbProvincia2";
             this.cmbProvincia2.Size = new System.Drawing.Size(246, 24);
             this.cmbProvincia2.TabIndex = 41;
@@ -942,7 +945,7 @@
             // 
             // txtFechaNacimiento
             // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(485, 3);
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(121, 131);
             this.txtFechaNacimiento.Mask = "00/00/0000";
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(76, 22);
@@ -952,7 +955,7 @@
             // label73
             // 
             this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(414, 3);
+            this.label73.Location = new System.Drawing.Point(19, 131);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(59, 16);
             this.label73.TabIndex = 38;
@@ -960,32 +963,31 @@
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(484, 56);
-            this.txtCelular.Mask = "000-000-000000";
+            this.txtCelular.Location = new System.Drawing.Point(259, 78);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(239, 22);
+            this.txtCelular.Size = new System.Drawing.Size(108, 22);
             this.txtCelular.TabIndex = 30;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(121, 56);
-            this.txtTelefono.Mask = "(999)0000-0000";
+            this.txtTelefono.Location = new System.Drawing.Point(121, 78);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(143, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(83, 22);
             this.txtTelefono.TabIndex = 22;
             // 
             // txtCodCLiente
             // 
-            this.txtCodCLiente.Location = new System.Drawing.Point(287, 56);
+            this.txtCodCLiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtCodCLiente.Location = new System.Drawing.Point(381, 53);
             this.txtCodCLiente.Name = "txtCodCLiente";
-            this.txtCodCLiente.Size = new System.Drawing.Size(50, 22);
+            this.txtCodCLiente.Size = new System.Drawing.Size(22, 22);
             this.txtCodCLiente.TabIndex = 29;
             this.txtCodCLiente.Visible = false;
             // 
             // btnNuevoBarrio
             // 
             this.btnNuevoBarrio.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnNuevoBarrio.Location = new System.Drawing.Point(373, 131);
+            this.btnNuevoBarrio.Location = new System.Drawing.Point(729, 52);
             this.btnNuevoBarrio.Name = "btnNuevoBarrio";
             this.btnNuevoBarrio.Size = new System.Drawing.Size(25, 25);
             this.btnNuevoBarrio.TabIndex = 25;
@@ -996,7 +998,7 @@
             // 
             this.CmbBarrio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbBarrio.FormattingEnabled = true;
-            this.CmbBarrio.Location = new System.Drawing.Point(121, 134);
+            this.CmbBarrio.Location = new System.Drawing.Point(477, 53);
             this.CmbBarrio.Name = "CmbBarrio";
             this.CmbBarrio.Size = new System.Drawing.Size(246, 24);
             this.CmbBarrio.TabIndex = 19;
@@ -1004,7 +1006,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(19, 135);
+            this.label14.Location = new System.Drawing.Point(409, 56);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(44, 16);
             this.label14.TabIndex = 23;
@@ -1013,16 +1015,16 @@
             // txtAltura
             // 
             this.txtAltura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAltura.Location = new System.Drawing.Point(484, 83);
+            this.txtAltura.Location = new System.Drawing.Point(475, 112);
             this.txtAltura.MaxLength = 20;
             this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(246, 22);
+            this.txtAltura.Size = new System.Drawing.Size(83, 22);
             this.txtAltura.TabIndex = 18;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(417, 86);
+            this.label13.Location = new System.Drawing.Point(404, 112);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 16);
             this.label13.TabIndex = 21;
@@ -1031,7 +1033,7 @@
             // txtCalle
             // 
             this.txtCalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCalle.Location = new System.Drawing.Point(121, 83);
+            this.txtCalle.Location = new System.Drawing.Point(477, 83);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(246, 22);
             this.txtCalle.TabIndex = 17;
@@ -1039,7 +1041,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(19, 83);
+            this.label12.Location = new System.Drawing.Point(409, 86);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 16);
             this.label12.TabIndex = 19;
@@ -1048,7 +1050,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(415, 59);
+            this.label11.Location = new System.Drawing.Point(207, 81);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 16);
             this.label11.TabIndex = 16;
@@ -1057,7 +1059,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 59);
+            this.label10.Location = new System.Drawing.Point(14, 77);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 16);
             this.label10.TabIndex = 15;
@@ -1074,7 +1076,7 @@
             // txtApellido
             // 
             this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApellido.Location = new System.Drawing.Point(485, 28);
+            this.txtApellido.Location = new System.Drawing.Point(121, 53);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(246, 22);
             this.txtApellido.TabIndex = 14;
@@ -1099,7 +1101,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(415, 31);
+            this.label9.Location = new System.Drawing.Point(14, 50);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 16);
             this.label9.TabIndex = 10;

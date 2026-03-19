@@ -36,10 +36,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.chkStock = new System.Windows.Forms.CheckBox();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Grilla = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.Grupo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
             this.SuspendLayout();
@@ -117,13 +117,22 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(543, 331);
+            this.btnAceptar.Location = new System.Drawing.Point(543, 325);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(75, 30);
             this.btnAceptar.TabIndex = 43;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::Concesionaria.Properties.Resources.zoom2;
+            this.btnBuscar.Location = new System.Drawing.Point(490, 10);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(40, 27);
+            this.btnBuscar.TabIndex = 42;
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // cmbMarca
             // 
@@ -153,15 +162,6 @@
             this.Grilla.ShowEditingIcon = false;
             this.Grilla.Size = new System.Drawing.Size(603, 228);
             this.Grilla.TabIndex = 26;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = global::Concesionaria.Properties.Resources.zoom2;
-            this.btnBuscar.Location = new System.Drawing.Point(490, 10);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(40, 27);
-            this.btnBuscar.TabIndex = 42;
-            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // FrmBuscarAuto
             // 
