@@ -431,5 +431,14 @@ namespace Concesionaria.Clases
             sql = sql + " order by m.Nombre,a.Anio desc";
             return cDb.ExecuteDataTable(sql);
         }
+
+
+        public DataTable GetModelosxCoduto(int CodAuto)
+        {
+            string sql = "select m.CodModelo,m.Nombre from Modelo m, Auto a ";
+            sql = sql + " where a.CodMarca = m.CodMarca ";
+            return cDb.ExecuteDataTable(sql);
+
+        }
     }
 }

@@ -70,7 +70,7 @@ namespace Concesionaria
             fun.LlenarCombo(cmbProvincia, "Provincia", "Nombre", "CodProvincia");
             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");  
             fun.LlenarCombo(CmbCategoriaIva, "CategoriaIva", "Nombre", "Codigo");
-            fun.LlenarCombo(CmbModelo, "Modelo", "Nombre", "CodModelo");
+          //  fun.LlenarCombo(CmbModelo, "Modelo", "Nombre", "CodModelo");
             fun.LlenarCombo(cMBcOLOR, "Color", "Nombre", "CodColor");
             cPapeles papel = new cPapeles();
             DataTable tbPapeles = papel.GetPapeles();
@@ -497,6 +497,11 @@ namespace Concesionaria
                     if (trdo.Rows[0]["CodMarca"].ToString() != "")
                     {
                         cmb_CodMarca.SelectedValue = trdo.Rows[0]["CodMarca"].ToString();
+                    }
+
+                    if (trdo.Rows[0]["CodModelo"].ToString() != "")
+                    {
+                        CmbModelo.SelectedValue = trdo.Rows[0]["CodModelo"].ToString();
                     }
 
                     if (trdo.Rows[0]["Propio"].ToString() == "1")
@@ -2514,6 +2519,19 @@ namespace Concesionaria
             FrmAltaBasica form = new FrmAltaBasica();
             form.FormClosing += new FormClosingEventHandler(form_FormClosing);
             form.ShowDialog();
+        }
+
+        private void cmb_CodMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {  
+            if (cmb_CodMarca.SelectedIndex < 1)
+            {
+                return;
+            }
+            Int32 CodMarca = Convert.ToInt32(cmb_CodMarca.SelectedValue);
+            cModelo modelo = new cModelo();
+            DataTable trdo = modelo.GetModelosxMarca(CodMarca);
+            cFunciones fun = new Clases.cFunciones();
+            fun.LlenarComboDatatable(CmbModelo, trdo, "Nombre", "CodModelo");
         }
     }
 }

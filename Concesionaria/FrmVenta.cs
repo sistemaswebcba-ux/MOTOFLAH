@@ -54,6 +54,7 @@ namespace Concesionaria
             fun.LlenarCombo(CmbBanco, "Banco", "Nombre", "CodBanco");
             fun.LlenarCombo(cmbTarjeta, "Tarjeta", "Nombre", "CodTarjeta");
             fun.LlenarCombo(CmbTipoCombustible2, "TipoCombustible", "Nombre", "Codigo");
+            fun.LlenarCombo(cmbColor, "Color", "Nombre", "CodColor"); 
             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
             fun.LlenarCombo(CmbProvinciaAuto , "Provincia", "Nombre", "CodProvincia");
             CargarVendedor();
@@ -167,6 +168,21 @@ namespace Concesionaria
                     if (trdo.Rows[0]["CodMarca"].ToString() != "")
                     {
                         cmbMarca.SelectedValue = trdo.Rows[0]["CodMarca"].ToString();
+                        Int32 CodMarca = Convert.ToInt32(cmbMarca.SelectedValue);
+                        cModelo modelo = new cModelo();
+                        DataTable tbModel = modelo.GetModelosxMarca(CodMarca);
+                        //cFunciones fun = new Clases.cFunciones();
+                        fun.LlenarComboDatatable(cmbModelo, tbModel, "Nombre", "CodModelo");
+                    }
+
+                    if (trdo.Rows[0]["CodModelo"].ToString() != "")
+                    {
+                        cmbModelo.SelectedValue = trdo.Rows[0]["CodModelo"].ToString();                 
+                    }
+
+                    if (trdo.Rows[0]["CodColor"].ToString() != "")
+                    {
+                        cmbColor.SelectedValue = trdo.Rows[0]["CodColor"].ToString();
                     }
 
                     if (trdo.Rows[0]["Propio"].ToString() == "1")
@@ -218,11 +234,11 @@ namespace Concesionaria
             {
                 string exTitular = trdo.Rows[0]["Nombre"].ToString();
                 exTitular = exTitular + " " + trdo.Rows[0]["Apellido"].ToString();
-                txtExTitular.Text = exTitular;
+                //txtExTitular.Text = exTitular;
             }
             else
             {
-                txtExTitular.Text = "";
+               // txtExTitular.Text = "";
             }
 
         }
@@ -1531,7 +1547,7 @@ namespace Concesionaria
             txtChasis.Text = "";
             if (cmbCiudad.SelectedIndex > 0)
                 cmbCiudad.SelectedIndex = 0;
-            txtExTitular.Text = "";
+          //  txtExTitular.Text = "";
             GrillaCheques.DataSource = null;
             txtImporteCobranza.Text = "";
             txtFechaCompromiso.Text = "";
@@ -3131,8 +3147,8 @@ namespace Concesionaria
                         DataTable tcli = cli.GetClientesxCodigo(CodCliente);
                         if (tcli.Rows.Count > 0)
                         {
-                            txtExTitular.Text = tcli.Rows[0]["Nombre"].ToString();
-                            txtExTitular.Text = txtExTitular.Text + " " + tcli.Rows[0]["Apellido"].ToString();
+                          //  txtExTitular.Text = tcli.Rows[0]["Nombre"].ToString();
+                          //  txtExTitular.Text = txtExTitular.Text + " " + tcli.Rows[0]["Apellido"].ToString();
                         }
                     }
 

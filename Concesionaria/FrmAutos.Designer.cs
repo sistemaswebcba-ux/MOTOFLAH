@@ -37,12 +37,16 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.CmbCategoriaIva = new System.Windows.Forms.ComboBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.GrillaCliente = new System.Windows.Forms.DataGridView();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.CmbBarrio = new System.Windows.Forms.ComboBox();
+            this.btnNuevoBarrio = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.cmbCiudad2 = new System.Windows.Forms.ComboBox();
@@ -66,6 +70,7 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cMBcOLOR = new System.Windows.Forms.ComboBox();
             this.label45 = new System.Windows.Forms.Label();
             this.txtCertificado = new System.Windows.Forms.TextBox();
             this.CmbModelo = new System.Windows.Forms.ComboBox();
@@ -110,6 +115,9 @@
             this.txtImporteGastoRecepcion = new System.Windows.Forms.TextBox();
             this.CmbGastoRecepcion = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
+            this.bnAgregarGastosRecepcion = new System.Windows.Forms.Button();
+            this.btnEliminarGastoRecepcion = new System.Windows.Forms.Button();
+            this.btnAgregarGastodeRecepcion = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
@@ -119,10 +127,14 @@
             this.txtFechaEntregaPapel = new System.Windows.Forms.MaskedTextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.chkEntrego = new System.Windows.Forms.CheckBox();
+            this.btnQuitarPapel = new System.Windows.Forms.Button();
+            this.btnAgregarPapel = new System.Windows.Forms.Button();
             this.Lista = new System.Windows.Forms.ListBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.txtRuta = new System.Windows.Forms.TextBox();
             this.btnSubirImagen = new System.Windows.Forms.Button();
+            this.Imagen = new System.Windows.Forms.PictureBox();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.Efectivo = new System.Windows.Forms.TabPage();
             this.txtEfectivo = new System.Windows.Forms.MaskedTextBox();
@@ -138,6 +150,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.txtPatente2 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.GrillaCheques = new System.Windows.Forms.DataGridView();
             this.CmbBanco = new System.Windows.Forms.ComboBox();
@@ -148,6 +161,9 @@
             this.label47 = new System.Windows.Forms.Label();
             this.txtCheque = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.BtnAgregarCheque = new System.Windows.Forms.Button();
+            this.btnNuevaBanco = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtEfectivoaPagar = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -163,22 +179,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.txtTotalGasto = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.BtnAgregarCheque = new System.Windows.Forms.Button();
-            this.btnNuevaBanco = new System.Windows.Forms.Button();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnAgregarCliente = new System.Windows.Forms.Button();
-            this.btnNuevoBarrio = new System.Windows.Forms.Button();
-            this.bnAgregarGastosRecepcion = new System.Windows.Forms.Button();
-            this.btnEliminarGastoRecepcion = new System.Windows.Forms.Button();
-            this.btnAgregarGastodeRecepcion = new System.Windows.Forms.Button();
-            this.btnQuitarPapel = new System.Windows.Forms.Button();
-            this.btnAgregarPapel = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.Imagen = new System.Windows.Forms.PictureBox();
-            this.cMBcOLOR = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
@@ -192,13 +192,13 @@
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPapeles)).BeginInit();
             this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.tabControl3.SuspendLayout();
             this.Efectivo.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -310,6 +310,36 @@
             this.CmbCategoriaIva.Size = new System.Drawing.Size(131, 24);
             this.CmbCategoriaIva.TabIndex = 78;
             // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Image = global::Concesionaria.Properties.Resources.carpeta;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(746, 10);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(40, 27);
+            this.btnBuscarCliente.TabIndex = 77;
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
+            // button4
+            // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(759, 188);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(40, 29);
+            this.button4.TabIndex = 64;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnAgregarCliente
+            // 
+            this.btnAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCliente.Image")));
+            this.btnAgregarCliente.Location = new System.Drawing.Point(759, 153);
+            this.btnAgregarCliente.Name = "btnAgregarCliente";
+            this.btnAgregarCliente.Size = new System.Drawing.Size(40, 29);
+            this.btnAgregarCliente.TabIndex = 63;
+            this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
+            // 
             // GrillaCliente
             // 
             this.GrillaCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -363,6 +393,16 @@
             this.CmbBarrio.Name = "CmbBarrio";
             this.CmbBarrio.Size = new System.Drawing.Size(288, 24);
             this.CmbBarrio.TabIndex = 34;
+            // 
+            // btnNuevoBarrio
+            // 
+            this.btnNuevoBarrio.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnNuevoBarrio.Location = new System.Drawing.Point(758, 103);
+            this.btnNuevoBarrio.Name = "btnNuevoBarrio";
+            this.btnNuevoBarrio.Size = new System.Drawing.Size(25, 23);
+            this.btnNuevoBarrio.TabIndex = 35;
+            this.btnNuevoBarrio.UseVisualStyleBackColor = true;
+            this.btnNuevoBarrio.Click += new System.EventHandler(this.btnNuevoBarrio_Click_1);
             // 
             // label38
             // 
@@ -617,6 +657,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del vehículo";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cMBcOLOR
+            // 
+            this.cMBcOLOR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cMBcOLOR.FormattingEnabled = true;
+            this.cMBcOLOR.Location = new System.Drawing.Point(629, 114);
+            this.cMBcOLOR.Name = "cMBcOLOR";
+            this.cMBcOLOR.Size = new System.Drawing.Size(176, 24);
+            this.cMBcOLOR.TabIndex = 76;
             // 
             // label45
             // 
@@ -907,6 +956,7 @@
             this.cmb_CodMarca.Name = "cmb_CodMarca";
             this.cmb_CodMarca.Size = new System.Drawing.Size(285, 24);
             this.cmb_CodMarca.TabIndex = 3;
+            this.cmb_CodMarca.SelectedIndexChanged += new System.EventHandler(this.cmb_CodMarca_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -1031,6 +1081,36 @@
             this.label40.TabIndex = 56;
             this.label40.Text = "Gastos de recepción";
             // 
+            // bnAgregarGastosRecepcion
+            // 
+            this.bnAgregarGastosRecepcion.Image = ((System.Drawing.Image)(resources.GetObject("bnAgregarGastosRecepcion.Image")));
+            this.bnAgregarGastosRecepcion.Location = new System.Drawing.Point(447, 13);
+            this.bnAgregarGastosRecepcion.Name = "bnAgregarGastosRecepcion";
+            this.bnAgregarGastosRecepcion.Size = new System.Drawing.Size(40, 29);
+            this.bnAgregarGastosRecepcion.TabIndex = 63;
+            this.bnAgregarGastosRecepcion.UseVisualStyleBackColor = true;
+            this.bnAgregarGastosRecepcion.Click += new System.EventHandler(this.bnAgregarGastosRecepcion_Click_1);
+            // 
+            // btnEliminarGastoRecepcion
+            // 
+            this.btnEliminarGastoRecepcion.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarGastoRecepcion.Image")));
+            this.btnEliminarGastoRecepcion.Location = new System.Drawing.Point(772, 9);
+            this.btnEliminarGastoRecepcion.Name = "btnEliminarGastoRecepcion";
+            this.btnEliminarGastoRecepcion.Size = new System.Drawing.Size(40, 29);
+            this.btnEliminarGastoRecepcion.TabIndex = 62;
+            this.btnEliminarGastoRecepcion.UseVisualStyleBackColor = true;
+            this.btnEliminarGastoRecepcion.Click += new System.EventHandler(this.btnEliminarGastoRecepcion_Click);
+            // 
+            // btnAgregarGastodeRecepcion
+            // 
+            this.btnAgregarGastodeRecepcion.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarGastodeRecepcion.Image")));
+            this.btnAgregarGastodeRecepcion.Location = new System.Drawing.Point(727, 10);
+            this.btnAgregarGastodeRecepcion.Name = "btnAgregarGastodeRecepcion";
+            this.btnAgregarGastodeRecepcion.Size = new System.Drawing.Size(40, 29);
+            this.btnAgregarGastodeRecepcion.TabIndex = 60;
+            this.btnAgregarGastodeRecepcion.UseVisualStyleBackColor = true;
+            this.btnAgregarGastodeRecepcion.Click += new System.EventHandler(this.btnAgregarGastodeRecepcion_Click);
+            // 
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1124,6 +1204,26 @@
             this.chkEntrego.Text = "Entrego";
             this.chkEntrego.UseVisualStyleBackColor = true;
             // 
+            // btnQuitarPapel
+            // 
+            this.btnQuitarPapel.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarPapel.Image")));
+            this.btnQuitarPapel.Location = new System.Drawing.Point(297, 22);
+            this.btnQuitarPapel.Name = "btnQuitarPapel";
+            this.btnQuitarPapel.Size = new System.Drawing.Size(40, 28);
+            this.btnQuitarPapel.TabIndex = 58;
+            this.btnQuitarPapel.UseVisualStyleBackColor = true;
+            this.btnQuitarPapel.Click += new System.EventHandler(this.btnQuitarPapel_Click);
+            // 
+            // btnAgregarPapel
+            // 
+            this.btnAgregarPapel.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarPapel.Image")));
+            this.btnAgregarPapel.Location = new System.Drawing.Point(245, 22);
+            this.btnAgregarPapel.Name = "btnAgregarPapel";
+            this.btnAgregarPapel.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarPapel.TabIndex = 57;
+            this.btnAgregarPapel.UseVisualStyleBackColor = true;
+            this.btnAgregarPapel.Click += new System.EventHandler(this.btnAgregarPapel_Click);
+            // 
             // Lista
             // 
             this.Lista.FormattingEnabled = true;
@@ -1132,6 +1232,16 @@
             this.Lista.Name = "Lista";
             this.Lista.Size = new System.Drawing.Size(175, 196);
             this.Lista.TabIndex = 20;
+            // 
+            // button3
+            // 
+            this.button3.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.button3.Location = new System.Drawing.Point(199, 22);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(40, 28);
+            this.button3.TabIndex = 19;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // tabPage9
             // 
@@ -1162,6 +1272,15 @@
             this.btnSubirImagen.Text = "Abrir";
             this.btnSubirImagen.UseVisualStyleBackColor = true;
             this.btnSubirImagen.Click += new System.EventHandler(this.btnSubirImagen_Click);
+            // 
+            // Imagen
+            // 
+            this.Imagen.Location = new System.Drawing.Point(10, 13);
+            this.Imagen.Name = "Imagen";
+            this.Imagen.Size = new System.Drawing.Size(249, 194);
+            this.Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Imagen.TabIndex = 14;
+            this.Imagen.TabStop = false;
             // 
             // tabControl3
             // 
@@ -1312,6 +1431,16 @@
             this.label26.TabIndex = 31;
             this.label26.Text = "Patente";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::Concesionaria.Properties.Resources.zoom;
+            this.btnBuscar.Location = new System.Drawing.Point(223, 26);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(40, 28);
+            this.btnBuscar.TabIndex = 37;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1417,6 +1546,35 @@
             this.label46.Size = new System.Drawing.Size(109, 17);
             this.label46.TabIndex = 43;
             this.label46.Text = "Número cheque";
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(749, 50);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(40, 28);
+            this.button2.TabIndex = 56;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // BtnAgregarCheque
+            // 
+            this.BtnAgregarCheque.Image = ((System.Drawing.Image)(resources.GetObject("BtnAgregarCheque.Image")));
+            this.BtnAgregarCheque.Location = new System.Drawing.Point(703, 51);
+            this.BtnAgregarCheque.Name = "BtnAgregarCheque";
+            this.BtnAgregarCheque.Size = new System.Drawing.Size(40, 28);
+            this.BtnAgregarCheque.TabIndex = 55;
+            this.BtnAgregarCheque.UseVisualStyleBackColor = true;
+            this.BtnAgregarCheque.Click += new System.EventHandler(this.BtnAgregarCheque_Click);
+            // 
+            // btnNuevaBanco
+            // 
+            this.btnNuevaBanco.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaBanco.Image")));
+            this.btnNuevaBanco.Location = new System.Drawing.Point(343, 48);
+            this.btnNuevaBanco.Name = "btnNuevaBanco";
+            this.btnNuevaBanco.Size = new System.Drawing.Size(40, 28);
+            this.btnNuevaBanco.TabIndex = 54;
+            this.btnNuevaBanco.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -1570,163 +1728,6 @@
             this.label44.TabIndex = 53;
             this.label44.Text = "Gastos";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = global::Concesionaria.Properties.Resources.zoom;
-            this.btnBuscar.Location = new System.Drawing.Point(223, 26);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(40, 28);
-            this.btnBuscar.TabIndex = 37;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(749, 50);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 28);
-            this.button2.TabIndex = 56;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // BtnAgregarCheque
-            // 
-            this.BtnAgregarCheque.Image = ((System.Drawing.Image)(resources.GetObject("BtnAgregarCheque.Image")));
-            this.BtnAgregarCheque.Location = new System.Drawing.Point(703, 51);
-            this.BtnAgregarCheque.Name = "BtnAgregarCheque";
-            this.BtnAgregarCheque.Size = new System.Drawing.Size(40, 28);
-            this.BtnAgregarCheque.TabIndex = 55;
-            this.BtnAgregarCheque.UseVisualStyleBackColor = true;
-            this.BtnAgregarCheque.Click += new System.EventHandler(this.BtnAgregarCheque_Click);
-            // 
-            // btnNuevaBanco
-            // 
-            this.btnNuevaBanco.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaBanco.Image")));
-            this.btnNuevaBanco.Location = new System.Drawing.Point(343, 48);
-            this.btnNuevaBanco.Name = "btnNuevaBanco";
-            this.btnNuevaBanco.Size = new System.Drawing.Size(40, 28);
-            this.btnNuevaBanco.TabIndex = 54;
-            this.btnNuevaBanco.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.Image = global::Concesionaria.Properties.Resources.carpeta;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(746, 10);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(40, 27);
-            this.btnBuscarCliente.TabIndex = 77;
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
-            // 
-            // button4
-            // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(759, 188);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(40, 29);
-            this.button4.TabIndex = 64;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnAgregarCliente
-            // 
-            this.btnAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCliente.Image")));
-            this.btnAgregarCliente.Location = new System.Drawing.Point(759, 153);
-            this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(40, 29);
-            this.btnAgregarCliente.TabIndex = 63;
-            this.btnAgregarCliente.UseVisualStyleBackColor = true;
-            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
-            // 
-            // btnNuevoBarrio
-            // 
-            this.btnNuevoBarrio.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnNuevoBarrio.Location = new System.Drawing.Point(758, 103);
-            this.btnNuevoBarrio.Name = "btnNuevoBarrio";
-            this.btnNuevoBarrio.Size = new System.Drawing.Size(25, 23);
-            this.btnNuevoBarrio.TabIndex = 35;
-            this.btnNuevoBarrio.UseVisualStyleBackColor = true;
-            this.btnNuevoBarrio.Click += new System.EventHandler(this.btnNuevoBarrio_Click_1);
-            // 
-            // bnAgregarGastosRecepcion
-            // 
-            this.bnAgregarGastosRecepcion.Image = ((System.Drawing.Image)(resources.GetObject("bnAgregarGastosRecepcion.Image")));
-            this.bnAgregarGastosRecepcion.Location = new System.Drawing.Point(447, 13);
-            this.bnAgregarGastosRecepcion.Name = "bnAgregarGastosRecepcion";
-            this.bnAgregarGastosRecepcion.Size = new System.Drawing.Size(40, 29);
-            this.bnAgregarGastosRecepcion.TabIndex = 63;
-            this.bnAgregarGastosRecepcion.UseVisualStyleBackColor = true;
-            this.bnAgregarGastosRecepcion.Click += new System.EventHandler(this.bnAgregarGastosRecepcion_Click_1);
-            // 
-            // btnEliminarGastoRecepcion
-            // 
-            this.btnEliminarGastoRecepcion.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarGastoRecepcion.Image")));
-            this.btnEliminarGastoRecepcion.Location = new System.Drawing.Point(772, 9);
-            this.btnEliminarGastoRecepcion.Name = "btnEliminarGastoRecepcion";
-            this.btnEliminarGastoRecepcion.Size = new System.Drawing.Size(40, 29);
-            this.btnEliminarGastoRecepcion.TabIndex = 62;
-            this.btnEliminarGastoRecepcion.UseVisualStyleBackColor = true;
-            this.btnEliminarGastoRecepcion.Click += new System.EventHandler(this.btnEliminarGastoRecepcion_Click);
-            // 
-            // btnAgregarGastodeRecepcion
-            // 
-            this.btnAgregarGastodeRecepcion.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarGastodeRecepcion.Image")));
-            this.btnAgregarGastodeRecepcion.Location = new System.Drawing.Point(727, 10);
-            this.btnAgregarGastodeRecepcion.Name = "btnAgregarGastodeRecepcion";
-            this.btnAgregarGastodeRecepcion.Size = new System.Drawing.Size(40, 29);
-            this.btnAgregarGastodeRecepcion.TabIndex = 60;
-            this.btnAgregarGastodeRecepcion.UseVisualStyleBackColor = true;
-            this.btnAgregarGastodeRecepcion.Click += new System.EventHandler(this.btnAgregarGastodeRecepcion_Click);
-            // 
-            // btnQuitarPapel
-            // 
-            this.btnQuitarPapel.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarPapel.Image")));
-            this.btnQuitarPapel.Location = new System.Drawing.Point(297, 22);
-            this.btnQuitarPapel.Name = "btnQuitarPapel";
-            this.btnQuitarPapel.Size = new System.Drawing.Size(40, 28);
-            this.btnQuitarPapel.TabIndex = 58;
-            this.btnQuitarPapel.UseVisualStyleBackColor = true;
-            this.btnQuitarPapel.Click += new System.EventHandler(this.btnQuitarPapel_Click);
-            // 
-            // btnAgregarPapel
-            // 
-            this.btnAgregarPapel.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarPapel.Image")));
-            this.btnAgregarPapel.Location = new System.Drawing.Point(245, 22);
-            this.btnAgregarPapel.Name = "btnAgregarPapel";
-            this.btnAgregarPapel.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarPapel.TabIndex = 57;
-            this.btnAgregarPapel.UseVisualStyleBackColor = true;
-            this.btnAgregarPapel.Click += new System.EventHandler(this.btnAgregarPapel_Click);
-            // 
-            // button3
-            // 
-            this.button3.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.button3.Location = new System.Drawing.Point(199, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(40, 28);
-            this.button3.TabIndex = 19;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // Imagen
-            // 
-            this.Imagen.Location = new System.Drawing.Point(10, 13);
-            this.Imagen.Name = "Imagen";
-            this.Imagen.Size = new System.Drawing.Size(249, 194);
-            this.Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Imagen.TabIndex = 14;
-            this.Imagen.TabStop = false;
-            // 
-            // cMBcOLOR
-            // 
-            this.cMBcOLOR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cMBcOLOR.FormattingEnabled = true;
-            this.cMBcOLOR.Location = new System.Drawing.Point(629, 114);
-            this.cMBcOLOR.Name = "cMBcOLOR";
-            this.cMBcOLOR.Size = new System.Drawing.Size(176, 24);
-            this.cMBcOLOR.TabIndex = 76;
-            // 
             // FrmAutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1775,6 +1776,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPapeles)).EndInit();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.tabControl3.ResumeLayout(false);
             this.Efectivo.ResumeLayout(false);
             this.Efectivo.PerformLayout();
@@ -1785,7 +1787,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

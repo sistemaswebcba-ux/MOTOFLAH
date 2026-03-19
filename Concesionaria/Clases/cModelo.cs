@@ -20,5 +20,12 @@ namespace Concesionaria.Clases
             return Nombre;
 
         }
+
+        public DataTable GetModelosxMarca(int CodMarca)
+        {
+            string sql = "select * from Modelo ";
+            sql = sql + " where CodMarca =" + CodMarca.ToString();
+            return cDb.ExecuteDataTable(sql);
+        }
     }
 }

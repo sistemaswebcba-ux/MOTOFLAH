@@ -39,6 +39,8 @@
             this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.Grupo = new System.Windows.Forms.GroupBox();
+            this.cmb_CodMarca = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -144,9 +146,12 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(36, 36);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // Grupo
             // 
+            this.Grupo.Controls.Add(this.cmb_CodMarca);
+            this.Grupo.Controls.Add(this.label2);
             this.Grupo.Controls.Add(this.txtCodigo);
             this.Grupo.Controls.Add(this.txt_Nombre);
             this.Grupo.Controls.Add(this.label1);
@@ -158,9 +163,27 @@
             this.Grupo.TabStop = false;
             this.Grupo.Text = "Información del modelo";
             // 
+            // cmb_CodMarca
+            // 
+            this.cmb_CodMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_CodMarca.FormattingEnabled = true;
+            this.cmb_CodMarca.Location = new System.Drawing.Point(86, 26);
+            this.cmb_CodMarca.Name = "cmb_CodMarca";
+            this.cmb_CodMarca.Size = new System.Drawing.Size(173, 24);
+            this.cmb_CodMarca.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Marca";
+            // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(85, 60);
+            this.txtCodigo.Location = new System.Drawing.Point(257, 2);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 23);
             this.txtCodigo.TabIndex = 2;
@@ -169,7 +192,7 @@
             // txt_Nombre
             // 
             this.txt_Nombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Nombre.Location = new System.Drawing.Point(85, 31);
+            this.txt_Nombre.Location = new System.Drawing.Point(86, 58);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(310, 23);
             this.txt_Nombre.TabIndex = 1;
@@ -177,11 +200,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 28);
+            this.label1.Location = new System.Drawing.Point(12, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Modelo";
             // 
             // FRMaBMmODELO
             // 
@@ -217,5 +240,7 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txt_Nombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmb_CodMarca;
+        private System.Windows.Forms.Label label2;
     }
 }

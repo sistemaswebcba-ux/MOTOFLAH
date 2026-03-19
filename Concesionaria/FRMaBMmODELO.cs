@@ -57,6 +57,8 @@ namespace Concesionaria
         {
             Botonera(1);
             Grupo.Enabled = false;
+            cFunciones fun = new cFunciones();
+            fun.LlenarCombo(cmb_CodMarca, "Marca", "Nombre", "CodMarca");
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -135,6 +137,11 @@ namespace Concesionaria
         {
             Botonera(2);
             Grupo.Enabled = true;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

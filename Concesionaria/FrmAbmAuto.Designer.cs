@@ -77,6 +77,8 @@
             this.txt_Patente = new System.Windows.Forms.TextBox();
             this.lblPatente = new System.Windows.Forms.Label();
             this.btnAgregarCiudad = new System.Windows.Forms.Button();
+            this.cmb_CodModelo = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.BarraBotones.SuspendLayout();
             this.Grupo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
@@ -96,7 +98,7 @@
             this.btnSalir});
             this.BarraBotones.Location = new System.Drawing.Point(0, 0);
             this.BarraBotones.Name = "BarraBotones";
-            this.BarraBotones.Size = new System.Drawing.Size(829, 39);
+            this.BarraBotones.Size = new System.Drawing.Size(821, 39);
             this.BarraBotones.TabIndex = 10;
             this.BarraBotones.Text = "toolStrip1";
             // 
@@ -185,6 +187,8 @@
             // 
             // Grupo
             // 
+            this.Grupo.Controls.Add(this.label14);
+            this.Grupo.Controls.Add(this.cmb_CodModelo);
             this.Grupo.Controls.Add(this.btnSubirImagen);
             this.Grupo.Controls.Add(this.txt_RutaImagen);
             this.Grupo.Controls.Add(this.label13);
@@ -225,19 +229,20 @@
             this.Grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Grupo.Location = new System.Drawing.Point(12, 41);
             this.Grupo.Name = "Grupo";
-            this.Grupo.Size = new System.Drawing.Size(801, 434);
+            this.Grupo.Size = new System.Drawing.Size(801, 375);
             this.Grupo.TabIndex = 11;
             this.Grupo.TabStop = false;
             this.Grupo.Text = "Información del vehículo";
             // 
             // btnSubirImagen
             // 
-            this.btnSubirImagen.Location = new System.Drawing.Point(364, 258);
+            this.btnSubirImagen.Location = new System.Drawing.Point(281, 258);
             this.btnSubirImagen.Name = "btnSubirImagen";
             this.btnSubirImagen.Size = new System.Drawing.Size(75, 34);
             this.btnSubirImagen.TabIndex = 55;
             this.btnSubirImagen.Text = "Abrir";
             this.btnSubirImagen.UseVisualStyleBackColor = true;
+            this.btnSubirImagen.Visible = false;
             this.btnSubirImagen.Click += new System.EventHandler(this.btnSubirImagen_Click);
             // 
             // txt_RutaImagen
@@ -256,15 +261,17 @@
             this.label13.Size = new System.Drawing.Size(53, 16);
             this.label13.TabIndex = 53;
             this.label13.Text = "Imagen";
+            this.label13.Visible = false;
             // 
             // Imagen
             // 
             this.Imagen.Location = new System.Drawing.Point(112, 258);
             this.Imagen.Name = "Imagen";
-            this.Imagen.Size = new System.Drawing.Size(246, 170);
+            this.Imagen.Size = new System.Drawing.Size(151, 92);
             this.Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Imagen.TabIndex = 52;
             this.Imagen.TabStop = false;
+            this.Imagen.Visible = false;
             // 
             // cmb_CodSucursal
             // 
@@ -424,7 +431,7 @@
             // 
             // txtCodStock
             // 
-            this.txtCodStock.Location = new System.Drawing.Point(557, 28);
+            this.txtCodStock.Location = new System.Drawing.Point(250, 22);
             this.txtCodStock.Name = "txtCodStock";
             this.txtCodStock.Size = new System.Drawing.Size(50, 22);
             this.txtCodStock.TabIndex = 28;
@@ -441,7 +448,7 @@
             // 
             // txtCodAuto
             // 
-            this.txtCodAuto.Location = new System.Drawing.Point(540, 25);
+            this.txtCodAuto.Location = new System.Drawing.Point(306, 22);
             this.txtCodAuto.Name = "txtCodAuto";
             this.txtCodAuto.Size = new System.Drawing.Size(50, 22);
             this.txtCodAuto.TabIndex = 14;
@@ -500,19 +507,21 @@
             // 
             // txt_Descripcion
             // 
-            this.txt_Descripcion.Location = new System.Drawing.Point(504, 51);
+            this.txt_Descripcion.Location = new System.Drawing.Point(504, 318);
             this.txt_Descripcion.Name = "txt_Descripcion";
             this.txt_Descripcion.Size = new System.Drawing.Size(246, 22);
             this.txt_Descripcion.TabIndex = 3;
+            this.txt_Descripcion.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(410, 57);
+            this.label2.Location = new System.Drawing.Point(399, 318);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Descripción";
+            this.label2.Visible = false;
             // 
             // cmb_CodMarca
             // 
@@ -522,6 +531,7 @@
             this.cmb_CodMarca.Name = "cmb_CodMarca";
             this.cmb_CodMarca.Size = new System.Drawing.Size(246, 24);
             this.cmb_CodMarca.TabIndex = 2;
+            this.cmb_CodMarca.SelectedIndexChanged += new System.EventHandler(this.cmb_CodMarca_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -557,12 +567,30 @@
             this.btnAgregarCiudad.TabIndex = 17;
             this.btnAgregarCiudad.UseVisualStyleBackColor = true;
             // 
+            // cmb_CodModelo
+            // 
+            this.cmb_CodModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_CodModelo.FormattingEnabled = true;
+            this.cmb_CodModelo.Location = new System.Drawing.Point(504, 53);
+            this.cmb_CodModelo.Name = "cmb_CodModelo";
+            this.cmb_CodModelo.Size = new System.Drawing.Size(246, 24);
+            this.cmb_CodModelo.TabIndex = 56;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(415, 58);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(54, 16);
+            this.label14.TabIndex = 57;
+            this.label14.Text = "Modelo";
+            // 
             // FrmAbmAuto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(829, 487);
+            this.ClientSize = new System.Drawing.Size(821, 427);
             this.Controls.Add(this.Grupo);
             this.Controls.Add(this.BarraBotones);
             this.Controls.Add(this.btnAgregarCiudad);
@@ -632,5 +660,7 @@
         private System.Windows.Forms.PictureBox Imagen;
         private System.Windows.Forms.TextBox txt_RutaImagen;
         private System.Windows.Forms.Button btnSubirImagen;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cmb_CodModelo;
     }
 }

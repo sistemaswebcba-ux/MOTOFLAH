@@ -55,14 +55,22 @@ namespace Concesionaria
                 return false;
             }
 
+            if (cmb_CodMarca.SelectedIndex<1)
+            {
+                MessageBox.Show("Debe seleccionar una marca", Clases.cMensaje.Mensaje());
+                return false;
+            }
+            
+            if (cmb_CodModelo.SelectedIndex < 1)
+            {
+                MessageBox.Show("Debe seleccionar una modelo", Clases.cMensaje.Mensaje());
+                return false;
+            }
+
             if (txt_Kilometros.Text == "")
                 txt_Kilometros.Text = "0";
 
-            if (txt_Descripcion.Text == "")
-            {
-                MessageBox.Show("Debe ingresar una descripción para continuar", Clases.cMensaje.Mensaje());
-                return false;
-            }
+         
             return true;
         }
 
@@ -133,6 +141,7 @@ namespace Concesionaria
             {
                 if (Principal.CodigoPrincipalAbm != "")
                 {
+                    CargarModlosxMarca(Convert.ToInt32(Principal.CodigoPrincipalAbm));
                     Botonera(3);
                     txtCodAuto.Text = Principal.CodigoPrincipalAbm.ToString();
                     CargarImagen(Convert.ToInt32(txtCodAuto.Text));
@@ -140,6 +149,7 @@ namespace Concesionaria
                         fun.CargarControles(this, "Auto", "CodAuto", txtCodAuto.Text);
                     Grupo.Enabled = false;
                     UbicarProvincia(Convert.ToInt32(txtCodAuto.Text));
+                    UbicarModelo(Convert.ToInt32(txtCodAuto.Text));
                     return;
                 }
 
@@ -157,6 +167,28 @@ namespace Concesionaria
             //            break;
             //    }
             //}
+        }
+
+        private void CargarModlosxMarca(Int32 CodAuto)
+        {
+            cAuto auto = new cAuto();
+            DataTable trdo = auto.GetModelosxCoduto(CodAuto);
+            cFunciones fun = new Clases.cFunciones();
+            fun.LlenarComboDatatable(cmb_CodModelo, trdo, "Nombre", "CodModelo");
+        }
+
+        private void UbicarModelo(int CodAuto)
+        {
+            cAuto auto = new cAuto();
+            DataTable trdo = auto.GetAutoxCodigo(CodAuto);
+            if (trdo.Rows.Count >0)
+            {
+                if (trdo.Rows[0]["CodModelo"].ToString ()!="")
+                {
+                    int CodModelo = Convert.ToInt32(trdo.Rows[0]["CodModelo"].ToString());
+                    cmb_CodModelo.SelectedValue = CodModelo.ToString();
+                }
+            }
         }
 
         private void CargarImagen(Int32 CodAuto)
@@ -326,8 +358,7 @@ namespace Concesionaria
             fun.LimpiarGenerico(this);
             txtCodAuto.Text = "";
             Grupo.Enabled = true;
-            if (cmb_CodMarca.Items.Count > 0)
-                cmb_CodMarca.SelectedIndex = 1;
+         
         }
 
         private void btnEditar_Click_1(object sender, EventArgs e)
@@ -381,7 +412,12 @@ namespace Concesionaria
             {
                 //se usa por las dudas ingreso ya exista el deni
                 //y no grabe repetido el documento
-                UbicaAuto(); 
+                UbicaAuto();
+
+                // cargo el modelo del combo al txt
+                cModelo modelo = new cModelo();
+                int CodModelo = Convert.ToInt32(cmb_CodModelo.SelectedValue);
+                txt_Descripcion.Text = modelo.GetNombreModelo(CodModelo); 
 
                 if (txtCodAuto.Text == "")
                     fun.GuardarNuevoGenerico(this, "Auto");
@@ -472,6 +508,19 @@ namespace Concesionaria
             {
                 txt_RutaImagen.Text = "";
             }
+        }
+
+        private void cmb_CodMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_CodMarca.SelectedIndex < 1)
+            {
+                return;
+            } 
+            Int32 CodMarca = Convert.ToInt32(cmb_CodMarca.SelectedValue);
+            cModelo modelo = new cModelo();
+            DataTable trdo = modelo.GetModelosxMarca(CodMarca);
+            cFunciones fun = new Clases.cFunciones();
+            fun.LlenarComboDatatable(cmb_CodModelo, trdo, "Nombre", "CodModelo");
         }
     }
 }
