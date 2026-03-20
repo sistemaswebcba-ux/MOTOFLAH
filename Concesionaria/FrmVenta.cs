@@ -56,8 +56,11 @@ namespace Concesionaria
             fun.LlenarCombo(CmbTipoCombustible2, "TipoCombustible", "Nombre", "Codigo");
             fun.LlenarCombo(cmbColor, "Color", "Nombre", "CodColor"); 
             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
+            fun.LlenarCombo(cmbTipoUtilitario, "TipoUtilitario", "Nombre", "CodTipo");
             fun.LlenarCombo(CmbProvinciaAuto , "Provincia", "Nombre", "CodProvincia");
-            CargarVendedor();
+            fun.LlenarCombo(cmbProvinciaAutoVenta, "Provincia", "Nombre", "CodProvincia");
+            fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");
+            CargarVendedor(); 
             tbTarjeta = fun.CrearTabla("CodTarjeta;Nombre;Importe");
             OcultarVendedor(false);
             txtFecha.Text = DateTime.Now.ToShortDateString();
@@ -151,12 +154,25 @@ namespace Concesionaria
                         txtKms.Text = fun.FormatoEnteroMiles(txtKms.Text);
                     }
                     txtCodAuto.Text = trdo.Rows[0]["CodAuto"].ToString();
-                    
+
+                    if (trdo.Rows[0]["CodTipoUtilitario"].ToString() != "")
+                    {
+                        cmbTipoUtilitario.SelectedValue = trdo.Rows[0]["CodTipoUtilitario"].ToString();
+                    }
+
+                    if (trdo.Rows[0]["CodSucursal"].ToString() != "")
+                    {
+                        cmbSucursal.SelectedValue = trdo.Rows[0]["CodSucursal"].ToString();
+                    }
+
+                    txtCertificado.Text = trdo.Rows[0]["Certificado"].ToString();
 
                     if (trdo.Rows[0]["CodProvincia"].ToString() != "")
                     {
                         Int32 CodPro = Convert.ToInt32(trdo.Rows[0]["CodProvincia"].ToString());
+                        cmbProvinciaAutoVenta.SelectedValue = CodPro.ToString();
                         cCiudad objCiudad = new cCiudad();
+                        cmbProvinciaAutoVenta.SelectedValue = CodPro.ToString();
                         DataTable tbCiudad = objCiudad.GetCiudadxCodProvincia(CodPro);
                         fun.LlenarComboDatatable(cmbCiudad, tbCiudad, "Nombre", "CodCiudad");
                         if (trdo.Rows[0]["CodCiudad"].ToString() != "")
@@ -4770,7 +4786,6 @@ namespace Concesionaria
 
         private void BuscarAutoxCodigo(Int32 COdAuto)
         {
-
             Clases.cAuto auto = new Clases.cAuto();
             DataTable trdo = auto.GetAutoxCodigo(COdAuto);
             if (trdo.Rows.Count > 0)
@@ -4796,7 +4811,18 @@ namespace Concesionaria
                     cmbMarca.SelectedValue = trdo.Rows[0]["CodMarca"].ToString();
                 }
 
-              
+                if (trdo.Rows[0]["CodTipoUtilitario"].ToString() != "")
+                {
+                    cmbTipoUtilitario.SelectedValue = trdo.Rows[0]["CodTipoUtilitario"].ToString();
+                }
+
+                txtCertificado.Text = trdo.Rows[0]["Certificado"].ToString();
+
+                if (trdo.Rows[0]["CodSucursal"].ToString() != "")
+                {
+                    cmbSucursal.SelectedValue = trdo.Rows[0]["CodSucursal"].ToString();
+                }
+
                 if (trdo.Rows[0]["CodCiudad"].ToString() != "")
                 {
                     Int32 CodCiiudad = Convert.ToInt32(trdo.Rows[0]["CodCiudad"].ToString());
