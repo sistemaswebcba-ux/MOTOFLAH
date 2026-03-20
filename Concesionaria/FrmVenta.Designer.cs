@@ -859,7 +859,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(15, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(845, 159);
+            this.groupBox1.Size = new System.Drawing.Size(845, 183);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -877,7 +877,7 @@
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Image = global::Concesionaria.Properties.Resources.carpeta;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(373, 1);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(357, 0);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(30, 26);
             this.btnBuscarCliente.TabIndex = 76;
@@ -916,7 +916,7 @@
             // txtEmail
             // 
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.Location = new System.Drawing.Point(121, 106);
+            this.txtEmail.Location = new System.Drawing.Point(475, 159);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(246, 22);
             this.txtEmail.TabIndex = 47;
@@ -924,7 +924,7 @@
             // label76
             // 
             this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(19, 105);
+            this.label76.Location = new System.Drawing.Point(423, 159);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(42, 16);
             this.label76.TabIndex = 46;
@@ -933,7 +933,7 @@
             // label75
             // 
             this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(409, 29);
+            this.label75.Location = new System.Drawing.Point(409, 53);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(68, 16);
             this.label75.TabIndex = 43;
@@ -953,7 +953,7 @@
             // 
             this.CmbCiudadCliente2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbCiudadCliente2.FormattingEnabled = true;
-            this.CmbCiudadCliente2.Location = new System.Drawing.Point(477, 26);
+            this.CmbCiudadCliente2.Location = new System.Drawing.Point(477, 53);
             this.CmbCiudadCliente2.Name = "CmbCiudadCliente2";
             this.CmbCiudadCliente2.Size = new System.Drawing.Size(246, 24);
             this.CmbCiudadCliente2.TabIndex = 45;
@@ -962,7 +962,7 @@
             // label74
             // 
             this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(409, 7);
+            this.label74.Location = new System.Drawing.Point(407, 25);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(64, 16);
             this.label74.TabIndex = 42;
@@ -982,7 +982,7 @@
             // 
             this.cmbProvincia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia2.FormattingEnabled = true;
-            this.cmbProvincia2.Location = new System.Drawing.Point(477, -1);
+            this.cmbProvincia2.Location = new System.Drawing.Point(477, 25);
             this.cmbProvincia2.Name = "cmbProvincia2";
             this.cmbProvincia2.Size = new System.Drawing.Size(246, 24);
             this.cmbProvincia2.TabIndex = 41;
@@ -1008,7 +1008,7 @@
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(259, 78);
+            this.txtCelular.Location = new System.Drawing.Point(279, 77);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(108, 22);
             this.txtCelular.TabIndex = 30;
@@ -1023,7 +1023,7 @@
             // txtCodCLiente
             // 
             this.txtCodCLiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.txtCodCLiente.Location = new System.Drawing.Point(381, 53);
+            this.txtCodCLiente.Location = new System.Drawing.Point(426, 131);
             this.txtCodCLiente.Name = "txtCodCLiente";
             this.txtCodCLiente.Size = new System.Drawing.Size(22, 22);
             this.txtCodCLiente.TabIndex = 29;
@@ -1043,7 +1043,7 @@
             // 
             this.CmbBarrio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbBarrio.FormattingEnabled = true;
-            this.CmbBarrio.Location = new System.Drawing.Point(477, 53);
+            this.CmbBarrio.Location = new System.Drawing.Point(477, 81);
             this.CmbBarrio.Name = "CmbBarrio";
             this.CmbBarrio.Size = new System.Drawing.Size(246, 24);
             this.CmbBarrio.TabIndex = 19;
@@ -1051,7 +1051,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(409, 56);
+            this.label14.Location = new System.Drawing.Point(409, 84);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(44, 16);
             this.label14.TabIndex = 23;
@@ -1060,33 +1060,33 @@
             // txtAltura
             // 
             this.txtAltura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAltura.Location = new System.Drawing.Point(475, 112);
+            this.txtAltura.Location = new System.Drawing.Point(337, 105);
             this.txtAltura.MaxLength = 20;
             this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(83, 22);
+            this.txtAltura.Size = new System.Drawing.Size(50, 22);
             this.txtAltura.TabIndex = 18;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(411, 112);
+            this.label13.Location = new System.Drawing.Point(285, 109);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 16);
+            this.label13.Size = new System.Drawing.Size(42, 16);
             this.label13.TabIndex = 21;
-            this.label13.Text = "Número";
+            this.label13.Text = "Altura";
             // 
             // txtCalle
             // 
             this.txtCalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCalle.Location = new System.Drawing.Point(477, 83);
+            this.txtCalle.Location = new System.Drawing.Point(116, 105);
             this.txtCalle.Name = "txtCalle";
-            this.txtCalle.Size = new System.Drawing.Size(246, 22);
+            this.txtCalle.Size = new System.Drawing.Size(163, 22);
             this.txtCalle.TabIndex = 17;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(409, 86);
+            this.label12.Location = new System.Drawing.Point(14, 105);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 16);
             this.label12.TabIndex = 19;
@@ -1115,7 +1115,7 @@
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Location = new System.Drawing.Point(121, 28);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(246, 22);
+            this.txtNombre.Size = new System.Drawing.Size(266, 22);
             this.txtNombre.TabIndex = 13;
             // 
             // txtApellido
@@ -1123,7 +1123,7 @@
             this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtApellido.Location = new System.Drawing.Point(121, 53);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(246, 22);
+            this.txtApellido.Size = new System.Drawing.Size(266, 22);
             this.txtApellido.TabIndex = 14;
             // 
             // cmbDocumento
@@ -1139,7 +1139,7 @@
             // 
             this.txtNroDoc.Location = new System.Drawing.Point(271, 3);
             this.txtNroDoc.Name = "txtNroDoc";
-            this.txtNroDoc.Size = new System.Drawing.Size(96, 22);
+            this.txtNroDoc.Size = new System.Drawing.Size(80, 22);
             this.txtNroDoc.TabIndex = 12;
             this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
             // 
