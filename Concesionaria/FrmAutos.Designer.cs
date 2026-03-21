@@ -233,7 +233,7 @@
             // 
             this.cmbDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDocumento.FormattingEnabled = true;
-            this.cmbDocumento.Location = new System.Drawing.Point(85, 28);
+            this.cmbDocumento.Location = new System.Drawing.Point(85, 22);
             this.cmbDocumento.Name = "cmbDocumento";
             this.cmbDocumento.Size = new System.Drawing.Size(74, 24);
             this.cmbDocumento.TabIndex = 12;
@@ -241,7 +241,7 @@
             // txtApellido
             // 
             this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApellido.Location = new System.Drawing.Point(85, 80);
+            this.txtApellido.Location = new System.Drawing.Point(85, 76);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(302, 22);
             this.txtApellido.TabIndex = 14;
@@ -295,7 +295,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(393, 21);
+            this.label16.Location = new System.Drawing.Point(393, 29);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(67, 16);
             this.label16.TabIndex = 79;
@@ -529,7 +529,7 @@
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(85, 52);
+            this.txtNombre.Location = new System.Drawing.Point(85, 47);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(302, 22);
             this.txtNombre.TabIndex = 13;
@@ -538,7 +538,7 @@
             // 
             // txtNroDoc
             // 
-            this.txtNroDoc.Location = new System.Drawing.Point(220, 30);
+            this.txtNroDoc.Location = new System.Drawing.Point(220, 21);
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.Size = new System.Drawing.Size(167, 22);
             this.txtNroDoc.TabIndex = 12;

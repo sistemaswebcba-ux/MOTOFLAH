@@ -54,12 +54,16 @@ namespace Concesionaria
             fun.LlenarCombo(CmbBanco, "Banco", "Nombre", "CodBanco");
             fun.LlenarCombo(cmbTarjeta, "Tarjeta", "Nombre", "CodTarjeta");
             fun.LlenarCombo(CmbTipoCombustible2, "TipoCombustible", "Nombre", "Codigo");
-            fun.LlenarCombo(cmbColor, "Color", "Nombre", "CodColor"); 
+            fun.LlenarCombo(CmbCategoriaIva, "CategoriaIva", "Nombre", "Codigo");
+            fun.LlenarCombo(cmbColor, "Color", "Nombre", "CodColor");
+            fun.LlenarCombo(cmbColorAutoPartePago, "Color", "Nombre", "CodColor");  
             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
             fun.LlenarCombo(cmbTipoUtilitario, "TipoUtilitario", "Nombre", "CodTipo");
+            fun.LlenarCombo(cmbTipoUtilitarioAutoPartePago, "TipoUtilitario", "Nombre", "CodTipo");  
             fun.LlenarCombo(CmbProvinciaAuto , "Provincia", "Nombre", "CodProvincia");
             fun.LlenarCombo(cmbProvinciaAutoVenta, "Provincia", "Nombre", "CodProvincia");
             fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");
+            fun.LlenarCombo(cmbSucursalAutoPartePago, "Sucursal", "Nombre", "CodSucursal");  
             CargarVendedor(); 
             tbTarjeta = fun.CrearTabla("CodTarjeta;Nombre;Importe");
             OcultarVendedor(false);
@@ -339,7 +343,7 @@ namespace Concesionaria
             Clases.cCliente cliente = new Clases.cCliente();
             DataTable trdo = cliente.GetClientesxNroDoc(CodTipoDoc, nroDocumento);
             if (trdo.Rows.Count > 0)
-            {
+            {  
                 txtNombre.Text = trdo.Rows[0]["Nombre"].ToString();
                 txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
                 txtTelefono.Text = trdo.Rows[0]["Telefono"].ToString();
@@ -359,6 +363,12 @@ namespace Concesionaria
                     DateTime FechaNac = Convert.ToDateTime(trdo.Rows[0]["FechaNacimiento"].ToString());
                     txtFechaNacimiento.Text = FechaNac.ToShortDateString();
                 }
+
+                if (trdo.Rows[0]["CodCategoriaIva"].ToString() != "")
+                {
+                    CmbCategoriaIva.SelectedValue = trdo.Rows[0]["CodCategoriaIva"].ToString();
+                }
+
                 if (trdo.Rows[0]["CodBarrio"].ToString() != "")
                 {
                     Int32 CodBarrio = Convert.ToInt32(trdo.Rows[0]["CodBarrio"].ToString());
@@ -1939,15 +1949,15 @@ namespace Concesionaria
                 return;
             }
 
-            if (txtDescripcion2.Text == "")
-            {
-                MessageBox.Show("Debe ingresar una descripción del vehículo para continuar ", Clases.cMensaje.Mensaje());
-                return;
-            }
-
             if (CmbMarca2.SelectedIndex < 1)
             {
                 MessageBox.Show("Debe ingresar una marca para continuar.", Clases.cMensaje.Mensaje());
+                return;
+            }
+
+            if (cmbModeloAutoPago.SelectedIndex <1)
+            {
+                MessageBox.Show("Debe seleccionar un modelo para continuar", Clases.cMensaje.Mensaje());
                 return;
             }
 
@@ -1970,6 +1980,10 @@ namespace Concesionaria
             Int32 CodAuto = 0;
             string Motor = txtMotor2.Text;
             string Chasis = txtChasis2.Text;
+            string Certificado = txtCertificadoAutoPartePago.Text;
+            Int32? CodColor = null;
+            Int32? CodTipoUtilitario = null;
+            Int32? CodModelo = null;
 
 
             Patente = txtPatente2.Text;
@@ -1996,7 +2010,24 @@ namespace Concesionaria
             if (CmbTipoCombustible2.SelectedIndex > 0)
                 CodTipoCombustible2 = Convert.ToInt32(CmbTipoCombustible2.SelectedValue);
 
+            if (cmbColorAutoPartePago.SelectedIndex>0)
+            {
+                CodColor = Convert.ToInt32(cmbColorAutoPartePago.SelectedValue);
+                txtColor2.Text = cColor.GetColorxId(Convert.ToInt32(CodColor));
+            }
+
             string Color = txtColor2.Text;
+
+            if (cmbTipoUtilitarioAutoPartePago.SelectedIndex >0)
+            {
+                CodTipoUtilitario = Convert.ToInt32(cmbTipoUtilitarioAutoPartePago.SelectedValue);
+            }
+              
+            if (cmbModeloAutoPago.SelectedIndex > 0)
+            {
+                CodModelo = Convert.ToInt32(cmbModeloAutoPago.SelectedValue);
+            }
+
             Clases.cAuto auto = new Clases.cAuto();
             Boolean Graba = true;
             if (txtCodAuto2.Text != "")
@@ -2005,7 +2036,7 @@ namespace Concesionaria
             { 
                 //inserto el auto
                 auto.AgregarAuto(Patente, CodMarca, Descripcion,
-                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible2);
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible2,Certificado,CodColor, CodModelo, CodTipoUtilitario  );
                 CodAuto = auto.GetMaxCodAuto();
                 txtCodAuto2.Text = CodAuto.ToString();
                
@@ -2113,9 +2144,6 @@ namespace Concesionaria
 
         private void txtPatente2_TextChanged_1(object sender, EventArgs e)
         {
-            
-
-
             int b = 0;
             string Patente = txtPatente2.Text;
             if (Patente.Length > 5)
@@ -2131,15 +2159,59 @@ namespace Concesionaria
                     txtCodAuto2.Text = trdo.Rows[0]["CodAuto"].ToString();
                     txtMotor2.Text = trdo.Rows[0]["Motor"].ToString();
                     txtChasis2.Text = trdo.Rows[0]["Chasis"].ToString();
+
+                    if (trdo.Rows[0]["CodProvincia"].ToString() != "")
+                    {
+                        cFunciones fu = new cFunciones();
+                        Int32 CodPro = Convert.ToInt32(trdo.Rows[0]["CodProvincia"].ToString());
+                        CmbProvinciaAuto.SelectedValue = CodPro.ToString();
+                        cCiudad objCiudad = new cCiudad();
+                       // cmbProvinciaAutoVenta.SelectedValue = CodPro.ToString();
+                        DataTable tbCiudad = objCiudad.GetCiudadxCodProvincia(CodPro);
+                        fu.LlenarComboDatatable(CmbCiudad2, tbCiudad, "Nombre", "CodCiudad");
+                        if (trdo.Rows[0]["CodCiudad"].ToString() != "")
+                        {
+                            CmbCiudad2.SelectedValue = trdo.Rows[0]["CodCiudad"].ToString();
+                        }
+                    }
+                    /*
                     if (trdo.Rows[0]["CodCiudad"].ToString() != "")
                     {
                         CmbCiudad2.SelectedValue = trdo.Rows[0]["CodCiudad"].ToString();
                     }
+                    */
 
                     if (trdo.Rows[0]["CodMarca"].ToString() != "")
                     {
                         CmbMarca2.SelectedValue = trdo.Rows[0]["CodMarca"].ToString();
+                        Int32 CodMarca = Convert.ToInt32(CmbMarca2.SelectedValue);
+                        cModelo modelo = new cModelo();
+                        DataTable tmodelo = modelo.GetModelosxMarca(CodMarca);
+                        cFunciones fu = new cFunciones();
+                        fu.LlenarComboDatatable(cmbModeloAutoPago, tmodelo, "Nombre", "CodModelo");
                     }
+
+                    if (trdo.Rows[0]["CodModelo"].ToString() != "")
+                    {
+                        cmbModeloAutoPago.SelectedValue = trdo.Rows[0]["CodModelo"].ToString();
+                    }
+                     
+                    if (trdo.Rows[0]["CodSucursal"].ToString() != "")
+                    {
+                        cmbSucursalAutoPartePago.SelectedValue = trdo.Rows[0]["CodSucursal"].ToString();
+                    }
+
+                    if (trdo.Rows[0]["CodColor"].ToString() != "")
+                    {
+                        cmbColorAutoPartePago.SelectedValue = trdo.Rows[0]["CodColor"].ToString();
+                    }
+
+                    if (trdo.Rows[0]["CodTipoUtilitario"].ToString() != "")
+                    {
+                        cmbTipoUtilitarioAutoPartePago.SelectedValue = trdo.Rows[0]["CodTipoUtilitario"].ToString();
+                    }
+
+                    txtCertificadoAutoPartePago.Text = trdo.Rows[0]["Certificado"].ToString();
 
                     Clases.cStockAuto stock = new Clases.cStockAuto();
                     DataTable trdo2 = stock.GetStockAutosVigentes(Convert.ToInt32(txtCodAuto2.Text));
@@ -4902,6 +4974,19 @@ namespace Concesionaria
             Int32 CodCliente = Convert.ToInt32(Principal.CodigoPrincipalAbm);
             BuscarClientexCodigo(CodCliente);
            
+        }
+
+        private void CmbMarca2_SelectedIndexChanged(object sender, EventArgs e)
+        {   
+            if (CmbMarca2.SelectedIndex < 1)
+            {
+                return;
+            } 
+            Int32 CodMarca = Convert.ToInt32(CmbMarca2.SelectedValue);
+            cModelo modelo = new cModelo();
+            DataTable trdo = modelo.GetModelosxMarca(CodMarca);
+            cFunciones fun = new Clases.cFunciones();
+            fun.LlenarComboDatatable(cmbModeloAutoPago, trdo, "Nombre", "CodModelo");
         }
     }
 };

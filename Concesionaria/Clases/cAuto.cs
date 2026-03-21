@@ -14,13 +14,13 @@ namespace Concesionaria.Clases
             string Descripcion, Int32? Kilometros,
             Int32? CodCiudad, int Propio, int Concesion,
             string Observacion, string Anio,Double? Importe,
-            string Motor,string Chasis, string Color,Int32? CodTipoCombustible
+            string Motor,string Chasis, string Color,Int32? CodTipoCombustible , string Certificado , Int32? CodColor, Int32? CodModelo , Int32? CodTipoUtilitario
             )
         {
             string sql = "Insert into auto(";
             sql = sql + "Patente,CodMarca,Descripcion";
             sql = sql + ",Kilometros,CodCiudad,Propio,Concesion";
-            sql = sql + ",Observacion,Anio,Importe,Motor,Chasis,Color,CodTipoCombustible";
+            sql = sql + ",Observacion,Anio,Importe,Motor,Chasis,Color,CodTipoCombustible,Certificado, CodColor, CodModelo , CodTipoUtilitario ";
             sql = sql + ")";
             sql = sql + "Values (";
             sql = sql + "'" + Patente + "'";
@@ -52,7 +52,24 @@ namespace Concesionaria.Clases
             if (CodTipoCombustible ==null)
                 sql = sql + ",null";
             else
-                sql = sql + "," + CodTipoCombustible.ToString (); 
+                sql = sql + "," + CodTipoCombustible.ToString ();
+            sql = sql + "," + "'" + Certificado + "'";
+
+            if (CodColor == null)
+                sql = sql + ",null";
+            else
+                sql = sql + "," + CodColor.ToString();
+
+            if (CodModelo == null)
+                sql = sql + ",null";
+            else
+                sql = sql + "," + CodModelo.ToString();
+             
+            if (CodTipoUtilitario == null)
+                sql = sql + ",null";
+            else
+                sql = sql + "," + CodTipoUtilitario.ToString();
+
             sql = sql + ")";
             cDb.ExecutarNonQuery(sql); 
         }
