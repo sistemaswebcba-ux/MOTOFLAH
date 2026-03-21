@@ -1969,7 +1969,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(867, 168);
+            this.tabPage4.Size = new System.Drawing.Size(867, 212);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Efectivo";
             // 
@@ -2079,7 +2079,7 @@
             // btnAgregarProvinciaAuto
             // 
             this.btnAgregarProvinciaAuto.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarProvinciaAuto.Location = new System.Drawing.Point(769, 13);
+            this.btnAgregarProvinciaAuto.Location = new System.Drawing.Point(809, 13);
             this.btnAgregarProvinciaAuto.Name = "btnAgregarProvinciaAuto";
             this.btnAgregarProvinciaAuto.Size = new System.Drawing.Size(35, 26);
             this.btnAgregarProvinciaAuto.TabIndex = 47;
@@ -2101,7 +2101,7 @@
             this.CmbProvinciaAuto.FormattingEnabled = true;
             this.CmbProvinciaAuto.Location = new System.Drawing.Point(519, 15);
             this.CmbProvinciaAuto.Name = "CmbProvinciaAuto";
-            this.CmbProvinciaAuto.Size = new System.Drawing.Size(246, 24);
+            this.CmbProvinciaAuto.Size = new System.Drawing.Size(284, 24);
             this.CmbProvinciaAuto.TabIndex = 45;
             this.CmbProvinciaAuto.SelectedIndexChanged += new System.EventHandler(this.CmbProvinciaAuto_SelectedIndexChanged);
             // 
@@ -2109,15 +2109,15 @@
             // 
             this.CmbTipoCombustible2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbTipoCombustible2.FormattingEnabled = true;
-            this.CmbTipoCombustible2.Location = new System.Drawing.Point(687, 143);
+            this.CmbTipoCombustible2.Location = new System.Drawing.Point(687, 121);
             this.CmbTipoCombustible2.Name = "CmbTipoCombustible2";
-            this.CmbTipoCombustible2.Size = new System.Drawing.Size(137, 24);
+            this.CmbTipoCombustible2.Size = new System.Drawing.Size(116, 24);
             this.CmbTipoCombustible2.TabIndex = 44;
             // 
             // label60
             // 
             this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(645, 149);
+            this.label60.Location = new System.Drawing.Point(642, 124);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(36, 16);
             this.label60.TabIndex = 43;
@@ -2144,7 +2144,7 @@
             // txtColor2
             // 
             this.txtColor2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.txtColor2.Location = new System.Drawing.Point(785, 74);
+            this.txtColor2.Location = new System.Drawing.Point(425, 121);
             this.txtColor2.Name = "txtColor2";
             this.txtColor2.Size = new System.Drawing.Size(39, 22);
             this.txtColor2.TabIndex = 40;
@@ -2162,7 +2162,7 @@
             // btnAgregarRadicacion
             // 
             this.btnAgregarRadicacion.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarRadicacion.Location = new System.Drawing.Point(771, 42);
+            this.btnAgregarRadicacion.Location = new System.Drawing.Point(809, 40);
             this.btnAgregarRadicacion.Name = "btnAgregarRadicacion";
             this.btnAgregarRadicacion.Size = new System.Drawing.Size(33, 24);
             this.btnAgregarRadicacion.TabIndex = 38;
@@ -2171,22 +2171,22 @@
             // 
             // txtChasis2
             // 
-            this.txtChasis2.Location = new System.Drawing.Point(283, 95);
+            this.txtChasis2.Location = new System.Drawing.Point(324, 95);
             this.txtChasis2.Name = "txtChasis2";
-            this.txtChasis2.Size = new System.Drawing.Size(87, 22);
+            this.txtChasis2.Size = new System.Drawing.Size(97, 22);
             this.txtChasis2.TabIndex = 37;
             // 
             // txtMotor2
             // 
             this.txtMotor2.Location = new System.Drawing.Point(102, 93);
             this.txtMotor2.Name = "txtMotor2";
-            this.txtMotor2.Size = new System.Drawing.Size(120, 22);
+            this.txtMotor2.Size = new System.Drawing.Size(161, 22);
             this.txtMotor2.TabIndex = 36;
             // 
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(228, 99);
+            this.label52.Location = new System.Drawing.Point(269, 98);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(49, 16);
             this.label52.TabIndex = 35;
@@ -2195,7 +2195,7 @@
             // btnAgregarAuto
             // 
             this.btnAgregarAuto.Image = global::Concesionaria.Properties.Resources.add;
-            this.btnAgregarAuto.Location = new System.Drawing.Point(804, 38);
+            this.btnAgregarAuto.Location = new System.Drawing.Point(645, 141);
             this.btnAgregarAuto.Name = "btnAgregarAuto";
             this.btnAgregarAuto.Size = new System.Drawing.Size(40, 28);
             this.btnAgregarAuto.TabIndex = 33;
@@ -2253,7 +2253,7 @@
             this.CmbCiudad2.FormattingEnabled = true;
             this.CmbCiudad2.Location = new System.Drawing.Point(519, 42);
             this.CmbCiudad2.Name = "CmbCiudad2";
-            this.CmbCiudad2.Size = new System.Drawing.Size(246, 24);
+            this.CmbCiudad2.Size = new System.Drawing.Size(284, 24);
             this.CmbCiudad2.TabIndex = 6;
             // 
             // label18
@@ -2277,7 +2277,7 @@
             // txtAnio2
             // 
             this.txtAnio2.BackColor = System.Drawing.SystemColors.Control;
-            this.txtAnio2.Location = new System.Drawing.Point(519, 93);
+            this.txtAnio2.Location = new System.Drawing.Point(517, 93);
             this.txtAnio2.MaxLength = 4;
             this.txtAnio2.Name = "txtAnio2";
             this.txtAnio2.Size = new System.Drawing.Size(55, 22);
@@ -2622,7 +2622,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(867, 168);
+            this.tabPage7.Size = new System.Drawing.Size(867, 212);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Prenda";
             // 
@@ -2745,7 +2745,7 @@
             this.tabPage9.Controls.Add(this.btnAbrirCobranzas);
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(867, 168);
+            this.tabPage9.Size = new System.Drawing.Size(867, 212);
             this.tabPage9.TabIndex = 6;
             this.tabPage9.Text = "Cobranza";
             // 
@@ -2862,7 +2862,7 @@
             this.tabPage14.Controls.Add(this.btnNuevaBanco);
             this.tabPage14.Location = new System.Drawing.Point(4, 25);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(867, 168);
+            this.tabPage14.Size = new System.Drawing.Size(867, 212);
             this.tabPage14.TabIndex = 7;
             this.tabPage14.Text = "Cheques";
             // 
@@ -3002,7 +3002,7 @@
             this.tabPage17.Controls.Add(this.btnAgregarTarjeta);
             this.tabPage17.Location = new System.Drawing.Point(4, 25);
             this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Size = new System.Drawing.Size(867, 168);
+            this.tabPage17.Size = new System.Drawing.Size(867, 212);
             this.tabPage17.TabIndex = 9;
             this.tabPage17.Text = "Tarjetas";
             // 
@@ -3317,7 +3317,7 @@
             this.cmbModeloAutoPago.FormattingEnabled = true;
             this.cmbModeloAutoPago.Location = new System.Drawing.Point(102, 65);
             this.cmbModeloAutoPago.Name = "cmbModeloAutoPago";
-            this.cmbModeloAutoPago.Size = new System.Drawing.Size(261, 24);
+            this.cmbModeloAutoPago.Size = new System.Drawing.Size(319, 24);
             this.cmbModeloAutoPago.TabIndex = 67;
             // 
             // label85
@@ -3334,7 +3334,7 @@
             this.txtCertificadoAutoPartePago.BackColor = System.Drawing.SystemColors.Control;
             this.txtCertificadoAutoPartePago.Location = new System.Drawing.Point(102, 121);
             this.txtCertificadoAutoPartePago.Name = "txtCertificadoAutoPartePago";
-            this.txtCertificadoAutoPartePago.Size = new System.Drawing.Size(249, 22);
+            this.txtCertificadoAutoPartePago.Size = new System.Drawing.Size(319, 22);
             this.txtCertificadoAutoPartePago.TabIndex = 71;
             // 
             // label86
@@ -3352,16 +3352,16 @@
             this.cmbTipoUtilitarioAutoPartePago.FormattingEnabled = true;
             this.cmbTipoUtilitarioAutoPartePago.Location = new System.Drawing.Point(102, 144);
             this.cmbTipoUtilitarioAutoPartePago.Name = "cmbTipoUtilitarioAutoPartePago";
-            this.cmbTipoUtilitarioAutoPartePago.Size = new System.Drawing.Size(249, 24);
+            this.cmbTipoUtilitarioAutoPartePago.Size = new System.Drawing.Size(319, 24);
             this.cmbTipoUtilitarioAutoPartePago.TabIndex = 73;
             // 
             // cmbColorAutoPartePago
             // 
             this.cmbColorAutoPartePago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbColorAutoPartePago.FormattingEnabled = true;
-            this.cmbColorAutoPartePago.Location = new System.Drawing.Point(637, 93);
+            this.cmbColorAutoPartePago.Location = new System.Drawing.Point(631, 93);
             this.cmbColorAutoPartePago.Name = "cmbColorAutoPartePago";
-            this.cmbColorAutoPartePago.Size = new System.Drawing.Size(137, 24);
+            this.cmbColorAutoPartePago.Size = new System.Drawing.Size(172, 24);
             this.cmbColorAutoPartePago.TabIndex = 74;
             // 
             // cmbSucursalAutoPartePago
@@ -3370,7 +3370,7 @@
             this.cmbSucursalAutoPartePago.FormattingEnabled = true;
             this.cmbSucursalAutoPartePago.Location = new System.Drawing.Point(517, 69);
             this.cmbSucursalAutoPartePago.Name = "cmbSucursalAutoPartePago";
-            this.cmbSucursalAutoPartePago.Size = new System.Drawing.Size(246, 24);
+            this.cmbSucursalAutoPartePago.Size = new System.Drawing.Size(286, 24);
             this.cmbSucursalAutoPartePago.TabIndex = 75;
             // 
             // label19
