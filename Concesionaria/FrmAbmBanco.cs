@@ -72,6 +72,8 @@ namespace Concesionaria
             Botonera(1);
             fun.LimpiarGenerico(this);
             txtCodigo.Text = "";
+            Botonera(1);
+            Grupo.Enabled = false;
         }
 
         private void FrmAbmBanco_Load(object sender, EventArgs e)
@@ -119,6 +121,11 @@ namespace Concesionaria
             Botonera(2);
             Grupo.Enabled = true;
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -81,6 +81,8 @@
             this.lblPatente = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label84 = new System.Windows.Forms.Label();
+            this.CmbCategoriaIva = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtRutaImagenCliente = new System.Windows.Forms.TextBox();
@@ -191,6 +193,14 @@
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cmbSucursalAutoPartePago = new System.Windows.Forms.ComboBox();
+            this.cmbColorAutoPartePago = new System.Windows.Forms.ComboBox();
+            this.cmbTipoUtilitarioAutoPartePago = new System.Windows.Forms.ComboBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.txtCertificadoAutoPartePago = new System.Windows.Forms.TextBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.cmbModeloAutoPago = new System.Windows.Forms.ComboBox();
             this.btnAgregarProvinciaAuto = new System.Windows.Forms.Button();
             this.label77 = new System.Windows.Forms.Label();
             this.CmbProvinciaAuto = new System.Windows.Forms.ComboBox();
@@ -284,8 +294,6 @@
             this.BtnAgregarCheque = new System.Windows.Forms.Button();
             this.btnNuevaBanco = new System.Windows.Forms.Button();
             this.tabPage17 = new System.Windows.Forms.TabPage();
-            this.txtMontoTarjeta = new System.Windows.Forms.TextBox();
-            this.label70 = new System.Windows.Forms.Label();
             this.GrillaTarjeta = new System.Windows.Forms.DataGridView();
             this.txtImporteTarjeta = new System.Windows.Forms.TextBox();
             this.cmbTarjeta = new System.Windows.Forms.ComboBox();
@@ -312,16 +320,15 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
-            this.CmbCategoriaIva = new System.Windows.Forms.ComboBox();
-            this.label84 = new System.Windows.Forms.Label();
-            this.cmbModeloAutoPago = new System.Windows.Forms.ComboBox();
-            this.label85 = new System.Windows.Forms.Label();
-            this.txtCertificadoAutoPartePago = new System.Windows.Forms.TextBox();
-            this.label86 = new System.Windows.Forms.Label();
-            this.cmbTipoUtilitarioAutoPartePago = new System.Windows.Forms.ComboBox();
-            this.cmbColorAutoPartePago = new System.Windows.Forms.ComboBox();
-            this.cmbSucursalAutoPartePago = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.txtImporteBancoCredito = new System.Windows.Forms.TextBox();
+            this.cmbBancoCredito = new System.Windows.Forms.ComboBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.btnEliminarBancoCredito = new System.Windows.Forms.Button();
+            this.btnAgregarImporteCredito = new System.Windows.Forms.Button();
+            this.GrillaBancoCredito = new System.Windows.Forms.DataGridView();
+            this.label70 = new System.Windows.Forms.Label();
+            this.txtTotalCredito = new System.Windows.Forms.TextBox();
+            this.txtMontoCredito = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -364,6 +371,7 @@
             this.tabPage17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).BeginInit();
             this.groupBox55.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaBancoCredito)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -943,6 +951,24 @@
             this.groupBox1.Size = new System.Drawing.Size(845, 183);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(404, 31);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(67, 16);
+            this.label84.TabIndex = 78;
+            this.label84.Text = "Categoria";
+            // 
+            // CmbCategoriaIva
+            // 
+            this.CmbCategoriaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbCategoriaIva.FormattingEnabled = true;
+            this.CmbCategoriaIva.Location = new System.Drawing.Point(477, 28);
+            this.CmbCategoriaIva.Name = "CmbCategoriaIva";
+            this.CmbCategoriaIva.Size = new System.Drawing.Size(246, 24);
+            this.CmbCategoriaIva.TabIndex = 77;
             // 
             // button5
             // 
@@ -1832,7 +1858,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(867, 168);
+            this.tabPage5.Size = new System.Drawing.Size(867, 212);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Documentos";
             // 
@@ -1934,32 +1960,42 @@
             // tabPage16
             // 
             this.tabPage16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage16.Controls.Add(this.txtTotalCredito);
+            this.tabPage16.Controls.Add(this.label70);
+            this.tabPage16.Controls.Add(this.GrillaBancoCredito);
+            this.tabPage16.Controls.Add(this.txtImporteBancoCredito);
+            this.tabPage16.Controls.Add(this.cmbBancoCredito);
+            this.tabPage16.Controls.Add(this.label51);
+            this.tabPage16.Controls.Add(this.btnEliminarBancoCredito);
+            this.tabPage16.Controls.Add(this.btnAgregarImporteCredito);
             this.tabPage16.Controls.Add(this.txtImporteSenia);
             this.tabPage16.Controls.Add(this.label68);
             this.tabPage16.Location = new System.Drawing.Point(4, 25);
             this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Size = new System.Drawing.Size(867, 168);
+            this.tabPage16.Size = new System.Drawing.Size(867, 212);
             this.tabPage16.TabIndex = 8;
-            this.tabPage16.Text = "Seña";
+            this.tabPage16.Text = "Credito";
             // 
             // txtImporteSenia
             // 
             this.txtImporteSenia.BackColor = System.Drawing.SystemColors.Control;
-            this.txtImporteSenia.Location = new System.Drawing.Point(107, 20);
+            this.txtImporteSenia.Location = new System.Drawing.Point(696, 17);
             this.txtImporteSenia.Name = "txtImporteSenia";
-            this.txtImporteSenia.Size = new System.Drawing.Size(246, 22);
+            this.txtImporteSenia.Size = new System.Drawing.Size(96, 22);
             this.txtImporteSenia.TabIndex = 34;
+            this.txtImporteSenia.Visible = false;
             this.txtImporteSenia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImporteSenia_KeyPress);
             this.txtImporteSenia.Leave += new System.EventHandler(this.txtImporteSenia_Leave);
             // 
             // label68
             // 
             this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(26, 23);
+            this.label68.Location = new System.Drawing.Point(621, 17);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(53, 16);
             this.label68.TabIndex = 33;
             this.label68.Text = "Importe";
+            this.label68.Visible = false;
             // 
             // tabPage4
             // 
@@ -2075,6 +2111,77 @@
             this.groupBox4.Size = new System.Drawing.Size(850, 174);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(442, 72);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(69, 16);
+            this.label19.TabIndex = 76;
+            this.label19.Text = "Ubicacion";
+            // 
+            // cmbSucursalAutoPartePago
+            // 
+            this.cmbSucursalAutoPartePago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSucursalAutoPartePago.FormattingEnabled = true;
+            this.cmbSucursalAutoPartePago.Location = new System.Drawing.Point(517, 69);
+            this.cmbSucursalAutoPartePago.Name = "cmbSucursalAutoPartePago";
+            this.cmbSucursalAutoPartePago.Size = new System.Drawing.Size(286, 24);
+            this.cmbSucursalAutoPartePago.TabIndex = 75;
+            // 
+            // cmbColorAutoPartePago
+            // 
+            this.cmbColorAutoPartePago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbColorAutoPartePago.FormattingEnabled = true;
+            this.cmbColorAutoPartePago.Location = new System.Drawing.Point(631, 93);
+            this.cmbColorAutoPartePago.Name = "cmbColorAutoPartePago";
+            this.cmbColorAutoPartePago.Size = new System.Drawing.Size(172, 24);
+            this.cmbColorAutoPartePago.TabIndex = 74;
+            // 
+            // cmbTipoUtilitarioAutoPartePago
+            // 
+            this.cmbTipoUtilitarioAutoPartePago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoUtilitarioAutoPartePago.FormattingEnabled = true;
+            this.cmbTipoUtilitarioAutoPartePago.Location = new System.Drawing.Point(102, 144);
+            this.cmbTipoUtilitarioAutoPartePago.Name = "cmbTipoUtilitarioAutoPartePago";
+            this.cmbTipoUtilitarioAutoPartePago.Size = new System.Drawing.Size(319, 24);
+            this.cmbTipoUtilitarioAutoPartePago.TabIndex = 73;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(24, 146);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(36, 16);
+            this.label86.TabIndex = 72;
+            this.label86.Text = "Tipo";
+            // 
+            // txtCertificadoAutoPartePago
+            // 
+            this.txtCertificadoAutoPartePago.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCertificadoAutoPartePago.Location = new System.Drawing.Point(102, 121);
+            this.txtCertificadoAutoPartePago.Name = "txtCertificadoAutoPartePago";
+            this.txtCertificadoAutoPartePago.Size = new System.Drawing.Size(319, 22);
+            this.txtCertificadoAutoPartePago.TabIndex = 71;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(24, 118);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(72, 16);
+            this.label85.TabIndex = 70;
+            this.label85.Text = "Certificado";
+            // 
+            // cmbModeloAutoPago
+            // 
+            this.cmbModeloAutoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbModeloAutoPago.FormattingEnabled = true;
+            this.cmbModeloAutoPago.Location = new System.Drawing.Point(102, 65);
+            this.cmbModeloAutoPago.Name = "cmbModeloAutoPago";
+            this.cmbModeloAutoPago.Size = new System.Drawing.Size(319, 24);
+            this.cmbModeloAutoPago.TabIndex = 67;
             // 
             // btnAgregarProvinciaAuto
             // 
@@ -2354,7 +2461,7 @@
             this.tabPage11.Location = new System.Drawing.Point(4, 25);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(929, 126);
+            this.tabPage11.Size = new System.Drawing.Size(929, 175);
             this.tabPage11.TabIndex = 1;
             this.tabPage11.Text = "Listado de vehículo en parte de pago";
             // 
@@ -2394,7 +2501,7 @@
             this.tabPage13.Controls.Add(this.btnAgegarGastodeRecepcion);
             this.tabPage13.Location = new System.Drawing.Point(4, 25);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(929, 126);
+            this.tabPage13.Size = new System.Drawing.Size(929, 175);
             this.tabPage13.TabIndex = 2;
             this.tabPage13.Text = "Gastos de recepción";
             // 
@@ -2506,7 +2613,7 @@
             this.tabPage19.Controls.Add(this.ListaPapeles);
             this.tabPage19.Location = new System.Drawing.Point(4, 25);
             this.tabPage19.Name = "tabPage19";
-            this.tabPage19.Size = new System.Drawing.Size(929, 126);
+            this.tabPage19.Size = new System.Drawing.Size(929, 175);
             this.tabPage19.TabIndex = 3;
             this.tabPage19.Text = "Papeles";
             // 
@@ -2992,8 +3099,7 @@
             // tabPage17
             // 
             this.tabPage17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tabPage17.Controls.Add(this.txtMontoTarjeta);
-            this.tabPage17.Controls.Add(this.label70);
+            this.tabPage17.Controls.Add(this.txtMontoCredito);
             this.tabPage17.Controls.Add(this.GrillaTarjeta);
             this.tabPage17.Controls.Add(this.txtImporteTarjeta);
             this.tabPage17.Controls.Add(this.cmbTarjeta);
@@ -3006,23 +3112,6 @@
             this.tabPage17.TabIndex = 9;
             this.tabPage17.Text = "Tarjetas";
             // 
-            // txtMontoTarjeta
-            // 
-            this.txtMontoTarjeta.BackColor = System.Drawing.SystemColors.Control;
-            this.txtMontoTarjeta.Location = new System.Drawing.Point(750, 143);
-            this.txtMontoTarjeta.Name = "txtMontoTarjeta";
-            this.txtMontoTarjeta.Size = new System.Drawing.Size(96, 22);
-            this.txtMontoTarjeta.TabIndex = 54;
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(703, 143);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(39, 16);
-            this.label70.TabIndex = 53;
-            this.label70.Text = "Total";
-            // 
             // GrillaTarjeta
             // 
             this.GrillaTarjeta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -3030,7 +3119,7 @@
             this.GrillaTarjeta.Name = "GrillaTarjeta";
             this.GrillaTarjeta.ReadOnly = true;
             this.GrillaTarjeta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaTarjeta.Size = new System.Drawing.Size(822, 79);
+            this.GrillaTarjeta.Size = new System.Drawing.Size(822, 108);
             this.GrillaTarjeta.TabIndex = 52;
             // 
             // txtImporteTarjeta
@@ -3293,94 +3382,87 @@
             this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
             this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
-            // CmbCategoriaIva
+            // txtImporteBancoCredito
             // 
-            this.CmbCategoriaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbCategoriaIva.FormattingEnabled = true;
-            this.CmbCategoriaIva.Location = new System.Drawing.Point(477, 28);
-            this.CmbCategoriaIva.Name = "CmbCategoriaIva";
-            this.CmbCategoriaIva.Size = new System.Drawing.Size(246, 24);
-            this.CmbCategoriaIva.TabIndex = 77;
+            this.txtImporteBancoCredito.BackColor = System.Drawing.SystemColors.Control;
+            this.txtImporteBancoCredito.Location = new System.Drawing.Point(343, 17);
+            this.txtImporteBancoCredito.Name = "txtImporteBancoCredito";
+            this.txtImporteBancoCredito.Size = new System.Drawing.Size(172, 22);
+            this.txtImporteBancoCredito.TabIndex = 54;
+            this.txtImporteBancoCredito.Leave += new System.EventHandler(this.txtImporteBancoCredito_Leave);
             // 
-            // label84
+            // cmbBancoCredito
             // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(404, 31);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(67, 16);
-            this.label84.TabIndex = 78;
-            this.label84.Text = "Categoria";
+            this.cmbBancoCredito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBancoCredito.FormattingEnabled = true;
+            this.cmbBancoCredito.Location = new System.Drawing.Point(86, 17);
+            this.cmbBancoCredito.Name = "cmbBancoCredito";
+            this.cmbBancoCredito.Size = new System.Drawing.Size(246, 24);
+            this.cmbBancoCredito.TabIndex = 53;
             // 
-            // cmbModeloAutoPago
+            // label51
             // 
-            this.cmbModeloAutoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModeloAutoPago.FormattingEnabled = true;
-            this.cmbModeloAutoPago.Location = new System.Drawing.Point(102, 65);
-            this.cmbModeloAutoPago.Name = "cmbModeloAutoPago";
-            this.cmbModeloAutoPago.Size = new System.Drawing.Size(319, 24);
-            this.cmbModeloAutoPago.TabIndex = 67;
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(29, 17);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(47, 16);
+            this.label51.TabIndex = 52;
+            this.label51.Text = "Banco";
             // 
-            // label85
+            // btnEliminarBancoCredito
             // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(24, 118);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(72, 16);
-            this.label85.TabIndex = 70;
-            this.label85.Text = "Certificado";
+            this.btnEliminarBancoCredito.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.btnEliminarBancoCredito.Location = new System.Drawing.Point(569, 14);
+            this.btnEliminarBancoCredito.Name = "btnEliminarBancoCredito";
+            this.btnEliminarBancoCredito.Size = new System.Drawing.Size(40, 28);
+            this.btnEliminarBancoCredito.TabIndex = 56;
+            this.btnEliminarBancoCredito.UseVisualStyleBackColor = true;
+            this.btnEliminarBancoCredito.Click += new System.EventHandler(this.btnEliminarBancoCredito_Click);
             // 
-            // txtCertificadoAutoPartePago
+            // btnAgregarImporteCredito
             // 
-            this.txtCertificadoAutoPartePago.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCertificadoAutoPartePago.Location = new System.Drawing.Point(102, 121);
-            this.txtCertificadoAutoPartePago.Name = "txtCertificadoAutoPartePago";
-            this.txtCertificadoAutoPartePago.Size = new System.Drawing.Size(319, 22);
-            this.txtCertificadoAutoPartePago.TabIndex = 71;
+            this.btnAgregarImporteCredito.Image = global::Concesionaria.Properties.Resources.add;
+            this.btnAgregarImporteCredito.Location = new System.Drawing.Point(523, 14);
+            this.btnAgregarImporteCredito.Name = "btnAgregarImporteCredito";
+            this.btnAgregarImporteCredito.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarImporteCredito.TabIndex = 55;
+            this.btnAgregarImporteCredito.UseVisualStyleBackColor = true;
+            this.btnAgregarImporteCredito.Click += new System.EventHandler(this.btnAgregarImporteCredito_Click);
             // 
-            // label86
+            // GrillaBancoCredito
             // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(24, 146);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(36, 16);
-            this.label86.TabIndex = 72;
-            this.label86.Text = "Tipo";
+            this.GrillaBancoCredito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaBancoCredito.Location = new System.Drawing.Point(18, 58);
+            this.GrillaBancoCredito.Name = "GrillaBancoCredito";
+            this.GrillaBancoCredito.ReadOnly = true;
+            this.GrillaBancoCredito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GrillaBancoCredito.Size = new System.Drawing.Size(822, 107);
+            this.GrillaBancoCredito.TabIndex = 57;
             // 
-            // cmbTipoUtilitarioAutoPartePago
+            // label70
             // 
-            this.cmbTipoUtilitarioAutoPartePago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoUtilitarioAutoPartePago.FormattingEnabled = true;
-            this.cmbTipoUtilitarioAutoPartePago.Location = new System.Drawing.Point(102, 144);
-            this.cmbTipoUtilitarioAutoPartePago.Name = "cmbTipoUtilitarioAutoPartePago";
-            this.cmbTipoUtilitarioAutoPartePago.Size = new System.Drawing.Size(319, 24);
-            this.cmbTipoUtilitarioAutoPartePago.TabIndex = 73;
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(697, 171);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(39, 16);
+            this.label70.TabIndex = 58;
+            this.label70.Text = "Total";
             // 
-            // cmbColorAutoPartePago
+            // txtTotalCredito
             // 
-            this.cmbColorAutoPartePago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbColorAutoPartePago.FormattingEnabled = true;
-            this.cmbColorAutoPartePago.Location = new System.Drawing.Point(631, 93);
-            this.cmbColorAutoPartePago.Name = "cmbColorAutoPartePago";
-            this.cmbColorAutoPartePago.Size = new System.Drawing.Size(172, 24);
-            this.cmbColorAutoPartePago.TabIndex = 74;
+            this.txtTotalCredito.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTotalCredito.Location = new System.Drawing.Point(744, 171);
+            this.txtTotalCredito.Name = "txtTotalCredito";
+            this.txtTotalCredito.Size = new System.Drawing.Size(96, 22);
+            this.txtTotalCredito.TabIndex = 60;
             // 
-            // cmbSucursalAutoPartePago
+            // txtMontoCredito
             // 
-            this.cmbSucursalAutoPartePago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSucursalAutoPartePago.FormattingEnabled = true;
-            this.cmbSucursalAutoPartePago.Location = new System.Drawing.Point(517, 69);
-            this.cmbSucursalAutoPartePago.Name = "cmbSucursalAutoPartePago";
-            this.cmbSucursalAutoPartePago.Size = new System.Drawing.Size(286, 24);
-            this.cmbSucursalAutoPartePago.TabIndex = 75;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(442, 72);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(69, 16);
-            this.label19.TabIndex = 76;
-            this.label19.Text = "Ubicacion";
+            this.txtMontoCredito.BackColor = System.Drawing.SystemColors.Control;
+            this.txtMontoCredito.Location = new System.Drawing.Point(751, 176);
+            this.txtMontoCredito.Name = "txtMontoCredito";
+            this.txtMontoCredito.Size = new System.Drawing.Size(96, 22);
+            this.txtMontoCredito.TabIndex = 60;
             // 
             // FrmVenta
             // 
@@ -3461,6 +3543,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).EndInit();
             this.groupBox55.ResumeLayout(false);
             this.groupBox55.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaBancoCredito)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3696,8 +3779,6 @@
         private System.Windows.Forms.Button btnAgregarTarjeta;
         private System.Windows.Forms.TextBox txtImporteTarjeta;
         private System.Windows.Forms.DataGridView GrillaTarjeta;
-        private System.Windows.Forms.TextBox txtMontoTarjeta;
-        private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DataGridView GrillaCobranza;
         private System.Windows.Forms.Button BtnAgregarCobranza;
@@ -3760,5 +3841,14 @@
         private System.Windows.Forms.ComboBox cmbColorAutoPartePago;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox cmbSucursalAutoPartePago;
+        private System.Windows.Forms.TextBox txtImporteBancoCredito;
+        private System.Windows.Forms.ComboBox cmbBancoCredito;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Button btnEliminarBancoCredito;
+        private System.Windows.Forms.Button btnAgregarImporteCredito;
+        private System.Windows.Forms.DataGridView GrillaBancoCredito;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.TextBox txtTotalCredito;
+        private System.Windows.Forms.TextBox txtMontoCredito;
     }
 }

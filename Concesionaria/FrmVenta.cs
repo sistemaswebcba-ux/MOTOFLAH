@@ -20,6 +20,7 @@ namespace Concesionaria
         DataTable tprenda;
         DataTable tbTarjeta;
         DataTable tbCobranza;
+        DataTable tbBancoCredito;
         //se utiliza para indicar en que combo debe seguir
         //cuadno regrese del alta basica y tengas dos
         //tablas iguales
@@ -52,6 +53,7 @@ namespace Concesionaria
             fun.LlenarCombo(CmbGastosTransferencia, "CategoriaGastoTransferencia", "Descripcion", "Codigo");
             fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGastoRecepcion", "Descripcion", "Codigo");
             fun.LlenarCombo(CmbBanco, "Banco", "Nombre", "CodBanco");
+            fun.LlenarCombo(cmbBancoCredito , "Banco", "Nombre", "CodBanco");
             fun.LlenarCombo(cmbTarjeta, "Tarjeta", "Nombre", "CodTarjeta");
             fun.LlenarCombo(CmbTipoCombustible2, "TipoCombustible", "Nombre", "Codigo");
             fun.LlenarCombo(CmbCategoriaIva, "CategoriaIva", "Nombre", "Codigo");
@@ -66,6 +68,7 @@ namespace Concesionaria
             fun.LlenarCombo(cmbSucursalAutoPartePago, "Sucursal", "Nombre", "CodSucursal");  
             CargarVendedor(); 
             tbTarjeta = fun.CrearTabla("CodTarjeta;Nombre;Importe");
+            tbBancoCredito = fun.CrearTabla("CodBanco;Nombre;Importe");
             OcultarVendedor(false);
             txtFecha.Text = DateTime.Now.ToShortDateString();
             cPapeles papel = new cPapeles();
@@ -1151,7 +1154,7 @@ namespace Concesionaria
                         comandFecSenia.ExecuteNonQuery();
                 }
 
-                if (txtMontoTarjeta.Text != "" && txtMontoTarjeta.Text != "0")
+                if (txtMontoCredito.Text != "" && txtMontoCredito.Text != "0")
                 {
                     string sqlTar = "";
                     for (int i = 0; i < GrillaTarjeta.Rows.Count - 1; i++)
@@ -1503,7 +1506,7 @@ namespace Concesionaria
 
         private void LimpiarPantalla(Boolean LimpiaPatente)
         {
-            txtMontoTarjeta.Text = "";
+            txtMontoCredito.Text = "";
             tbTarjeta.Clear();
             if (LimpiaPatente == true)
                 txtPatente.Text = "";
@@ -1716,8 +1719,8 @@ namespace Concesionaria
             if (txtTotalCheque.Text != "")
                 Subtotal = Subtotal + fun2.ToDouble(txtTotalCheque.Text);
 
-            if (txtMontoTarjeta.Text != "")
-                Subtotal = Subtotal + fun2.ToDouble(txtMontoTarjeta.Text);
+            if (txtMontoCredito.Text != "")
+                Subtotal = Subtotal + fun2.ToDouble(txtMontoCredito.Text);
 
             if (txtImporteSenia.Text != "")
                 Subtotal = Subtotal + fun2.ToDouble(txtImporteSenia.Text);
@@ -2371,9 +2374,9 @@ namespace Concesionaria
                     Subtotal = Subtotal + fun.ToDouble(txtTotalCheque.Text);
             }
 
-            if (txtMontoTarjeta.Text != "")
+            if (txtMontoCredito.Text != "")
             {
-                Subtotal = Subtotal + fun.ToDouble(txtMontoTarjeta.Text);
+                Subtotal = Subtotal + fun.ToDouble(txtMontoCredito.Text);
             }
 
             txtSubTotal.Text = Subtotal.ToString();
@@ -4446,8 +4449,8 @@ namespace Concesionaria
             
             tbTarjeta = fun.AgregarFilas(tbTarjeta, Val);
             Double Total = fun.TotalizarColumna(tbTarjeta, "Importe");
-            txtMontoTarjeta.Text = Total.ToString();
-            txtMontoTarjeta.Text = fun.FormatoEnteroMiles(txtMontoTarjeta.Text);
+            txtMontoCredito.Text = Total.ToString();
+            txtMontoCredito.Text = fun.FormatoEnteroMiles(txtMontoCredito.Text);
             GrillaTarjeta.DataSource = tbTarjeta;
             CalcularSubTotal();
             GrillaTarjeta.Columns[0].Visible = false;
@@ -4473,8 +4476,8 @@ namespace Concesionaria
             tbTarjeta = fun.EliminarFila(tbTarjeta, "CodTarjeta", CodTarjeta);
             GrillaTarjeta.DataSource = tbTarjeta;
             Double Total = fun.TotalizarColumna(tbTarjeta, "Importe");
-            txtMontoTarjeta.Text = Total.ToString();
-            txtMontoTarjeta.Text = fun.FormatoEnteroMiles(txtMontoTarjeta.Text);
+            txtMontoCredito.Text = Total.ToString();
+            txtMontoCredito.Text = fun.FormatoEnteroMiles(txtMontoCredito.Text);
             CalcularSubTotal();
         }
 
@@ -4498,8 +4501,8 @@ namespace Concesionaria
                // Clases.cFunciones fun = new Clases.cFunciones();
                 GrillaTarjeta.DataSource = tbTarjeta ;
                 Double Total = fun.TotalizarColumna(tbTarjeta, "Importe");
-                txtMontoTarjeta.Text = Total.ToString();
-                txtMontoTarjeta.Text = fun.FormatoEnteroMiles(txtMontoTarjeta.Text);
+                txtMontoCredito.Text = Total.ToString();
+                txtMontoCredito.Text = fun.FormatoEnteroMiles(txtMontoCredito.Text);
                 GrillaTarjeta.DataSource = tbTarjeta;
                 CalcularSubTotal();
                 GrillaTarjeta.Columns[0].Visible = false;
@@ -4987,6 +4990,61 @@ namespace Concesionaria
             DataTable trdo = modelo.GetModelosxMarca(CodMarca);
             cFunciones fun = new Clases.cFunciones();
             fun.LlenarComboDatatable(cmbModeloAutoPago, trdo, "Nombre", "CodModelo");
+        }
+
+        private void btnAgregarImporteCredito_Click(object sender, EventArgs e)
+        {
+            if (cmbBancoCredito.SelectedIndex <1 )
+            {
+                MessageBox.Show("Debe seleccionar un banco para continuar");
+                return;
+            }
+
+            if (txtImporteBancoCredito.Text =="")
+            {
+                MessageBox.Show("Debe ingresar un importe para continuar ");
+                return;
+            }
+            cFunciones fun = new cFunciones();
+            int CodBanco = Convert.ToInt32 (cmbBancoCredito.SelectedValue);
+            string Nombre = cmbBancoCredito.Text;
+            string Importe = txtImporteBancoCredito.Text;
+
+            if (fun.Buscar(tbBancoCredito, "CodBanco", CodBanco.ToString()) == true)
+            {
+                MessageBox.Show("Ya se ha ingresado el banco ");
+                return;
+            }
+
+            string val = CodBanco.ToString () + ";" + Nombre + ";" + Importe;    
+            fun.AgregarFilas(tbBancoCredito, val);
+            GrillaBancoCredito.DataSource = tbBancoCredito;
+            
+            Double Total = fun.TotalizarColumna(tbBancoCredito, "Importe");
+            txtTotalCredito.Text = Total.ToString();
+            txtTotalCredito.Text = fun.FormatoEnteroMiles(txtTotalCredito.Text);
+        }
+
+        private void txtImporteBancoCredito_Leave(object sender, EventArgs e)
+        {   
+            Clases.cFunciones fun = new Clases.cFunciones();
+            txtImporteBancoCredito.Text = fun.FormatoEnteroMiles(txtImporteBancoCredito.Text);
+        }
+
+        private void btnEliminarBancoCredito_Click(object sender, EventArgs e)
+        { 
+            if (GrillaBancoCredito.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un elememto para continuar ");
+                return;
+            }  
+            string CodBanco = cmbBancoCredito.SelectedValue.ToString();
+            Clases.cFunciones fun = new Clases.cFunciones();
+            tbBancoCredito = fun.EliminarFila(tbBancoCredito, "CodBanco", CodBanco);
+            GrillaBancoCredito.DataSource = tbBancoCredito;
+            Double Total = fun.TotalizarColumna(tbBancoCredito, "Importe");
+            txtTotalCredito.Text = Total.ToString();
+            txtTotalCredito.Text = fun.FormatoEnteroMiles(txtTotalCredito.Text);
         }
     }
 };
