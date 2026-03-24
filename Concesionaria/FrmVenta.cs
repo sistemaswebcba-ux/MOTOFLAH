@@ -28,11 +28,13 @@ namespace Concesionaria
         {
             InitializeComponent();
             InicializarComponentes();
-
+            txtMontoCredito.BackColor = System.Drawing.Color.LightGreen;
+            txtTotalCredito.BackColor = System.Drawing.Color.LightGreen;
         }
 
         private void InicializarComponentes()
         {
+           
             tprenda = new DataTable();
             Clases.cFunciones fun = new Clases.cFunciones();
             string Lista = "CodEntidad;Nombre;Fecha;Importe;CodPrenda;FechaVencimiento";
@@ -1175,6 +1177,27 @@ namespace Concesionaria
                         comandTarjeta.ExecuteNonQuery();
                     }
                 }
+                 
+                if (txtTotalCredito.Text != "" && txtTotalCredito.Text != "0")
+                {
+                    string sqlCredito = ""; 
+                    for (int i = 0; i < GrillaBancoCredito.Rows.Count - 1; i++)
+                    {
+                        Int32 CodBanco = Convert.ToInt32(GrillaBancoCredito.Rows[i].Cells[0].Value.ToString());
+                        Double ImporteCredito = func.ToDouble(GrillaBancoCredito.Rows[i].Cells[2].Value.ToString());
+                        sqlCredito = "Insert into VentaxCredito(CodVenta";
+                        sqlCredito = sqlCredito + ",CodBanco,Importe)";
+                        sqlCredito = sqlCredito + " Values(" + CodVenta.ToString();
+                        sqlCredito = sqlCredito + "," + CodBanco.ToString();
+                        sqlCredito = sqlCredito + "," + ImporteCredito.ToString().Replace(",", ".");            
+                        sqlCredito = sqlCredito + ")";
+                        SqlCommand comandCredito = new SqlCommand();
+                        comandCredito.Connection = con;
+                        comandCredito.Transaction = Transaccion;
+                        comandCredito.CommandText = sqlCredito;
+                        comandCredito.ExecuteNonQuery();
+                    }
+                }
 
                 Transaccion.Commit();
 
@@ -1582,6 +1605,8 @@ namespace Concesionaria
             txtFechaCompromiso.Text = "";
             tbCobranza.Rows.Clear();
             tbListaPapeles.Rows.Clear();
+            tbBancoCredito.Rows.Clear();
+            GrillaBancoCredito.DataSource = null;
         }
 
         private Double CalcularTotalCuotas()
@@ -1711,8 +1736,6 @@ namespace Concesionaria
             if (txtTotalPrenda.Text != "")
                 Subtotal = Subtotal + fun2.ToDouble(txtTotalPrenda.Text);
 
-
-
             if (txtTotalCobranza.Text != "")
                 Subtotal = Subtotal + fun2.ToDouble(txtTotalCobranza.Text);
 
@@ -1721,6 +1744,9 @@ namespace Concesionaria
 
             if (txtMontoCredito.Text != "")
                 Subtotal = Subtotal + fun2.ToDouble(txtMontoCredito.Text);
+
+            if (txtTotalCredito.Text != "") 
+                Subtotal = Subtotal + fun2.ToDouble(txtTotalCredito.Text);
 
             if (txtImporteSenia.Text != "")
                 Subtotal = Subtotal + fun2.ToDouble(txtImporteSenia.Text);
@@ -2343,8 +2369,6 @@ namespace Concesionaria
             Clases.cFunciones fun = new Clases.cFunciones();
             double Subtotal = 0;
 
-
-
             if (txtTotalEfectivo.Text != "")
                 Subtotal = Subtotal + fun.ToDouble(txtTotalEfectivo.Text);
 
@@ -2377,6 +2401,11 @@ namespace Concesionaria
             if (txtMontoCredito.Text != "")
             {
                 Subtotal = Subtotal + fun.ToDouble(txtMontoCredito.Text);
+            }
+
+            if (txtTotalCredito.Text != "")
+            {
+                Subtotal = Subtotal + fun.ToDouble(txtTotalCredito.Text);
             }
 
             txtSubTotal.Text = Subtotal.ToString();
@@ -3216,6 +3245,21 @@ namespace Concesionaria
                 {
                     txtComisionVendedor.Text = fun.SepararDecimales(txtComisionVendedor.Text);
                     txtComisionVendedor.Text = fun.FormatoEnteroMiles(txtComisionVendedor.Text);
+                }
+
+                //busco el credito 
+                cVentaxCredito ventaCredito = new cVentaxCredito();
+                DataTable tbCredito = ventaCredito.GetCreditoxCodVenta(CodVenta);
+                if (tbCredito.Rows.Count >0)
+                {
+                    if (tbCredito.Rows[0]["Importe"].ToString ()!="")
+                    {
+                        tbCredito = fun.TablaaMiles(tbCredito, "Importe");
+                        GrillaBancoCredito.DataSource = tbCredito;
+                        fun.AnchoColumnas(GrillaBancoCredito, "0;70;30");
+                        Double TotalCredito = fun.TotalizarColumna(tbCredito, "Importe");
+                        txtTotalCredito.Text = TotalCredito.ToString();           
+                    }
                 }
 
                 txtImporteSenia.Text = tVenta.Rows[0]["PrecioSenia"].ToString();
@@ -4456,6 +4500,7 @@ namespace Concesionaria
             GrillaTarjeta.Columns[0].Visible = false;
             GrillaTarjeta.Columns[1].Width = 640;
             GrillaTarjeta.Columns[2].Width = 120;
+            txtMontoCredito.BackColor = System.Drawing.Color.LightGreen;
         }
 
         private void txtImporteTarjeta_Leave(object sender, EventArgs e)
@@ -5023,6 +5068,8 @@ namespace Concesionaria
             Double Total = fun.TotalizarColumna(tbBancoCredito, "Importe");
             txtTotalCredito.Text = Total.ToString();
             txtTotalCredito.Text = fun.FormatoEnteroMiles(txtTotalCredito.Text);
+            fun.AnchoColumnas(GrillaBancoCredito, "0;70;30");
+            CalcularSubTotal();
         }
 
         private void txtImporteBancoCredito_Leave(object sender, EventArgs e)
@@ -5045,6 +5092,7 @@ namespace Concesionaria
             Double Total = fun.TotalizarColumna(tbBancoCredito, "Importe");
             txtTotalCredito.Text = Total.ToString();
             txtTotalCredito.Text = fun.FormatoEnteroMiles(txtTotalCredito.Text);
+            CalcularSubTotal();
         }
     }
 };
