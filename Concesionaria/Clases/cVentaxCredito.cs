@@ -9,7 +9,7 @@ namespace Concesionaria.Clases
     {
         public DataTable GetCreditoxCodVenta(Int32 CodVenta)
         {
-            string sql = "select v.CodBanco, b.Nombre ,v.Importe from VentaxCredito v, Banco b";
+            string sql = "select v.CodBanco, b.Nombre ,v.Importe ,v.Cuota from VentaxCredito v, Banco b";
             sql = sql + " where v.CodBanco = b.CodBanco ";
             sql = sql + " and v.CodVenta=" + CodVenta.ToString();
             return cDb.ExecuteDataTable(sql);

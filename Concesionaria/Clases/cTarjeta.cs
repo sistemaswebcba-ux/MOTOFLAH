@@ -9,7 +9,7 @@ namespace Concesionaria.Clases
     {
         public DataTable GetTarjetaxCodVenta(Int32 CodVenta)
         {
-            string sql = "select vt.CodTarjeta,t.Nombre,vt.Importe";
+            string sql = "select vt.CodTarjeta,t.Nombre,vt.Importe,vt.Cuota ";
             sql = sql + " from ventaxtarjeta vt,Tarjeta t";
             sql = sql + " where vt.CodTarjeta=t.CodTarjeta";
             sql = sql + " and vt.CodVenta=" + CodVenta.ToString();
