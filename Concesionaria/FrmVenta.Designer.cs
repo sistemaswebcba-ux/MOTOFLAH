@@ -261,18 +261,6 @@
             this.btnAgregarPapel = new System.Windows.Forms.Button();
             this.btnNuevoPapel = new System.Windows.Forms.Button();
             this.ListaPapeles = new System.Windows.Forms.ListBox();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.txtFechaVencimientoPrenda = new System.Windows.Forms.MaskedTextBox();
-            this.label72 = new System.Windows.Forms.Label();
-            this.GrillaPrendas = new System.Windows.Forms.DataGridView();
-            this.CmbEntidadPrendaria = new System.Windows.Forms.ComboBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.txtImportePrenda = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.btnEliminarPrenda = new System.Windows.Forms.Button();
-            this.btnAgregarPrenda = new System.Windows.Forms.Button();
-            this.btnAbrircPrenda = new System.Windows.Forms.Button();
-            this.btnAgregarEntidadPrendaria = new System.Windows.Forms.Button();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.txtCuotasCobranza = new System.Windows.Forms.TextBox();
             this.label71 = new System.Windows.Forms.Label();
@@ -367,8 +355,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGastosRecepcion)).BeginInit();
             this.tabPage19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPapeles)).BeginInit();
-            this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaPrendas)).BeginInit();
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCobranza)).BeginInit();
             this.tabPage14.SuspendLayout();
@@ -1836,7 +1822,6 @@
             this.tabControl2.Controls.Add(this.tabPage16);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage9);
             this.tabControl2.Controls.Add(this.tabPage14);
             this.tabControl2.Controls.Add(this.tabPage17);
@@ -2763,131 +2748,6 @@
             this.ListaPapeles.Size = new System.Drawing.Size(175, 100);
             this.ListaPapeles.TabIndex = 21;
             // 
-            // tabPage7
-            // 
-            this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tabPage7.Controls.Add(this.txtFechaVencimientoPrenda);
-            this.tabPage7.Controls.Add(this.label72);
-            this.tabPage7.Controls.Add(this.GrillaPrendas);
-            this.tabPage7.Controls.Add(this.CmbEntidadPrendaria);
-            this.tabPage7.Controls.Add(this.label37);
-            this.tabPage7.Controls.Add(this.txtImportePrenda);
-            this.tabPage7.Controls.Add(this.label34);
-            this.tabPage7.Controls.Add(this.btnEliminarPrenda);
-            this.tabPage7.Controls.Add(this.btnAgregarPrenda);
-            this.tabPage7.Controls.Add(this.btnAbrircPrenda);
-            this.tabPage7.Controls.Add(this.btnAgregarEntidadPrendaria);
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(867, 212);
-            this.tabPage7.TabIndex = 3;
-            this.tabPage7.Text = "Prenda";
-            // 
-            // txtFechaVencimientoPrenda
-            // 
-            this.txtFechaVencimientoPrenda.Location = new System.Drawing.Point(639, 18);
-            this.txtFechaVencimientoPrenda.Mask = "00/00/0000";
-            this.txtFechaVencimientoPrenda.Name = "txtFechaVencimientoPrenda";
-            this.txtFechaVencimientoPrenda.Size = new System.Drawing.Size(70, 22);
-            this.txtFechaVencimientoPrenda.TabIndex = 53;
-            this.txtFechaVencimientoPrenda.ValidatingType = typeof(System.DateTime);
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(510, 24);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(123, 16);
-            this.label72.TabIndex = 52;
-            this.label72.Text = "Fecha Vencimiento";
-            // 
-            // GrillaPrendas
-            // 
-            this.GrillaPrendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaPrendas.Location = new System.Drawing.Point(32, 51);
-            this.GrillaPrendas.Name = "GrillaPrendas";
-            this.GrillaPrendas.ReadOnly = true;
-            this.GrillaPrendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaPrendas.Size = new System.Drawing.Size(814, 111);
-            this.GrillaPrendas.TabIndex = 49;
-            // 
-            // CmbEntidadPrendaria
-            // 
-            this.CmbEntidadPrendaria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbEntidadPrendaria.FormattingEnabled = true;
-            this.CmbEntidadPrendaria.Location = new System.Drawing.Point(309, 21);
-            this.CmbEntidadPrendaria.Name = "CmbEntidadPrendaria";
-            this.CmbEntidadPrendaria.Size = new System.Drawing.Size(199, 24);
-            this.CmbEntidadPrendaria.TabIndex = 17;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(258, 24);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(54, 16);
-            this.label37.TabIndex = 16;
-            this.label37.Text = "Entidad";
-            // 
-            // txtImportePrenda
-            // 
-            this.txtImportePrenda.Location = new System.Drawing.Point(106, 21);
-            this.txtImportePrenda.Name = "txtImportePrenda";
-            this.txtImportePrenda.Size = new System.Drawing.Size(100, 22);
-            this.txtImportePrenda.TabIndex = 15;
-            this.txtImportePrenda.Leave += new System.EventHandler(this.txtImportePrenda_Leave);
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(29, 21);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(53, 16);
-            this.label34.TabIndex = 0;
-            this.label34.Text = "Importe";
-            // 
-            // btnEliminarPrenda
-            // 
-            this.btnEliminarPrenda.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.btnEliminarPrenda.Location = new System.Drawing.Point(807, 12);
-            this.btnEliminarPrenda.Name = "btnEliminarPrenda";
-            this.btnEliminarPrenda.Size = new System.Drawing.Size(40, 28);
-            this.btnEliminarPrenda.TabIndex = 51;
-            this.btnEliminarPrenda.UseVisualStyleBackColor = true;
-            this.btnEliminarPrenda.Click += new System.EventHandler(this.btnEliminarPrenda_Click);
-            // 
-            // btnAgregarPrenda
-            // 
-            this.btnAgregarPrenda.Image = global::Concesionaria.Properties.Resources.add;
-            this.btnAgregarPrenda.Location = new System.Drawing.Point(761, 12);
-            this.btnAgregarPrenda.Name = "btnAgregarPrenda";
-            this.btnAgregarPrenda.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarPrenda.TabIndex = 50;
-            this.btnAgregarPrenda.UseVisualStyleBackColor = true;
-            this.btnAgregarPrenda.Click += new System.EventHandler(this.btnAgregarPrenda_Click);
-            // 
-            // btnAbrircPrenda
-            // 
-            this.btnAbrircPrenda.Image = global::Concesionaria.Properties.Resources.zoom2;
-            this.btnAbrircPrenda.Location = new System.Drawing.Point(212, 18);
-            this.btnAbrircPrenda.Name = "btnAbrircPrenda";
-            this.btnAbrircPrenda.Size = new System.Drawing.Size(40, 28);
-            this.btnAbrircPrenda.TabIndex = 44;
-            this.btnAbrircPrenda.UseVisualStyleBackColor = true;
-            this.btnAbrircPrenda.Visible = false;
-            this.btnAbrircPrenda.Click += new System.EventHandler(this.btnAbrircPrenda_Click);
-            // 
-            // btnAgregarEntidadPrendaria
-            // 
-            this.btnAgregarEntidadPrendaria.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarEntidadPrendaria.Location = new System.Drawing.Point(715, 12);
-            this.btnAgregarEntidadPrendaria.Name = "btnAgregarEntidadPrendaria";
-            this.btnAgregarEntidadPrendaria.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarEntidadPrendaria.TabIndex = 31;
-            this.btnAgregarEntidadPrendaria.UseVisualStyleBackColor = true;
-            this.btnAgregarEntidadPrendaria.Click += new System.EventHandler(this.btnAgregarEntidadPrendaria_Click);
-            // 
             // tabPage9
             // 
             this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -3575,9 +3435,6 @@
             this.tabPage19.ResumeLayout(false);
             this.tabPage19.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPapeles)).EndInit();
-            this.tabPage7.ResumeLayout(false);
-            this.tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaPrendas)).EndInit();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCobranza)).EndInit();
@@ -3647,7 +3504,6 @@
         private System.Windows.Forms.TextBox txtEfectivo;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.GroupBox groupBox55;
         private System.Windows.Forms.TextBox txtTotalPrenda;
         private System.Windows.Forms.TextBox txtTotalDocumentos;
@@ -3672,8 +3528,6 @@
         private System.Windows.Forms.DataGridView GrillaCuotas;
         private System.Windows.Forms.TextBox txtTotalEfectivo;
         private System.Windows.Forms.Button btnGrabar;
-        private System.Windows.Forms.TextBox txtImportePrenda;
-        private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button btnBorrarCuotas;
         private System.Windows.Forms.TextBox txtImporteCobranza;
         private System.Windows.Forms.Label label35;
@@ -3703,9 +3557,6 @@
         private System.Windows.Forms.DataGridView GrillaVehiculos;
         private System.Windows.Forms.Button btnAgregarAuto;
         private System.Windows.Forms.Button btnEliminarAuto;
-        private System.Windows.Forms.Button btnAgregarEntidadPrendaria;
-        private System.Windows.Forms.ComboBox CmbEntidadPrendaria;
-        private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox txtSubTotal;
         private System.Windows.Forms.TabPage tabPage12;
@@ -3805,7 +3656,6 @@
         private System.Windows.Forms.MaskedTextBox txtFechaImpuesto;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Button btnAgregarImpuesto;
-        private System.Windows.Forms.Button btnAbrircPrenda;
         private System.Windows.Forms.Button btnAbrirCuotas;
         private System.Windows.Forms.Button btnAbrirCobranzas;
         private System.Windows.Forms.Button btnAbrirCheques;
@@ -3814,9 +3664,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TabPage tabPage16;
         private System.Windows.Forms.TextBox txtImporteSenia;
-        private System.Windows.Forms.DataGridView GrillaPrendas;
-        private System.Windows.Forms.Button btnEliminarPrenda;
-        private System.Windows.Forms.Button btnAgregarPrenda;
         private System.Windows.Forms.TabPage tabPage17;
         private System.Windows.Forms.ComboBox cmbTarjeta;
         private System.Windows.Forms.Label label69;
@@ -3829,8 +3676,6 @@
         private System.Windows.Forms.Button BtnAgregarCobranza;
         private System.Windows.Forms.TextBox txtCuotasCobranza;
         private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.MaskedTextBox txtFechaVencimientoPrenda;
-        private System.Windows.Forms.Label label72;
         private System.Windows.Forms.MaskedTextBox txtFechaNacimiento;
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.Label label74;

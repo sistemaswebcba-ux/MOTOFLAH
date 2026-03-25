@@ -42,7 +42,7 @@ namespace Concesionaria
             PintarFormulario();
             //Clases.cFunciones fun = new Clases.cFunciones();
             fun.LlenarCombo(cmbMarca, "Marca", "Nombre", "CodMarca");
-            fun.LlenarCombo(CmbEntidadPrendaria, "EntidadPrendaria", "Descripcion", "CodEntidad");
+          //  fun.LlenarCombo(CmbEntidadPrendaria, "EntidadPrendaria", "Descripcion", "CodEntidad");
             fun.LlenarCombo(CmbMarca2, "Marca", "Nombre", "CodMarca");
            // fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
             if (cmbCiudad.Items.Count > 1)
@@ -100,7 +100,7 @@ namespace Concesionaria
                 btnAgregarImpuesto.Enabled = true;
                 btnQuitarImpuesto.Enabled = true;
                 btnQuitarImpuesto.Enabled = true;
-                btnAbrircPrenda.Visible = true;
+              //  btnAbrircPrenda.Visible = true;
                 btnAbrirCuotas.Visible = true;
                 txtPatente.Enabled = false;
                 btnAbrirCobranzas.Visible = true;
@@ -1460,15 +1460,6 @@ namespace Concesionaria
 
         private void txtImportePrenda_Leave(object sender, EventArgs e)
         {
-            if (txtImportePrenda.Text != "")
-            {
-                Clases.cFunciones fun = new Clases.cFunciones();
-                txtImportePrenda.Text = fun.FormatoEnteroMiles(txtImportePrenda.Text);
-                
-            }
-            else
-                txtTotalPrenda.Text = "";
-           //CalcularSubTotal();
         }
 
         private string GetSqlMovimientos(Int32 CodVenta)
@@ -1544,7 +1535,7 @@ namespace Concesionaria
             txtCodAuto.Text = "";
             txtCodStock.Text = "";
             cmbMarca.SelectedIndex = 0;
-            CmbEntidadPrendaria.SelectedIndex = 0;
+          //  CmbEntidadPrendaria.SelectedIndex = 0;
             txtDescripcion.Text = "";
             txtObservacion.Text = "";
             txtAnio.Text = "";
@@ -1577,7 +1568,7 @@ namespace Concesionaria
             txtImporteVehiculoCompra.Text = "";
             GetCostos(-1);
             
-            txtImportePrenda.Text = "";
+          //  txtImportePrenda.Text = "";
             txtCapital.Text = "";
             txtCuotas.Text = "";
             txtInteres.Text = "";
@@ -1670,11 +1661,7 @@ namespace Concesionaria
             {
                 if (txtTotalPrenda.Text != "0")
                 {
-                    if (CmbEntidadPrendaria.SelectedIndex < 1)
-                    {
-                        MessageBox.Show("Debe ingresar una entidad de prenda para continuar para continuar", Clases.cMensaje.Mensaje());
-                        return false;
-                    }
+                   
                 }
             }
             if (CmbVendedor.SelectedIndex < 1)
@@ -1887,10 +1874,7 @@ namespace Concesionaria
                         fun.LlenarCombo(CmbMarca2, "Marca", "Nombre", "CodMarca");
                         CmbMarca2.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         break;
-                    case "EntidadPrendaria":
-                        fun.LlenarCombo(CmbEntidadPrendaria, "EntidadPrendaria", "Descripcion", "CodEntidad");
-                        CmbEntidadPrendaria.SelectedValue = Principal.CampoIdSecundarioGenerado;
-                        break;
+                 
                     case "CategoriaGastoRecepcion":
                         fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGastoRecepcion", "Descripcion", "Codigo");
                         CmbGastoRecepcion.SelectedValue = Principal.CampoIdSecundarioGenerado;
@@ -2343,16 +2327,13 @@ namespace Concesionaria
 
         private void btnAgregarEntidadPrendaria_Click(object sender, EventArgs e)
         {
-            Principal.CampoIdSecundario = "CodEntidad";
-            Principal.CampoNombreSecundario = "Descripcion";
-            Principal.NombreTablaSecundario = "EntidadPrendaria";
-            FrmAltaBasica form = new FrmAltaBasica();
-            form.FormClosing += new FormClosingEventHandler(form_FormClosing);
-            form.ShowDialog();
+           
         }
 
         private string GetSqlPrenda(Int32 CodVenta)
         {
+            string sql = "";
+            /*
             Clases.cFunciones fun = new Clases.cFunciones();
             string CodEntidad = CmbEntidadPrendaria.SelectedValue.ToString();
             string CodCliente = txtCodCLiente.Text;
@@ -2367,6 +2348,7 @@ namespace Concesionaria
             sql = sql + "," + Importe.ToString();
             sql = sql + ",0";
             sql = sql + ")";
+            */
             return sql;
         }
 
@@ -3213,7 +3195,7 @@ namespace Concesionaria
                     string sImporte = tVenta.Rows[0]["ImportePrenda"].ToString().Replace(",", ".");
                     vec = sImporte.Split('.');
                     txtTotalPrenda.Text = fun.FormatoEnteroMiles(vec[0]);
-                    txtImportePrenda.Text = fun.FormatoEnteroMiles(vec[0]);
+                    //txtImportePrenda.Text = fun.FormatoEnteroMiles(vec[0]);
                 }
                 else
                     txtTotalVehiculoPartePago.Text = tVenta.Rows[0]["ImporteAutoPartePago"].ToString();
@@ -3802,6 +3784,7 @@ namespace Concesionaria
 
         private void btnAbrircPrenda_Click(object sender, EventArgs e)
         {
+            /*
             if (GrillaPrendas.CurrentRow == null)
             {
                 MessageBox.Show("Debe seleccionar un registro", "Sistema");
@@ -3811,6 +3794,7 @@ namespace Concesionaria
             Principal.CodigoPrincipalAbm = CodPrenda.ToString();
             FrmCobroPrenda form = new FrmCobroPrenda();
             form.ShowDialog();
+            */
         }
 
         private void btnAbrirCuotas_Click(object sender, EventArgs e)
@@ -4324,56 +4308,11 @@ namespace Concesionaria
 
         private void btnAgregarPrenda_Click(object sender, EventArgs e)
         {
-            Clases.cFunciones fun = new Clases.cFunciones();
-            if (txtImportePrenda.Text == "")
-            {
-                MessageBox.Show("Debe ingresar un monto de prenda", "Sistema");
-                return;
-            }
-            if (CmbEntidadPrendaria.SelectedIndex < 1)
-            {
-                MessageBox.Show("Debe seleccionar una entidad prendaria", "Sistema");
-                return;
-            }
-            if (fun.ValidarFecha (txtFechaVencimientoPrenda.Text)==false)
-            {
-                Mensaje("La fecha de fin es incorrecta");
-                return;
-            }
-            string Importe = txtImportePrenda.Text;
-            string CodEntidad = CmbEntidadPrendaria.SelectedValue.ToString();
-            string FechaVencimiento = txtFechaVencimientoPrenda.Text;
-            if (fun.Buscar(tprenda , "CodEntidad", CodEntidad) == true)
-            {
-                MessageBox.Show("Ya se ha ingresado la entidad");
-                return;
-            }
-            string Nombre = CmbEntidadPrendaria.Text;
-            string Fecha = DateTime.Now.ToShortDateString();
-            string CodPrenda = "-1";
-
-            string Valores = CodEntidad + ";" + Nombre + ";" + Fecha + ";" + Importe + ";" + CodPrenda;
-            Valores = Valores + ";" + FechaVencimiento;
-            tprenda = fun.AgregarFilas(tprenda, Valores);
-            GrillaPrendas.DataSource = tprenda;
-            double Total = fun.TotalizarColumna(tprenda, "Importe");
-            txtTotalPrenda.Text = Total.ToString();
-            if (txtTotalPrenda.Text != "")
-            {
-                txtTotalPrenda.Text = fun.FormatoEnteroMiles(txtTotalPrenda.Text);
-            }
-            GrillaPrendas.Columns[0].Visible = false;
-           // GrillaPrendas.Columns[2].Visible = false;
-            GrillaPrendas.Columns[1].Width = 425;
-            GrillaPrendas.Columns[3].Width = 150;
-            GrillaPrendas.Columns[4].Visible = false;
-            GrillaPrendas.Columns[5].Width = 80;
-            GrillaPrendas.Columns[5].HeaderText = "Vencimiento";
-            CalcularSubTotal();
+           
         }
 
         private void BuscarPrenda(Int32 CodVenta)
-        {
+        { /*
             cPrenda Prenda = new cPrenda();
             DataTable tbPre = Prenda.GetDetallePredaxCodVenta(CodVenta);
             GrillaPrendas.DataSource = tbPre;
@@ -4383,26 +4322,12 @@ namespace Concesionaria
             GrillaPrendas.Columns[4].Visible = false;
             GrillaPrendas.Columns[5].Width = 80;
             GrillaPrendas.Columns[5].HeaderText = "Vencimiento";
+            */
         }
 
         private void btnEliminarPrenda_Click(object sender, EventArgs e)
         {
-            if (GrillaPrendas.CurrentRow == null)
-            {
-                MessageBox.Show("Debe seleccionar un registro", "Sistema");
-                return;
-            }
-            string CodEntidad = GrillaPrendas.CurrentRow.Cells[0].Value.ToString();
-            Clases.cFunciones fun = new Clases.cFunciones();
-            tprenda = fun.EliminarFila(tprenda, "CodEntidad", CodEntidad);
-            GrillaPrendas.DataSource = tprenda;
-            double Total = fun.TotalizarColumna(tprenda, "Importe");
-            txtTotalPrenda.Text = Total.ToString();
-            if (txtTotalPrenda.Text != "")
-            {
-                txtTotalPrenda.Text = fun.FormatoEnteroMiles(txtTotalPrenda.Text);
-            }
-            CalcularSubTotal();
+          
         }
 
         private void GrabarPrenda(Int32 CodVenta,SqlConnection con,SqlTransaction Transaccion)
