@@ -101,7 +101,7 @@ namespace Concesionaria
                 btnQuitarImpuesto.Enabled = true;
                 btnQuitarImpuesto.Enabled = true;
               //  btnAbrircPrenda.Visible = true;
-                btnAbrirCuotas.Visible = true;
+              //  btnAbrirCuotas.Visible = true;
                 txtPatente.Enabled = false;
                 btnAbrirCobranzas.Visible = true;
                 btnAbrirCheques.Visible = true;
@@ -289,7 +289,7 @@ namespace Concesionaria
             txtSubTotal.Text = "";
             txtTotalVenta.Text = "";
             txtTotalDocumentos.Text = "";
-            GrillaCuotas.DataSource = null;
+            //GrillaCuotas.DataSource = null;
             txtTotalPrenda.Text = "";
             txtTotalCobranza.Text = "";
 
@@ -533,6 +533,7 @@ namespace Concesionaria
 
         private void btnCalcularCuotas_Click(object sender, EventArgs e)
         {
+            /*
             Clases.cFunciones fun = new Clases.cFunciones();
             if (fun.ValidarFecha(txtFecha.Text) == false)
             {
@@ -593,6 +594,7 @@ namespace Concesionaria
             double d2 = Capital * d1;
             ValorCuota = (Capital + d2) / Cuotas;
             */
+            /*
             CapitalConInteres = Capital + Capital * PorAplicar / 100;
             ValorCuota = CapitalConInteres / Cuotas;
             Int32 ValorCuotaEntero = Convert.ToInt32(ValorCuota);
@@ -636,6 +638,7 @@ namespace Concesionaria
             GrillaCuotas.Columns[3].HeaderText = "Importe s/Interés";
             txtTotalDocumentos.Text = txtCapital.Text;
             CalcularSubTotal();
+            */
         }
 
         private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
@@ -860,6 +863,7 @@ namespace Concesionaria
                 CodVenta = comandMaxVenta.ExecuteScalar().ToString();
                 
                 //grabo el plan de cuotas
+                /*
                 if (txtTotalDocumentos.Text != "")
                 {
                     //grabo las cuotas
@@ -890,7 +894,7 @@ namespace Concesionaria
                         comandCuota.ExecuteNonQuery();
                     }
                 }
-
+                */
                 //grabos los autos que entrego como parte de pago
 
                 if (txtTotalVehiculoPartePago.Text != "")
@@ -1451,11 +1455,13 @@ namespace Concesionaria
 
         private void txtCapital_Leave(object sender, EventArgs e)
         {
+            /*
             if (txtCapital.Text != "")
             {
                 Clases.cFunciones fun = new Clases.cFunciones();
                 txtCapital.Text = fun.FormatoEnteroMiles(txtCapital.Text);
             }
+            */
         }
 
         private void txtImportePrenda_Leave(object sender, EventArgs e)
@@ -1569,10 +1575,10 @@ namespace Concesionaria
             GetCostos(-1);
             
           //  txtImportePrenda.Text = "";
-            txtCapital.Text = "";
-            txtCuotas.Text = "";
-            txtInteres.Text = "";
-            GrillaCuotas.DataSource = null;
+          //  txtCapital.Text = "";
+          //  txtCuotas.Text = "";
+          //  txtInteres.Text = "";
+          //  GrillaCuotas.DataSource = null;
             txtTotalEfectivo.Text = "";
             txtTotalVehiculoPartePago.Text = "";
             txtTotalDocumentos.Text = "";
@@ -1610,10 +1616,12 @@ namespace Concesionaria
         {
             double TotalCuotas = 0;
             Clases.cFunciones fun = new Clases.cFunciones();
+            /*
             for (int i = 0; i < GrillaCuotas.Rows.Count - 1; i++)
             {
                 TotalCuotas = TotalCuotas + fun.ToDouble(GrillaCuotas.Rows[i].Cells[1].Value.ToString());
             }
+            */
             return TotalCuotas;
         }
 
@@ -1757,11 +1765,13 @@ namespace Concesionaria
 
         private void btnBorrarCuotas_Click(object sender, EventArgs e)
         {
+            /*
             GrillaCuotas.DataSource = null;
             txtCapital.Text = "";
             txtCuotas.Text = "";
             txtInteres.Text = "";
             txtTotalDocumentos.Text = "";
+            */
         }
 
         private void txtImporteCobranza_Leave(object sender, EventArgs e)
@@ -3431,6 +3441,7 @@ namespace Concesionaria
 
         public void BuscarCuotasxCodVenta(Int32 CodVenta)
         {
+            /*
             Clases.cVenta venta = new Clases.cVenta();
             DataTable trdo = venta.GetCuotaxCodVenta(CodVenta);
             GrillaCuotas.DataSource = trdo;
@@ -3446,6 +3457,7 @@ namespace Concesionaria
             GrillaCuotas.Columns[1].Width = 195;
             GrillaCuotas.Columns[2].Width = 180;
             GrillaCuotas.Columns[3].Width = 210;
+            */
         }
 
         private void BuscarChequesxCodVenta(Int32 CodVenta)
@@ -3799,10 +3811,12 @@ namespace Concesionaria
 
         private void btnAbrirCuotas_Click(object sender, EventArgs e)
         {
+            /*
             string patente = txtPatente.Text;
             Principal.CodigoPrincipalAbm = patente.ToString();
             FrmCobroCuotas form = new FrmCobroCuotas();
             form.ShowDialog();
+            */
         }
 
         private void btnAbrirCobranzas_Click(object sender, EventArgs e)

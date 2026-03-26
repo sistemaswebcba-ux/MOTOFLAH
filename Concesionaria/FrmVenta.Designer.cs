@@ -172,18 +172,10 @@
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.btnAbrirCuotas = new System.Windows.Forms.Button();
-            this.btnBorrarCuotas = new System.Windows.Forms.Button();
-            this.GrillaCuotas = new System.Windows.Forms.DataGridView();
-            this.txtCuotas = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.txtInteres = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txtCapital = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.btnCalcularCuotas = new System.Windows.Forms.Button();
             this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.label68 = new System.Windows.Forms.Label();
+            this.txtCuotasCredito = new System.Windows.Forms.TextBox();
+            this.label70 = new System.Windows.Forms.Label();
             this.GrillaBancoCredito = new System.Windows.Forms.DataGridView();
             this.txtImporteBancoCredito = new System.Windows.Forms.TextBox();
             this.cmbBancoCredito = new System.Windows.Forms.ComboBox();
@@ -287,6 +279,9 @@
             this.BtnAgregarCheque = new System.Windows.Forms.Button();
             this.btnNuevaBanco = new System.Windows.Forms.Button();
             this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.label88 = new System.Windows.Forms.Label();
+            this.txtCuotaTarjeta = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
             this.GrillaTarjeta = new System.Windows.Forms.DataGridView();
             this.txtImporteTarjeta = new System.Windows.Forms.TextBox();
             this.cmbTarjeta = new System.Windows.Forms.ComboBox();
@@ -315,12 +310,6 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.txtCuotasCredito = new System.Windows.Forms.TextBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
-            this.txtCuotaTarjeta = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -340,8 +329,6 @@
             this.tabPage18.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControl2.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaCuotas)).BeginInit();
             this.tabPage16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaBancoCredito)).BeginInit();
             this.tabPage4.SuspendLayout();
@@ -1818,133 +1805,17 @@
             // 
             // tabControl2
             // 
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage16);
             this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Controls.Add(this.tabPage9);
-            this.tabControl2.Controls.Add(this.tabPage14);
             this.tabControl2.Controls.Add(this.tabPage17);
+            this.tabControl2.Controls.Add(this.tabPage16);
+            this.tabControl2.Controls.Add(this.tabPage9);
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Controls.Add(this.tabPage14);
             this.tabControl2.Location = new System.Drawing.Point(0, 22);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(875, 241);
             this.tabControl2.TabIndex = 1;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tabPage5.Controls.Add(this.btnAbrirCuotas);
-            this.tabPage5.Controls.Add(this.btnBorrarCuotas);
-            this.tabPage5.Controls.Add(this.GrillaCuotas);
-            this.tabPage5.Controls.Add(this.txtCuotas);
-            this.tabPage5.Controls.Add(this.label33);
-            this.tabPage5.Controls.Add(this.txtInteres);
-            this.tabPage5.Controls.Add(this.label32);
-            this.tabPage5.Controls.Add(this.txtCapital);
-            this.tabPage5.Controls.Add(this.label31);
-            this.tabPage5.Controls.Add(this.btnCalcularCuotas);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(867, 212);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Documentos";
-            // 
-            // btnAbrirCuotas
-            // 
-            this.btnAbrirCuotas.Image = global::Concesionaria.Properties.Resources.zoom2;
-            this.btnAbrirCuotas.Location = new System.Drawing.Point(712, 15);
-            this.btnAbrirCuotas.Name = "btnAbrirCuotas";
-            this.btnAbrirCuotas.Size = new System.Drawing.Size(34, 24);
-            this.btnAbrirCuotas.TabIndex = 45;
-            this.btnAbrirCuotas.UseVisualStyleBackColor = true;
-            this.btnAbrirCuotas.Visible = false;
-            this.btnAbrirCuotas.Click += new System.EventHandler(this.btnAbrirCuotas_Click);
-            // 
-            // btnBorrarCuotas
-            // 
-            this.btnBorrarCuotas.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.btnBorrarCuotas.Location = new System.Drawing.Point(672, 15);
-            this.btnBorrarCuotas.Name = "btnBorrarCuotas";
-            this.btnBorrarCuotas.Size = new System.Drawing.Size(34, 24);
-            this.btnBorrarCuotas.TabIndex = 26;
-            this.btnBorrarCuotas.UseVisualStyleBackColor = true;
-            this.btnBorrarCuotas.Click += new System.EventHandler(this.btnBorrarCuotas_Click);
-            // 
-            // GrillaCuotas
-            // 
-            this.GrillaCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaCuotas.Location = new System.Drawing.Point(20, 44);
-            this.GrillaCuotas.Name = "GrillaCuotas";
-            this.GrillaCuotas.ReadOnly = true;
-            this.GrillaCuotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaCuotas.ShowEditingIcon = false;
-            this.GrillaCuotas.Size = new System.Drawing.Size(826, 118);
-            this.GrillaCuotas.TabIndex = 25;
-            // 
-            // txtCuotas
-            // 
-            this.txtCuotas.Location = new System.Drawing.Point(500, 15);
-            this.txtCuotas.Name = "txtCuotas";
-            this.txtCuotas.Size = new System.Drawing.Size(116, 22);
-            this.txtCuotas.TabIndex = 5;
-            this.txtCuotas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuotas_KeyPress);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(438, 15);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(50, 16);
-            this.label33.TabIndex = 4;
-            this.label33.Text = "Cuotas";
-            // 
-            // txtInteres
-            // 
-            this.txtInteres.Location = new System.Drawing.Point(280, 15);
-            this.txtInteres.Name = "txtInteres";
-            this.txtInteres.Size = new System.Drawing.Size(116, 22);
-            this.txtInteres.TabIndex = 3;
-            this.txtInteres.TextChanged += new System.EventHandler(this.txtInteres_TextChanged);
-            this.txtInteres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInteres_KeyPress);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(216, 15);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(48, 16);
-            this.label32.TabIndex = 2;
-            this.label32.Text = "Interés";
-            // 
-            // txtCapital
-            // 
-            this.txtCapital.Location = new System.Drawing.Point(82, 15);
-            this.txtCapital.Name = "txtCapital";
-            this.txtCapital.Size = new System.Drawing.Size(116, 22);
-            this.txtCapital.TabIndex = 1;
-            this.txtCapital.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCapital_KeyPress);
-            this.txtCapital.Leave += new System.EventHandler(this.txtCapital_Leave);
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(17, 15);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(50, 16);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "Capital";
-            // 
-            // btnCalcularCuotas
-            // 
-            this.btnCalcularCuotas.Image = global::Concesionaria.Properties.Resources.money_euro;
-            this.btnCalcularCuotas.Location = new System.Drawing.Point(632, 15);
-            this.btnCalcularCuotas.Name = "btnCalcularCuotas";
-            this.btnCalcularCuotas.Size = new System.Drawing.Size(34, 24);
-            this.btnCalcularCuotas.TabIndex = 24;
-            this.btnCalcularCuotas.UseVisualStyleBackColor = true;
-            this.btnCalcularCuotas.Click += new System.EventHandler(this.btnCalcularCuotas_Click);
             // 
             // tabPage16
             // 
@@ -1964,6 +1835,32 @@
             this.tabPage16.Size = new System.Drawing.Size(867, 212);
             this.tabPage16.TabIndex = 8;
             this.tabPage16.Text = "Credito";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(481, 24);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(50, 16);
+            this.label68.TabIndex = 60;
+            this.label68.Text = "Cuotas";
+            // 
+            // txtCuotasCredito
+            // 
+            this.txtCuotasCredito.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCuotasCredito.Location = new System.Drawing.Point(534, 18);
+            this.txtCuotasCredito.Name = "txtCuotasCredito";
+            this.txtCuotasCredito.Size = new System.Drawing.Size(128, 22);
+            this.txtCuotasCredito.TabIndex = 59;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(290, 23);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(53, 16);
+            this.label70.TabIndex = 58;
+            this.label70.Text = "Importe";
             // 
             // GrillaBancoCredito
             // 
@@ -3025,6 +2922,32 @@
             this.tabPage17.TabIndex = 9;
             this.tabPage17.Text = "Tarjetas";
             // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(571, 27);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(50, 16);
+            this.label88.TabIndex = 62;
+            this.label88.Text = "Cuotas";
+            // 
+            // txtCuotaTarjeta
+            // 
+            this.txtCuotaTarjeta.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCuotaTarjeta.Location = new System.Drawing.Point(627, 23);
+            this.txtCuotaTarjeta.Name = "txtCuotaTarjeta";
+            this.txtCuotaTarjeta.Size = new System.Drawing.Size(128, 22);
+            this.txtCuotaTarjeta.TabIndex = 61;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(354, 24);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(53, 16);
+            this.label87.TabIndex = 53;
+            this.label87.Text = "Importe";
+            // 
             // GrillaTarjeta
             // 
             this.GrillaTarjeta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -3094,13 +3017,13 @@
             this.groupBox55.Controls.Add(this.txtSubTotal);
             this.groupBox55.Controls.Add(this.txtTotalEfectivo);
             this.groupBox55.Controls.Add(this.txtTotalCobranza);
+            this.groupBox55.Controls.Add(this.txtTotalVehiculoPartePago);
             this.groupBox55.Controls.Add(this.label30);
+            this.groupBox55.Controls.Add(this.label25);
             this.groupBox55.Controls.Add(this.txtTotalVenta);
             this.groupBox55.Controls.Add(this.label28);
             this.groupBox55.Controls.Add(this.label27);
             this.groupBox55.Controls.Add(this.label26);
-            this.groupBox55.Controls.Add(this.txtTotalVehiculoPartePago);
-            this.groupBox55.Controls.Add(this.label25);
             this.groupBox55.Controls.Add(this.label24);
             this.groupBox55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.groupBox55.Location = new System.Drawing.Point(16, 520);
@@ -3113,7 +3036,7 @@
             // txtTotalCredito
             // 
             this.txtTotalCredito.BackColor = System.Drawing.Color.LightGreen;
-            this.txtTotalCredito.Location = new System.Drawing.Point(335, 39);
+            this.txtTotalCredito.Location = new System.Drawing.Point(229, 39);
             this.txtTotalCredito.Name = "txtTotalCredito";
             this.txtTotalCredito.Size = new System.Drawing.Size(96, 23);
             this.txtTotalCredito.TabIndex = 61;
@@ -3122,7 +3045,7 @@
             // 
             this.txtMontoCredito.BackColor = System.Drawing.Color.LightGreen;
             this.txtMontoCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.txtMontoCredito.Location = new System.Drawing.Point(228, 39);
+            this.txtMontoCredito.Location = new System.Drawing.Point(119, 39);
             this.txtMontoCredito.Name = "txtMontoCredito";
             this.txtMontoCredito.ReadOnly = true;
             this.txtMontoCredito.Size = new System.Drawing.Size(100, 23);
@@ -3179,7 +3102,7 @@
             // 
             this.txtTotalCobranza.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalCobranza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.txtTotalCobranza.Location = new System.Drawing.Point(441, 39);
+            this.txtTotalCobranza.Location = new System.Drawing.Point(331, 39);
             this.txtTotalCobranza.Name = "txtTotalCobranza";
             this.txtTotalCobranza.ReadOnly = true;
             this.txtTotalCobranza.Size = new System.Drawing.Size(100, 23);
@@ -3188,7 +3111,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(438, 19);
+            this.label30.Location = new System.Drawing.Point(334, 19);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(77, 17);
             this.label30.TabIndex = 12;
@@ -3216,7 +3139,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(335, 19);
+            this.label27.Location = new System.Drawing.Point(236, 19);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(60, 17);
             this.label27.TabIndex = 5;
@@ -3225,7 +3148,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(228, 19);
+            this.label26.Location = new System.Drawing.Point(116, 19);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(68, 17);
             this.label26.TabIndex = 4;
@@ -3235,7 +3158,7 @@
             // 
             this.txtTotalVehiculoPartePago.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalVehiculoPartePago.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.txtTotalVehiculoPartePago.Location = new System.Drawing.Point(119, 39);
+            this.txtTotalVehiculoPartePago.Location = new System.Drawing.Point(439, 39);
             this.txtTotalVehiculoPartePago.Name = "txtTotalVehiculoPartePago";
             this.txtTotalVehiculoPartePago.ReadOnly = true;
             this.txtTotalVehiculoPartePago.Size = new System.Drawing.Size(100, 23);
@@ -3244,7 +3167,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(116, 19);
+            this.label25.Location = new System.Drawing.Point(436, 19);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(78, 17);
             this.label25.TabIndex = 2;
@@ -3315,58 +3238,6 @@
             this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
             this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(290, 23);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(53, 16);
-            this.label70.TabIndex = 58;
-            this.label70.Text = "Importe";
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(481, 24);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(50, 16);
-            this.label68.TabIndex = 60;
-            this.label68.Text = "Cuotas";
-            // 
-            // txtCuotasCredito
-            // 
-            this.txtCuotasCredito.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCuotasCredito.Location = new System.Drawing.Point(534, 18);
-            this.txtCuotasCredito.Name = "txtCuotasCredito";
-            this.txtCuotasCredito.Size = new System.Drawing.Size(128, 22);
-            this.txtCuotasCredito.TabIndex = 59;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(354, 24);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(53, 16);
-            this.label87.TabIndex = 53;
-            this.label87.Text = "Importe";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(571, 27);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(50, 16);
-            this.label88.TabIndex = 62;
-            this.label88.Text = "Cuotas";
-            // 
-            // txtCuotaTarjeta
-            // 
-            this.txtCuotaTarjeta.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCuotaTarjeta.Location = new System.Drawing.Point(627, 23);
-            this.txtCuotaTarjeta.Name = "txtCuotaTarjeta";
-            this.txtCuotaTarjeta.Size = new System.Drawing.Size(128, 22);
-            this.txtCuotaTarjeta.TabIndex = 61;
-            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3414,9 +3285,6 @@
             this.tabPage18.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaCuotas)).EndInit();
             this.tabPage16.ResumeLayout(false);
             this.tabPage16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaBancoCredito)).EndInit();
@@ -3514,21 +3382,11 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtTotalVenta;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.TextBox txtTotalCobranza;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox txtCuotas;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox txtInteres;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox txtCapital;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Button btnCalcularCuotas;
-        private System.Windows.Forms.DataGridView GrillaCuotas;
         private System.Windows.Forms.TextBox txtTotalEfectivo;
         private System.Windows.Forms.Button btnGrabar;
-        private System.Windows.Forms.Button btnBorrarCuotas;
         private System.Windows.Forms.TextBox txtImporteCobranza;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Button btnAnular;
@@ -3656,7 +3514,6 @@
         private System.Windows.Forms.MaskedTextBox txtFechaImpuesto;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Button btnAgregarImpuesto;
-        private System.Windows.Forms.Button btnAbrirCuotas;
         private System.Windows.Forms.Button btnAbrirCobranzas;
         private System.Windows.Forms.Button btnAbrirCheques;
         private System.Windows.Forms.Button btnGrabarPreVenta;
