@@ -9,9 +9,10 @@ namespace Concesionaria.Clases
     {
         public DataTable GetTarjetaxCodVenta(Int32 CodVenta)
         {
-            string sql = "select vt.CodTarjeta,t.Nombre,vt.Importe,vt.Cuota ";
-            sql = sql + " from ventaxtarjeta vt,Tarjeta t";
+            string sql = "select vt.CodTarjeta,t.Nombre,b.CodBanco,b.Nombre as Banco, vt.Importe,vt.Cuota ";
+            sql = sql + " from ventaxtarjeta vt,Tarjeta t, Banco b";
             sql = sql + " where vt.CodTarjeta=t.CodTarjeta";
+            sql = sql + " and vt.CodBanco = b.CodBanco ";
             sql = sql + " and vt.CodVenta=" + CodVenta.ToString();
             return cDb.ExecuteDataTable(sql);
         }

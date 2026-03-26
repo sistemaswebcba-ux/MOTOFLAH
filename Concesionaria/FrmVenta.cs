@@ -21,6 +21,7 @@ namespace Concesionaria
         DataTable tbTarjeta;
         DataTable tbCobranza;
         DataTable tbBancoCredito;
+        DataTable tbCliente;
         //se utiliza para indicar en que combo debe seguir
         //cuadno regrese del alta basica y tengas dos
         //tablas iguales
@@ -55,6 +56,7 @@ namespace Concesionaria
             fun.LlenarCombo(CmbGastosTransferencia, "CategoriaGastoTransferencia", "Descripcion", "Codigo");
             fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGastoRecepcion", "Descripcion", "Codigo");
             fun.LlenarCombo(CmbBanco, "Banco", "Nombre", "CodBanco");
+            fun.LlenarCombo(cmbBancoTarjeta, "Banco", "Nombre", "CodBanco");
             fun.LlenarCombo(cmbBancoCredito , "Banco", "Nombre", "CodBanco");
             fun.LlenarCombo(cmbTarjeta, "Tarjeta", "Nombre", "CodTarjeta");
             fun.LlenarCombo(CmbTipoCombustible2, "TipoCombustible", "Nombre", "Codigo");
@@ -69,7 +71,7 @@ namespace Concesionaria
             fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");
             fun.LlenarCombo(cmbSucursalAutoPartePago, "Sucursal", "Nombre", "CodSucursal");  
             CargarVendedor(); 
-            tbTarjeta = fun.CrearTabla("CodTarjeta;Nombre;Importe;Cuota");
+            tbTarjeta = fun.CrearTabla("CodTarjeta;Nombre;CodBanco;Banco;Importe;Cuota");
             tbBancoCredito = fun.CrearTabla("CodBanco;Nombre;Importe;Cuota");
             OcultarVendedor(false);
             txtFecha.Text = DateTime.Now.ToShortDateString();
@@ -86,6 +88,8 @@ namespace Concesionaria
             tbListaPapeles.Columns.Add("Texto");
             tbListaPapeles.Columns.Add("Fecha");
             tbListaPapeles.Columns.Add("FechaVencimiento");
+            string ColCliente = "CodCliente;Apellido;Nombre;Nrodocumento;Telefono";
+            tbCliente = fun.CrearTabla(ColCliente);
             if (Principal.CodigoPrincipalAbm != null)
             {
                 string Cod = Principal.CodigoPrincipalAbm;
@@ -357,12 +361,7 @@ namespace Concesionaria
                 txtAltura.Text = trdo.Rows[0]["Numero"].ToString();
                 txtEmail.Text = trdo.Rows[0]["Email"].ToString();
                 txtObservacion.Text = trdo.Rows[0]["Observacion"].ToString();
-                if (trdo.Rows[0]["RutaImagen"].ToString()!="")
-                {
-                    string Ruta = trdo.Rows[0]["RutaImagen"].ToString();
-                    txtRutaImagenCliente.Text = Ruta;
-                    imgFotoCliente.Image = System.Drawing.Image.FromFile(Ruta);
-                }
+              
                 if (trdo.Rows[0]["FechaNacimiento"].ToString() != "")
                 {
                     DateTime FechaNac = Convert.ToDateTime(trdo.Rows[0]["FechaNacimiento"].ToString());
@@ -417,8 +416,12 @@ namespace Concesionaria
             txtTelefono.Text = "";
             txtCelular.Text = "";
             CmbBarrio.SelectedIndex = 0;
+           
             txtCalle.Text = "";
             txtAltura.Text = "";
+            txtEmail.Enabled = false;
+            if (CmbCategoriaIva.SelectedIndex > 0)
+                CmbCategoriaIva.SelectedIndex = 0;
         }
 
         private void txtPatente2_TextChanged(object sender, EventArgs e)
@@ -786,6 +789,7 @@ namespace Concesionaria
                 ImporteSenia = GetTotalSenia(Convert.ToInt32(txtCodPreVenta.Text));
             try
             {
+                /*
                 sqlCLiente = GetSqlClientes();
                 Comand.CommandText = sqlCLiente;
                 Comand.ExecuteNonQuery();
@@ -799,6 +803,8 @@ namespace Concesionaria
                     comand2.CommandText = "select max(CodCliente) as CodCliente from Cliente";
                     txtCodCLiente.Text = comand2.ExecuteScalar().ToString();
                 }
+
+                */
 
                 //saco el auto del stock
                 string sqlStock = "update StockAuto";
@@ -922,6 +928,22 @@ namespace Concesionaria
                         }
                     }
                 }
+
+                //grabo los clientes
+                if (tbCliente.Rows.Count >0)
+                {
+                    cVentaxCliente venCli = new cVentaxCliente();
+                    int CodCli = 0;
+                    for (int k = 0; k < tbCliente.Rows.Count; k++)
+                    {
+                        if (tbCliente.Rows[k]["CodCliente"].ToString ()!="")
+                        {  
+                            CodCli = Convert.ToInt32(tbCliente.Rows[k]["CodCliente"].ToString());
+                            venCli.Insertar(con, Transaccion,Convert.ToInt32 (CodVenta), CodCli);
+                        }
+                    }
+                }
+             
 
                 //grabo la prenda
                 if (txtTotalPrenda.Text != "")
@@ -1166,16 +1188,18 @@ namespace Concesionaria
                     for (int i = 0; i < GrillaTarjeta.Rows.Count - 1; i++)
                     {
                         Int32 CodTarjeta = Convert.ToInt32(GrillaTarjeta.Rows[i].Cells[0].Value.ToString());
-                        Double ImporteTarjeta =func.ToDouble (GrillaTarjeta.Rows[i].Cells[2].Value.ToString());
-                        int CuotaTarjeta = Convert.ToInt32(GrillaTarjeta.Rows[i].Cells[3].Value.ToString());
+                        Double ImporteTarjeta =func.ToDouble (GrillaTarjeta.Rows[i].Cells[4].Value.ToString());
+                        int CuotaTarjeta = Convert.ToInt32(GrillaTarjeta.Rows[i].Cells[5].Value.ToString());
+                        int CodBancoTarjeta = Convert.ToInt32(GrillaTarjeta.Rows[i].Cells[2].Value.ToString());
 
                         sqlTar = "Insert into ventaxtarjeta(CodVenta";
-                        sqlTar = sqlTar + ",CodTarjeta,Importe,Saldo,Cuota)";
+                        sqlTar = sqlTar + ",CodTarjeta,Importe,Saldo,Cuota,CodBanco)";
                         sqlTar = sqlTar + " Values(" + CodVenta.ToString();
                         sqlTar = sqlTar + "," + CodTarjeta.ToString();
                         sqlTar = sqlTar + "," + ImporteTarjeta.ToString().Replace(",", ".");
                         sqlTar = sqlTar + "," + ImporteTarjeta.ToString().Replace(",", ".");
                         sqlTar = sqlTar + "," + CuotaTarjeta.ToString();
+                        sqlTar = sqlTar + "," + CodBancoTarjeta.ToString();
                         sqlTar = sqlTar + ")";
                         SqlCommand comandTarjeta = new SqlCommand();
                         comandTarjeta.Connection = con;
@@ -1245,7 +1269,7 @@ namespace Concesionaria
             string Altura = txtAltura.Text;
             Int32? CodBarrio = null;
             string Observacion = txtObservacion.Text;
-            string RutaImagen = txtRutaImagenCliente.Text;
+            string RutaImagen = ""; // txtRutaImagenCliente.Text;
             DateTime? FechaNacimiento = null;
             cFunciones func = new cFunciones();
             if (func.ValidarFecha(txtFechaNacimiento.Text)==true)
@@ -1376,8 +1400,11 @@ namespace Concesionaria
             if (txtTotalPrenda.Text != "")
                 ImportePrenda = fun.ToDouble(txtTotalPrenda.Text);
 
+            CodCliente = Convert.ToInt32(tbCliente.Rows[0]["CodCliente"].ToString());
+            /*
             if (txtCodCLiente.Text != "")
                 CodCliente = Convert.ToInt32(txtCodCLiente.Text);
+                */
 
             if (txtImporteCobranza.Text != "")
                 ImporteCobranza = fun.ToDouble(txtImporteCobranza.Text);
@@ -1610,6 +1637,8 @@ namespace Concesionaria
             tbListaPapeles.Rows.Clear();
             tbBancoCredito.Rows.Clear();
             GrillaBancoCredito.DataSource = null;
+            tbCliente.Rows.Clear();
+            GrillaCliente.DataSource = null;
         }
 
         private Double CalcularTotalCuotas()
@@ -1633,21 +1662,10 @@ namespace Concesionaria
                 return false;
             }
 
-            if (txtNombre.Text == "")
+            
+            if (tbCliente.Rows.Count <1)
             {
-                MessageBox.Show("Debe ingresar el nombre del cliente para continuar", Clases.cMensaje.Mensaje());
-                return false;
-            }
-
-            if (txtApellido.Text == "")
-            {
-                MessageBox.Show("Debe ingresar el apellido del cliente para continuar", Clases.cMensaje.Mensaje());
-                return false;
-            }
-
-            if (txtNroDoc.Text == "")
-            {
-                MessageBox.Show("Debe ingresar el número de documento del cliente para continuar", Clases.cMensaje.Mensaje());
+                MessageBox.Show("Debe ingresar un cliente para continuar ", Clases.cMensaje.Mensaje());
                 return false;
             }
 
@@ -3174,6 +3192,7 @@ namespace Concesionaria
                 BuscarAutoxCodVenta(CodVenta);
                 BuscarChequesxCodVenta(CodVenta);
                 CargarImpuestos(CodVenta);
+                BuscarVentaxClientes(CodVenta);
                 GetGastosdeRecepcionxCodVenta(CodVenta);
                 string Patente = tVenta.Rows[0]["Patente"].ToString();
                 txtPatente.Text = Patente;
@@ -3288,6 +3307,15 @@ namespace Concesionaria
 
                 }
             }
+        }
+
+        private void BuscarVentaxClientes(Int32 CodVenta)
+        {
+            cFunciones fun = new cFunciones();
+            cVentaxCliente ven = new cVentaxCliente();
+            DataTable trdo = ven.GetClientexCodVenta(CodVenta);
+            GrillaCliente.DataSource = trdo;
+            fun.AnchoColumnas(GrillaCliente, "0;30;30;20;20");          
         }
 
         private void BuscarAutosPartePago(Int32 CodVenta)
@@ -4421,6 +4449,13 @@ namespace Concesionaria
                 MessageBox.Show("Debe seleccionar una tarjeta", "Sistema");
                 return;
             }
+
+            if (cmbBancoTarjeta.SelectedIndex <1)
+            {
+                MessageBox.Show("Debe seleccionar un banco", "Sistema");
+                return;
+            }
+
             if (txtImporteTarjeta.Text == "")
             {
                 MessageBox.Show("Debe ingresar un monto de tarjeta", "Sistema");
@@ -4439,12 +4474,16 @@ namespace Concesionaria
                 MessageBox.Show("Ya se ha ingresado la tarjeta");
                 return;
             }
-              
+
+            string CodBanco = cmbBancoTarjeta.SelectedValue.ToString();
+            string NombreBanco = cmbBancoTarjeta.Text;
+
+
             string Nombre = cmbTarjeta.Text;
             string Importe = txtImporteTarjeta.Text;
             string Cuota = txtCuotaTarjeta.Text;
 
-            string Val = CodTarjeta + ";" + Nombre + ";" + Importe + ";" + Cuota;
+            string Val = CodTarjeta + ";" + Nombre + ";" + CodBanco +";" + NombreBanco + ";"  + Importe + ";" + Cuota;
             
             tbTarjeta = fun.AgregarFilas(tbTarjeta, Val);
             Double Total = fun.TotalizarColumna(tbTarjeta, "Importe");
@@ -4452,7 +4491,7 @@ namespace Concesionaria
             txtMontoCredito.Text = fun.FormatoEnteroMiles(txtMontoCredito.Text);
             GrillaTarjeta.DataSource = tbTarjeta;
             CalcularSubTotal();
-            fun.AnchoColumnas(GrillaTarjeta, "0;70;20;10");
+            fun.AnchoColumnas(GrillaTarjeta, "0;35;0;35;20;10");
             /*
             GrillaTarjeta.Columns[0].Visible = false;
             GrillaTarjeta.Columns[1].Width = 640;
@@ -4491,25 +4530,29 @@ namespace Concesionaria
             DataTable trdo = tarjeta.GetTarjetaxCodVenta(CodVenta);
             if (trdo.Rows.Count >0)
             {
-                string val ="";
+                string val =""; 
                 for (int i=0;i<trdo.Rows.Count ;i++)
                 {
                     val = trdo.Rows[i]["CodTarjeta"].ToString ();
                     val = val + ";" + trdo.Rows[i]["Nombre"].ToString ();
+                    val = val + ";" + trdo.Rows[i]["CodBanco"].ToString();
+                    val = val + ";" + trdo.Rows[i]["Banco"].ToString();
                     val = val + ";" + trdo.Rows[i]["Importe"].ToString ();
                     val = val + ";" + trdo.Rows[i]["Cuota"].ToString();
                     tbTarjeta = fun.AgregarFilas(tbTarjeta, val);
                     // DataRow r = tbTarjeta.NewRow();
                    // tbTarjeta.Rows.Add (r);
                 }
-               // Clases.cFunciones fun = new Clases.cFunciones();
+                // Clases.cFunciones fun = new Clases.cFunciones();
+                tbTarjeta = fun.TablaaMiles(tbTarjeta, "Importe");
                 GrillaTarjeta.DataSource = tbTarjeta ;
                 Double Total = fun.TotalizarColumna(tbTarjeta, "Importe");
                 txtMontoCredito.Text = Total.ToString();
                 txtMontoCredito.Text = fun.FormatoEnteroMiles(txtMontoCredito.Text);
                 GrillaTarjeta.DataSource = tbTarjeta;
                 CalcularSubTotal();
-                fun.AnchoColumnas(GrillaTarjeta, "0;70;20;10");
+               // fun.AnchoColumnas(GrillaTarjeta, "0;70;20;10");
+                fun.AnchoColumnas(GrillaTarjeta, "0;35;0;35;20;10");
             }
         }
 
@@ -4808,6 +4851,7 @@ namespace Concesionaria
 
         private void btnSubirFotoCliente_Click(object sender, EventArgs e)
         {
+            /*
             try
             {
                 cImagen imgAuto = new cImagen();
@@ -4833,11 +4877,13 @@ namespace Concesionaria
             {
                 Mensaje("Hubo un error al intentar grabar la imagen");
             }
+            */
             
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            /*
             if (txtRutaImagenCliente.Text  == "")
             {
                 Mensaje("El cliente no tiene imagenes");
@@ -4846,6 +4892,7 @@ namespace Concesionaria
             Principal.RutaImagen = txtRutaImagenCliente.Text;
             FrmVerFotos frm = new FrmVerFotos();
             frm.ShowDialog();
+            */
         }
 
         private void btnBuscarAuto_Click(object sender, EventArgs e)
@@ -5061,6 +5108,149 @@ namespace Concesionaria
             txtTotalCredito.Text = Total.ToString();
             txtTotalCredito.Text = fun.FormatoEnteroMiles(txtTotalCredito.Text);
             CalcularSubTotal();
+        }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            if (txtNroDoc.Text == "")
+            {
+                Mensaje("Debe ingresar un número de documento");
+                return;
+            }
+
+            if (txtApellido.Text == "")
+            {
+                Mensaje("Debe ingresar un apellido");
+                return;
+            }
+
+            if (txtNombre.Text == "")
+            {
+                Mensaje("Debe ingresar un nombre");
+                return;
+            }
+
+            Int32 CodTipoDoc = 0;
+            if (cmbDocumento.SelectedIndex > 0)
+                CodTipoDoc = Convert.ToInt32(cmbDocumento.SelectedValue);
+            Clases.cCliente cliente = new Clases.cCliente();
+            string NroDocumento = txtNroDoc.Text;
+            Boolean Nuevo = true;
+            if (NroDocumento != "")
+            {
+                DataTable trdo = cliente.GetClientexNroDoc(CodTipoDoc, NroDocumento);
+
+                if (trdo.Rows.Count > 0)
+                {
+                    if (trdo.Rows[0]["Nombre"].ToString() != "")
+                        Nuevo = false;
+                }
+
+            }
+            cFunciones fun = new cFunciones();
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = Clases.cConexion.Cadenacon();
+            con.Open();
+            SqlTransaction Transaccion;
+            Transaccion = con.BeginTransaction();
+            try
+            {
+                if (GuardarCliente(con, Transaccion, Nuevo) == true)
+                {  // string ColCliente = "CodCliente;Apellido;Nombre;Nrodocumento;Telefono";
+                    string CodCLi = txtCodCLiente.Text;
+                    string Ape = txtApellido.Text;
+                    string Nom = txtNombre.Text;
+                    string Telefono = txtTelefono.Text;
+
+                    if (fun.Buscar(tbCliente, "NroDocumento", NroDocumento) == false)
+                    {
+                        string val = CodCLi + ";" + Ape + ";" + Nom + ";" + NroDocumento + ";" + Telefono;
+                        tbCliente = fun.AgregarFilas(tbCliente, val);
+
+                        GrillaCliente.DataSource = tbCliente;
+                        fun.AnchoColumnas(GrillaCliente, "0;30;30;20;20");
+                        GrillaCliente.Columns[0].Visible = false;
+                    }
+                    Transaccion.Commit();
+                    con.Close();
+                    MessageBox.Show("Datos grabados correctamente", Clases.cMensaje.Mensaje());
+                    txtNroDoc.Text = "";
+                    LimpiarCliente();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string msj = "Hubo un error en el proceso " + ex.Message.ToString();
+                MessageBox.Show(msj, Clases.cMensaje.Mensaje());
+
+                Transaccion.Rollback();
+                con.Close();
+
+            }
+        }
+
+        private Boolean GuardarCliente(SqlConnection con, SqlTransaction Transaccion, Boolean Nuevo)
+        {
+            /*  if (txtNroDoc.Text == "")
+              {
+                  MessageBox.Show("Debe ingresar un número de documento para continuar.", Clases.cMensaje.Mensaje());
+                  return false;
+              }
+             * */
+            cFunciones fun = new cFunciones();
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un nombre de un nombre para continuar.", Clases.cMensaje.Mensaje());
+                return false;
+            }
+
+            if (txtApellido.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un nombre de un apellido para continuar.", Clases.cMensaje.Mensaje());
+                return false;
+            }
+
+            Int32? CodTipoDoc = null;
+            if (cmbDocumento.SelectedIndex > 0)
+                CodTipoDoc = Convert.ToInt32(cmbDocumento.SelectedValue);
+            string NroDocumento = txtNroDoc.Text;
+            Clases.cCliente cliente = new Clases.cCliente();
+
+
+            string Nombre = txtNombre.Text;
+            string Apellido = txtApellido.Text;
+            string Telefono = txtTelefono.Text;
+            string Celular = txtCelular.Text;
+            string Calle = txtCalle.Text;
+            string Altura = txtAltura.Text;
+            Int32? CodBarrio = null;
+            DateTime? FechaNacimiento = null;
+            if (fun.ValidarFecha(txtFechaNacimiento.Text) == true)
+                FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+            string Email = txtEmail.Text;
+            string Observacion = txtObservacion.Text;
+
+            if (CmbBarrio.SelectedIndex > 0)
+                CodBarrio = Convert.ToInt32(CmbBarrio.SelectedValue);
+
+            int? CodCategoriaIva = null;
+            if (CmbCategoriaIva.SelectedIndex > 0)
+                CodCategoriaIva = Convert.ToInt32(CmbCategoriaIva.SelectedValue);
+
+            if (Nuevo == true)
+            {
+                cliente.InsertarClienteTransaccion(con, Transaccion, CodTipoDoc, NroDocumento, Nombre,
+                    Apellido, Telefono, Celular, Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva);
+                txtCodCLiente.Text = cliente.GetMaxClientetTransaccion(con, Transaccion).ToString();
+            }
+            else
+            {
+                cliente.ModificarClientetTransaccion(con, Transaccion, Convert.ToInt32(txtCodCLiente.Text), CodTipoDoc, NroDocumento, Nombre,
+                    Apellido, Telefono, Celular,
+                    Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva);
+            }
+            return true;
         }
     }
 };

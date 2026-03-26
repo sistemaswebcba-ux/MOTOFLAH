@@ -85,9 +85,6 @@
             this.CmbCategoriaIva = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.txtRutaImagenCliente = new System.Windows.Forms.TextBox();
-            this.imgFotoCliente = new System.Windows.Forms.PictureBox();
-            this.btnSubirFotoCliente = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label76 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
@@ -172,6 +169,19 @@
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txtEfectivo = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.label88 = new System.Windows.Forms.Label();
+            this.txtCuotaTarjeta = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.GrillaTarjeta = new System.Windows.Forms.DataGridView();
+            this.txtImporteTarjeta = new System.Windows.Forms.TextBox();
+            this.cmbTarjeta = new System.Windows.Forms.ComboBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.btnQuitarTarjeta = new System.Windows.Forms.Button();
+            this.btnAgregarTarjeta = new System.Windows.Forms.Button();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.label68 = new System.Windows.Forms.Label();
             this.txtCuotasCredito = new System.Windows.Forms.TextBox();
@@ -183,9 +193,17 @@
             this.btnEliminarBancoCredito = new System.Windows.Forms.Button();
             this.btnAgregarImporteCredito = new System.Windows.Forms.Button();
             this.txtImporteSenia = new System.Windows.Forms.TextBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.txtEfectivo = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.txtCuotasCobranza = new System.Windows.Forms.TextBox();
+            this.label71 = new System.Windows.Forms.Label();
+            this.GrillaCobranza = new System.Windows.Forms.DataGridView();
+            this.label58 = new System.Windows.Forms.Label();
+            this.txtFechaCompromiso = new System.Windows.Forms.MaskedTextBox();
+            this.txtImporteCobranza = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.BtnAgregarCobranza = new System.Windows.Forms.Button();
+            this.btnAbrirCobranzas = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
@@ -253,17 +271,6 @@
             this.btnAgregarPapel = new System.Windows.Forms.Button();
             this.btnNuevoPapel = new System.Windows.Forms.Button();
             this.ListaPapeles = new System.Windows.Forms.ListBox();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.txtCuotasCobranza = new System.Windows.Forms.TextBox();
-            this.label71 = new System.Windows.Forms.Label();
-            this.GrillaCobranza = new System.Windows.Forms.DataGridView();
-            this.label58 = new System.Windows.Forms.Label();
-            this.txtFechaCompromiso = new System.Windows.Forms.MaskedTextBox();
-            this.txtImporteCobranza = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.BtnAgregarCobranza = new System.Windows.Forms.Button();
-            this.btnAbrirCobranzas = new System.Windows.Forms.Button();
             this.tabPage14 = new System.Windows.Forms.TabPage();
             this.btnAbrirCheques = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -278,16 +285,6 @@
             this.label46 = new System.Windows.Forms.Label();
             this.BtnAgregarCheque = new System.Windows.Forms.Button();
             this.btnNuevaBanco = new System.Windows.Forms.Button();
-            this.tabPage17 = new System.Windows.Forms.TabPage();
-            this.label88 = new System.Windows.Forms.Label();
-            this.txtCuotaTarjeta = new System.Windows.Forms.TextBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.GrillaTarjeta = new System.Windows.Forms.DataGridView();
-            this.txtImporteTarjeta = new System.Windows.Forms.TextBox();
-            this.cmbTarjeta = new System.Windows.Forms.ComboBox();
-            this.label69 = new System.Windows.Forms.Label();
-            this.btnQuitarTarjeta = new System.Windows.Forms.Button();
-            this.btnAgregarTarjeta = new System.Windows.Forms.Button();
             this.groupBox55 = new System.Windows.Forms.GroupBox();
             this.txtTotalCredito = new System.Windows.Forms.TextBox();
             this.txtMontoCredito = new System.Windows.Forms.TextBox();
@@ -297,25 +294,29 @@
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.txtTotalEfectivo = new System.Windows.Forms.TextBox();
             this.txtTotalCobranza = new System.Windows.Forms.TextBox();
+            this.txtTotalVehiculoPartePago = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.txtTotalVenta = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.txtTotalVehiculoPartePago = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.txtTotalPrenda = new System.Windows.Forms.TextBox();
             this.txtTotalDocumentos = new System.Windows.Forms.TextBox();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
+            this.GrillaCliente = new System.Windows.Forms.DataGridView();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btnAgregarCliente = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.cmbBancoTarjeta = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFotoCliente)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGastosGenerales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
@@ -329,9 +330,13 @@
             this.tabPage18.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).BeginInit();
             this.tabPage16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaBancoCredito)).BeginInit();
-            this.tabPage4.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaCobranza)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage10.SuspendLayout();
@@ -342,13 +347,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGastosRecepcion)).BeginInit();
             this.tabPage19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPapeles)).BeginInit();
-            this.tabPage9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaCobranza)).BeginInit();
             this.tabPage14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).BeginInit();
-            this.tabPage17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).BeginInit();
             this.groupBox55.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -365,7 +367,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(871, 233);
+            this.tabControl1.Size = new System.Drawing.Size(871, 266);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -375,7 +377,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(863, 204);
+            this.tabPage1.Size = new System.Drawing.Size(863, 237);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Información del Vehículo";
             // 
@@ -879,19 +881,19 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(863, 204);
+            this.tabPage2.Size = new System.Drawing.Size(863, 237);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Información del Cliente";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.btnAgregarCliente);
+            this.groupBox1.Controls.Add(this.GrillaCliente);
             this.groupBox1.Controls.Add(this.label84);
             this.groupBox1.Controls.Add(this.CmbCategoriaIva);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
-            this.groupBox1.Controls.Add(this.txtRutaImagenCliente);
-            this.groupBox1.Controls.Add(this.imgFotoCliente);
-            this.groupBox1.Controls.Add(this.btnSubirFotoCliente);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label76);
             this.groupBox1.Controls.Add(this.label75);
@@ -925,14 +927,14 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(15, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(845, 183);
+            this.groupBox1.Size = new System.Drawing.Size(845, 225);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
             // label84
             // 
             this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(404, 31);
+            this.label84.Location = new System.Drawing.Point(403, 24);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(67, 16);
             this.label84.TabIndex = 78;
@@ -942,15 +944,15 @@
             // 
             this.CmbCategoriaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbCategoriaIva.FormattingEnabled = true;
-            this.CmbCategoriaIva.Location = new System.Drawing.Point(477, 28);
+            this.CmbCategoriaIva.Location = new System.Drawing.Point(471, 14);
             this.CmbCategoriaIva.Name = "CmbCategoriaIva";
-            this.CmbCategoriaIva.Size = new System.Drawing.Size(246, 24);
+            this.CmbCategoriaIva.Size = new System.Drawing.Size(158, 24);
             this.CmbCategoriaIva.TabIndex = 77;
             // 
             // button5
             // 
             this.button5.Image = global::Concesionaria.Properties.Resources.tv;
-            this.button5.Location = new System.Drawing.Point(760, -1);
+            this.button5.Location = new System.Drawing.Point(805, -1);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(34, 28);
             this.button5.TabIndex = 70;
@@ -961,54 +963,25 @@
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Image = global::Concesionaria.Properties.Resources.carpeta;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(357, 0);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(357, 13);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(30, 26);
             this.btnBuscarCliente.TabIndex = 76;
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
-            // txtRutaImagenCliente
-            // 
-            this.txtRutaImagenCliente.Location = new System.Drawing.Point(727, 155);
-            this.txtRutaImagenCliente.Name = "txtRutaImagenCliente";
-            this.txtRutaImagenCliente.Size = new System.Drawing.Size(96, 22);
-            this.txtRutaImagenCliente.TabIndex = 69;
-            this.txtRutaImagenCliente.Visible = false;
-            // 
-            // imgFotoCliente
-            // 
-            this.imgFotoCliente.Location = new System.Drawing.Point(781, 43);
-            this.imgFotoCliente.Name = "imgFotoCliente";
-            this.imgFotoCliente.Size = new System.Drawing.Size(55, 50);
-            this.imgFotoCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgFotoCliente.TabIndex = 68;
-            this.imgFotoCliente.TabStop = false;
-            this.imgFotoCliente.Visible = false;
-            // 
-            // btnSubirFotoCliente
-            // 
-            this.btnSubirFotoCliente.Location = new System.Drawing.Point(781, 99);
-            this.btnSubirFotoCliente.Name = "btnSubirFotoCliente";
-            this.btnSubirFotoCliente.Size = new System.Drawing.Size(75, 29);
-            this.btnSubirFotoCliente.TabIndex = 67;
-            this.btnSubirFotoCliente.Text = "Abrir";
-            this.btnSubirFotoCliente.UseVisualStyleBackColor = true;
-            this.btnSubirFotoCliente.Visible = false;
-            this.btnSubirFotoCliente.Click += new System.EventHandler(this.btnSubirFotoCliente_Click);
-            // 
             // txtEmail
             // 
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.Location = new System.Drawing.Point(475, 133);
+            this.txtEmail.Location = new System.Drawing.Point(471, 119);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(246, 22);
+            this.txtEmail.Size = new System.Drawing.Size(317, 22);
             this.txtEmail.TabIndex = 47;
             // 
             // label76
             // 
             this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(407, 139);
+            this.label76.Location = new System.Drawing.Point(404, 125);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(42, 16);
             this.label76.TabIndex = 46;
@@ -1017,7 +990,7 @@
             // label75
             // 
             this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(409, 79);
+            this.label75.Location = new System.Drawing.Point(402, 72);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(68, 16);
             this.label75.TabIndex = 43;
@@ -1026,7 +999,7 @@
             // btnAgregarCiudad2
             // 
             this.btnAgregarCiudad2.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarCiudad2.Location = new System.Drawing.Point(729, 73);
+            this.btnAgregarCiudad2.Location = new System.Drawing.Point(798, 73);
             this.btnAgregarCiudad2.Name = "btnAgregarCiudad2";
             this.btnAgregarCiudad2.Size = new System.Drawing.Size(25, 25);
             this.btnAgregarCiudad2.TabIndex = 44;
@@ -1037,16 +1010,16 @@
             // 
             this.CmbCiudadCliente2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbCiudadCliente2.FormattingEnabled = true;
-            this.CmbCiudadCliente2.Location = new System.Drawing.Point(477, 77);
+            this.CmbCiudadCliente2.Location = new System.Drawing.Point(473, 67);
             this.CmbCiudadCliente2.Name = "CmbCiudadCliente2";
-            this.CmbCiudadCliente2.Size = new System.Drawing.Size(246, 24);
+            this.CmbCiudadCliente2.Size = new System.Drawing.Size(315, 24);
             this.CmbCiudadCliente2.TabIndex = 45;
             this.CmbCiudadCliente2.SelectedIndexChanged += new System.EventHandler(this.CmbCiudadCliente2_SelectedIndexChanged);
             // 
             // label74
             // 
             this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(407, 53);
+            this.label74.Location = new System.Drawing.Point(403, 50);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(64, 16);
             this.label74.TabIndex = 42;
@@ -1055,7 +1028,7 @@
             // btnAgregarProvincia2
             // 
             this.btnAgregarProvincia2.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarProvincia2.Location = new System.Drawing.Point(729, 46);
+            this.btnAgregarProvincia2.Location = new System.Drawing.Point(798, 44);
             this.btnAgregarProvincia2.Name = "btnAgregarProvincia2";
             this.btnAgregarProvincia2.Size = new System.Drawing.Size(25, 25);
             this.btnAgregarProvincia2.TabIndex = 40;
@@ -1066,15 +1039,16 @@
             // 
             this.cmbProvincia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProvincia2.FormattingEnabled = true;
-            this.cmbProvincia2.Location = new System.Drawing.Point(477, 53);
+            this.cmbProvincia2.Location = new System.Drawing.Point(473, 41);
             this.cmbProvincia2.Name = "cmbProvincia2";
-            this.cmbProvincia2.Size = new System.Drawing.Size(246, 24);
+            this.cmbProvincia2.Size = new System.Drawing.Size(315, 24);
             this.cmbProvincia2.TabIndex = 41;
             this.cmbProvincia2.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia2_SelectedIndexChanged);
             // 
             // txtFechaNacimiento
             // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(121, 133);
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(708, 16);
+            this.txtFechaNacimiento.Mask = "00/00/0000";
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(76, 22);
             this.txtFechaNacimiento.TabIndex = 39;
@@ -1083,7 +1057,7 @@
             // label73
             // 
             this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(19, 131);
+            this.label73.Location = new System.Drawing.Point(643, 18);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(59, 16);
             this.label73.TabIndex = 38;
@@ -1091,14 +1065,14 @@
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(279, 77);
+            this.txtCelular.Location = new System.Drawing.Point(279, 90);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(108, 22);
             this.txtCelular.TabIndex = 30;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(121, 78);
+            this.txtTelefono.Location = new System.Drawing.Point(121, 91);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(83, 22);
             this.txtTelefono.TabIndex = 22;
@@ -1106,7 +1080,7 @@
             // txtCodCLiente
             // 
             this.txtCodCLiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.txtCodCLiente.Location = new System.Drawing.Point(357, 153);
+            this.txtCodCLiente.Location = new System.Drawing.Point(-9, 8);
             this.txtCodCLiente.Name = "txtCodCLiente";
             this.txtCodCLiente.Size = new System.Drawing.Size(22, 22);
             this.txtCodCLiente.TabIndex = 29;
@@ -1115,7 +1089,7 @@
             // btnNuevoBarrio
             // 
             this.btnNuevoBarrio.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnNuevoBarrio.Location = new System.Drawing.Point(729, 103);
+            this.btnNuevoBarrio.Location = new System.Drawing.Point(798, 103);
             this.btnNuevoBarrio.Name = "btnNuevoBarrio";
             this.btnNuevoBarrio.Size = new System.Drawing.Size(25, 25);
             this.btnNuevoBarrio.TabIndex = 25;
@@ -1126,15 +1100,15 @@
             // 
             this.CmbBarrio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbBarrio.FormattingEnabled = true;
-            this.CmbBarrio.Location = new System.Drawing.Point(477, 106);
+            this.CmbBarrio.Location = new System.Drawing.Point(473, 91);
             this.CmbBarrio.Name = "CmbBarrio";
-            this.CmbBarrio.Size = new System.Drawing.Size(246, 24);
+            this.CmbBarrio.Size = new System.Drawing.Size(315, 24);
             this.CmbBarrio.TabIndex = 19;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(409, 106);
+            this.label14.Location = new System.Drawing.Point(402, 96);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(44, 16);
             this.label14.TabIndex = 23;
@@ -1143,7 +1117,7 @@
             // txtAltura
             // 
             this.txtAltura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAltura.Location = new System.Drawing.Point(337, 106);
+            this.txtAltura.Location = new System.Drawing.Point(337, 119);
             this.txtAltura.MaxLength = 20;
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(50, 22);
@@ -1152,7 +1126,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(285, 109);
+            this.label13.Location = new System.Drawing.Point(285, 122);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 16);
             this.label13.TabIndex = 21;
@@ -1161,7 +1135,7 @@
             // txtCalle
             // 
             this.txtCalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCalle.Location = new System.Drawing.Point(121, 106);
+            this.txtCalle.Location = new System.Drawing.Point(121, 119);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(163, 22);
             this.txtCalle.TabIndex = 17;
@@ -1169,7 +1143,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 105);
+            this.label12.Location = new System.Drawing.Point(14, 118);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 16);
             this.label12.TabIndex = 19;
@@ -1178,7 +1152,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(207, 81);
+            this.label11.Location = new System.Drawing.Point(207, 94);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 16);
             this.label11.TabIndex = 16;
@@ -1187,7 +1161,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 77);
+            this.label10.Location = new System.Drawing.Point(14, 90);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 16);
             this.label10.TabIndex = 15;
@@ -1196,7 +1170,7 @@
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(121, 28);
+            this.txtNombre.Location = new System.Drawing.Point(121, 41);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(266, 22);
             this.txtNombre.TabIndex = 13;
@@ -1204,7 +1178,7 @@
             // txtApellido
             // 
             this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApellido.Location = new System.Drawing.Point(121, 53);
+            this.txtApellido.Location = new System.Drawing.Point(121, 66);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(266, 22);
             this.txtApellido.TabIndex = 14;
@@ -1213,14 +1187,14 @@
             // 
             this.cmbDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDocumento.FormattingEnabled = true;
-            this.cmbDocumento.Location = new System.Drawing.Point(121, 0);
+            this.cmbDocumento.Location = new System.Drawing.Point(121, 13);
             this.cmbDocumento.Name = "cmbDocumento";
             this.cmbDocumento.Size = new System.Drawing.Size(83, 24);
             this.cmbDocumento.TabIndex = 12;
             // 
             // txtNroDoc
             // 
-            this.txtNroDoc.Location = new System.Drawing.Point(271, 3);
+            this.txtNroDoc.Location = new System.Drawing.Point(271, 16);
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.Size = new System.Drawing.Size(80, 22);
             this.txtNroDoc.TabIndex = 12;
@@ -1229,7 +1203,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 50);
+            this.label9.Location = new System.Drawing.Point(14, 63);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 16);
             this.label9.TabIndex = 10;
@@ -1238,7 +1212,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 28);
+            this.label8.Location = new System.Drawing.Point(14, 41);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 16);
             this.label8.TabIndex = 9;
@@ -1247,7 +1221,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(213, 3);
+            this.label7.Location = new System.Drawing.Point(213, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 8;
@@ -1256,7 +1230,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 3);
+            this.label6.Location = new System.Drawing.Point(14, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 16);
             this.label6.TabIndex = 7;
@@ -1796,7 +1770,7 @@
             // 
             this.groupBox3.Controls.Add(this.tabControl2);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(16, 251);
+            this.groupBox3.Location = new System.Drawing.Point(12, 284);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(875, 263);
             this.groupBox3.TabIndex = 2;
@@ -1816,6 +1790,142 @@
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(875, 241);
             this.tabControl2.TabIndex = 1;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage4.Controls.Add(this.txtEfectivo);
+            this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(867, 212);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "Efectivo";
+            // 
+            // txtEfectivo
+            // 
+            this.txtEfectivo.BackColor = System.Drawing.SystemColors.Control;
+            this.txtEfectivo.Location = new System.Drawing.Point(106, 17);
+            this.txtEfectivo.Name = "txtEfectivo";
+            this.txtEfectivo.Size = new System.Drawing.Size(246, 22);
+            this.txtEfectivo.TabIndex = 32;
+            this.txtEfectivo.Click += new System.EventHandler(this.txtEfectivo_Click);
+            this.txtEfectivo.TextChanged += new System.EventHandler(this.txtEfectivo_TextChanged);
+            this.txtEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEfectivo_KeyPress);
+            this.txtEfectivo.Leave += new System.EventHandler(this.txtEfectivo_Leave);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(25, 20);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 16);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "Importe";
+            // 
+            // tabPage17
+            // 
+            this.tabPage17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage17.Controls.Add(this.cmbBancoTarjeta);
+            this.tabPage17.Controls.Add(this.label31);
+            this.tabPage17.Controls.Add(this.label88);
+            this.tabPage17.Controls.Add(this.txtCuotaTarjeta);
+            this.tabPage17.Controls.Add(this.label87);
+            this.tabPage17.Controls.Add(this.GrillaTarjeta);
+            this.tabPage17.Controls.Add(this.txtImporteTarjeta);
+            this.tabPage17.Controls.Add(this.cmbTarjeta);
+            this.tabPage17.Controls.Add(this.label69);
+            this.tabPage17.Controls.Add(this.btnQuitarTarjeta);
+            this.tabPage17.Controls.Add(this.btnAgregarTarjeta);
+            this.tabPage17.Location = new System.Drawing.Point(4, 25);
+            this.tabPage17.Name = "tabPage17";
+            this.tabPage17.Size = new System.Drawing.Size(867, 212);
+            this.tabPage17.TabIndex = 9;
+            this.tabPage17.Text = "Tarjetas";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(612, 27);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(50, 16);
+            this.label88.TabIndex = 62;
+            this.label88.Text = "Cuotas";
+            // 
+            // txtCuotaTarjeta
+            // 
+            this.txtCuotaTarjeta.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCuotaTarjeta.Location = new System.Drawing.Point(668, 21);
+            this.txtCuotaTarjeta.Name = "txtCuotaTarjeta";
+            this.txtCuotaTarjeta.Size = new System.Drawing.Size(87, 22);
+            this.txtCuotaTarjeta.TabIndex = 61;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(429, 24);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(53, 16);
+            this.label87.TabIndex = 53;
+            this.label87.Text = "Importe";
+            // 
+            // GrillaTarjeta
+            // 
+            this.GrillaTarjeta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaTarjeta.Location = new System.Drawing.Point(24, 52);
+            this.GrillaTarjeta.Name = "GrillaTarjeta";
+            this.GrillaTarjeta.ReadOnly = true;
+            this.GrillaTarjeta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GrillaTarjeta.Size = new System.Drawing.Size(822, 108);
+            this.GrillaTarjeta.TabIndex = 52;
+            // 
+            // txtImporteTarjeta
+            // 
+            this.txtImporteTarjeta.BackColor = System.Drawing.SystemColors.Control;
+            this.txtImporteTarjeta.Location = new System.Drawing.Point(488, 18);
+            this.txtImporteTarjeta.Name = "txtImporteTarjeta";
+            this.txtImporteTarjeta.Size = new System.Drawing.Size(118, 22);
+            this.txtImporteTarjeta.TabIndex = 33;
+            this.txtImporteTarjeta.Leave += new System.EventHandler(this.txtImporteTarjeta_Leave);
+            // 
+            // cmbTarjeta
+            // 
+            this.cmbTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTarjeta.FormattingEnabled = true;
+            this.cmbTarjeta.Location = new System.Drawing.Point(75, 21);
+            this.cmbTarjeta.Name = "cmbTarjeta";
+            this.cmbTarjeta.Size = new System.Drawing.Size(167, 24);
+            this.cmbTarjeta.TabIndex = 12;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(21, 21);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(51, 16);
+            this.label69.TabIndex = 11;
+            this.label69.Text = "Tarjeta";
+            // 
+            // btnQuitarTarjeta
+            // 
+            this.btnQuitarTarjeta.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.btnQuitarTarjeta.Location = new System.Drawing.Point(807, 21);
+            this.btnQuitarTarjeta.Name = "btnQuitarTarjeta";
+            this.btnQuitarTarjeta.Size = new System.Drawing.Size(40, 28);
+            this.btnQuitarTarjeta.TabIndex = 51;
+            this.btnQuitarTarjeta.UseVisualStyleBackColor = true;
+            this.btnQuitarTarjeta.Click += new System.EventHandler(this.btnQuitarTarjeta_Click);
+            // 
+            // btnAgregarTarjeta
+            // 
+            this.btnAgregarTarjeta.Image = global::Concesionaria.Properties.Resources.add;
+            this.btnAgregarTarjeta.Location = new System.Drawing.Point(761, 21);
+            this.btnAgregarTarjeta.Name = "btnAgregarTarjeta";
+            this.btnAgregarTarjeta.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarTarjeta.TabIndex = 50;
+            this.btnAgregarTarjeta.UseVisualStyleBackColor = true;
+            this.btnAgregarTarjeta.Click += new System.EventHandler(this.btnAgregarTarjeta_Click);
             // 
             // tabPage16
             // 
@@ -1930,38 +2040,119 @@
             this.txtImporteSenia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImporteSenia_KeyPress);
             this.txtImporteSenia.Leave += new System.EventHandler(this.txtImporteSenia_Leave);
             // 
-            // tabPage4
+            // tabPage9
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tabPage4.Controls.Add(this.txtEfectivo);
-            this.tabPage4.Controls.Add(this.label16);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(867, 212);
-            this.tabPage4.TabIndex = 0;
-            this.tabPage4.Text = "Efectivo";
+            this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage9.Controls.Add(this.txtCuotasCobranza);
+            this.tabPage9.Controls.Add(this.label71);
+            this.tabPage9.Controls.Add(this.GrillaCobranza);
+            this.tabPage9.Controls.Add(this.label58);
+            this.tabPage9.Controls.Add(this.txtFechaCompromiso);
+            this.tabPage9.Controls.Add(this.txtImporteCobranza);
+            this.tabPage9.Controls.Add(this.label35);
+            this.tabPage9.Controls.Add(this.button6);
+            this.tabPage9.Controls.Add(this.BtnAgregarCobranza);
+            this.tabPage9.Controls.Add(this.btnAbrirCobranzas);
+            this.tabPage9.Location = new System.Drawing.Point(4, 25);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(867, 212);
+            this.tabPage9.TabIndex = 6;
+            this.tabPage9.Text = "Cobranza";
             // 
-            // txtEfectivo
+            // txtCuotasCobranza
             // 
-            this.txtEfectivo.BackColor = System.Drawing.SystemColors.Control;
-            this.txtEfectivo.Location = new System.Drawing.Point(106, 17);
-            this.txtEfectivo.Name = "txtEfectivo";
-            this.txtEfectivo.Size = new System.Drawing.Size(246, 22);
-            this.txtEfectivo.TabIndex = 32;
-            this.txtEfectivo.Click += new System.EventHandler(this.txtEfectivo_Click);
-            this.txtEfectivo.TextChanged += new System.EventHandler(this.txtEfectivo_TextChanged);
-            this.txtEfectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEfectivo_KeyPress);
-            this.txtEfectivo.Leave += new System.EventHandler(this.txtEfectivo_Leave);
+            this.txtCuotasCobranza.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCuotasCobranza.Location = new System.Drawing.Point(322, 10);
+            this.txtCuotasCobranza.Name = "txtCuotasCobranza";
+            this.txtCuotasCobranza.Size = new System.Drawing.Size(131, 22);
+            this.txtCuotasCobranza.TabIndex = 53;
             // 
-            // label16
+            // label71
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(25, 20);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(53, 16);
-            this.label16.TabIndex = 31;
-            this.label16.Text = "Importe";
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(266, 12);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(50, 16);
+            this.label71.TabIndex = 52;
+            this.label71.Text = "Cuotas";
+            // 
+            // GrillaCobranza
+            // 
+            this.GrillaCobranza.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaCobranza.Location = new System.Drawing.Point(13, 38);
+            this.GrillaCobranza.Name = "GrillaCobranza";
+            this.GrillaCobranza.ReadOnly = true;
+            this.GrillaCobranza.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GrillaCobranza.Size = new System.Drawing.Size(814, 111);
+            this.GrillaCobranza.TabIndex = 50;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(479, 12);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(124, 16);
+            this.label58.TabIndex = 42;
+            this.label58.Text = "Fecha compromiso";
+            // 
+            // txtFechaCompromiso
+            // 
+            this.txtFechaCompromiso.Location = new System.Drawing.Point(609, 9);
+            this.txtFechaCompromiso.Mask = "00/00/0000";
+            this.txtFechaCompromiso.Name = "txtFechaCompromiso";
+            this.txtFechaCompromiso.Size = new System.Drawing.Size(82, 22);
+            this.txtFechaCompromiso.TabIndex = 41;
+            this.txtFechaCompromiso.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtImporteCobranza
+            // 
+            this.txtImporteCobranza.BackColor = System.Drawing.SystemColors.Control;
+            this.txtImporteCobranza.Location = new System.Drawing.Point(129, 10);
+            this.txtImporteCobranza.Name = "txtImporteCobranza";
+            this.txtImporteCobranza.Size = new System.Drawing.Size(131, 22);
+            this.txtImporteCobranza.TabIndex = 33;
+            this.txtImporteCobranza.TextChanged += new System.EventHandler(this.txtImporteCobranza_TextChanged);
+            this.txtImporteCobranza.Leave += new System.EventHandler(this.txtImporteCobranza_Leave);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(11, 10);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(112, 16);
+            this.label35.TabIndex = 7;
+            this.label35.Text = "Importe cobranza";
+            // 
+            // button6
+            // 
+            this.button6.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.button6.Location = new System.Drawing.Point(743, 7);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(40, 28);
+            this.button6.TabIndex = 51;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // BtnAgregarCobranza
+            // 
+            this.BtnAgregarCobranza.Image = global::Concesionaria.Properties.Resources.add;
+            this.BtnAgregarCobranza.Location = new System.Drawing.Point(697, 7);
+            this.BtnAgregarCobranza.Name = "BtnAgregarCobranza";
+            this.BtnAgregarCobranza.Size = new System.Drawing.Size(40, 28);
+            this.BtnAgregarCobranza.TabIndex = 48;
+            this.BtnAgregarCobranza.UseVisualStyleBackColor = true;
+            this.BtnAgregarCobranza.Click += new System.EventHandler(this.BtnAgregarCobranza_Click);
+            // 
+            // btnAbrirCobranzas
+            // 
+            this.btnAbrirCobranzas.Image = global::Concesionaria.Properties.Resources.zoom2;
+            this.btnAbrirCobranzas.Location = new System.Drawing.Point(789, 8);
+            this.btnAbrirCobranzas.Name = "btnAbrirCobranzas";
+            this.btnAbrirCobranzas.Size = new System.Drawing.Size(34, 24);
+            this.btnAbrirCobranzas.TabIndex = 46;
+            this.btnAbrirCobranzas.UseVisualStyleBackColor = true;
+            this.btnAbrirCobranzas.Visible = false;
+            this.btnAbrirCobranzas.Click += new System.EventHandler(this.btnAbrirCobranzas_Click);
             // 
             // tabPage6
             // 
@@ -2645,120 +2836,6 @@
             this.ListaPapeles.Size = new System.Drawing.Size(175, 100);
             this.ListaPapeles.TabIndex = 21;
             // 
-            // tabPage9
-            // 
-            this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tabPage9.Controls.Add(this.txtCuotasCobranza);
-            this.tabPage9.Controls.Add(this.label71);
-            this.tabPage9.Controls.Add(this.GrillaCobranza);
-            this.tabPage9.Controls.Add(this.label58);
-            this.tabPage9.Controls.Add(this.txtFechaCompromiso);
-            this.tabPage9.Controls.Add(this.txtImporteCobranza);
-            this.tabPage9.Controls.Add(this.label35);
-            this.tabPage9.Controls.Add(this.button6);
-            this.tabPage9.Controls.Add(this.BtnAgregarCobranza);
-            this.tabPage9.Controls.Add(this.btnAbrirCobranzas);
-            this.tabPage9.Location = new System.Drawing.Point(4, 25);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(867, 212);
-            this.tabPage9.TabIndex = 6;
-            this.tabPage9.Text = "Cobranza";
-            // 
-            // txtCuotasCobranza
-            // 
-            this.txtCuotasCobranza.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCuotasCobranza.Location = new System.Drawing.Point(322, 10);
-            this.txtCuotasCobranza.Name = "txtCuotasCobranza";
-            this.txtCuotasCobranza.Size = new System.Drawing.Size(131, 22);
-            this.txtCuotasCobranza.TabIndex = 53;
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(266, 12);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(50, 16);
-            this.label71.TabIndex = 52;
-            this.label71.Text = "Cuotas";
-            // 
-            // GrillaCobranza
-            // 
-            this.GrillaCobranza.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaCobranza.Location = new System.Drawing.Point(13, 38);
-            this.GrillaCobranza.Name = "GrillaCobranza";
-            this.GrillaCobranza.ReadOnly = true;
-            this.GrillaCobranza.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaCobranza.Size = new System.Drawing.Size(814, 111);
-            this.GrillaCobranza.TabIndex = 50;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(479, 12);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(124, 16);
-            this.label58.TabIndex = 42;
-            this.label58.Text = "Fecha compromiso";
-            // 
-            // txtFechaCompromiso
-            // 
-            this.txtFechaCompromiso.Location = new System.Drawing.Point(609, 9);
-            this.txtFechaCompromiso.Mask = "00/00/0000";
-            this.txtFechaCompromiso.Name = "txtFechaCompromiso";
-            this.txtFechaCompromiso.Size = new System.Drawing.Size(82, 22);
-            this.txtFechaCompromiso.TabIndex = 41;
-            this.txtFechaCompromiso.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtImporteCobranza
-            // 
-            this.txtImporteCobranza.BackColor = System.Drawing.SystemColors.Control;
-            this.txtImporteCobranza.Location = new System.Drawing.Point(129, 10);
-            this.txtImporteCobranza.Name = "txtImporteCobranza";
-            this.txtImporteCobranza.Size = new System.Drawing.Size(131, 22);
-            this.txtImporteCobranza.TabIndex = 33;
-            this.txtImporteCobranza.TextChanged += new System.EventHandler(this.txtImporteCobranza_TextChanged);
-            this.txtImporteCobranza.Leave += new System.EventHandler(this.txtImporteCobranza_Leave);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(11, 10);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(112, 16);
-            this.label35.TabIndex = 7;
-            this.label35.Text = "Importe cobranza";
-            // 
-            // button6
-            // 
-            this.button6.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.button6.Location = new System.Drawing.Point(743, 7);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(40, 28);
-            this.button6.TabIndex = 51;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // BtnAgregarCobranza
-            // 
-            this.BtnAgregarCobranza.Image = global::Concesionaria.Properties.Resources.add;
-            this.BtnAgregarCobranza.Location = new System.Drawing.Point(697, 7);
-            this.BtnAgregarCobranza.Name = "BtnAgregarCobranza";
-            this.BtnAgregarCobranza.Size = new System.Drawing.Size(40, 28);
-            this.BtnAgregarCobranza.TabIndex = 48;
-            this.BtnAgregarCobranza.UseVisualStyleBackColor = true;
-            this.BtnAgregarCobranza.Click += new System.EventHandler(this.BtnAgregarCobranza_Click);
-            // 
-            // btnAbrirCobranzas
-            // 
-            this.btnAbrirCobranzas.Image = global::Concesionaria.Properties.Resources.zoom2;
-            this.btnAbrirCobranzas.Location = new System.Drawing.Point(789, 8);
-            this.btnAbrirCobranzas.Name = "btnAbrirCobranzas";
-            this.btnAbrirCobranzas.Size = new System.Drawing.Size(34, 24);
-            this.btnAbrirCobranzas.TabIndex = 46;
-            this.btnAbrirCobranzas.UseVisualStyleBackColor = true;
-            this.btnAbrirCobranzas.Visible = false;
-            this.btnAbrirCobranzas.Click += new System.EventHandler(this.btnAbrirCobranzas_Click);
-            // 
             // tabPage14
             // 
             this.tabPage14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -2904,107 +2981,6 @@
             this.btnNuevaBanco.UseVisualStyleBackColor = true;
             this.btnNuevaBanco.Click += new System.EventHandler(this.btnNuevaBanco_Click);
             // 
-            // tabPage17
-            // 
-            this.tabPage17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tabPage17.Controls.Add(this.label88);
-            this.tabPage17.Controls.Add(this.txtCuotaTarjeta);
-            this.tabPage17.Controls.Add(this.label87);
-            this.tabPage17.Controls.Add(this.GrillaTarjeta);
-            this.tabPage17.Controls.Add(this.txtImporteTarjeta);
-            this.tabPage17.Controls.Add(this.cmbTarjeta);
-            this.tabPage17.Controls.Add(this.label69);
-            this.tabPage17.Controls.Add(this.btnQuitarTarjeta);
-            this.tabPage17.Controls.Add(this.btnAgregarTarjeta);
-            this.tabPage17.Location = new System.Drawing.Point(4, 25);
-            this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Size = new System.Drawing.Size(867, 212);
-            this.tabPage17.TabIndex = 9;
-            this.tabPage17.Text = "Tarjetas";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(571, 27);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(50, 16);
-            this.label88.TabIndex = 62;
-            this.label88.Text = "Cuotas";
-            // 
-            // txtCuotaTarjeta
-            // 
-            this.txtCuotaTarjeta.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCuotaTarjeta.Location = new System.Drawing.Point(627, 23);
-            this.txtCuotaTarjeta.Name = "txtCuotaTarjeta";
-            this.txtCuotaTarjeta.Size = new System.Drawing.Size(128, 22);
-            this.txtCuotaTarjeta.TabIndex = 61;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(354, 24);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(53, 16);
-            this.label87.TabIndex = 53;
-            this.label87.Text = "Importe";
-            // 
-            // GrillaTarjeta
-            // 
-            this.GrillaTarjeta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaTarjeta.Location = new System.Drawing.Point(24, 52);
-            this.GrillaTarjeta.Name = "GrillaTarjeta";
-            this.GrillaTarjeta.ReadOnly = true;
-            this.GrillaTarjeta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaTarjeta.Size = new System.Drawing.Size(822, 108);
-            this.GrillaTarjeta.TabIndex = 52;
-            // 
-            // txtImporteTarjeta
-            // 
-            this.txtImporteTarjeta.BackColor = System.Drawing.SystemColors.Control;
-            this.txtImporteTarjeta.Location = new System.Drawing.Point(416, 21);
-            this.txtImporteTarjeta.Name = "txtImporteTarjeta";
-            this.txtImporteTarjeta.Size = new System.Drawing.Size(149, 22);
-            this.txtImporteTarjeta.TabIndex = 33;
-            this.txtImporteTarjeta.Leave += new System.EventHandler(this.txtImporteTarjeta_Leave);
-            // 
-            // cmbTarjeta
-            // 
-            this.cmbTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTarjeta.FormattingEnabled = true;
-            this.cmbTarjeta.Location = new System.Drawing.Point(75, 21);
-            this.cmbTarjeta.Name = "cmbTarjeta";
-            this.cmbTarjeta.Size = new System.Drawing.Size(273, 24);
-            this.cmbTarjeta.TabIndex = 12;
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(21, 21);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(51, 16);
-            this.label69.TabIndex = 11;
-            this.label69.Text = "Tarjeta";
-            // 
-            // btnQuitarTarjeta
-            // 
-            this.btnQuitarTarjeta.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.btnQuitarTarjeta.Location = new System.Drawing.Point(807, 21);
-            this.btnQuitarTarjeta.Name = "btnQuitarTarjeta";
-            this.btnQuitarTarjeta.Size = new System.Drawing.Size(40, 28);
-            this.btnQuitarTarjeta.TabIndex = 51;
-            this.btnQuitarTarjeta.UseVisualStyleBackColor = true;
-            this.btnQuitarTarjeta.Click += new System.EventHandler(this.btnQuitarTarjeta_Click);
-            // 
-            // btnAgregarTarjeta
-            // 
-            this.btnAgregarTarjeta.Image = global::Concesionaria.Properties.Resources.add;
-            this.btnAgregarTarjeta.Location = new System.Drawing.Point(761, 21);
-            this.btnAgregarTarjeta.Name = "btnAgregarTarjeta";
-            this.btnAgregarTarjeta.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarTarjeta.TabIndex = 50;
-            this.btnAgregarTarjeta.UseVisualStyleBackColor = true;
-            this.btnAgregarTarjeta.Click += new System.EventHandler(this.btnAgregarTarjeta_Click);
-            // 
             // groupBox55
             // 
             this.groupBox55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -3026,7 +3002,7 @@
             this.groupBox55.Controls.Add(this.label26);
             this.groupBox55.Controls.Add(this.label24);
             this.groupBox55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.groupBox55.Location = new System.Drawing.Point(16, 520);
+            this.groupBox55.Location = new System.Drawing.Point(12, 553);
             this.groupBox55.Name = "groupBox55";
             this.groupBox55.Size = new System.Drawing.Size(871, 75);
             this.groupBox55.TabIndex = 3;
@@ -3108,6 +3084,16 @@
             this.txtTotalCobranza.Size = new System.Drawing.Size(100, 23);
             this.txtTotalCobranza.TabIndex = 13;
             // 
+            // txtTotalVehiculoPartePago
+            // 
+            this.txtTotalVehiculoPartePago.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalVehiculoPartePago.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.txtTotalVehiculoPartePago.Location = new System.Drawing.Point(439, 39);
+            this.txtTotalVehiculoPartePago.Name = "txtTotalVehiculoPartePago";
+            this.txtTotalVehiculoPartePago.ReadOnly = true;
+            this.txtTotalVehiculoPartePago.Size = new System.Drawing.Size(100, 23);
+            this.txtTotalVehiculoPartePago.TabIndex = 3;
+            // 
             // label30
             // 
             this.label30.AutoSize = true;
@@ -3116,6 +3102,15 @@
             this.label30.Size = new System.Drawing.Size(77, 17);
             this.label30.TabIndex = 12;
             this.label30.Text = "Cobranza";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(436, 19);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(78, 17);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Vehículos";
             // 
             // txtTotalVenta
             // 
@@ -3154,25 +3149,6 @@
             this.label26.TabIndex = 4;
             this.label26.Text = "Tarjetas";
             // 
-            // txtTotalVehiculoPartePago
-            // 
-            this.txtTotalVehiculoPartePago.BackColor = System.Drawing.Color.LightGreen;
-            this.txtTotalVehiculoPartePago.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.txtTotalVehiculoPartePago.Location = new System.Drawing.Point(439, 39);
-            this.txtTotalVehiculoPartePago.Name = "txtTotalVehiculoPartePago";
-            this.txtTotalVehiculoPartePago.ReadOnly = true;
-            this.txtTotalVehiculoPartePago.Size = new System.Drawing.Size(100, 23);
-            this.txtTotalVehiculoPartePago.TabIndex = 3;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(436, 19);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(78, 17);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "Vehículos";
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -3186,7 +3162,7 @@
             // 
             this.txtTotalPrenda.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalPrenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.txtTotalPrenda.Location = new System.Drawing.Point(347, 612);
+            this.txtTotalPrenda.Location = new System.Drawing.Point(347, 634);
             this.txtTotalPrenda.Name = "txtTotalPrenda";
             this.txtTotalPrenda.ReadOnly = true;
             this.txtTotalPrenda.Size = new System.Drawing.Size(100, 23);
@@ -3197,7 +3173,7 @@
             // 
             this.txtTotalDocumentos.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.txtTotalDocumentos.Location = new System.Drawing.Point(241, 612);
+            this.txtTotalDocumentos.Location = new System.Drawing.Point(241, 634);
             this.txtTotalDocumentos.Name = "txtTotalDocumentos";
             this.txtTotalDocumentos.ReadOnly = true;
             this.txtTotalDocumentos.Size = new System.Drawing.Size(100, 23);
@@ -3207,7 +3183,7 @@
             // btnGrabar
             // 
             this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(615, 612);
+            this.btnGrabar.Location = new System.Drawing.Point(611, 634);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(131, 36);
             this.btnGrabar.TabIndex = 4;
@@ -3218,7 +3194,7 @@
             // btnAnular
             // 
             this.btnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.Location = new System.Drawing.Point(490, 612);
+            this.btnAnular.Location = new System.Drawing.Point(490, 634);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(119, 36);
             this.btnAnular.TabIndex = 5;
@@ -3230,7 +3206,7 @@
             // btnGrabarPreVenta
             // 
             this.btnGrabarPreVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabarPreVenta.Location = new System.Drawing.Point(752, 612);
+            this.btnGrabarPreVenta.Location = new System.Drawing.Point(752, 634);
             this.btnGrabarPreVenta.Name = "btnGrabarPreVenta";
             this.btnGrabarPreVenta.Size = new System.Drawing.Size(131, 36);
             this.btnGrabarPreVenta.TabIndex = 6;
@@ -3238,12 +3214,59 @@
             this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
             this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
+            // GrillaCliente
+            // 
+            this.GrillaCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaCliente.Location = new System.Drawing.Point(17, 153);
+            this.GrillaCliente.Name = "GrillaCliente";
+            this.GrillaCliente.ReadOnly = true;
+            this.GrillaCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GrillaCliente.Size = new System.Drawing.Size(771, 66);
+            this.GrillaCliente.TabIndex = 79;
+            // 
+            // button7
+            // 
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(794, 190);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(40, 29);
+            this.button7.TabIndex = 81;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarCliente
+            // 
+            this.btnAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCliente.Image")));
+            this.btnAgregarCliente.Location = new System.Drawing.Point(794, 153);
+            this.btnAgregarCliente.Name = "btnAgregarCliente";
+            this.btnAgregarCliente.Size = new System.Drawing.Size(40, 29);
+            this.btnAgregarCliente.TabIndex = 80;
+            this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(248, 27);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(47, 16);
+            this.label31.TabIndex = 63;
+            this.label31.Text = "Banco";
+            // 
+            // cmbBancoTarjeta
+            // 
+            this.cmbBancoTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBancoTarjeta.FormattingEnabled = true;
+            this.cmbBancoTarjeta.Location = new System.Drawing.Point(303, 21);
+            this.cmbBancoTarjeta.Name = "cmbBancoTarjeta";
+            this.cmbBancoTarjeta.Size = new System.Drawing.Size(108, 24);
+            this.cmbBancoTarjeta.TabIndex = 64;
+            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(888, 647);
+            this.ClientSize = new System.Drawing.Size(888, 669);
             this.Controls.Add(this.btnGrabarPreVenta);
             this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.btnGrabar);
@@ -3265,7 +3288,6 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFotoCliente)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGastosGenerales)).EndInit();
@@ -3285,11 +3307,17 @@
             this.tabPage18.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage17.ResumeLayout(false);
+            this.tabPage17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).EndInit();
             this.tabPage16.ResumeLayout(false);
             this.tabPage16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaBancoCredito)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaCobranza)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
@@ -3303,17 +3331,12 @@
             this.tabPage19.ResumeLayout(false);
             this.tabPage19.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPapeles)).EndInit();
-            this.tabPage9.ResumeLayout(false);
-            this.tabPage9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaCobranza)).EndInit();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).EndInit();
-            this.tabPage17.ResumeLayout(false);
-            this.tabPage17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).EndInit();
             this.groupBox55.ResumeLayout(false);
             this.groupBox55.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3560,9 +3583,6 @@
         private System.Windows.Forms.Button btnNuevoPapel;
         private System.Windows.Forms.DataGridView GrillaPapeles;
         private System.Windows.Forms.Button BtnVerFoto;
-        private System.Windows.Forms.PictureBox imgFotoCliente;
-        private System.Windows.Forms.Button btnSubirFotoCliente;
-        private System.Windows.Forms.TextBox txtRutaImagenCliente;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txtRutaAuto;
         private System.Windows.Forms.Button btnBuscarAuto;
@@ -3602,5 +3622,10 @@
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.TextBox txtCuotaTarjeta;
         private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.DataGridView GrillaCliente;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnAgregarCliente;
+        private System.Windows.Forms.ComboBox cmbBancoTarjeta;
+        private System.Windows.Forms.Label label31;
     }
 }
