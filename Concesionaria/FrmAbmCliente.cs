@@ -25,6 +25,7 @@ namespace Concesionaria
                 cmb_CodTipoDoc.SelectedIndex = 1;
            // cmb_CodTipoDoc.Enabled = false;  
             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
+            fun.LlenarCombo(cmb_CodCategoriaIva, "CategoriaIva", "Nombre", "Codigo");
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -65,7 +66,7 @@ namespace Concesionaria
         private void FrmAbmCliente_Load(object sender, EventArgs e)
         {
             Botonera(1);
-            Grupo.Enabled = true;
+            Grupo.Enabled = false;
         }
 
         private void Botonera(int Jugada)
@@ -161,6 +162,13 @@ namespace Concesionaria
                             CargarCiudadxBarrio(CodBarrio);
                         }
 
+                        if (tbCLi.Rows[0]["FechaNacimiento"].ToString() != "")
+                        {
+                            DateTime Fecha = Convert.ToDateTime(tbCLi.Rows[0]["FechaNacimiento"].ToString());
+                            txtFechaNacimiento.Text = Fecha.ToShortDateString();
+                        }
+
+
                     }
                     return;
                 }
@@ -236,10 +244,25 @@ namespace Concesionaria
                 //se usa por las dudas ingreso ya exista el deni
                 //y no grabe repetido el documento
                 UbicaCliente();
-                  if (txtCodCLiente.Text =="")
-                      fun.GuardarNuevoGenerico(this, "Cliente");
-                  else
-                      fun.ModificarGenerico(this, "Cliente", "CodCliente", txtCodCLiente.Text);
+                if (txtCodCLiente.Text =="")
+                {
+                    fun.GuardarNuevoGenerico(this, "Cliente");
+                    cCliente cli = new cCliente();
+                    int codigo = cli.GetMaxCliente();
+                    cFunciones fu = new cFunciones();
+                    if (fu.ValidarFecha (txtFechaNacimiento.Text))
+                    {
+                        cli.ActualizarFecha(codigo, txtFechaNacimiento.Text);
+                    }
+                }
+                      
+                else
+                {
+                    cCliente cli = new cCliente();
+                    fun.ModificarGenerico(this, "Cliente", "CodCliente", txtCodCLiente.Text);
+                    cli.ActualizarFecha(Convert.ToInt32(txtCodCLiente.Text), txtFechaNacimiento.Text);
+                }
+                      
                   MessageBox.Show("Datos grabados Correctamente", Clases.cMensaje.Mensaje());
                   Botonera(1);
                   fun.LimpiarGenerico(this);

@@ -404,5 +404,13 @@ namespace Concesionaria.Clases
 
         }
 
+        public void ActualizarFecha (int CodCliente, string Fecha)
+        {
+            string sql = "update cliente set ";
+            sql = sql + " FechaNacimiento =" + "'" + Fecha + "'";
+            sql = sql + " where CodCliente =" + CodCliente.ToString();
+            cDb.ExecutarNonQuery(sql);
+        }
+
     }
 }

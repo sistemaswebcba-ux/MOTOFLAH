@@ -177,7 +177,7 @@ namespace Concesionaria
         { 
             Clases.cFunciones fun = new Clases.cFunciones();
             Clases.cStockAuto stock = new Clases.cStockAuto();
-            DataTable trdo = stock.GetStockDetalladosVigente("", null);
+            DataTable trdo = stock.GetStockDetalladosVigente("", null,null);
             double Total = fun.TotalizarColumnaCondicion(trdo, "Costo", "Concesion", "0");
             txtVehículo.Text = Total.ToString();
             if (txtVehículo.Text != "")

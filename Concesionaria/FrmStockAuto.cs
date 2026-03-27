@@ -33,7 +33,7 @@ namespace Concesionaria
             double Total = 0;
             Clases.cFunciones fun = new Clases.cFunciones();
             Clases.cStockAuto stock = new Clases.cStockAuto();
-            DataTable trdo = stock.GetStockDetalladosVigente(Patente,CodMarca);
+            DataTable trdo = stock.GetStockDetalladosVigente(Patente,CodMarca,null);
             trdo = fun.TablaaMiles(trdo, "Costo");
             Total = fun.TotalizarColumna(trdo, "Costo");
             txtTotalVehiculos.Text = trdo.Rows.Count.ToString();
@@ -66,20 +66,32 @@ namespace Concesionaria
             Clases.cFunciones fun = new Clases.cFunciones();
             string Patente = txtPatente.Text;
             Int32? CodMarca = null;
+            Int32? CodModelo = null;
+            string Chasis = "";
+            string Certificado = "";
             if (cmbMarca.SelectedIndex > 0)
                 CodMarca = Convert.ToInt32(cmbMarca.SelectedValue);
+            if (cmbModelo.SelectedIndex > 0)
+                CodModelo = Convert.ToInt32(cmbModelo.SelectedValue);
+            if (txtChasis.Text != "")
+                Chasis = txtChasis.Text;
+            if (txtCertificado.Text != "")
+                Certificado = txtCertificado.Text;
+            //GetStockDetalladoMotoFlash
             Clases.cStockAuto stock = new Clases.cStockAuto();
-            DataTable trdo = stock.GetStockDetalladosVigente(Patente, CodMarca);
+            // DataTable trdo = stock.GetStockDetalladosVigente(Patente, CodMarca, CodModelo);
+            DataTable trdo = stock.GetStockDetalladoMotoFlash(Patente, CodMarca, CodModelo, Chasis, Certificado);
             txtTotalVehiculos.Text = trdo.Rows.Count.ToString();
-            trdo = fun.TablaaMiles(trdo, "Costo");
-            trdo = fun.TablaaMiles(trdo, "PrecioVenta");
+          //  trdo = fun.TablaaMiles(trdo, "Costo");
+          //  trdo = fun.TablaaMiles(trdo, "PrecioVenta");
             Grilla.DataSource = trdo;
+            /*
             Grilla.Columns[0].Visible = false;
             Grilla.Columns[5].Visible = false;
             Grilla.Columns[10].Visible = false;
             Grilla.Columns[7].HeaderText = "Concesión";
             Grilla.Columns[9].HeaderText = "Precio Venta";
-            //Grilla.Columns[7].Visible = false; 
+            
             Grilla.Columns[2].Width = 170;
             Grilla.Columns[3].Width = 270;
             Grilla.Columns[4].Width = 100;
@@ -100,6 +112,10 @@ namespace Concesionaria
                 txtConcesion.Text = fun.SepararDecimales(txtConcesion.Text);
                 txtConcesion.Text = fun.FormatoEnteroMiles(txtConcesion.Text);
             }
+            */
+
+            string col = "0;8;15;15;12;15;12;13;10";
+            fun.AnchoColumnas(Grilla, col);
         }
 
         private void PintarFormulario()
@@ -296,6 +312,18 @@ namespace Concesionaria
                 Combustible = trdo.Rows[0]["Combustible"].ToString();
             }
             return Combustible;
+        }
+
+        private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbMarca.SelectedIndex>0)
+            {
+                int CodMarca = Convert.ToInt32(cmbMarca.SelectedValue);
+                cModelo modelo = new cModelo();
+                DataTable trdo = modelo.GetModelosxMarca(CodMarca);
+                cFunciones fun = new cFunciones();
+                fun.LlenarComboDatatable(cmbModelo, trdo, "nombre", "CodModelo");
+            }
         }
     }
 }

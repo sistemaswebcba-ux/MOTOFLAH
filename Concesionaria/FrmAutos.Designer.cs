@@ -213,7 +213,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(165, 28);
+            this.label7.Location = new System.Drawing.Point(147, 28);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 8;
@@ -235,7 +235,7 @@
             this.cmbDocumento.FormattingEnabled = true;
             this.cmbDocumento.Location = new System.Drawing.Point(85, 22);
             this.cmbDocumento.Name = "cmbDocumento";
-            this.cmbDocumento.Size = new System.Drawing.Size(74, 24);
+            this.cmbDocumento.Size = new System.Drawing.Size(60, 24);
             this.cmbDocumento.TabIndex = 12;
             // 
             // txtApellido
@@ -313,7 +313,7 @@
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Image = global::Concesionaria.Properties.Resources.carpeta;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(746, 10);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(743, 13);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(40, 27);
             this.btnBuscarCliente.TabIndex = 77;
@@ -538,9 +538,9 @@
             // 
             // txtNroDoc
             // 
-            this.txtNroDoc.Location = new System.Drawing.Point(220, 21);
+            this.txtNroDoc.Location = new System.Drawing.Point(212, 23);
             this.txtNroDoc.Name = "txtNroDoc";
-            this.txtNroDoc.Size = new System.Drawing.Size(167, 22);
+            this.txtNroDoc.Size = new System.Drawing.Size(178, 22);
             this.txtNroDoc.TabIndex = 12;
             this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
             this.txtNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDoc_KeyPress);

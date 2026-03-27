@@ -50,7 +50,7 @@ namespace Concesionaria.Clases
 
         }
 
-        public DataTable GetStockDetalladosVigente(string Patente,Int32? CodMarca)
+        public DataTable GetStockDetalladosVigente(string Patente,Int32? CodMarca, Int32? CodModelo)
         {
             string sql = "";
             sql = "select sa.CodStock,a.Patente";
@@ -81,6 +81,8 @@ namespace Concesionaria.Clases
                 sql = sql + " and a.Patente like" + "'%" + Patente + "%'";
             if (CodMarca != null)
                 sql = sql + " and a.CodMarca =" + CodMarca.ToString();
+            if (CodModelo != null) 
+                sql = sql + " and a.CodModelo =" + CodModelo.ToString();
             sql = sql + " order by m.Nombre,a.Anio desc";
             return cDb.ExecuteDataTable(sql);
         }
@@ -248,6 +250,58 @@ namespace Concesionaria.Clases
                 sql = sql + " and a.CodMarca =" + CodMarca.ToString();
             if (Descripcion != null)
                 sql = sql + " and a.Descripcion like " + "'%" + Descripcion + "%'";
+            sql = sql + " order by m.Nombre,a.Anio desc";
+            return cDb.ExecuteDataTable(sql);
+        }
+
+        public DataTable GetStockDetalladoMotoFlash(string Patente, Int32? CodMarca, Int32? CodModelo, string Chasis, string Certificado)
+        {
+            string sql = "";
+            sql = "select sa.CodStock,a.Patente";
+            sql = sql + ",m.Nombre as Marca";
+            sql = sql + ",a.Descripcion as Modelo ";
+            sql = sql + ",a.Color ";
+            sql = sql + ",a.Chasis ";
+            sql = sql + ",a.Motor ";
+            sql = sql + ",a.Certificado ";
+            sql = sql + ",sa.FechaAlta as Fecha";
+           
+          //  sql = sql + ", ('') as Cliente";
+            //sql = sql + ",Importe as Costo";
+          //  sql = sql + ",(Importe + (select isnull(sum(Importe),0) from Costo cos where ";
+          //  sql = sql + " cos.CodStock = sa.CodStock ) ";
+          //  sql = sql + " + (select isnull(sum(Importe),0) from Gasto gas where gas.CodStock = sa.CodStock)";
+            //sql = sql + " + (select isnull(sum(Importe),0) from GastosRecepcionxAuto gra where gra.CodStock = sa.CodStock)";
+         //   sql = sql + " - (select isnull(sum(dif.Importe),0) from gastospagar gap, DiferenciaTransferencia dif";
+         //   sql = sql + " where gap.CodGasto=dif.CodGasto  and gap.CodStock = sa.CodStock)";
+         //   sql = sql + ") as Costo";
+         //   sql = sql + ",Concesion";
+         //   sql = sql + ",(select suc.Nombre from sucursal suc where suc.CodSucursal=a.CodSucursal) as Ubicacion";
+         //   sql = sql + ",sa.PrecioVenta";
+         //   sql = sql + ",(select suc.Nombre from sucursal suc where suc.CodSucursal=a.CodSucursal) as Ubicacion";
+
+            sql = sql + " from auto a, StockAuto sa,marca m";
+            sql = sql + " where a.Codauto =sa.CodAuto ";
+            // sql = sql + " and sa.CodCliente = cli.CodCliente";
+            sql = sql + " and a.CodMarca = m.CodMarca";
+            sql = sql + " and sa.FechaBaja is null ";
+            if (Patente != "")
+                sql = sql + " and a.Patente like" + "'%" + Patente + "%'";
+            if (CodMarca != null)
+                sql = sql + " and a.CodMarca =" + CodMarca.ToString();
+            if (CodModelo != null)
+                sql = sql + " and a.CodModelo =" + CodModelo.ToString();
+
+            if (Chasis !="")
+            {
+                sql = sql + " and a.Chasis like " + "'%" + Chasis + "%'";
+            }
+
+            if (Certificado != "")
+            {
+                sql = sql + " and a.Certificado like " + "'%" + Certificado + "%'";
+            }
+
             sql = sql + " order by m.Nombre,a.Anio desc";
             return cDb.ExecuteDataTable(sql);
         }

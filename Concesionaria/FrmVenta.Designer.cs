@@ -81,6 +81,9 @@
             this.lblPatente = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btnAgregarCliente = new System.Windows.Forms.Button();
+            this.GrillaCliente = new System.Windows.Forms.DataGridView();
             this.label84 = new System.Windows.Forms.Label();
             this.CmbCategoriaIva = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -173,6 +176,8 @@
             this.txtEfectivo = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.cmbBancoTarjeta = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.label88 = new System.Windows.Forms.Label();
             this.txtCuotaTarjeta = new System.Windows.Forms.TextBox();
             this.label87 = new System.Windows.Forms.Label();
@@ -307,16 +312,12 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
-            this.GrillaCliente = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.btnAgregarCliente = new System.Windows.Forms.Button();
-            this.label31 = new System.Windows.Forms.Label();
-            this.cmbBancoTarjeta = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGastosGenerales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
@@ -350,7 +351,6 @@
             this.tabPage14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).BeginInit();
             this.groupBox55.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -931,6 +931,35 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
+            // button7
+            // 
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(794, 190);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(40, 29);
+            this.button7.TabIndex = 81;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarCliente
+            // 
+            this.btnAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCliente.Image")));
+            this.btnAgregarCliente.Location = new System.Drawing.Point(794, 153);
+            this.btnAgregarCliente.Name = "btnAgregarCliente";
+            this.btnAgregarCliente.Size = new System.Drawing.Size(40, 29);
+            this.btnAgregarCliente.TabIndex = 80;
+            this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
+            // 
+            // GrillaCliente
+            // 
+            this.GrillaCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaCliente.Location = new System.Drawing.Point(17, 153);
+            this.GrillaCliente.Name = "GrillaCliente";
+            this.GrillaCliente.ReadOnly = true;
+            this.GrillaCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GrillaCliente.Size = new System.Drawing.Size(771, 66);
+            this.GrillaCliente.TabIndex = 79;
+            // 
             // label84
             // 
             this.label84.AutoSize = true;
@@ -1189,14 +1218,14 @@
             this.cmbDocumento.FormattingEnabled = true;
             this.cmbDocumento.Location = new System.Drawing.Point(121, 13);
             this.cmbDocumento.Name = "cmbDocumento";
-            this.cmbDocumento.Size = new System.Drawing.Size(83, 24);
+            this.cmbDocumento.Size = new System.Drawing.Size(60, 24);
             this.cmbDocumento.TabIndex = 12;
             // 
             // txtNroDoc
             // 
-            this.txtNroDoc.Location = new System.Drawing.Point(271, 16);
+            this.txtNroDoc.Location = new System.Drawing.Point(249, 16);
             this.txtNroDoc.Name = "txtNroDoc";
-            this.txtNroDoc.Size = new System.Drawing.Size(80, 22);
+            this.txtNroDoc.Size = new System.Drawing.Size(102, 22);
             this.txtNroDoc.TabIndex = 12;
             this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
             // 
@@ -1221,7 +1250,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(213, 16);
+            this.label7.Location = new System.Drawing.Point(187, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 8;
@@ -1248,7 +1277,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(863, 204);
+            this.tabPage3.Size = new System.Drawing.Size(863, 237);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Costos asociados";
             // 
@@ -1322,7 +1351,7 @@
             this.tabPage12.Controls.Add(this.btnAgregarGastoTransferencia);
             this.tabPage12.Location = new System.Drawing.Point(4, 25);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(863, 204);
+            this.tabPage12.Size = new System.Drawing.Size(863, 237);
             this.tabPage12.TabIndex = 3;
             this.tabPage12.Text = "Gastos Generales";
             this.tabPage12.Click += new System.EventHandler(this.tabPage12_Click);
@@ -1437,7 +1466,7 @@
             this.tabPage15.Controls.Add(this.btnAgregarVendedor);
             this.tabPage15.Location = new System.Drawing.Point(4, 25);
             this.tabPage15.Name = "tabPage15";
-            this.tabPage15.Size = new System.Drawing.Size(863, 204);
+            this.tabPage15.Size = new System.Drawing.Size(863, 237);
             this.tabPage15.TabIndex = 4;
             this.tabPage15.Text = "Vendedor";
             // 
@@ -1556,7 +1585,7 @@
             this.Garantías.Location = new System.Drawing.Point(4, 25);
             this.Garantías.Name = "Garantías";
             this.Garantías.Padding = new System.Windows.Forms.Padding(3);
-            this.Garantías.Size = new System.Drawing.Size(863, 204);
+            this.Garantías.Size = new System.Drawing.Size(863, 237);
             this.Garantías.TabIndex = 5;
             this.Garantías.Text = "Garantías";
             // 
@@ -1660,7 +1689,7 @@
             this.tabPage8.Controls.Add(this.btnAgregarImpuesto);
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(863, 204);
+            this.tabPage8.Size = new System.Drawing.Size(863, 237);
             this.tabPage8.TabIndex = 6;
             this.tabPage8.Text = "Impuestos";
             // 
@@ -1754,7 +1783,7 @@
             this.tabPage18.Controls.Add(this.txtObservacion);
             this.tabPage18.Location = new System.Drawing.Point(4, 25);
             this.tabPage18.Name = "tabPage18";
-            this.tabPage18.Size = new System.Drawing.Size(863, 204);
+            this.tabPage18.Size = new System.Drawing.Size(863, 237);
             this.tabPage18.TabIndex = 7;
             this.tabPage18.Text = "Observaciones";
             // 
@@ -1843,6 +1872,24 @@
             this.tabPage17.Size = new System.Drawing.Size(867, 212);
             this.tabPage17.TabIndex = 9;
             this.tabPage17.Text = "Tarjetas";
+            // 
+            // cmbBancoTarjeta
+            // 
+            this.cmbBancoTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBancoTarjeta.FormattingEnabled = true;
+            this.cmbBancoTarjeta.Location = new System.Drawing.Point(303, 21);
+            this.cmbBancoTarjeta.Name = "cmbBancoTarjeta";
+            this.cmbBancoTarjeta.Size = new System.Drawing.Size(108, 24);
+            this.cmbBancoTarjeta.TabIndex = 64;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(248, 27);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(47, 16);
+            this.label31.TabIndex = 63;
+            this.label31.Text = "Banco";
             // 
             // label88
             // 
@@ -3214,53 +3261,6 @@
             this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
             this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
-            // GrillaCliente
-            // 
-            this.GrillaCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaCliente.Location = new System.Drawing.Point(17, 153);
-            this.GrillaCliente.Name = "GrillaCliente";
-            this.GrillaCliente.ReadOnly = true;
-            this.GrillaCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaCliente.Size = new System.Drawing.Size(771, 66);
-            this.GrillaCliente.TabIndex = 79;
-            // 
-            // button7
-            // 
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(794, 190);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(40, 29);
-            this.button7.TabIndex = 81;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregarCliente
-            // 
-            this.btnAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCliente.Image")));
-            this.btnAgregarCliente.Location = new System.Drawing.Point(794, 153);
-            this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(40, 29);
-            this.btnAgregarCliente.TabIndex = 80;
-            this.btnAgregarCliente.UseVisualStyleBackColor = true;
-            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(248, 27);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(47, 16);
-            this.label31.TabIndex = 63;
-            this.label31.Text = "Banco";
-            // 
-            // cmbBancoTarjeta
-            // 
-            this.cmbBancoTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBancoTarjeta.FormattingEnabled = true;
-            this.cmbBancoTarjeta.Location = new System.Drawing.Point(303, 21);
-            this.cmbBancoTarjeta.Name = "cmbBancoTarjeta";
-            this.cmbBancoTarjeta.Size = new System.Drawing.Size(108, 24);
-            this.cmbBancoTarjeta.TabIndex = 64;
-            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3288,6 +3288,7 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGastosGenerales)).EndInit();
@@ -3336,7 +3337,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).EndInit();
             this.groupBox55.ResumeLayout(false);
             this.groupBox55.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
