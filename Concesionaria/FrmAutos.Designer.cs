@@ -41,7 +41,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.GrillaCliente = new System.Windows.Forms.DataGridView();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.label39 = new System.Windows.Forms.Label();
@@ -179,6 +178,7 @@
             this.label33 = new System.Windows.Forms.Label();
             this.txtTotalGasto = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
@@ -249,13 +249,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.CmbCategoriaIva);
             this.groupBox2.Controls.Add(this.btnBuscarCliente);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.btnAgregarCliente);
             this.groupBox2.Controls.Add(this.GrillaCliente);
-            this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.label41);
             this.groupBox2.Controls.Add(this.txtFechaNacimiento);
             this.groupBox2.Controls.Add(this.label39);
@@ -349,14 +349,6 @@
             this.GrillaCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GrillaCliente.Size = new System.Drawing.Size(746, 65);
             this.GrillaCliente.TabIndex = 58;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.Location = new System.Drawing.Point(464, 130);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(319, 22);
-            this.txtEmail.TabIndex = 39;
             // 
             // label41
             // 
@@ -1728,6 +1720,14 @@
             this.label44.TabIndex = 53;
             this.label44.Text = "Gastos";
             // 
+            // txtEmail
+            // 
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEmail.Location = new System.Drawing.Point(462, 130);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(290, 22);
+            this.txtEmail.TabIndex = 80;
+            // 
             // FrmAutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1877,7 +1877,6 @@
         private System.Windows.Forms.ComboBox cmbProvincia2;
         private System.Windows.Forms.ComboBox CmbBarrio;
         private System.Windows.Forms.Button btnNuevoBarrio;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.MaskedTextBox txtFechaNacimiento;
         private System.Windows.Forms.Label label39;
@@ -1943,5 +1942,6 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox txtCertificado;
         private System.Windows.Forms.ComboBox cMBcOLOR;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }

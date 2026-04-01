@@ -329,6 +329,10 @@ namespace Concesionaria.Clases
                 sql = sql + ",null";
 
             sql = sql + ")";
+
+         //   string sqlFormat = "set dateformat dmy;";
+         //   sqlFormat = sqlFormat + sql;
+
             SqlCommand comand = new SqlCommand();
             comand.Connection = con;
             comand.Transaction = Transaccion;
@@ -417,6 +421,9 @@ namespace Concesionaria.Clases
                 sql = sql + ",CodColor =" + CodColor.ToString();
 
             sql = sql + " where patente =" + "'" + Patente + "'";
+
+         //   string sqlFormat = "set dateformat dmy;";
+         //   sqlFormat = sqlFormat + sql;
 
             SqlCommand comand = new SqlCommand();
             comand.Connection = con;

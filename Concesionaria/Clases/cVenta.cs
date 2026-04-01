@@ -76,8 +76,8 @@ namespace Concesionaria.Clases
             sql = sql + " and a.CodAuto = sa.CodAuto";
             //AGREGO ESTA LINEA PARA NO DULICR EL VEH
             sql = sql + " and v.CodStock = sa.CodStock";
-            sql = sql + " and v.Fecha >=" + "'" + FechaDesde +"'";
-            sql = sql + " and v.Fecha<=" + "'" + FechaHasta + "'";
+            sql = sql + " and v.Fecha >=" + "'" + FechaDesde.ToShortDateString () +"'";
+            sql = sql + " and v.Fecha<=" + "'" + FechaHasta.ToShortDateString () + "'";
             if (Patente != "")
                 sql = sql + " and a.Patente like" + "'%" + Patente + "%'";
             if (Apellido != null)

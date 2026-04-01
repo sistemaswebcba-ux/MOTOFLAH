@@ -18,7 +18,10 @@ namespace Concesionaria.Clases
 
         public static DataTable ExecuteDataTable(string sql)
         {
-            return SqlHelper.ExecuteDataset(cConexion.Cadenacon(), CommandType.Text, sql).Tables[0];  
+           // string sqlFormat = "set dateformat dmy;";
+          //  sqlFormat = sqlFormat + sql;
+            return SqlHelper.ExecuteDataset(cConexion.Cadenacon(), CommandType.Text, sql).Tables[0];
+          //  return SqlHelper.ExecuteDataset(cConexion.Cadenacon(), CommandType.Text, sqlFormat).Tables[0];
         }
 
         public static string ExecuteScalar(string sql, string Campo)

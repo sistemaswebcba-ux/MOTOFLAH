@@ -20,7 +20,17 @@ namespace Concesionaria
             dpFechaHasta.Value = fecha;
             txtTotal.BackColor = cColor.CajaTexto();
             txtCantidadVentas.BackColor = cColor.CajaTexto();
-            Buscar();
+            try
+            {
+                
+                Buscar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                
+            }
+           
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

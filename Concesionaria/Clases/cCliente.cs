@@ -242,6 +242,8 @@ namespace Concesionaria.Clases
             else
                 sql = sql + ",null";
             sql = sql + ")";
+         //   string sqlFormat = "set dateformat dmy;";
+         //   sqlFormat = sqlFormat + sql;
             SqlCommand comand = new SqlCommand();
             comand.Connection = con;
             comand.Transaction = Transaccion;
@@ -304,8 +306,11 @@ namespace Concesionaria.Clases
 
             sql = sql + ",Email =" + "'" + Email + "'";
             sql = sql + ",Observacion =" + "'" + Observacion + "'";
-
             sql = sql + " where CodCliente=" + CodCliente.ToString();
+
+          //  string sqlFormat = "set dateformat dmy;";
+         //   sqlFormat = sqlFormat + sql;
+
             SqlCommand comand = new SqlCommand();
             comand.Connection = con;
             comand.Transaction = Transaccion;

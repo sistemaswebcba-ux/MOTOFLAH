@@ -359,7 +359,7 @@ namespace Concesionaria
             {
                 string msj = "Hubo un error en el proceso " + ex.Message.ToString();
                 MessageBox.Show(msj, Clases.cMensaje.Mensaje());
-
+                MessageBox.Show(ex.Message.ToString());
                 Transaccion.Rollback();
                 con.Close();
 
@@ -2417,17 +2417,11 @@ namespace Concesionaria
             Clases.cCliente cliente = new Clases.cCliente();
             string NroDocumento = txtNroDoc.Text;
             Boolean Nuevo = true;
-            if (NroDocumento != "")
-            {
-                DataTable trdo = cliente.GetClientexNroDoc(CodTipoDoc, NroDocumento);
+          
 
-                if (trdo.Rows.Count > 0)
-                {
-                    if (trdo.Rows[0]["Nombre"].ToString() != "")
-                        Nuevo = false;
-                }
+            if (txtCodCLiente.Text != "")
+                Nuevo = false;
 
-            }
             cFunciones fun = new cFunciones();
             SqlConnection con = new SqlConnection();
             con.ConnectionString = Clases.cConexion.Cadenacon();
