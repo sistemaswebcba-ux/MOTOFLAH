@@ -41,7 +41,7 @@ namespace Concesionaria
         private void Buscar()
         {
             Clases.cFunciones fun = new Clases.cFunciones();
-            if ( dpFechaDesde.Value > dpFechaHasta.Value)
+            if (dpFechaDesde.Value > dpFechaHasta.Value)
             {
                 MessageBox.Show("La fecha desde debe ser inferior a la fecha hasta", Clases.cMensaje.Mensaje());
                 return;
@@ -54,6 +54,7 @@ namespace Concesionaria
             DateTime FechaHasta = dpFechaHasta.Value;
             DataTable trdo = objVenta.GetVentasxFecha(FechaDesde, FechaHasta, txtPatente.Text.Trim(), Apellido);
             Clases.cPreVenta objPreVenta = new Clases.cPreVenta();
+            Int32 CodVenta = 0;
 
             DataTable trdo2 = objPreVenta.GetPreVentasxFecha(FechaDesde, FechaHasta, txtPatente.Text.Trim(), Apellido);
             //le agre[g
@@ -72,10 +73,55 @@ namespace Concesionaria
                 trdo.Rows.Add(fila);
             }
 
+            //armo el nuevo data source de venta
+            string Col = "CodVenta;Fecha;Cliente;Telefono;Marca;Modelo;Color;Patente;Importe";
 
+            DataTable tbVenta = fun.CrearTabla(Col);
+            //  int CodVenta = 0;
+            string Fecha = "";
+            string Cliente = "";
+            string Telefono = "";
+            string Marca = "";
+            string Modelo = "";
+            string ColorAuto = "";
+            string Patente = "";
+            string Importe = "";
+            string Val = "";
+            for (int i = 0; i < trdo.Rows.Count; i++)
+            {
+                CodVenta = Convert.ToInt32(trdo.Rows[i]["CodVenta"].ToString());
+                Fecha = trdo.Rows[i]["Fecha"].ToString();
+                if (Fecha.Length > 10)
+                    Fecha = Fecha.Substring(0, 10);
+                Cliente = trdo.Rows[i]["Nombre"].ToString();
+                Cliente = Cliente + " " + trdo.Rows[i]["Apellido"].ToString();
+                Telefono = trdo.Rows[i]["Telefono"].ToString();
+                Marca = trdo.Rows[i]["Marca"].ToString();
+                Modelo = trdo.Rows[i]["Modelo"].ToString();
+                ColorAuto = trdo.Rows[i]["Color"].ToString();
+                Patente = trdo.Rows[i]["Patente"].ToString();
+                Importe = trdo.Rows[i]["ImporteVenta"].ToString();
+                Val = CodVenta.ToString() + ";" + Fecha;
+                Val = Val + ";" + Cliente + ";" + Telefono;
+                Val = Val + ";" + Marca + ";" + Modelo;
+                Val = Val + ";" + ColorAuto + ";" + Patente;
+                Val = Val + ";" + Importe;
+                tbVenta = fun.AgregarFilas(tbVenta, Val);
+            }
+            tbVenta = fun.TablaaMiles(tbVenta, "Importe");
 
-            Int32 Cant = trdo.Rows.Count;
+            Grilla.DataSource = tbVenta;
+            string Ancho = "0;10;20;10;15;15;10;10;10";
+            fun.AnchoColumnas(Grilla, Ancho);
+
+            Int32 Cant = tbVenta.Rows.Count;
             txtCantidadVentas.Text = Cant.ToString();
+
+            txtTotal.Text = fun.TotalizarColumna(tbVenta, "Importe").ToString();
+            txtTotal.Text = fun.FormatoEnteroMiles(txtTotal.Text);
+
+            /*
+           
             trdo = fun.TablaaMiles(trdo, "ImporteVenta");
             trdo = fun.TablaaMiles(trdo, "ImporteEfectivo");
             trdo = fun.TablaaMiles(trdo, "ImporteAutoPartePago");
@@ -87,12 +133,12 @@ namespace Concesionaria
             txtTotal.Text = fun.TotalizarColumna(trdo, "Ganancia").ToString();
             txtTotal.Text = fun.FormatoEnteroMiles(txtTotal.Text);
             Grilla.DataSource = trdo;
-            //
+            
             Clases.cVenta ven = new Clases.cVenta();
             //pinto las ventas sin saldo
             for (int k = 0; k < Grilla.Rows.Count - 1; k++)
             {
-                Int32 CodVenta = Convert.ToInt32(Grilla.Rows[k].Cells[0].Value.ToString());
+                CodVenta = Convert.ToInt32(Grilla.Rows[k].Cells[0].Value.ToString());
                 if (k < PosPintar)
                 {
                     double ImporteDocumento = 0;
@@ -132,7 +178,11 @@ namespace Concesionaria
 
                 }
             }
-            //
+            
+            */
+
+            /*
+
             Grilla.Columns[0].Visible = false;
             Grilla.Columns[2].HeaderText = "Descripción";
             Grilla.Columns[7].HeaderText = "Total";
@@ -158,6 +208,7 @@ namespace Concesionaria
                 if (k >= PosPintar)
                     Grilla.Rows[k].DefaultCellStyle.BackColor = Color.LightGray;
             }
+            */
         }
 
         private void btnAbrirVenta_Click(object sender, EventArgs e)

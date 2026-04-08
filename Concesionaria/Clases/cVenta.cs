@@ -50,10 +50,10 @@ namespace Concesionaria.Clases
             return CodVenta;
         }
 
-        public DataTable GetVentasxFecha(DateTime FechaDesde, DateTime FechaHasta,string Patente,string Apellido)
+        public DataTable GetVentasxFecha(DateTime FechaDesde, DateTime FechaHasta, string Patente, string Apellido)
         {
             string sql = "";
-            sql = "select Distinct v.CodVenta,a.Patente,a.Descripcion,sa.DescripcionAutoPartePago, c.Apellido,c.Nombre,";
+            sql = "select Distinct v.CodVenta,a.Patente,a.Descripcion,sa.DescripcionAutoPartePago, c.Apellido,c.Nombre,c.Telefono,";
             sql = sql + "v.Fecha,v.ImporteVenta,ImporteEfectivo,v.ImporteAutoPartePago,v.ImporteCredito,v.ImportePrenda";
             sql = sql + ", (select sum(Importe) from Cheque che ";
             sql = sql + "  where che.CodVenta = v.CodVenta and che.CodPrenda is null) as Cheque";
@@ -68,7 +68,10 @@ namespace Concesionaria.Clases
             sql = sql + " + (select isnull(sum(Importe),0) from DiferenciaTransferencia dif where dif.CodVenta = v.CodVenta )";
             sql = sql + " + (select isnull(sum(Diferencia),0) from Prenda Pren where Pren.CodVenta = v.CodVenta )";
             sql = sql + " - (select isnull(sum(Importe),0) from Impuesto Imp where Imp.CodVenta = v.CodVenta )";
-            sql = sql + " ) as Ganancia";
+            sql = sql + " ) as Ganancia ";
+            sql = sql + " ,(select m.nombre from marca m where m.codmarca =a.codmarca) as Marca ";
+            sql = sql + " ,(select mo.nombre from modelo mo where mo.CodModelo =a.CodModelo) as Modelo ";
+            sql = sql + " ,(select co.nombre from color co where a.CodColor =co.CodColor) as Color ";
             sql = sql + ",v.CodCliente";
             sql = sql + " from venta v,cliente c,auto a,stockauto sa";
             sql = sql + " where v.CodCliente = c.CodCliente";
@@ -76,14 +79,15 @@ namespace Concesionaria.Clases
             sql = sql + " and a.CodAuto = sa.CodAuto";
             //AGREGO ESTA LINEA PARA NO DULICR EL VEH
             sql = sql + " and v.CodStock = sa.CodStock";
-            sql = sql + " and v.Fecha >=" + "'" + FechaDesde.ToShortDateString () +"'";
-            sql = sql + " and v.Fecha<=" + "'" + FechaHasta.ToShortDateString () + "'";
+            sql = sql + " and v.Fecha >=" + "'" + FechaDesde + "'";
+            sql = sql + " and v.Fecha<=" + "'" + FechaHasta + "'";
             if (Patente != "")
                 sql = sql + " and a.Patente like" + "'%" + Patente + "%'";
             if (Apellido != null)
-                sql = sql + " and c.Apellido like" + "'%" + Apellido + "%'" ;
+                sql = sql + " and c.Apellido like" + "'%" + Apellido + "%'";
+
             sql = sql + " order by v.CodVenta Desc";
-            return cDb.ExecuteDataTable(sql);  
+            return cDb.ExecuteDataTable(sql);
         }
 
         public Double GetCostosTotalesxCodStock(Int32 CodStock)
