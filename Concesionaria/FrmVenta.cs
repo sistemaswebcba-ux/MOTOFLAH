@@ -49,9 +49,11 @@ namespace Concesionaria
             if (cmbCiudad.Items.Count > 1)
                 cmbCiudad.SelectedValue = 1;
             fun.LlenarCombo(CmbCiudad2, "Ciudad", "Nombre", "CodCiudad");
-            fun.LlenarCombo(cmbDocumento, "TipoDocumento", "Nombre", "CodTipoDoc");
-            if (cmbDocumento.Items.Count > 1)
-                cmbDocumento.SelectedIndex = 1;
+            cTipoDocumento tipodni = new cTipoDocumento();
+            tipodni.UbicaCombo(cmbDocumento);
+        //    fun.LlenarCombo(cmbDocumento, "TipoDocumento", "Nombre", "CodTipoDoc");
+        //    if (cmbDocumento.Items.Count > 1)
+        //        cmbDocumento.SelectedIndex = 1;
             fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
             fun.LlenarCombo(CmbGastosTransferencia, "CategoriaGastoTransferencia", "Descripcion", "Codigo");
             fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGastoRecepcion", "Descripcion", "Codigo");
@@ -419,7 +421,7 @@ namespace Concesionaria
            
             txtCalle.Text = "";
             txtAltura.Text = "";
-            txtEmail.Enabled = false;
+            txtEmail.Text = "";
             if (CmbCategoriaIva.SelectedIndex > 0)
                 CmbCategoriaIva.SelectedIndex = 0;
         }
@@ -5118,11 +5120,7 @@ namespace Concesionaria
                 return;
             }
 
-            if (txtApellido.Text == "")
-            {
-                Mensaje("Debe ingresar un apellido");
-                return;
-            }
+           
 
             if (txtNombre.Text == "")
             {
@@ -5192,22 +5190,10 @@ namespace Concesionaria
 
         private Boolean GuardarCliente(SqlConnection con, SqlTransaction Transaccion, Boolean Nuevo)
         {
-            /*  if (txtNroDoc.Text == "")
-              {
-                  MessageBox.Show("Debe ingresar un número de documento para continuar.", Clases.cMensaje.Mensaje());
-                  return false;
-              }
-             * */
             cFunciones fun = new cFunciones();
             if (txtNombre.Text == "")
             {
                 MessageBox.Show("Debe ingresar un nombre de un nombre para continuar.", Clases.cMensaje.Mensaje());
-                return false;
-            }
-
-            if (txtApellido.Text == "")
-            {
-                MessageBox.Show("Debe ingresar un nombre de un apellido para continuar.", Clases.cMensaje.Mensaje());
                 return false;
             }
 

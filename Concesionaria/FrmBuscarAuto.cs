@@ -45,7 +45,13 @@ namespace Concesionaria
             else
                 trdo = auto.GetAutoResumido(Patente, CodMarca, Descripcion);
             Grilla.DataSource = trdo;
-            fun.AnchoColumnas(Grilla, "0;20;40;20;10;10");
+            string ancho = "0;10;15;15;10;0;20;15;15";
+            fun.AnchoColumnas(Grilla, ancho );
+           
+            Grilla.Columns[2].HeaderText = "Marca";
+            Grilla.Columns[3].HeaderText = "Modelo";
+            Grilla.Columns[4].HeaderText = "Año";
+            
         }
 
         private void FrmBuscarAuto_Load(object sender, EventArgs e)
@@ -65,6 +71,11 @@ namespace Concesionaria
             Principal.CodigoPrincipalAbm = Grilla.CurrentRow.Cells[0].Value.ToString();
             Principal.CodStock = Convert.ToInt32(Grilla.CurrentRow.Cells[5].Value.ToString());
             this.Close();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Buscar();
         }
     }
 }

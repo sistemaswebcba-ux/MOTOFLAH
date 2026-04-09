@@ -88,7 +88,6 @@
             this.CmbCategoriaIva = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label76 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
             this.btnAgregarCiudad2 = new System.Windows.Forms.Button();
@@ -114,7 +113,6 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.cmbDocumento = new System.Windows.Forms.ComboBox();
             this.txtNroDoc = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -312,6 +310,7 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -442,7 +441,7 @@
             // label83
             // 
             this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(421, 73);
+            this.label83.Location = new System.Drawing.Point(426, 73);
             this.label83.Name = "label83";
             this.label83.Size = new System.Drawing.Size(69, 16);
             this.label83.TabIndex = 76;
@@ -460,7 +459,7 @@
             // label82
             // 
             this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(426, 22);
+            this.label82.Location = new System.Drawing.Point(423, 22);
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(64, 16);
             this.label82.TabIndex = 74;
@@ -479,15 +478,15 @@
             // 
             this.cmbTipoUtilitario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoUtilitario.FormattingEnabled = true;
-            this.cmbTipoUtilitario.Location = new System.Drawing.Point(115, 170);
+            this.cmbTipoUtilitario.Location = new System.Drawing.Point(77, 170);
             this.cmbTipoUtilitario.Name = "cmbTipoUtilitario";
-            this.cmbTipoUtilitario.Size = new System.Drawing.Size(249, 24);
+            this.cmbTipoUtilitario.Size = new System.Drawing.Size(287, 24);
             this.cmbTipoUtilitario.TabIndex = 72;
             // 
             // label81
             // 
             this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(6, 173);
+            this.label81.Location = new System.Drawing.Point(-1, 173);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(36, 16);
             this.label81.TabIndex = 71;
@@ -496,15 +495,15 @@
             // txtCertificado
             // 
             this.txtCertificado.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCertificado.Location = new System.Drawing.Point(115, 142);
+            this.txtCertificado.Location = new System.Drawing.Point(77, 142);
             this.txtCertificado.Name = "txtCertificado";
-            this.txtCertificado.Size = new System.Drawing.Size(249, 22);
+            this.txtCertificado.Size = new System.Drawing.Size(287, 22);
             this.txtCertificado.TabIndex = 70;
             // 
             // label80
             // 
             this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(6, 144);
+            this.label80.Location = new System.Drawing.Point(-1, 141);
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(72, 16);
             this.label80.TabIndex = 69;
@@ -532,15 +531,15 @@
             // 
             this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModelo.FormattingEnabled = true;
-            this.cmbModelo.Location = new System.Drawing.Point(113, 65);
+            this.cmbModelo.Location = new System.Drawing.Point(77, 65);
             this.cmbModelo.Name = "cmbModelo";
-            this.cmbModelo.Size = new System.Drawing.Size(246, 24);
+            this.cmbModelo.Size = new System.Drawing.Size(282, 24);
             this.cmbModelo.TabIndex = 66;
             // 
             // btnBuscarAuto
             // 
             this.btnBuscarAuto.Image = global::Concesionaria.Properties.Resources.carpeta;
-            this.btnBuscarAuto.Location = new System.Drawing.Point(219, 5);
+            this.btnBuscarAuto.Location = new System.Drawing.Point(183, 5);
             this.btnBuscarAuto.Name = "btnBuscarAuto";
             this.btnBuscarAuto.Size = new System.Drawing.Size(40, 33);
             this.btnBuscarAuto.TabIndex = 65;
@@ -625,23 +624,23 @@
             // txtChasis
             // 
             this.txtChasis.BackColor = System.Drawing.SystemColors.Control;
-            this.txtChasis.Location = new System.Drawing.Point(115, 118);
+            this.txtChasis.Location = new System.Drawing.Point(77, 118);
             this.txtChasis.Name = "txtChasis";
-            this.txtChasis.Size = new System.Drawing.Size(249, 22);
+            this.txtChasis.Size = new System.Drawing.Size(287, 22);
             this.txtChasis.TabIndex = 38;
             // 
             // txtMotor
             // 
             this.txtMotor.BackColor = System.Drawing.SystemColors.Control;
-            this.txtMotor.Location = new System.Drawing.Point(115, 93);
+            this.txtMotor.Location = new System.Drawing.Point(77, 93);
             this.txtMotor.Name = "txtMotor";
-            this.txtMotor.Size = new System.Drawing.Size(249, 22);
+            this.txtMotor.Size = new System.Drawing.Size(287, 22);
             this.txtMotor.TabIndex = 37;
             // 
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(6, 118);
+            this.label54.Location = new System.Drawing.Point(0, 118);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(49, 16);
             this.label54.TabIndex = 36;
@@ -650,7 +649,7 @@
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(6, 96);
+            this.label53.Location = new System.Drawing.Point(0, 96);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(42, 16);
             this.label53.TabIndex = 35;
@@ -674,7 +673,6 @@
             this.txtImporteCompra.ReadOnly = true;
             this.txtImporteCompra.Size = new System.Drawing.Size(116, 22);
             this.txtImporteCompra.TabIndex = 33;
-            this.txtImporteCompra.Visible = false;
             // 
             // lblImporteCompra
             // 
@@ -684,7 +682,6 @@
             this.lblImporteCompra.Size = new System.Drawing.Size(43, 16);
             this.lblImporteCompra.TabIndex = 32;
             this.lblImporteCompra.Text = "Costo";
-            this.lblImporteCompra.Visible = false;
             // 
             // button1
             // 
@@ -813,7 +810,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(426, 103);
+            this.label3.Location = new System.Drawing.Point(426, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 16);
             this.label3.TabIndex = 6;
@@ -831,7 +828,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 73);
+            this.label2.Location = new System.Drawing.Point(0, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 16);
             this.label2.TabIndex = 4;
@@ -841,15 +838,15 @@
             // 
             this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(113, 39);
+            this.cmbMarca.Location = new System.Drawing.Point(77, 44);
             this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(246, 24);
+            this.cmbMarca.Size = new System.Drawing.Size(282, 24);
             this.cmbMarca.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 42);
+            this.label1.Location = new System.Drawing.Point(-1, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 16);
             this.label1.TabIndex = 2;
@@ -859,7 +856,7 @@
             // 
             this.txtPatente.BackColor = System.Drawing.SystemColors.Control;
             this.txtPatente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPatente.Location = new System.Drawing.Point(113, 16);
+            this.txtPatente.Location = new System.Drawing.Point(77, 16);
             this.txtPatente.Name = "txtPatente";
             this.txtPatente.Size = new System.Drawing.Size(100, 22);
             this.txtPatente.TabIndex = 1;
@@ -868,9 +865,9 @@
             // 
             // lblPatente
             // 
-            this.lblPatente.Location = new System.Drawing.Point(6, 13);
+            this.lblPatente.Location = new System.Drawing.Point(0, 19);
             this.lblPatente.Name = "lblPatente";
-            this.lblPatente.Size = new System.Drawing.Size(80, 25);
+            this.lblPatente.Size = new System.Drawing.Size(80, 15);
             this.lblPatente.TabIndex = 0;
             this.lblPatente.Text = "Patente";
             // 
@@ -887,6 +884,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.btnAgregarCliente);
             this.groupBox1.Controls.Add(this.GrillaCliente);
@@ -894,7 +892,6 @@
             this.groupBox1.Controls.Add(this.CmbCategoriaIva);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
-            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label76);
             this.groupBox1.Controls.Add(this.label75);
             this.groupBox1.Controls.Add(this.btnAgregarCiudad2);
@@ -920,7 +917,6 @@
             this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.cmbDocumento);
             this.groupBox1.Controls.Add(this.txtNroDoc);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -998,14 +994,6 @@
             this.btnBuscarCliente.TabIndex = 76;
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.Location = new System.Drawing.Point(471, 119);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(317, 22);
-            this.txtEmail.TabIndex = 47;
             // 
             // label76
             // 
@@ -1094,16 +1082,16 @@
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(279, 90);
+            this.txtCelular.Location = new System.Drawing.Point(100, 93);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(108, 22);
+            this.txtCelular.Size = new System.Drawing.Size(287, 22);
             this.txtCelular.TabIndex = 30;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(121, 91);
+            this.txtTelefono.Location = new System.Drawing.Point(100, 67);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(83, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(287, 22);
             this.txtTelefono.TabIndex = 22;
             // 
             // txtCodCLiente
@@ -1146,7 +1134,7 @@
             // txtAltura
             // 
             this.txtAltura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAltura.Location = new System.Drawing.Point(337, 119);
+            this.txtAltura.Location = new System.Drawing.Point(338, 119);
             this.txtAltura.MaxLength = 20;
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(50, 22);
@@ -1155,7 +1143,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(285, 122);
+            this.label13.Location = new System.Drawing.Point(290, 121);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 16);
             this.label13.TabIndex = 21;
@@ -1164,7 +1152,7 @@
             // txtCalle
             // 
             this.txtCalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCalle.Location = new System.Drawing.Point(121, 119);
+            this.txtCalle.Location = new System.Drawing.Point(100, 119);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(163, 22);
             this.txtCalle.TabIndex = 17;
@@ -1172,7 +1160,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 118);
+            this.label12.Location = new System.Drawing.Point(18, 118);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 16);
             this.label12.TabIndex = 19;
@@ -1181,7 +1169,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(207, 94);
+            this.label11.Location = new System.Drawing.Point(14, 91);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 16);
             this.label11.TabIndex = 16;
@@ -1190,7 +1178,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 90);
+            this.label10.Location = new System.Drawing.Point(10, 67);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 16);
             this.label10.TabIndex = 15;
@@ -1199,24 +1187,26 @@
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(121, 41);
+            this.txtNombre.Location = new System.Drawing.Point(100, 41);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(266, 22);
+            this.txtNombre.Size = new System.Drawing.Size(287, 22);
             this.txtNombre.TabIndex = 13;
             // 
             // txtApellido
             // 
+            this.txtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApellido.Location = new System.Drawing.Point(121, 66);
+            this.txtApellido.Location = new System.Drawing.Point(-9, 125);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(266, 22);
+            this.txtApellido.Size = new System.Drawing.Size(31, 22);
             this.txtApellido.TabIndex = 14;
+            this.txtApellido.Visible = false;
             // 
             // cmbDocumento
             // 
             this.cmbDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDocumento.FormattingEnabled = true;
-            this.cmbDocumento.Location = new System.Drawing.Point(121, 13);
+            this.cmbDocumento.Location = new System.Drawing.Point(100, 15);
             this.cmbDocumento.Name = "cmbDocumento";
             this.cmbDocumento.Size = new System.Drawing.Size(60, 24);
             this.cmbDocumento.TabIndex = 12;
@@ -1228,15 +1218,6 @@
             this.txtNroDoc.Size = new System.Drawing.Size(102, 22);
             this.txtNroDoc.TabIndex = 12;
             this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 63);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 16);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Apellido";
             // 
             // label8
             // 
@@ -3261,6 +3242,13 @@
             this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
             this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(473, 119);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(311, 22);
+            this.txtEmail.TabIndex = 82;
+            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3382,7 +3370,6 @@
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.ComboBox cmbDocumento;
         private System.Windows.Forms.TextBox txtNroDoc;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -3564,7 +3551,6 @@
         private System.Windows.Forms.Label label75;
         private System.Windows.Forms.Button btnAgregarCiudad2;
         private System.Windows.Forms.ComboBox CmbCiudadCliente2;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.ComboBox CmbProvinciaAuto;
@@ -3627,5 +3613,6 @@
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.ComboBox cmbBancoTarjeta;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }

@@ -439,8 +439,11 @@ namespace Concesionaria.Clases
             sql = "select a.CodAuto,a.Patente";
             sql = sql + ",m.Nombre";
             sql = sql + ",a.Descripcion as Descripción";
-            sql = sql + ",(select aa.Nombre from anio aa where aa.CodAnio = a.CodAnio) as Modelo ";
+            sql = sql + ",a.Anio as Modelo ";
             sql = sql + ",sa.CodStOCk ";
+            sql = sql + " ,(select co.nombre from color co where a.CodColor =co.CodColor) as Color ";
+            sql = sql + ",a.Chasis,a.Motor ";
+
             sql = sql + " from auto a,marca m,stockauto sa ";
 
             sql = sql + " where a.CodMarca = m.CodMarca ";
@@ -452,6 +455,7 @@ namespace Concesionaria.Clases
                 sql = sql + " and a.CodMarca =" + CodMarca.ToString();
             if (Descripcion != "")
                 sql = sql + " and a.Descripcion like " + "'%" + Descripcion + "%'";
+            
             sql = sql + " order by m.Nombre,a.Anio desc";
             return cDb.ExecuteDataTable(sql);
         }

@@ -386,7 +386,7 @@ namespace Concesionaria.Clases
 
             string resul = b + b1;
 
-            string sql = "select codcliente,Apellido,Nombre,Telefono ";
+            string sql = "select codcliente,Apellido,Nombre,NroDocumento,Telefono ";
             sql = sql + " from Cliente ";
             switch (resul)
             {

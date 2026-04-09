@@ -54,11 +54,13 @@ namespace Concesionaria
             Clases.cFunciones fun = new Clases.cFunciones();
             fun.LlenarCombo(cmb_CodMarca, "Marca", "Nombre", "CodMarca");
             //  fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
-            if (cmbCiudad.Items.Count > 0)
-                cmbCiudad.SelectedValue = 1;
-            fun.LlenarCombo(cmbDocumento, "TipoDocumento", "Nombre", "CodTipoDoc");
-            if (cmbDocumento.Items.Count > 0)
-                cmbDocumento.SelectedIndex = 1;
+            //   if (cmbCiudad.Items.Count > 0)
+            //     cmbCiudad.SelectedValue = 1;
+            //    fun.LlenarCombo(cmbDocumento, "TipoDocumento", "Nombre", "CodTipoDoc");
+            //  if (cmbDocumento.Items.Count > 0)
+            //    cmbDocumento.SelectedIndex = 1;
+            cTipoDocumento tipoDoc = new cTipoDocumento();
+            tipoDoc.UbicaCombo(cmbDocumento);
            // cmbDocumento.Enabled = false;
             // fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
             //fun.LlenarCombo(CmbCategoriaGasto, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
@@ -826,11 +828,7 @@ namespace Concesionaria
                 return false;
             }
 
-            if (txtApellido.Text == "")
-            {
-                MessageBox.Show("Debe ingresar un nombre de un apellido para continuar.", Clases.cMensaje.Mensaje());
-                return false;
-            }
+          
 
             Int32? CodTipoDoc = null;
             if (cmbDocumento.SelectedIndex > 0)
@@ -2068,6 +2066,14 @@ namespace Concesionaria
                     DateTime FechaNac = Convert.ToDateTime(trdo.Rows[0]["FechaNacimiento"].ToString());
                     txtFechaNacimiento.Text = FechaNac.ToShortDateString();
                 }
+
+                if (trdo.Rows[0]["CodCategoriaIva"].ToString() != "")
+                {
+                    int CodCatIva = Convert.ToInt32(trdo.Rows[0]["CodCategoriaIva"].ToString());
+                    if (CmbCategoriaIva.Items.Count > 0)
+                        CmbCategoriaIva.SelectedValue = CodCatIva.ToString();
+                }
+
                 if (trdo.Rows[0]["CodBarrio"].ToString() != "")
                 {
                     Int32 CodBarrio = Convert.ToInt32(trdo.Rows[0]["CodBarrio"].ToString());
@@ -2399,12 +2405,6 @@ namespace Concesionaria
                 return;
             }
 
-            if (txtApellido.Text  == "")
-            {
-                Mensaje("Debe ingresar un apellido");
-                return;
-            }
-
             if (txtNombre.Text  == "")
             {
                 Mensaje("Debe ingresar un nombre");
@@ -2443,7 +2443,7 @@ namespace Concesionaria
                         tbCliente = fun.AgregarFilas(tbCliente, val);
                        
                         GrillaCliente.DataSource = tbCliente;
-                        fun.AnchoColumnas(GrillaCliente, "0;30;30;20;20");
+                        fun.AnchoColumnas(GrillaCliente, "0;0;40;30;30");
                         GrillaCliente.Columns[0].Visible = false;
                     }
                     Transaccion.Commit();

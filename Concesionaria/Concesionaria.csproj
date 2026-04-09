@@ -123,6 +123,7 @@
     <Compile Include="Clases\cSaldoEfectivoPagar.cs" />
     <Compile Include="Clases\cStockAuto.cs" />
     <Compile Include="Clases\cTarjeta.cs" />
+    <Compile Include="Clases\cTipoDocumento.cs" />
     <Compile Include="Clases\cUsuario.cs" />
     <Compile Include="Clases\cVendedor.cs" />
     <Compile Include="Clases\cVenta.cs" />

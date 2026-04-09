@@ -33,7 +33,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.chkStock = new System.Windows.Forms.CheckBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -50,7 +49,6 @@
             this.Grupo.Controls.Add(this.label3);
             this.Grupo.Controls.Add(this.txtPatente);
             this.Grupo.Controls.Add(this.label2);
-            this.Grupo.Controls.Add(this.flowLayoutPanel1);
             this.Grupo.Controls.Add(this.chkStock);
             this.Grupo.Controls.Add(this.btnAceptar);
             this.Grupo.Controls.Add(this.btnBuscar);
@@ -60,7 +58,7 @@
             this.Grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Grupo.Location = new System.Drawing.Point(3, 12);
             this.Grupo.Name = "Grupo";
-            this.Grupo.Size = new System.Drawing.Size(641, 361);
+            this.Grupo.Size = new System.Drawing.Size(934, 457);
             this.Grupo.TabIndex = 3;
             this.Grupo.TabStop = false;
             // 
@@ -76,9 +74,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 17);
+            this.label3.Size = new System.Drawing.Size(54, 17);
             this.label3.TabIndex = 80;
-            this.label3.Text = "Descripción";
+            this.label3.Text = "Modelo";
             // 
             // txtPatente
             // 
@@ -96,13 +94,6 @@
             this.label2.TabIndex = 46;
             this.label2.Text = "Patente";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(348, 188);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 8);
-            this.flowLayoutPanel1.TabIndex = 45;
-            // 
             // chkStock
             // 
             this.chkStock.AutoSize = true;
@@ -117,7 +108,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(543, 325);
+            this.btnAceptar.Location = new System.Drawing.Point(850, 421);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 30);
             this.btnAceptar.TabIndex = 43;
@@ -133,6 +124,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(40, 27);
             this.btnBuscar.TabIndex = 42;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // cmbMarca
             // 
@@ -155,19 +147,19 @@
             // Grilla
             // 
             this.Grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grilla.Location = new System.Drawing.Point(15, 86);
+            this.Grilla.Location = new System.Drawing.Point(15, 68);
             this.Grilla.Name = "Grilla";
             this.Grilla.ReadOnly = true;
             this.Grilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grilla.ShowEditingIcon = false;
-            this.Grilla.Size = new System.Drawing.Size(603, 228);
+            this.Grilla.Size = new System.Drawing.Size(910, 347);
             this.Grilla.TabIndex = 26;
             // 
             // FrmBuscarAuto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 380);
+            this.ClientSize = new System.Drawing.Size(940, 481);
             this.Controls.Add(this.Grupo);
             this.Name = "FrmBuscarAuto";
             this.Text = "FrmBuscarAuto";
@@ -186,7 +178,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPatente;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.CheckBox chkStock;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnBuscar;

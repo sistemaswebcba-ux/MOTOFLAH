@@ -35,6 +35,7 @@
             this.cmbDocumento = new System.Windows.Forms.ComboBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.CmbCategoriaIva = new System.Windows.Forms.ComboBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -62,7 +63,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtNroDoc = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.eventLog1 = new System.Diagnostics.EventLog();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -178,7 +178,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.txtTotalGasto = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
@@ -240,11 +239,13 @@
             // 
             // txtApellido
             // 
+            this.txtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApellido.Location = new System.Drawing.Point(85, 76);
+            this.txtApellido.Location = new System.Drawing.Point(212, 0);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(302, 22);
+            this.txtApellido.Size = new System.Drawing.Size(31, 22);
             this.txtApellido.TabIndex = 14;
+            this.txtApellido.Visible = false;
             this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             // 
             // groupBox2
@@ -279,7 +280,6 @@
             this.groupBox2.Controls.Add(this.txtApellido);
             this.groupBox2.Controls.Add(this.cmbDocumento);
             this.groupBox2.Controls.Add(this.txtNroDoc);
-            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
@@ -291,6 +291,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información del Cliente";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEmail.Location = new System.Drawing.Point(462, 130);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(290, 22);
+            this.txtEmail.TabIndex = 80;
             // 
             // label16
             // 
@@ -305,7 +313,7 @@
             // 
             this.CmbCategoriaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbCategoriaIva.FormattingEnabled = true;
-            this.CmbCategoriaIva.Location = new System.Drawing.Point(464, 21);
+            this.CmbCategoriaIva.Location = new System.Drawing.Point(462, 17);
             this.CmbCategoriaIva.Name = "CmbCategoriaIva";
             this.CmbCategoriaIva.Size = new System.Drawing.Size(131, 24);
             this.CmbCategoriaIva.TabIndex = 78;
@@ -313,7 +321,7 @@
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Image = global::Concesionaria.Properties.Resources.carpeta;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(743, 13);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(743, 18);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(40, 27);
             this.btnBuscarCliente.TabIndex = 77;
@@ -361,7 +369,7 @@
             // 
             // txtFechaNacimiento
             // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(664, 18);
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(664, 23);
             this.txtFechaNacimiento.Mask = "00/00/0000";
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(76, 22);
@@ -418,7 +426,7 @@
             // 
             this.cmbCiudad2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCiudad2.FormattingEnabled = true;
-            this.cmbCiudad2.Location = new System.Drawing.Point(464, 76);
+            this.cmbCiudad2.Location = new System.Drawing.Point(464, 75);
             this.cmbCiudad2.Name = "cmbCiudad2";
             this.cmbCiudad2.Size = new System.Drawing.Size(319, 24);
             this.cmbCiudad2.TabIndex = 33;
@@ -436,16 +444,16 @@
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(246, 104);
+            this.txtCelular.Location = new System.Drawing.Point(85, 103);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(144, 22);
+            this.txtCelular.Size = new System.Drawing.Size(302, 22);
             this.txtCelular.TabIndex = 30;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(85, 105);
+            this.txtTelefono.Location = new System.Drawing.Point(88, 77);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(118, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(302, 22);
             this.txtTelefono.TabIndex = 22;
             // 
             // txtCodCLiente
@@ -503,7 +511,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(209, 111);
+            this.label11.Location = new System.Drawing.Point(10, 106);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(28, 16);
             this.label11.TabIndex = 16;
@@ -512,7 +520,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 105);
+            this.label10.Location = new System.Drawing.Point(6, 80);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 16);
             this.label10.TabIndex = 15;
@@ -521,7 +529,7 @@
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(85, 47);
+            this.txtNombre.Location = new System.Drawing.Point(85, 51);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(302, 22);
             this.txtNombre.TabIndex = 13;
@@ -536,16 +544,6 @@
             this.txtNroDoc.TabIndex = 12;
             this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
             this.txtNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDoc_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 80);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 16);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Apellido";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // btnGrabar
             // 
@@ -1720,14 +1718,6 @@
             this.label44.TabIndex = 53;
             this.label44.Text = "Gastos";
             // 
-            // txtEmail
-            // 
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.Location = new System.Drawing.Point(462, 130);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(290, 22);
-            this.txtEmail.TabIndex = 80;
-            // 
             // FrmAutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1804,7 +1794,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtNroDoc;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtAltura;
         private System.Windows.Forms.Label label13;

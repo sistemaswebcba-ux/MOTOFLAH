@@ -35,7 +35,7 @@ namespace Concesionaria
 
             DataTable tb = cli.BuscarCliente(Nombre, Apellido);
             Grilla.DataSource = tb;
-            fun.AnchoColumnas(Grilla, "0;40;40;20");
+            fun.AnchoColumnas(Grilla, "0;0;50;30;20");
 
         }
 
