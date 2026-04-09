@@ -442,7 +442,7 @@ namespace Concesionaria.Clases
             sql = sql + ",a.Anio as Modelo ";
             sql = sql + ",sa.CodStOCk ";
             sql = sql + " ,(select co.nombre from color co where a.CodColor =co.CodColor) as Color ";
-            sql = sql + ",a.Chasis,a.Motor ";
+            sql = sql + ",a.Chasis,a.Motor ,a.Certificado ";
 
             sql = sql + " from auto a,marca m,stockauto sa ";
 

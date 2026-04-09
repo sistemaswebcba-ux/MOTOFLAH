@@ -4923,6 +4923,7 @@ namespace Concesionaria
                 txtMotor.Text = trdo.Rows[0]["Motor"].ToString();
                 txtChasis.Text = trdo.Rows[0]["Chasis"].ToString();
                 txtKms.Text = trdo.Rows[0]["Kilometros"].ToString();
+                txtAnio.Text = trdo.Rows[0]["Anio"].ToString();
                 if (txtKms.Text != "")
                 {
                     txtKms.Text = fun.FormatoEnteroMiles(txtKms.Text);

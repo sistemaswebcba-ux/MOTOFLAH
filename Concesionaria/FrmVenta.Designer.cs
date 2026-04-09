@@ -373,6 +373,8 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.label57);
+            this.tabPage1.Controls.Add(this.txtFecha);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -401,8 +403,6 @@
             this.groupBox2.Controls.Add(this.btnAbrirPreVenta);
             this.groupBox2.Controls.Add(this.txtCodPreVenta);
             this.groupBox2.Controls.Add(this.btnVerDetalleStock);
-            this.groupBox2.Controls.Add(this.txtFecha);
-            this.groupBox2.Controls.Add(this.label57);
             this.groupBox2.Controls.Add(this.txtChasis);
             this.groupBox2.Controls.Add(this.txtMotor);
             this.groupBox2.Controls.Add(this.label54);
@@ -605,7 +605,7 @@
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(774, 176);
+            this.txtFecha.Location = new System.Drawing.Point(544, 198);
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(71, 22);
@@ -615,7 +615,7 @@
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(722, 182);
+            this.label57.Location = new System.Drawing.Point(432, 201);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(46, 16);
             this.label57.TabIndex = 39;
@@ -706,7 +706,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(428, 170);
+            this.label15.Location = new System.Drawing.Point(423, 176);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(102, 16);
             this.label15.TabIndex = 29;
@@ -744,7 +744,7 @@
             // radioConcesion
             // 
             this.radioConcesion.AutoSize = true;
-            this.radioConcesion.Location = new System.Drawing.Point(662, 159);
+            this.radioConcesion.Location = new System.Drawing.Point(655, 159);
             this.radioConcesion.Name = "radioConcesion";
             this.radioConcesion.Size = new System.Drawing.Size(90, 20);
             this.radioConcesion.TabIndex = 13;
@@ -755,7 +755,7 @@
             // 
             this.radioPropio.AutoSize = true;
             this.radioPropio.Checked = true;
-            this.radioPropio.Location = new System.Drawing.Point(662, 180);
+            this.radioPropio.Location = new System.Drawing.Point(655, 180);
             this.radioPropio.Name = "radioPropio";
             this.radioPropio.Size = new System.Drawing.Size(66, 20);
             this.radioPropio.TabIndex = 12;
@@ -3271,6 +3271,7 @@
             this.Load += new System.EventHandler(this.FrmVenta_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage2.ResumeLayout(false);

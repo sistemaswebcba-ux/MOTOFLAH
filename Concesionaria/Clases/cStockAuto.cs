@@ -239,7 +239,7 @@ namespace Concesionaria.Clases
             //    sql = sql + ",sa.PrecioVenta";
             //    sql = sql + ",(select suc.Nombre from sucursal suc where suc.CodSucursal=a.CodSucursal) as Ubicacion";
             sql = sql + " ,(select co.nombre from color co where a.CodColor =co.CodColor) as Color ";
-            sql = sql + ",a.Chasis,a.Motor ";
+            sql = sql + ",a.Chasis,a.Motor,a.Certificado ";
             sql = sql + " from auto a, StockAuto sa,marca m";
             sql = sql + " where a.Codauto =sa.CodAuto ";
             // sql = sql + " and sa.CodCliente = cli.CodCliente";
