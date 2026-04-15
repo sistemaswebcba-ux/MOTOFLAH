@@ -69,6 +69,8 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnQuitarAuto = new System.Windows.Forms.Button();
+            this.btnAgregarAuto = new System.Windows.Forms.Button();
             this.cMBcOLOR = new System.Windows.Forms.ComboBox();
             this.label45 = new System.Windows.Forms.Label();
             this.txtCertificado = new System.Windows.Forms.TextBox();
@@ -178,6 +180,7 @@
             this.label33 = new System.Windows.Forms.Label();
             this.txtTotalGasto = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
+            this.GrillaAutos = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
@@ -198,6 +201,7 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaAutos)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -550,7 +554,7 @@
             this.btnGrabar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.ForeColor = System.Drawing.Color.Black;
-            this.btnGrabar.Location = new System.Drawing.Point(731, 521);
+            this.btnGrabar.Location = new System.Drawing.Point(731, 640);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(85, 37);
             this.btnGrabar.TabIndex = 20;
@@ -567,7 +571,7 @@
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(640, 521);
+            this.btnCancelar.Location = new System.Drawing.Point(632, 640);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(85, 37);
             this.btnCancelar.TabIndex = 21;
@@ -603,6 +607,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnQuitarAuto);
+            this.groupBox1.Controls.Add(this.btnAgregarAuto);
             this.groupBox1.Controls.Add(this.cMBcOLOR);
             this.groupBox1.Controls.Add(this.label45);
             this.groupBox1.Controls.Add(this.txtCertificado);
@@ -648,6 +654,26 @@
             this.groupBox1.Text = "Información del vehículo";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // btnQuitarAuto
+            // 
+            this.btnQuitarAuto.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarAuto.Image")));
+            this.btnQuitarAuto.Location = new System.Drawing.Point(758, 195);
+            this.btnQuitarAuto.Name = "btnQuitarAuto";
+            this.btnQuitarAuto.Size = new System.Drawing.Size(40, 28);
+            this.btnQuitarAuto.TabIndex = 78;
+            this.btnQuitarAuto.UseVisualStyleBackColor = true;
+            this.btnQuitarAuto.Click += new System.EventHandler(this.btnQuitarAuto_Click);
+            // 
+            // btnAgregarAuto
+            // 
+            this.btnAgregarAuto.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarAuto.Image")));
+            this.btnAgregarAuto.Location = new System.Drawing.Point(716, 198);
+            this.btnAgregarAuto.Name = "btnAgregarAuto";
+            this.btnAgregarAuto.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarAuto.TabIndex = 77;
+            this.btnAgregarAuto.UseVisualStyleBackColor = true;
+            this.btnAgregarAuto.Click += new System.EventHandler(this.btnAgregarAuto_Click);
+            // 
             // cMBcOLOR
             // 
             this.cMBcOLOR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -685,7 +711,7 @@
             // dpFecha
             // 
             this.dpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpFecha.Location = new System.Drawing.Point(712, 201);
+            this.dpFecha.Location = new System.Drawing.Point(278, 31);
             this.dpFecha.Name = "dpFecha";
             this.dpFecha.Size = new System.Drawing.Size(85, 22);
             this.dpFecha.TabIndex = 72;
@@ -766,7 +792,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(660, 202);
+            this.label22.Location = new System.Drawing.Point(226, 36);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(46, 16);
             this.label22.TabIndex = 34;
@@ -806,7 +832,7 @@
             // 
             // txtCodStock
             // 
-            this.txtCodStock.Location = new System.Drawing.Point(316, 28);
+            this.txtCodStock.Location = new System.Drawing.Point(346, 30);
             this.txtCodStock.Name = "txtCodStock";
             this.txtCodStock.Size = new System.Drawing.Size(50, 22);
             this.txtCodStock.TabIndex = 28;
@@ -835,7 +861,7 @@
             // 
             // txtCodAuto
             // 
-            this.txtCodAuto.Location = new System.Drawing.Point(249, 25);
+            this.txtCodAuto.Location = new System.Drawing.Point(408, 25);
             this.txtCodAuto.Name = "txtCodAuto";
             this.txtCodAuto.Size = new System.Drawing.Size(50, 22);
             this.txtCodAuto.TabIndex = 14;
@@ -1279,10 +1305,10 @@
             this.tabControl3.Controls.Add(this.tabPage4);
             this.tabControl3.Controls.Add(this.tabPage2);
             this.tabControl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl3.Location = new System.Drawing.Point(12, 272);
+            this.tabControl3.Location = new System.Drawing.Point(12, 388);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(823, 197);
+            this.tabControl3.Size = new System.Drawing.Size(823, 170);
             this.tabControl3.TabIndex = 23;
             // 
             // Efectivo
@@ -1293,7 +1319,7 @@
             this.Efectivo.Location = new System.Drawing.Point(4, 25);
             this.Efectivo.Name = "Efectivo";
             this.Efectivo.Padding = new System.Windows.Forms.Padding(3);
-            this.Efectivo.Size = new System.Drawing.Size(815, 168);
+            this.Efectivo.Size = new System.Drawing.Size(815, 141);
             this.Efectivo.TabIndex = 0;
             this.Efectivo.Text = "Efectivo";
             // 
@@ -1333,7 +1359,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(815, 168);
+            this.tabPage5.Size = new System.Drawing.Size(815, 141);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Vehículo";
             // 
@@ -1448,7 +1474,7 @@
             this.tabPage4.Controls.Add(this.btnNuevaBanco);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(815, 168);
+            this.tabPage4.Size = new System.Drawing.Size(815, 141);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "Cheques";
             // 
@@ -1459,7 +1485,7 @@
             this.GrillaCheques.Name = "GrillaCheques";
             this.GrillaCheques.ReadOnly = true;
             this.GrillaCheques.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaCheques.Size = new System.Drawing.Size(763, 79);
+            this.GrillaCheques.Size = new System.Drawing.Size(763, 50);
             this.GrillaCheques.TabIndex = 57;
             // 
             // CmbBanco
@@ -1574,7 +1600,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(815, 168);
+            this.tabPage2.Size = new System.Drawing.Size(815, 141);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Efectivos a pagar";
             // 
@@ -1602,7 +1628,7 @@
             // 
             this.txtTotalEfectivo.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalEfectivo.Location = new System.Drawing.Point(16, 492);
+            this.txtTotalEfectivo.Location = new System.Drawing.Point(17, 611);
             this.txtTotalEfectivo.Name = "txtTotalEfectivo";
             this.txtTotalEfectivo.ReadOnly = true;
             this.txtTotalEfectivo.Size = new System.Drawing.Size(122, 23);
@@ -1612,7 +1638,7 @@
             // 
             this.txtTotal.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(697, 492);
+            this.txtTotal.Location = new System.Drawing.Point(698, 611);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(131, 23);
@@ -1622,7 +1648,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(694, 472);
+            this.label24.Location = new System.Drawing.Point(698, 580);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(40, 17);
             this.label24.TabIndex = 44;
@@ -1632,7 +1658,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(13, 472);
+            this.label25.Location = new System.Drawing.Point(17, 580);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(58, 17);
             this.label25.TabIndex = 45;
@@ -1642,7 +1668,7 @@
             // 
             this.txtTotalVehiculo.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalVehiculo.Location = new System.Drawing.Point(144, 492);
+            this.txtTotalVehiculo.Location = new System.Drawing.Point(145, 611);
             this.txtTotalVehiculo.Name = "txtTotalVehiculo";
             this.txtTotalVehiculo.ReadOnly = true;
             this.txtTotalVehiculo.Size = new System.Drawing.Size(131, 23);
@@ -1652,7 +1678,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(141, 472);
+            this.label29.Location = new System.Drawing.Point(145, 580);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(62, 17);
             this.label29.TabIndex = 47;
@@ -1662,7 +1688,7 @@
             // 
             this.txtTotalCheque.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalCheque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalCheque.Location = new System.Drawing.Point(281, 492);
+            this.txtTotalCheque.Location = new System.Drawing.Point(282, 611);
             this.txtTotalCheque.Name = "txtTotalCheque";
             this.txtTotalCheque.ReadOnly = true;
             this.txtTotalCheque.Size = new System.Drawing.Size(131, 23);
@@ -1672,7 +1698,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(289, 472);
+            this.label30.Location = new System.Drawing.Point(293, 580);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(64, 17);
             this.label30.TabIndex = 49;
@@ -1682,7 +1708,7 @@
             // 
             this.txtTotalEfectivosaPagar.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalEfectivosaPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalEfectivosaPagar.Location = new System.Drawing.Point(418, 492);
+            this.txtTotalEfectivosaPagar.Location = new System.Drawing.Point(419, 611);
             this.txtTotalEfectivosaPagar.Name = "txtTotalEfectivosaPagar";
             this.txtTotalEfectivosaPagar.ReadOnly = true;
             this.txtTotalEfectivosaPagar.Size = new System.Drawing.Size(131, 23);
@@ -1692,7 +1718,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(415, 472);
+            this.label33.Location = new System.Drawing.Point(419, 580);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(111, 17);
             this.label33.TabIndex = 51;
@@ -1702,7 +1728,7 @@
             // 
             this.txtTotalGasto.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalGasto.Location = new System.Drawing.Point(560, 492);
+            this.txtTotalGasto.Location = new System.Drawing.Point(561, 611);
             this.txtTotalGasto.Name = "txtTotalGasto";
             this.txtTotalGasto.ReadOnly = true;
             this.txtTotalGasto.Size = new System.Drawing.Size(131, 23);
@@ -1712,18 +1738,29 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(557, 472);
+            this.label44.Location = new System.Drawing.Point(561, 580);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(53, 17);
             this.label44.TabIndex = 53;
             this.label44.Text = "Gastos";
+            // 
+            // GrillaAutos
+            // 
+            this.GrillaAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaAutos.Location = new System.Drawing.Point(16, 272);
+            this.GrillaAutos.Name = "GrillaAutos";
+            this.GrillaAutos.ReadOnly = true;
+            this.GrillaAutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GrillaAutos.Size = new System.Drawing.Size(819, 98);
+            this.GrillaAutos.TabIndex = 58;
             // 
             // FrmAutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(840, 570);
+            this.ClientSize = new System.Drawing.Size(840, 689);
+            this.Controls.Add(this.GrillaAutos);
             this.Controls.Add(this.label44);
             this.Controls.Add(this.txtTotalGasto);
             this.Controls.Add(this.label33);
@@ -1777,6 +1814,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaAutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1932,5 +1970,8 @@
         private System.Windows.Forms.TextBox txtCertificado;
         private System.Windows.Forms.ComboBox cMBcOLOR;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.DataGridView GrillaAutos;
+        private System.Windows.Forms.Button btnQuitarAuto;
+        private System.Windows.Forms.Button btnAgregarAuto;
     }
 }

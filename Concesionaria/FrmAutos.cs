@@ -15,6 +15,7 @@ namespace Concesionaria
     {
         DataTable tbListaPapeles;
         DataTable tbCliente;
+        DataTable tbAuto;
         public FrmAutos()
         {
             InitializeComponent();
@@ -89,6 +90,8 @@ namespace Concesionaria
             tbListaPapeles.Columns.Add("FechaVencimiento");
             string ColCliente = "CodCliente;Apellido;Nombre;Nrodocumento;Telefono";
             tbCliente = fun.CrearTabla(ColCliente);
+            string ColAuto = "CodAuto;Patente;Marca;Modelo;Importe";
+            tbAuto = fun.CrearTabla(ColAuto);
         }
 
         private void GrabarAutos(SqlConnection con, SqlTransaction Transaccion)
@@ -156,10 +159,6 @@ namespace Concesionaria
             Chasis = txtChasis.Text;
             Int32? CodTipoCombustible = null;
 
-          
-            
-        
-
             if (cmbSucursal.SelectedIndex > 0)
                 CodSucursal = Convert.ToInt32(cmbSucursal.SelectedValue);
 
@@ -202,7 +201,7 @@ namespace Concesionaria
                     CodCliente = Convert.ToInt32(txtCodCLiente.Text);
                 CodCliente = GetCodClienteGrilla();
                 Clases.cStockAuto stockAuto = new Clases.cStockAuto();
-                stockAuto.InsertarStockAutoTransaccion(con, Transaccion, CodAuto, Fecha.ToShortDateString(), CodCliente, Principal.CodUsuarioLogueado, Importe);
+                stockAuto.InsertarStockAutoTransaccion(con, Transaccion, CodAuto, Fecha.ToShortDateString(), CodCliente, Principal.CodUsuarioLogueado, Importe,0);
                 Clases.cCosto costo = new Clases.cCosto();
                 CodStock = stockAuto.GetMaxCodStockxAutoTransaccion(con, Transaccion, CodAuto);
                 txtCodStock.Text = CodStock.ToString();
@@ -213,8 +212,35 @@ namespace Concesionaria
 
         }
 
+        public void GrabarStockGrilla(SqlConnection con, SqlTransaction Transaccion)
+        {
+            cFunciones fun = new cFunciones();
+            Int32 CodAuto = 0;
+            Int32 CodCliente = 0;
+            CodCliente = GetCodClienteGrilla();
+            Clases.cStockAuto stockAuto = new Clases.cStockAuto();
+            Double Importe = 0;
+            DateTime Fecha = dpFecha.Value;
+            for (int i = 0; i < tbAuto.Rows.Count ; i++)
+            {
+                if (tbAuto.Rows[i]["CodAuto"].ToString ()!="")
+                {
+                    CodAuto = Convert.ToInt32(tbAuto.Rows[i]["CodAuto"].ToString());
+                    Importe = fun.ToDouble(tbAuto.Rows[i]["Importe"].ToString());
+                    stockAuto.InsertarStockAutoTransaccion(con, Transaccion, CodAuto, Fecha.ToShortDateString(), CodCliente, Principal.CodUsuarioLogueado, Importe,0);
+                    if (i==0)
+                    {
+                        //saco el primer auto del stock
+                        txtCodStock.Text = stockAuto.GetMaxCodStockxAutoTransaccion(con, Transaccion, CodAuto).ToString();
+                        txtCodAuto.Text = CodAuto.ToString();
+                    }
+                }
+            }
+        }
+
         private void btnGrabar_Click(object sender, EventArgs e)
         {
+            /*
             if (txtCodStock.Text != "")
             {
                 MessageBox.Show("El vehículo ya esta cargado como stock", Clases.cMensaje.Mensaje());
@@ -222,6 +248,13 @@ namespace Concesionaria
                 LimpiarCliente();
                 txtCodStock.Text = "";
                 txtCodAuto.Text = "";
+                return;
+            }
+            */
+
+            if (tbAuto.Rows.Count <1)
+            {
+                Mensaje("Debe ingresar un vehiculo para continuar");
                 return;
             }
 
@@ -236,12 +269,14 @@ namespace Concesionaria
                 Mensaje("Debe ingresar un cliente para continuar");
                 return;
             }
-
+            /*
             if (cmb_CodMarca.SelectedIndex<1)
             {
                 Mensaje("Debe seleccionar una Marca");
                 return;
             }
+            */
+            /*
 
             if (CmbModelo.SelectedIndex<1)
             {
@@ -256,6 +291,7 @@ namespace Concesionaria
                 string NombreModelo = modelo.GetNombreModelo(CodModelo);
                 txtDescripcion.Text = NombreModelo;
             }
+            */
 
             Int32 Concesion = 0;
             if (radioConcesion.Checked)
@@ -321,13 +357,15 @@ namespace Concesionaria
             try
             {
                 Int32 CodCompra = 0;
-                GrabarAutos(con, Transaccion);
-
+               // GrabarAutos(con, Transaccion);
+                GrabarStockGrilla(con, Transaccion);
                 if (Concesion == 0)
                     CodCompra = GrabarCompra(con, Transaccion);
                 if (CodCompra > 0)
-                {
+                {   
                     GrabarCompraxCliente(con, Transaccion, CodCompra);
+                    cStockAuto st = new cStockAuto();
+                    st.ActualizarCodCompra(con, Transaccion, CodCompra);
                 }
                 if (Concesion == 0)
                     GrabarGastosPagar(con, Transaccion, Convert.ToInt32(txtCodAuto.Text), CodCompra);
@@ -398,6 +436,8 @@ namespace Concesionaria
             tbListaPapeles.Rows.Clear();
             tbCliente.Rows.Clear();
             GrillaCliente.DataSource = tbCliente;
+            tbAuto.Rows.Clear();
+            GrillaAutos.DataSource = tbAuto;
         }
 
         private void CargarImagen(Int32 CodAuto)
@@ -529,6 +569,10 @@ namespace Concesionaria
                             txtCodCLiente.Text = trdo2.Rows[0]["CodCliente"].ToString();
                             GetClientesxCodigo(Convert.ToInt32(txtCodCLiente.Text));
                         }
+                        MessageBox.Show("El vehiculo ya esta en stock");
+                        LimpiarAuto();
+                        txtPatente.Text = "";
+                        return;
                     }
                 }
             }
@@ -2526,6 +2570,176 @@ namespace Concesionaria
             DataTable trdo = modelo.GetModelosxMarca(CodMarca);
             cFunciones fun = new Clases.cFunciones();
             fun.LlenarComboDatatable(CmbModelo, trdo, "Nombre", "CodModelo");
+        }
+
+        private void btnAgregarAuto_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = Clases.cConexion.Cadenacon();
+            con.Open();
+            SqlTransaction Transaccion;
+            Transaccion = con.BeginTransaction();
+            try
+            {
+                AgregarAutos(con, Transaccion);
+                Transaccion.Commit();
+                con.Close();
+                CalcularTotal();
+                LimpiarAuto();
+                txtPatente.Text = "";
+            }
+            catch (Exception)
+            {
+                Transaccion.Rollback();
+                con.Close();
+            }
+        }
+
+        private void CalcularTotal()
+        {
+            Double Total = 0;
+            cFunciones fun = new cFunciones();
+            Total = fun.TotalizarColumna(tbAuto, "Importe");
+            txtTotal.Text = fun.FormatoEnteroMiles (Total.ToString());
+        }
+
+        private void AgregarAutos(SqlConnection con, SqlTransaction Transaccion)
+        {
+            string Patente = "";
+            Int32? CodMarca = null;
+            string Descripcion = "";
+            Int32? Kilometros = null;
+            Int32? CodCiudad = null;
+            int Propio = 0;
+            int Concesion = 0;
+            string Observacion = "";
+            string Anio = "";
+            Double? Importe = 0;
+            Int32 CodStock = -1;
+            Int32 CodAuto = 0;
+            string Motor = "";
+            string Chasis = "";
+            string Color = "";
+            Int32? CodTipoUtilitario = null;
+            Int32? CodSucursal = null;
+            string RutaImagen = "";
+            Int32? CodModelo = null;
+            string Certificado = "";
+            Int32? CodColor = null;
+            string Marca = "";
+
+            if (cMBcOLOR.SelectedIndex > 0)
+            {
+                CodColor = Convert.ToInt32(cMBcOLOR.SelectedValue);
+                string NombreColor = cColor.GetColorxId(Convert.ToInt32(CodColor));
+                txtColor.Text = NombreColor;
+            }
+
+            Patente = txtPatente.Text;
+            Color = txtColor.Text;
+            if (cmbCiudad.SelectedIndex > 0)
+                CodCiudad = Convert.ToInt32(cmbCiudad.SelectedValue);
+
+            Descripcion = CmbModelo.Text;
+            Anio = txtAnio.Text;
+            if (txtKilometros.Text != "")
+                Kilometros = Convert.ToInt32(txtKilometros.Text.Replace(".", ""));
+            if (cmb_CodMarca.SelectedIndex > 0)
+            {
+                CodMarca = Convert.ToInt32(cmb_CodMarca.SelectedValue);
+                Marca = cmb_CodMarca.Text;
+            }
+
+            if (radioPropio.Checked)
+            {
+                Propio = 1;
+            }
+
+            if (radioConcesion.Checked)
+            {
+                Concesion = 1;
+            }
+
+            if (txtImporte.Text != "")
+            {
+                Clases.cFunciones fun = new Clases.cFunciones();
+                Importe = fun.ToDouble(txtImporte.Text);
+            }
+
+            Motor = txtMotor.Text;
+            Chasis = txtChasis.Text;
+            Int32? CodTipoCombustible = null;
+
+            if (cmbSucursal.SelectedIndex > 0)
+                CodSucursal = Convert.ToInt32(cmbSucursal.SelectedValue);
+
+            if (cmbTipoUtilitario.SelectedIndex > 0)
+                CodTipoUtilitario = Convert.ToInt32(cmbTipoUtilitario.SelectedValue);
+            if (txtRuta.Text != "")
+                RutaImagen = txtRuta.Text;
+
+            if (CmbModelo.SelectedIndex > 0)
+                CodModelo = Convert.ToInt32(CmbModelo.SelectedValue);
+
+            Certificado = txtCertificado.Text;
+
+            Clases.cAuto auto = new Clases.cAuto();
+            Boolean Graba = true;
+            if (txtCodAuto.Text != "")
+            {
+                Graba = false;
+                CodAuto = Convert.ToInt32(txtCodAuto.Text);
+            }
+                
+            if (Graba)
+            {
+                //inserto el auto
+                auto.AgregarAutoTransaccion(con, Transaccion, Patente, CodMarca, Descripcion,
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible, CodSucursal, CodTipoUtilitario, RutaImagen, CodModelo, Certificado, CodColor);
+                CodAuto = auto.GetMaxCodAutoTransaccion(con, Transaccion);
+                txtCodAuto.Text = CodAuto.ToString();
+
+
+            }
+            else
+            {
+                auto.ModificarAutoTransaccion(con, Transaccion, Patente, CodMarca, Descripcion,
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodSucursal, CodTipoUtilitario, RutaImagen, CodModelo, Certificado, CodColor);
+            }
+
+            cFunciones func = new cFunciones();
+
+            if(func.Buscar (tbAuto,"CodAuto",CodAuto.ToString ())==true)
+            {
+                MessageBox.Show("Ya se ha ingresado el auto");
+                return;
+            }
+
+            string Val = "";
+            Val = CodAuto.ToString();
+            Val = Val + ";" + Patente + ";" + Marca + ";" + CmbModelo.Text;
+            Val = Val + ";" + txtImporte.Text;
+            tbAuto = func.AgregarFilas(tbAuto, Val);
+            GrillaAutos.DataSource = tbAuto;
+            
+
+
+        }
+
+        private void btnQuitarAuto_Click(object sender, EventArgs e)
+        {
+            if (GrillaAutos.CurrentRow ==null)
+            {
+                MessageBox.Show("Debe seleccionar un registro ");
+                return;
+            }
+
+            String codAuto = GrillaAutos.CurrentRow.Cells[0].Value.ToString();
+            cFunciones fun = new cFunciones();
+            tbAuto = fun.EliminarFila(tbAuto, "CodAuto", codAuto);
+            GrillaAutos.DataSource = tbAuto;
+            CalcularTotal();
+            LimpiarAuto();
         }
     }
 }

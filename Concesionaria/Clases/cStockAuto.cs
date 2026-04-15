@@ -115,10 +115,10 @@ namespace Concesionaria.Clases
             return cDb.ExecuteDataTable(sql);
         }
 
-        public void InsertarStockAutoTransaccion(SqlConnection con,SqlTransaction Transaccion, Int32 CodAuto, string Fecha, Int32? CodCliente, Int32 CodUsuario, Double? ImporteCompra)
+        public void InsertarStockAutoTransaccion(SqlConnection con,SqlTransaction Transaccion, Int32 CodAuto, string Fecha, Int32? CodCliente, Int32 CodUsuario, Double? ImporteCompra, int CodCompra)
         {
             string sql = "";
-            sql = "insert into StockAuto(CodAuto,FechaAlta,CodCliente,CodUsuario,ImporteCompra)";
+            sql = "insert into StockAuto(CodAuto,FechaAlta,CodCliente,CodUsuario,ImporteCompra,CodCompra)";
             sql = sql + " values(" + CodAuto.ToString();
             sql = sql + "," + "'" + Fecha + "'";
             if (CodCliente == null)
@@ -130,6 +130,7 @@ namespace Concesionaria.Clases
                 sql = sql + "," + ImporteCompra.ToString();
             else
                 sql = sql + ",null";
+            sql = sql + "," + CodCompra.ToString();
             sql = sql + ")";
             SqlCommand comand = new SqlCommand();
             comand.Connection = con;
@@ -214,7 +215,7 @@ namespace Concesionaria.Clases
             return cDb.ExecuteDataTable(sql);
         }
 
-        public DataTable GetStockResumidoVigente(string Patente, Int32? CodMarca, string Descripcion)
+        public DataTable GetStockResumidoVigente(string Patente, Int32? CodMarca, string Descripcion, string Chasis, string Certificado)
         {
             string sql = "";
             sql = "select a.CodAuto,a.Patente";
@@ -251,6 +252,10 @@ namespace Concesionaria.Clases
                 sql = sql + " and a.CodMarca =" + CodMarca.ToString();
             if (Descripcion != null)
                 sql = sql + " and a.Descripcion like " + "'%" + Descripcion + "%'";
+            if (Chasis !="")
+                sql = sql + " and a.Chasis like " + "'%" + Chasis + "%'";
+            if (Certificado != "")
+                sql = sql + " and a.Certificado like " + "'%" + Certificado + "%'";
             sql = sql + " order by m.Nombre,a.Anio desc";
             return cDb.ExecuteDataTable(sql);
         }
@@ -305,6 +310,14 @@ namespace Concesionaria.Clases
 
             sql = sql + " order by m.Nombre,a.Anio desc";
             return cDb.ExecuteDataTable(sql);
+        }
+
+
+        public void ActualizarCodCompra (SqlConnection con, SqlTransaction Transaccion, Int32 CodCompra)
+        {
+            string sql = "update StockAuto set CodCompra =" + CodCompra.ToString();
+            sql = sql + " where CodCompra =0 ";
+            cDb.EjecutarNonQueryTransaccion(con, Transaccion, sql);
         }
     }
 }

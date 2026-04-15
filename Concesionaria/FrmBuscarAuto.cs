@@ -22,6 +22,8 @@ namespace Concesionaria
             string Patente = "";
             Int32? CodMarca = null;
             string Descripcion = "";
+            string Chasis = "";
+            string Certificado = "";
             if (cmbMarca.SelectedIndex > 0)
             {
                 CodMarca = Convert.ToInt32(cmbMarca.SelectedValue);
@@ -32,20 +34,36 @@ namespace Concesionaria
                 Patente = txtPatente.Text;
             }
 
+            if (cmbModelo.SelectedIndex >0)
+            {
+                Descripcion = cmbModelo.Text;
+            }
+
+            if (txtChasis.Text !="")
+            {
+                Chasis = txtChasis.Text;
+            }
+
+            if (txtCertificado.Text !="")
+            {
+                Certificado = txtCertificado.Text;
+            }
+
+            /*
             if (txtDescripcion.Text != "")
             {
                 Descripcion = txtDescripcion.Text;
             }
-
+            */
             DataTable trdo;
             cAuto auto = new cAuto();
             cStockAuto stock = new cStockAuto();
             if (chkStock.Checked == true)
-                trdo = stock.GetStockResumidoVigente(Patente, CodMarca, Descripcion);
+                trdo = stock.GetStockResumidoVigente(Patente, CodMarca, Descripcion, Chasis, Certificado);
             else
                 trdo = auto.GetAutoResumido(Patente, CodMarca, Descripcion);
             Grilla.DataSource = trdo;
-            string ancho = "0;10;15;15;10;0;20;10;10;10";
+            string ancho = "0;10;15;15;8;0;15;12;15;10";
             fun.AnchoColumnas(Grilla, ancho );
            
             Grilla.Columns[2].HeaderText = "Marca";
@@ -76,6 +94,18 @@ namespace Concesionaria
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             Buscar();
+        }
+
+        private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbMarca.SelectedIndex > 0)
+            {
+                int CodMarca = Convert.ToInt32(cmbMarca.SelectedValue);
+                cModelo modelo = new cModelo();
+                DataTable trdo = modelo.GetModelosxMarca(CodMarca);
+                cFunciones fun = new cFunciones();
+                fun.LlenarComboDatatable(cmbModelo, trdo, "nombre", "CodModelo");
+            }
         }
     }
 }

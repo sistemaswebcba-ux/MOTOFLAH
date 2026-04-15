@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.Grupo = new System.Windows.Forms.GroupBox();
+            this.txtCertificado = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtChasis = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbModelo = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPatente = new System.Windows.Forms.TextBox();
@@ -45,6 +50,11 @@
             // 
             // Grupo
             // 
+            this.Grupo.Controls.Add(this.txtCertificado);
+            this.Grupo.Controls.Add(this.label8);
+            this.Grupo.Controls.Add(this.txtChasis);
+            this.Grupo.Controls.Add(this.label7);
+            this.Grupo.Controls.Add(this.cmbModelo);
             this.Grupo.Controls.Add(this.txtDescripcion);
             this.Grupo.Controls.Add(this.label3);
             this.Grupo.Controls.Add(this.txtPatente);
@@ -58,16 +68,58 @@
             this.Grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Grupo.Location = new System.Drawing.Point(3, 12);
             this.Grupo.Name = "Grupo";
-            this.Grupo.Size = new System.Drawing.Size(934, 457);
+            this.Grupo.Size = new System.Drawing.Size(1059, 497);
             this.Grupo.TabIndex = 3;
             this.Grupo.TabStop = false;
             // 
+            // txtCertificado
+            // 
+            this.txtCertificado.Location = new System.Drawing.Point(638, 41);
+            this.txtCertificado.Name = "txtCertificado";
+            this.txtCertificado.Size = new System.Drawing.Size(130, 23);
+            this.txtCertificado.TabIndex = 86;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(557, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 17);
+            this.label8.TabIndex = 85;
+            this.label8.Text = "Certificado";
+            // 
+            // txtChasis
+            // 
+            this.txtChasis.Location = new System.Drawing.Point(383, 42);
+            this.txtChasis.Name = "txtChasis";
+            this.txtChasis.Size = new System.Drawing.Size(167, 23);
+            this.txtChasis.TabIndex = 84;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(327, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 17);
+            this.label7.TabIndex = 83;
+            this.label7.Text = "Chasis";
+            // 
+            // cmbModelo
+            // 
+            this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbModelo.FormattingEnabled = true;
+            this.cmbModelo.Location = new System.Drawing.Point(100, 41);
+            this.cmbModelo.Name = "cmbModelo";
+            this.cmbModelo.Size = new System.Drawing.Size(214, 24);
+            this.cmbModelo.TabIndex = 82;
+            // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(100, 39);
+            this.txtDescripcion.Location = new System.Drawing.Point(730, 6);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(214, 23);
+            this.txtDescripcion.Size = new System.Drawing.Size(61, 23);
             this.txtDescripcion.TabIndex = 81;
+            this.txtDescripcion.Visible = false;
             // 
             // label3
             // 
@@ -99,7 +151,7 @@
             this.chkStock.AutoSize = true;
             this.chkStock.Checked = true;
             this.chkStock.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkStock.Location = new System.Drawing.Point(543, 14);
+            this.chkStock.Location = new System.Drawing.Point(638, 12);
             this.chkStock.Name = "chkStock";
             this.chkStock.Size = new System.Drawing.Size(62, 21);
             this.chkStock.TabIndex = 44;
@@ -108,7 +160,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(850, 421);
+            this.btnAceptar.Location = new System.Drawing.Point(967, 458);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 30);
             this.btnAceptar.TabIndex = 43;
@@ -119,7 +171,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = global::Concesionaria.Properties.Resources.zoom2;
-            this.btnBuscar.Location = new System.Drawing.Point(490, 10);
+            this.btnBuscar.Location = new System.Drawing.Point(774, 37);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(40, 27);
             this.btnBuscar.TabIndex = 42;
@@ -134,6 +186,7 @@
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(214, 24);
             this.cmbMarca.TabIndex = 41;
+            this.cmbMarca.SelectedIndexChanged += new System.EventHandler(this.cmbMarca_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -152,14 +205,14 @@
             this.Grilla.ReadOnly = true;
             this.Grilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grilla.ShowEditingIcon = false;
-            this.Grilla.Size = new System.Drawing.Size(910, 347);
+            this.Grilla.Size = new System.Drawing.Size(1027, 371);
             this.Grilla.TabIndex = 26;
             // 
             // FrmBuscarAuto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 481);
+            this.ClientSize = new System.Drawing.Size(1062, 512);
             this.Controls.Add(this.Grupo);
             this.Name = "FrmBuscarAuto";
             this.Text = "FrmBuscarAuto";
@@ -184,5 +237,10 @@
         private System.Windows.Forms.ComboBox cmbMarca;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView Grilla;
+        private System.Windows.Forms.ComboBox cmbModelo;
+        private System.Windows.Forms.TextBox txtChasis;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtCertificado;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -477,22 +477,24 @@ namespace Concesionaria
                 {
                     cmbMarca.SelectedValue = trdo.Rows[0]["CodMarca"].ToString();
                 }
-
+                /*
                 if (trdo.Rows[0]["CodAnio"].ToString() != "")
                 {
                     // cmbAnio.SelectedValue = trdo.Rows[0]["CodAnio"].ToString();
                 }
-
+                */
+                /*
                 if (trdo.Rows[0]["CodTipoUtilitario"].ToString() != "")
                 {
                     //  cmbTipoUtilitario.SelectedValue = trdo.Rows[0]["CodTipoUtilitario"].ToString();
                 }
-
+                */
+                /*
                 if (trdo.Rows[0]["CodColor"].ToString() != "")
                 {
                     // cmbColor.SelectedValue = trdo.Rows[0]["CodColor"].ToString();
                 }
-
+                */
                 if (trdo.Rows[0]["CodCiudad"].ToString() != "")
                 {
                     Int32 CodCiiudad = Convert.ToInt32(trdo.Rows[0]["CodCiudad"].ToString());
