@@ -2721,9 +2721,14 @@ namespace Concesionaria
             Val = Val + ";" + txtImporte.Text;
             tbAuto = func.AgregarFilas(tbAuto, Val);
             GrillaAutos.DataSource = tbAuto;
-            
+            AnchoGrillaAuto();
+        }
 
-
+        private void AnchoGrillaAuto()
+        {
+            cFunciones func = new Clases.cFunciones();
+            string Ancho = "0;20;30;30;20";
+            func.AnchoColumnas(GrillaAutos, Ancho);
         }
 
         private void btnQuitarAuto_Click(object sender, EventArgs e)
@@ -2740,6 +2745,7 @@ namespace Concesionaria
             GrillaAutos.DataSource = tbAuto;
             CalcularTotal();
             LimpiarAuto();
+            AnchoGrillaAuto();
         }
     }
 }
