@@ -319,5 +319,18 @@ namespace Concesionaria.Clases
             sql = sql + " where CodCompra =0 ";
             cDb.EjecutarNonQueryTransaccion(con, Transaccion, sql);
         }
+
+        public Int32 GetMaxCodStockxAutoVigente(Int32 CodAuto)
+        {
+            Int32 CodStock = 0;
+            string sql = "select max(CodStock) as CodStock from StockAuto";
+            sql = sql + " where CodAuto=" + CodAuto.ToString();
+            sql = sql + " and FechaBaja is null";
+            DataTable trdo = cDb.ExecuteDataTable(sql);
+            if (trdo.Rows.Count > 0)
+                if (trdo.Rows[0]["CodStock"].ToString() != "")
+                    CodStock = Convert.ToInt32(trdo.Rows[0]["CodStock"].ToString());
+            return CodStock;
+        }
     }
 }

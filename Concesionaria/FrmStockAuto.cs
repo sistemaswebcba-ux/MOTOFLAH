@@ -114,7 +114,7 @@ namespace Concesionaria
             }
             */
 
-            string col = "0;7;10;15;12;17;16;13;10";
+            string col = "0;7;10;15;8;17;18;17;8";
             fun.AnchoColumnas(Grilla, col);
         }
 

@@ -63,7 +63,7 @@ namespace Concesionaria
             else
                 trdo = auto.GetAutoResumido(Patente, CodMarca, Descripcion);
             Grilla.DataSource = trdo;
-            string ancho = "0;10;15;15;8;0;15;12;15;10";
+            string ancho = "0;8;10;15;6;0;10;17;17;17";
             fun.AnchoColumnas(Grilla, ancho );
            
             Grilla.Columns[2].HeaderText = "Marca";

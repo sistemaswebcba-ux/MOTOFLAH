@@ -209,12 +209,12 @@ namespace Concesionaria.Clases
         public void InsertarClienteTransaccion(SqlConnection con, SqlTransaction Transaccion, Int32? CodTipoDoc, string NroDocumento,
             string Nombre, string Apellido, string Telefono, string Celular,
             string Calle, string Altura, Int32? CodBarrio,
-            DateTime? FechaNacimiento,string Email,string Observacion , int? CodCategoriaIva
+            DateTime? FechaNacimiento,string Email,string Observacion , int? CodCategoriaIva , string CodigoPostal
             )
         {
             string sql = "Insert into Cliente(CodTipoDoc,NroDocumento,Nombre,Apellido";
             sql = sql + ",Telefono,Celular, Calle,  Numero, CodBarrio";
-            sql = sql + ",FechaNacimiento,Email,Observacion,CodCategoriaIva)";
+            sql = sql + ",FechaNacimiento,Email,Observacion,CodCategoriaIva,CodigoPostal)";
             sql = sql + "Values(";
             if (CodTipoDoc == null)
                 sql = sql + "null";
@@ -241,6 +241,7 @@ namespace Concesionaria.Clases
                 sql = sql + "," + CodCategoriaIva.ToString();
             else
                 sql = sql + ",null";
+            sql = sql + "," + "'" + CodigoPostal + "'";
             sql = sql + ")";
          //   string sqlFormat = "set dateformat dmy;";
          //   sqlFormat = sqlFormat + sql;
@@ -265,7 +266,7 @@ namespace Concesionaria.Clases
 
         public void ModificarClientetTransaccion(SqlConnection con,SqlTransaction Transaccion,Int32 CodCliente, Int32? CodTipoDoc, string NroDocumento,
            string Nombre, string Apellido, string Telefono, string Celular,
-           string Calle, string Numero, Int32? CodBarrio, DateTime? FechaNacimiento, string Email, string Observacion, int? CodCategoriaIva)
+           string Calle, string Numero, Int32? CodBarrio, DateTime? FechaNacimiento, string Email, string Observacion, int? CodCategoriaIva , string CodigoPostal )
         {
             string sql = "Update Cliente ";
 
@@ -306,6 +307,8 @@ namespace Concesionaria.Clases
 
             sql = sql + ",Email =" + "'" + Email + "'";
             sql = sql + ",Observacion =" + "'" + Observacion + "'";
+            sql = sql + ",CodigoPostal =" + "'" + CodigoPostal + "'";
+             
             sql = sql + " where CodCliente=" + CodCliente.ToString();
 
           //  string sqlFormat = "set dateformat dmy;";

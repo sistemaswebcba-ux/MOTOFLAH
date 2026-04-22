@@ -5212,11 +5212,15 @@ namespace Concesionaria
             string Calle = txtCalle.Text;
             string Altura = txtAltura.Text;
             Int32? CodBarrio = null;
+            string CodigoPostal = "";
             DateTime? FechaNacimiento = null;
             if (fun.ValidarFecha(txtFechaNacimiento.Text) == true)
                 FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
             string Email = txtEmail.Text;
             string Observacion = txtObservacion.Text;
+
+            if (txtCodigoPostal.Text != "")
+                CodigoPostal = txtCodigoPostal.Text;
 
             if (CmbBarrio.SelectedIndex > 0)
                 CodBarrio = Convert.ToInt32(CmbBarrio.SelectedValue);
@@ -5228,14 +5232,14 @@ namespace Concesionaria
             if (Nuevo == true)
             {
                 cliente.InsertarClienteTransaccion(con, Transaccion, CodTipoDoc, NroDocumento, Nombre,
-                    Apellido, Telefono, Celular, Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva);
+                    Apellido, Telefono, Celular, Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva,CodigoPostal);
                 txtCodCLiente.Text = cliente.GetMaxClientetTransaccion(con, Transaccion).ToString();
             }
             else
             {
                 cliente.ModificarClientetTransaccion(con, Transaccion, Convert.ToInt32(txtCodCLiente.Text), CodTipoDoc, NroDocumento, Nombre,
                     Apellido, Telefono, Celular,
-                    Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva);
+                    Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva, CodigoPostal);
             }
             return true;
         }

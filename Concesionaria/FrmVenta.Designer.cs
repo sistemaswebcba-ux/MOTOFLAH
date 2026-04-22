@@ -33,6 +33,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label83 = new System.Windows.Forms.Label();
+            this.txtFecha = new System.Windows.Forms.MaskedTextBox();
+            this.label57 = new System.Windows.Forms.Label();
             this.cmbSucursal = new System.Windows.Forms.ComboBox();
             this.label82 = new System.Windows.Forms.Label();
             this.cmbProvinciaAutoVenta = new System.Windows.Forms.ComboBox();
@@ -50,8 +52,6 @@
             this.btnAbrirPreVenta = new System.Windows.Forms.Button();
             this.txtCodPreVenta = new System.Windows.Forms.TextBox();
             this.btnVerDetalleStock = new System.Windows.Forms.Button();
-            this.txtFecha = new System.Windows.Forms.MaskedTextBox();
-            this.label57 = new System.Windows.Forms.Label();
             this.txtChasis = new System.Windows.Forms.TextBox();
             this.txtMotor = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
@@ -62,7 +62,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnAgregarCiudad = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtCodStock = new System.Windows.Forms.TextBox();
             this.txtPrecioVenta = new System.Windows.Forms.MaskedTextBox();
             this.txtCodAuto = new System.Windows.Forms.TextBox();
             this.radioConcesion = new System.Windows.Forms.RadioButton();
@@ -79,8 +78,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.lblPatente = new System.Windows.Forms.Label();
+            this.txtCodStock = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.GrillaCliente = new System.Windows.Forms.DataGridView();
@@ -310,7 +311,7 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtCodigoPostal = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -373,8 +374,7 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.label57);
-            this.tabPage1.Controls.Add(this.txtFecha);
+            this.tabPage1.Controls.Add(this.txtCodStock);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -386,6 +386,8 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.groupBox2.Controls.Add(this.label83);
+            this.groupBox2.Controls.Add(this.txtFecha);
+            this.groupBox2.Controls.Add(this.label57);
             this.groupBox2.Controls.Add(this.cmbSucursal);
             this.groupBox2.Controls.Add(this.label82);
             this.groupBox2.Controls.Add(this.cmbProvinciaAutoVenta);
@@ -413,7 +415,6 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnAgregarCiudad);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.txtCodStock);
             this.groupBox2.Controls.Add(this.txtPrecioVenta);
             this.groupBox2.Controls.Add(this.txtCodAuto);
             this.groupBox2.Controls.Add(this.radioConcesion);
@@ -446,6 +447,24 @@
             this.label83.Size = new System.Drawing.Size(69, 16);
             this.label83.TabIndex = 76;
             this.label83.Text = "Ubicación";
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.Location = new System.Drawing.Point(288, 16);
+            this.txtFecha.Mask = "00/00/0000";
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(71, 22);
+            this.txtFecha.TabIndex = 40;
+            this.txtFecha.ValidatingType = typeof(System.DateTime);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(236, 18);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(46, 16);
+            this.label57.TabIndex = 39;
+            this.label57.Text = "Fecha";
             // 
             // cmbSucursal
             // 
@@ -557,7 +576,7 @@
             // BtnVerFoto
             // 
             this.BtnVerFoto.Image = global::Concesionaria.Properties.Resources.tv;
-            this.BtnVerFoto.Location = new System.Drawing.Point(265, 16);
+            this.BtnVerFoto.Location = new System.Drawing.Point(365, 16);
             this.BtnVerFoto.Name = "BtnVerFoto";
             this.BtnVerFoto.Size = new System.Drawing.Size(34, 28);
             this.BtnVerFoto.TabIndex = 61;
@@ -602,24 +621,6 @@
             this.btnVerDetalleStock.TabIndex = 43;
             this.btnVerDetalleStock.UseVisualStyleBackColor = true;
             this.btnVerDetalleStock.Click += new System.EventHandler(this.btnVerDetalleStock_Click);
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.Location = new System.Drawing.Point(544, 198);
-            this.txtFecha.Mask = "00/00/0000";
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(71, 22);
-            this.txtFecha.TabIndex = 40;
-            this.txtFecha.ValidatingType = typeof(System.DateTime);
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(432, 201);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(46, 16);
-            this.label57.TabIndex = 39;
-            this.label57.Text = "Fecha";
             // 
             // txtChasis
             // 
@@ -711,14 +712,6 @@
             this.label15.Size = new System.Drawing.Size(102, 16);
             this.label15.TabIndex = 29;
             this.label15.Text = "Precio de venta";
-            // 
-            // txtCodStock
-            // 
-            this.txtCodStock.Location = new System.Drawing.Point(329, 18);
-            this.txtCodStock.Name = "txtCodStock";
-            this.txtCodStock.Size = new System.Drawing.Size(30, 22);
-            this.txtCodStock.TabIndex = 28;
-            this.txtCodStock.Visible = false;
             // 
             // txtPrecioVenta
             // 
@@ -871,6 +864,14 @@
             this.lblPatente.TabIndex = 0;
             this.lblPatente.Text = "Patente";
             // 
+            // txtCodStock
+            // 
+            this.txtCodStock.Location = new System.Drawing.Point(371, 209);
+            this.txtCodStock.Name = "txtCodStock";
+            this.txtCodStock.Size = new System.Drawing.Size(30, 22);
+            this.txtCodStock.TabIndex = 28;
+            this.txtCodStock.Visible = false;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -884,6 +885,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCodigoPostal);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.btnAgregarCliente);
@@ -926,6 +928,13 @@
             this.groupBox1.Size = new System.Drawing.Size(845, 225);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(473, 119);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(311, 22);
+            this.txtEmail.TabIndex = 82;
             // 
             // button7
             // 
@@ -1133,34 +1142,36 @@
             // 
             // txtAltura
             // 
+            this.txtAltura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtAltura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAltura.Location = new System.Drawing.Point(338, 119);
+            this.txtAltura.Location = new System.Drawing.Point(0, 42);
             this.txtAltura.MaxLength = 20;
             this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(50, 22);
+            this.txtAltura.Size = new System.Drawing.Size(31, 22);
             this.txtAltura.TabIndex = 18;
+            this.txtAltura.Visible = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(290, 121);
+            this.label13.Location = new System.Drawing.Point(262, 122);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 16);
+            this.label13.Size = new System.Drawing.Size(77, 16);
             this.label13.TabIndex = 21;
-            this.label13.Text = "Altura";
+            this.label13.Text = "Cod. Postal";
             // 
             // txtCalle
             // 
             this.txtCalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCalle.Location = new System.Drawing.Point(100, 119);
             this.txtCalle.Name = "txtCalle";
-            this.txtCalle.Size = new System.Drawing.Size(163, 22);
+            this.txtCalle.Size = new System.Drawing.Size(156, 22);
             this.txtCalle.TabIndex = 17;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 118);
+            this.label12.Location = new System.Drawing.Point(14, 119);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 16);
             this.label12.TabIndex = 19;
@@ -3242,12 +3253,13 @@
             this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
             this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
-            // txtEmail
+            // txtCodigoPostal
             // 
-            this.txtEmail.Location = new System.Drawing.Point(473, 119);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(311, 22);
-            this.txtEmail.TabIndex = 82;
+            this.txtCodigoPostal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCodigoPostal.Location = new System.Drawing.Point(340, 121);
+            this.txtCodigoPostal.Name = "txtCodigoPostal";
+            this.txtCodigoPostal.Size = new System.Drawing.Size(47, 22);
+            this.txtCodigoPostal.TabIndex = 83;
             // 
             // FrmVenta
             // 
@@ -3615,5 +3627,6 @@
         private System.Windows.Forms.ComboBox cmbBancoTarjeta;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtCodigoPostal;
     }
 }

@@ -181,6 +181,7 @@
             this.txtTotalGasto = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.GrillaAutos = new System.Windows.Forms.DataGridView();
+            this.txtCodigoPostal = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
@@ -254,6 +255,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtCodigoPostal);
             this.groupBox2.Controls.Add(this.txtEmail);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.CmbCategoriaIva);
@@ -325,7 +327,7 @@
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Image = global::Concesionaria.Properties.Resources.carpeta;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(743, 18);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(347, 18);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(40, 27);
             this.btnBuscarCliente.TabIndex = 77;
@@ -480,33 +482,35 @@
             // 
             // txtAltura
             // 
-            this.txtAltura.Location = new System.Drawing.Point(330, 127);
+            this.txtAltura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtAltura.Location = new System.Drawing.Point(274, 0);
             this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(57, 22);
+            this.txtAltura.Size = new System.Drawing.Size(34, 22);
             this.txtAltura.TabIndex = 18;
+            this.txtAltura.Visible = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(283, 133);
+            this.label13.Location = new System.Drawing.Point(257, 133);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 16);
+            this.label13.Size = new System.Drawing.Size(77, 16);
             this.label13.TabIndex = 21;
-            this.label13.Text = "Altura";
+            this.label13.Text = "Cod. Postal";
             // 
             // txtCalle
             // 
             this.txtCalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCalle.Location = new System.Drawing.Point(85, 130);
             this.txtCalle.Name = "txtCalle";
-            this.txtCalle.Size = new System.Drawing.Size(192, 22);
+            this.txtCalle.Size = new System.Drawing.Size(169, 22);
             this.txtCalle.TabIndex = 17;
             this.txtCalle.TextChanged += new System.EventHandler(this.txtCalle_TextChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(10, 130);
+            this.label12.Location = new System.Drawing.Point(3, 130);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 16);
             this.label12.TabIndex = 19;
@@ -515,7 +519,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(10, 106);
+            this.label11.Location = new System.Drawing.Point(3, 106);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(28, 16);
             this.label11.TabIndex = 16;
@@ -524,7 +528,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 80);
+            this.label10.Location = new System.Drawing.Point(2, 80);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 16);
             this.label10.TabIndex = 15;
@@ -544,7 +548,7 @@
             // 
             this.txtNroDoc.Location = new System.Drawing.Point(212, 23);
             this.txtNroDoc.Name = "txtNroDoc";
-            this.txtNroDoc.Size = new System.Drawing.Size(178, 22);
+            this.txtNroDoc.Size = new System.Drawing.Size(132, 22);
             this.txtNroDoc.TabIndex = 12;
             this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
             this.txtNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDoc_KeyPress);
@@ -1754,6 +1758,14 @@
             this.GrillaAutos.Size = new System.Drawing.Size(819, 98);
             this.GrillaAutos.TabIndex = 58;
             // 
+            // txtCodigoPostal
+            // 
+            this.txtCodigoPostal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCodigoPostal.Location = new System.Drawing.Point(340, 127);
+            this.txtCodigoPostal.Name = "txtCodigoPostal";
+            this.txtCodigoPostal.Size = new System.Drawing.Size(47, 22);
+            this.txtCodigoPostal.TabIndex = 81;
+            // 
             // FrmAutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1973,5 +1985,6 @@
         private System.Windows.Forms.DataGridView GrillaAutos;
         private System.Windows.Forms.Button btnQuitarAuto;
         private System.Windows.Forms.Button btnAgregarAuto;
+        private System.Windows.Forms.TextBox txtCodigoPostal;
     }
 }

@@ -90,7 +90,7 @@ namespace Concesionaria
             tbListaPapeles.Columns.Add("FechaVencimiento");
             string ColCliente = "CodCliente;Apellido;Nombre;Nrodocumento;Telefono";
             tbCliente = fun.CrearTabla(ColCliente);
-            string ColAuto = "CodAuto;Patente;Marca;Modelo;Importe";
+            string ColAuto = "CodAuto;Patente;Marca;Modelo;Color;Chasis;Importe";
             tbAuto = fun.CrearTabla(ColAuto);
         }
 
@@ -887,12 +887,17 @@ namespace Concesionaria
             string Celular = txtCelular.Text;
             string Calle = txtCalle.Text;
             string Altura = txtAltura.Text;
+            string CodigoPostal = "";
+
             Int32? CodBarrio = null;
             DateTime? FechaNacimiento = null;
             if (fun.ValidarFecha(txtFechaNacimiento.Text) == true)
                 FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
             string Email = txtEmail.Text;
             string Observacion = txtObservacion.Text;
+
+            if (txtCodigoPostal.Text != "")
+                CodigoPostal = txtCodigoPostal.Text;
 
             if (CmbBarrio.SelectedIndex > 0)
                 CodBarrio = Convert.ToInt32(CmbBarrio.SelectedValue);
@@ -904,14 +909,14 @@ namespace Concesionaria
             if (Nuevo == true)
             {
                 cliente.InsertarClienteTransaccion(con, Transaccion, CodTipoDoc, NroDocumento, Nombre,
-                    Apellido, Telefono, Celular, Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva);
+                    Apellido, Telefono, Celular, Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva , CodigoPostal);
                 txtCodCLiente.Text = cliente.GetMaxClientetTransaccion(con, Transaccion).ToString();
             }
             else
             {
                 cliente.ModificarClientetTransaccion(con, Transaccion, Convert.ToInt32(txtCodCLiente.Text), CodTipoDoc, NroDocumento, Nombre,
                     Apellido, Telefono, Celular,
-                    Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva );
+                    Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva, CodigoPostal );
             }
             return true;
         }
@@ -2096,6 +2101,7 @@ namespace Concesionaria
             DataTable trdo = cliente.GetClientesxCodigo(CodCliente);
             if (trdo.Rows.Count > 0)
             {
+                txtCodigoPostal.Text = trdo.Rows[0]["CodigoPostal"].ToString();
                 txtNroDoc.Text = trdo.Rows[0]["NroDocumento"].ToString();
                 txtNombre.Text = trdo.Rows[0]["Nombre"].ToString();
                 txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
@@ -2574,6 +2580,25 @@ namespace Concesionaria
 
         private void btnAgregarAuto_Click(object sender, EventArgs e)
         {
+            if (cmb_CodMarca.SelectedIndex<1)
+            {
+                MessageBox.Show("Debe seleccionar una marca ");
+                return;
+            }
+
+            if (CmbModelo.SelectedIndex<1)
+            {
+                MessageBox.Show("Debe seleccionar un modelo");
+                return;
+
+            }
+
+            if (txtImporte.Text =="")
+            {
+                MessageBox.Show("Debe ingresar un importe");
+                return;
+            }
+
             SqlConnection con = new SqlConnection();
             con.ConnectionString = Clases.cConexion.Cadenacon();
             con.Open();
@@ -2718,7 +2743,7 @@ namespace Concesionaria
             string Val = "";
             Val = CodAuto.ToString();
             Val = Val + ";" + Patente + ";" + Marca + ";" + CmbModelo.Text;
-            Val = Val + ";" + txtImporte.Text;
+            Val = Val + ";" + Color +";" + Chasis +";" + txtImporte.Text;
             tbAuto = func.AgregarFilas(tbAuto, Val);
             GrillaAutos.DataSource = tbAuto;
             AnchoGrillaAuto();
@@ -2727,7 +2752,7 @@ namespace Concesionaria
         private void AnchoGrillaAuto()
         {
             cFunciones func = new Clases.cFunciones();
-            string Ancho = "0;20;30;30;20";
+            string Ancho = "0;10;25;20;15;15;15";
             func.AnchoColumnas(GrillaAutos, Ancho);
         }
 

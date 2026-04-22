@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmCliente));
             this.Grupo = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cmb_CodCategoriaIva = new System.Windows.Forms.ComboBox();
+            this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
+            this.label39 = new System.Windows.Forms.Label();
             this.txt_Observacion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Imagen = new System.Windows.Forms.PictureBox();
@@ -49,7 +53,7 @@
             this.btnNuevoBarrio = new System.Windows.Forms.Button();
             this.cmb_CodBarrio = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txt_Numero = new System.Windows.Forms.TextBox();
+            this.txt_CodigoPostal = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txt_Calle = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -72,10 +76,6 @@
             this.btnAbrir = new System.Windows.Forms.ToolStripButton();
             this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.label16 = new System.Windows.Forms.Label();
-            this.cmb_CodCategoriaIva = new System.Windows.Forms.ComboBox();
-            this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
-            this.label39 = new System.Windows.Forms.Label();
             this.Grupo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.BarraBotones.SuspendLayout();
@@ -106,7 +106,7 @@
             this.Grupo.Controls.Add(this.btnNuevoBarrio);
             this.Grupo.Controls.Add(this.cmb_CodBarrio);
             this.Grupo.Controls.Add(this.label14);
-            this.Grupo.Controls.Add(this.txt_Numero);
+            this.Grupo.Controls.Add(this.txt_CodigoPostal);
             this.Grupo.Controls.Add(this.label13);
             this.Grupo.Controls.Add(this.txt_Calle);
             this.Grupo.Controls.Add(this.label12);
@@ -127,6 +127,42 @@
             this.Grupo.TabIndex = 4;
             this.Grupo.TabStop = false;
             this.Grupo.Text = "Información del Cliente";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(379, 32);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(69, 17);
+            this.label16.TabIndex = 83;
+            this.label16.Text = "Categoría";
+            // 
+            // cmb_CodCategoriaIva
+            // 
+            this.cmb_CodCategoriaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_CodCategoriaIva.FormattingEnabled = true;
+            this.cmb_CodCategoriaIva.Location = new System.Drawing.Point(454, 29);
+            this.cmb_CodCategoriaIva.Name = "cmb_CodCategoriaIva";
+            this.cmb_CodCategoriaIva.Size = new System.Drawing.Size(258, 24);
+            this.cmb_CodCategoriaIva.TabIndex = 82;
+            // 
+            // txtFechaNacimiento
+            // 
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(286, 167);
+            this.txtFechaNacimiento.Mask = "00/00/0000";
+            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
+            this.txtFechaNacimiento.Size = new System.Drawing.Size(79, 23);
+            this.txtFechaNacimiento.TabIndex = 81;
+            this.txtFechaNacimiento.ValidatingType = typeof(System.DateTime);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(220, 167);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(60, 17);
+            this.label39.TabIndex = 80;
+            this.label39.Text = "Fec Nac";
             // 
             // txt_Observacion
             // 
@@ -300,21 +336,21 @@
             this.label14.TabIndex = 23;
             this.label14.Text = "Barrio";
             // 
-            // txt_Numero
+            // txt_CodigoPostal
             // 
-            this.txt_Numero.Location = new System.Drawing.Point(99, 167);
-            this.txt_Numero.Name = "txt_Numero";
-            this.txt_Numero.Size = new System.Drawing.Size(79, 23);
-            this.txt_Numero.TabIndex = 18;
+            this.txt_CodigoPostal.Location = new System.Drawing.Point(99, 167);
+            this.txt_CodigoPostal.Name = "txt_CodigoPostal";
+            this.txt_CodigoPostal.Size = new System.Drawing.Size(79, 23);
+            this.txt_CodigoPostal.TabIndex = 18;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(16, 167);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(45, 17);
+            this.label13.Size = new System.Drawing.Size(80, 17);
             this.label13.TabIndex = 21;
-            this.label13.Text = "Altura";
+            this.label13.Text = "Cod. Postal";
             // 
             // txt_Calle
             // 
@@ -523,42 +559,6 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(379, 32);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 17);
-            this.label16.TabIndex = 83;
-            this.label16.Text = "Categoría";
-            // 
-            // cmb_CodCategoriaIva
-            // 
-            this.cmb_CodCategoriaIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_CodCategoriaIva.FormattingEnabled = true;
-            this.cmb_CodCategoriaIva.Location = new System.Drawing.Point(454, 29);
-            this.cmb_CodCategoriaIva.Name = "cmb_CodCategoriaIva";
-            this.cmb_CodCategoriaIva.Size = new System.Drawing.Size(258, 24);
-            this.cmb_CodCategoriaIva.TabIndex = 82;
-            // 
-            // txtFechaNacimiento
-            // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(286, 167);
-            this.txtFechaNacimiento.Mask = "00/00/0000";
-            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(79, 23);
-            this.txtFechaNacimiento.TabIndex = 81;
-            this.txtFechaNacimiento.ValidatingType = typeof(System.DateTime);
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(220, 167);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(60, 17);
-            this.label39.TabIndex = 80;
-            this.label39.Text = "Fec Nac";
-            // 
             // FrmAbmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -592,7 +592,7 @@
         private System.Windows.Forms.Button btnNuevoBarrio;
         private System.Windows.Forms.ComboBox cmb_CodBarrio;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txt_Numero;
+        private System.Windows.Forms.TextBox txt_CodigoPostal;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txt_Calle;
         private System.Windows.Forms.Label label12;

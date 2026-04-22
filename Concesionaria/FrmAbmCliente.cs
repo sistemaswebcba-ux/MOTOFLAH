@@ -26,6 +26,8 @@ namespace Concesionaria
            // cmb_CodTipoDoc.Enabled = false;  
             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
             fun.LlenarCombo(cmb_CodCategoriaIva, "CategoriaIva", "Nombre", "Codigo");
+            cTipoDocumento tipoDoc = new cTipoDocumento();
+            tipoDoc.UbicaCombo(cmb_CodTipoDoc);
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -260,7 +262,11 @@ namespace Concesionaria
                 {
                     cCliente cli = new cCliente();
                     fun.ModificarGenerico(this, "Cliente", "CodCliente", txtCodCLiente.Text);
-                    cli.ActualizarFecha(Convert.ToInt32(txtCodCLiente.Text), txtFechaNacimiento.Text);
+                    if (fun.ValidarFecha(txtFechaNacimiento.Text))
+                    {
+                        cli.ActualizarFecha(Convert.ToInt32(txtCodCLiente.Text), txtFechaNacimiento.Text);
+                    }
+                   
                 }
                       
                   MessageBox.Show("Datos grabados Correctamente", Clases.cMensaje.Mensaje());
