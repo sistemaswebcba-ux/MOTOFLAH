@@ -3411,6 +3411,7 @@ namespace Concesionaria
                 txtMotor.Text = trdo.Rows[0]["Motor"].ToString();
                 txtChasis.Text = trdo.Rows[0]["Chasis"].ToString();
                 txtKms.Text = trdo.Rows[0]["Kilometros"].ToString();
+                txtCertificado.Text = trdo.Rows[0]["Certificado"].ToString();
                 if (txtKms.Text != "")
                 {
                     txtKms.Text = fun.FormatoEnteroMiles(txtKms.Text);
@@ -3441,6 +3442,19 @@ namespace Concesionaria
                 {
                     GetCostos(Convert.ToInt32(txtCodStock.Text));
                     CargarGastosGeneralesxCodStoxk(Convert.ToInt32(txtCodStock.Text));
+                }
+
+                if (trdo.Rows[0]["CodMarca"].ToString() != "")
+                {
+                    Int32 CodMarca = Convert.ToInt32(trdo.Rows[0]["CodMarca"].ToString());
+                    cModelo modelo = new Clases.cModelo();
+                    DataTable tbModelo = modelo.GetModelosxMarca(CodMarca);
+                    fun.LlenarComboDatatable(cmbModelo, tbModelo, "Nombre", "CodModelo");
+                    if (trdo.Rows[0]["CodModelo"].ToString() != "")
+                    {
+                        Int32 CodModelo = Convert.ToInt32(trdo.Rows[0]["CodModelo"].ToString());
+                        cmbModelo.SelectedValue = CodModelo.ToString();
+                    }
                 }
 
             }

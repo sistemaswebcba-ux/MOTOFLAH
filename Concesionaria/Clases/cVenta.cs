@@ -53,7 +53,7 @@ namespace Concesionaria.Clases
         public DataTable GetVentasxFecha(DateTime FechaDesde, DateTime FechaHasta, string Patente, string Apellido)
         {
             string sql = "";
-            sql = "select Distinct v.CodVenta,a.Patente,a.Descripcion,sa.DescripcionAutoPartePago, c.Apellido,c.Nombre,c.Telefono,";
+            sql = "select Distinct v.CodVenta,a.Patente,a.Descripcion,sa.DescripcionAutoPartePago, c.Apellido,c.Nombre,c.Celular,";
             sql = sql + "v.Fecha,v.ImporteVenta,ImporteEfectivo,v.ImporteAutoPartePago,v.ImporteCredito,v.ImportePrenda";
             sql = sql + ", (select sum(Importe) from Cheque che ";
             sql = sql + "  where che.CodVenta = v.CodVenta and che.CodPrenda is null) as Cheque";

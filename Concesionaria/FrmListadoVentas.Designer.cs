@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dpFechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.dpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnReporte2 = new System.Windows.Forms.Button();
@@ -48,8 +50,6 @@
             this.txtPrenda = new System.Windows.Forms.TextBox();
             this.txtVehículo = new System.Windows.Forms.TextBox();
             this.txtDocumentos = new System.Windows.Forms.TextBox();
-            this.dpFechaDesde = new System.Windows.Forms.DateTimePicker();
-            this.dpFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +85,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de ventas";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // dpFechaHasta
+            // 
+            this.dpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpFechaHasta.Location = new System.Drawing.Point(311, 36);
+            this.dpFechaHasta.Name = "dpFechaHasta";
+            this.dpFechaHasta.Size = new System.Drawing.Size(87, 22);
+            this.dpFechaHasta.TabIndex = 72;
+            // 
+            // dpFechaDesde
+            // 
+            this.dpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dpFechaDesde.Location = new System.Drawing.Point(118, 36);
+            this.dpFechaDesde.Name = "dpFechaDesde";
+            this.dpFechaDesde.Size = new System.Drawing.Size(85, 22);
+            this.dpFechaDesde.TabIndex = 71;
             // 
             // txtApellido
             // 
@@ -189,9 +205,9 @@
             this.lblGanancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGanancia.Location = new System.Drawing.Point(1045, 506);
             this.lblGanancia.Name = "lblGanancia";
-            this.lblGanancia.Size = new System.Drawing.Size(105, 17);
+            this.lblGanancia.Size = new System.Drawing.Size(88, 17);
             this.lblGanancia.TabIndex = 42;
-            this.lblGanancia.Text = "Total Ganancia";
+            this.lblGanancia.Text = "Total Ventas";
             // 
             // txtTotal
             // 
@@ -264,22 +280,6 @@
             this.txtDocumentos.ReadOnly = true;
             this.txtDocumentos.Size = new System.Drawing.Size(136, 22);
             this.txtDocumentos.TabIndex = 1;
-            // 
-            // dpFechaDesde
-            // 
-            this.dpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpFechaDesde.Location = new System.Drawing.Point(118, 36);
-            this.dpFechaDesde.Name = "dpFechaDesde";
-            this.dpFechaDesde.Size = new System.Drawing.Size(85, 22);
-            this.dpFechaDesde.TabIndex = 71;
-            // 
-            // dpFechaHasta
-            // 
-            this.dpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dpFechaHasta.Location = new System.Drawing.Point(311, 36);
-            this.dpFechaHasta.Name = "dpFechaHasta";
-            this.dpFechaHasta.Size = new System.Drawing.Size(87, 22);
-            this.dpFechaHasta.TabIndex = 72;
             // 
             // FrmListadoVentas
             // 

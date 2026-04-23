@@ -74,13 +74,13 @@ namespace Concesionaria
             }
 
             //armo el nuevo data source de venta
-            string Col = "CodVenta;Fecha;Cliente;Telefono;Marca;Modelo;Color;Patente;Importe";
+            string Col = "CodVenta;Fecha;Cliente;Celular;Marca;Modelo;Color;Patente;Importe";
 
             DataTable tbVenta = fun.CrearTabla(Col);
             //  int CodVenta = 0;
             string Fecha = "";
             string Cliente = "";
-            string Telefono = "";
+            string Celular = "";
             string Marca = "";
             string Modelo = "";
             string ColorAuto = "";
@@ -95,14 +95,14 @@ namespace Concesionaria
                     Fecha = Fecha.Substring(0, 10);
                 Cliente = trdo.Rows[i]["Nombre"].ToString();
                 Cliente = Cliente + " " + trdo.Rows[i]["Apellido"].ToString();
-                Telefono = trdo.Rows[i]["Telefono"].ToString();
+                Celular = trdo.Rows[i]["Celular"].ToString();
                 Marca = trdo.Rows[i]["Marca"].ToString();
                 Modelo = trdo.Rows[i]["Modelo"].ToString();
                 ColorAuto = trdo.Rows[i]["Color"].ToString();
                 Patente = trdo.Rows[i]["Patente"].ToString();
                 Importe = trdo.Rows[i]["ImporteVenta"].ToString();
                 Val = CodVenta.ToString() + ";" + Fecha;
-                Val = Val + ";" + Cliente + ";" + Telefono;
+                Val = Val + ";" + Cliente + ";" + Celular;
                 Val = Val + ";" + Marca + ";" + Modelo;
                 Val = Val + ";" + ColorAuto + ";" + Patente;
                 Val = Val + ";" + Importe;
