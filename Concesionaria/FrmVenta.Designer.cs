@@ -310,6 +310,8 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
+            this.txtImporteTranferencia = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1803,6 +1805,8 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage4.Controls.Add(this.txtImporteTranferencia);
+            this.tabPage4.Controls.Add(this.label9);
             this.tabPage4.Controls.Add(this.txtEfectivo);
             this.tabPage4.Controls.Add(this.label16);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
@@ -1815,7 +1819,7 @@
             // txtEfectivo
             // 
             this.txtEfectivo.BackColor = System.Drawing.SystemColors.Control;
-            this.txtEfectivo.Location = new System.Drawing.Point(106, 17);
+            this.txtEfectivo.Location = new System.Drawing.Point(155, 17);
             this.txtEfectivo.Name = "txtEfectivo";
             this.txtEfectivo.Size = new System.Drawing.Size(246, 22);
             this.txtEfectivo.TabIndex = 32;
@@ -1827,11 +1831,11 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(25, 20);
+            this.label16.Location = new System.Drawing.Point(6, 17);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(53, 16);
+            this.label16.Size = new System.Drawing.Size(104, 16);
             this.label16.TabIndex = 31;
-            this.label16.Text = "Importe";
+            this.label16.Text = "Importe Efectivo";
             // 
             // tabPage17
             // 
@@ -3241,6 +3245,24 @@
             this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
             this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
+            // txtImporteTranferencia
+            // 
+            this.txtImporteTranferencia.BackColor = System.Drawing.SystemColors.Control;
+            this.txtImporteTranferencia.Location = new System.Drawing.Point(155, 45);
+            this.txtImporteTranferencia.Name = "txtImporteTranferencia";
+            this.txtImporteTranferencia.Size = new System.Drawing.Size(246, 22);
+            this.txtImporteTranferencia.TabIndex = 34;
+            this.txtImporteTranferencia.Leave += new System.EventHandler(this.txtImporteTranferencia_Leave);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 45);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(139, 16);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Importe Transferencia";
+            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3606,5 +3628,7 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtCodigoPostal;
+        private System.Windows.Forms.TextBox txtImporteTranferencia;
+        private System.Windows.Forms.Label label9;
     }
 }

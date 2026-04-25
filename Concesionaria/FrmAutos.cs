@@ -2186,8 +2186,9 @@ namespace Concesionaria
                         }
                     }
                 }
-
+                txtCodigoPostal.Text = trdo.Rows[0]["CodigoPostal"].ToString();
                 txtCodCLiente.Text = trdo.Rows[0]["CodCliente"].ToString();
+                txtEmail.Text = trdo.Rows[0]["Email"].ToString();
             }
         }
 

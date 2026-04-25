@@ -1388,6 +1388,7 @@ namespace Concesionaria
             double ImporteCobranza = 0;
             double ImporteBanco = 0;
             double PrecioSenia = 0;
+            double ImporteTranferencia = 0;
 
             Clases.cFunciones fun = new Clases.cFunciones();
             if (txtPrecioVenta.Text != "")
@@ -1401,6 +1402,10 @@ namespace Concesionaria
 
             if (txtTotalPrenda.Text != "")
                 ImportePrenda = fun.ToDouble(txtTotalPrenda.Text);
+
+            if (txtImporteTranferencia.Text != "")
+                ImporteTranferencia = fun.ToDouble(txtImporteTranferencia.Text);
+
 
             CodCliente = Convert.ToInt32(tbCliente.Rows[0]["CodCliente"].ToString());
             /*
@@ -1423,7 +1428,7 @@ namespace Concesionaria
             //Principal.CodUsuarioLogueado 
             sql = "insert into Venta(Fecha,CodUsuario,CodCliente";
             sql = sql + ",CodAutoVendido,CodAutoPartePago,ImporteVenta,";
-            sql = sql + "ImporteAutoPartePago,ImporteCredito,ImporteEfectivo,ImportePrenda,ImporteCobranza,ImporteBanco,CodVendedor,CodStock,PrecioSenia)";
+            sql = sql + "ImporteAutoPartePago,ImporteCredito,ImporteEfectivo,ImportePrenda,ImporteCobranza,ImporteBanco,CodVendedor,CodStock,PrecioSenia,ImporteTranferencia)";
             sql = sql + "values(" + "'" + Fecha.ToShortDateString() + "'";
             sql = sql + "," + Principal.CodUsuarioLogueado.ToString();
             sql = sql + "," + CodCliente.ToString();
@@ -1442,6 +1447,7 @@ namespace Concesionaria
             sql = sql + "," + CodVendedor.ToString();
             sql = sql + "," + CodStock.ToString();
             sql = sql + "," + PrecioSenia.ToString();
+            sql = sql + "," + ImporteTranferencia.ToString();
             sql = sql + ")";
             return sql;
         }
@@ -1582,6 +1588,7 @@ namespace Concesionaria
             txtCodCLiente.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
+            txtImporteTranferencia.Text = "";
             
             txtCelular.Text = "";
             txtTotalCredito.Text = "";
@@ -1771,6 +1778,10 @@ namespace Concesionaria
 
             if (txtImporteSenia.Text != "")
                 Subtotal = Subtotal + fun2.ToDouble(txtImporteSenia.Text);
+
+            if (txtImporteTranferencia.Text != "")
+                Subtotal = Subtotal + fun2.ToDouble(txtImporteTranferencia.Text);
+
             double Total = fun2.ToDouble(txtTotalVenta.Text);
 
             if (Subtotal != Total)
@@ -2424,6 +2435,11 @@ namespace Concesionaria
             if (txtTotalCredito.Text != "")
             {
                 Subtotal = Subtotal + fun.ToDouble(txtTotalCredito.Text);
+            }
+
+            if (txtImporteTranferencia.Text !="")
+            {
+                Subtotal = Subtotal + fun.ToDouble(txtImporteTranferencia.Text);
             }
 
             txtSubTotal.Text = Subtotal.ToString();
@@ -3220,6 +3236,15 @@ namespace Concesionaria
                 else
                     txtEfectivo.Text = tVenta.Rows[0]["ImporteEfectivo"].ToString();
 
+                if (tVenta.Rows[0]["ImporteTranferencia"].ToString() != "")
+                {  
+                    string sImporte = tVenta.Rows[0]["ImporteTranferencia"].ToString().Replace(",", ".");
+                    vec = sImporte.Split('.');
+                    txtImporteTranferencia.Text = fun.FormatoEnteroMiles(vec[0]);
+                }
+                else
+                    txtImporteTranferencia.Text = tVenta.Rows[0]["ImporteTranferencia"].ToString();
+
                 if (tVenta.Rows[0]["ImporteAutoPartePago"].ToString() != "")
                 {
                     string sImporte = tVenta.Rows[0]["ImporteAutoPartePago"].ToString().Replace(",", ".");
@@ -3503,6 +3528,7 @@ namespace Concesionaria
                 if (trdo.Rows[0]["CodBarrio"].ToString() != "")
                     CmbBarrio.SelectedValue = trdo.Rows[0]["CodBarrio"].ToString();
                 txtCodCLiente.Text = trdo.Rows[0]["CodCliente"].ToString();
+                txtCodigoPostal.Text = trdo.Rows[0]["CodigoPostal"].ToString();
             }
             else
                 LimpiarCliente();
@@ -5338,6 +5364,16 @@ namespace Concesionaria
                     Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion, CodCategoriaIva, CodigoPostal);
             }
             return true;
+        }
+
+        private void txtImporteTranferencia_Leave(object sender, EventArgs e)
+        { 
+            if (txtImporteTranferencia.Text != "")
+            {
+                Clases.cFunciones fun = new Clases.cFunciones();
+                txtImporteTranferencia.Text = fun.FormatoEnteroMiles(txtImporteTranferencia.Text);
+            }
+            CalcularSubTotal();
         }
     }
 };
