@@ -128,6 +128,7 @@ namespace Concesionaria
             }
             txtTotalVehiculoPartePago.BackColor = System.Drawing.Color.LightGreen;
             txtTotalEfectivo.BackColor = System.Drawing.Color.LightGreen;
+            txtTotalTranferencia.BackColor  = System.Drawing.Color.LightGreen;
             txtTotalDocumentos.BackColor = System.Drawing.Color.LightGreen;
             txtTotalPrenda.BackColor = System.Drawing.Color.LightGreen;
             txtTotalCobranza.BackColor = System.Drawing.Color.LightGreen;
@@ -5373,6 +5374,7 @@ namespace Concesionaria
                 Clases.cFunciones fun = new Clases.cFunciones();
                 txtImporteTranferencia.Text = fun.FormatoEnteroMiles(txtImporteTranferencia.Text);
             }
+            txtTotalTranferencia.Text = txtImporteTranferencia.Text;
             CalcularSubTotal();
         }
     }

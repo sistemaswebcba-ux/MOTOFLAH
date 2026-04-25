@@ -312,6 +312,9 @@
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
             this.txtImporteTranferencia = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtTotalTranferencia = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1783,7 +1786,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 284);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(875, 263);
+            this.groupBox3.Size = new System.Drawing.Size(875, 224);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Formas de Pago";
@@ -1799,7 +1802,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 22);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(875, 241);
+            this.tabControl2.Size = new System.Drawing.Size(875, 196);
             this.tabControl2.TabIndex = 1;
             // 
             // tabPage4
@@ -1812,7 +1815,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(867, 212);
+            this.tabPage4.Size = new System.Drawing.Size(867, 167);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Efectivo";
             // 
@@ -1853,7 +1856,7 @@
             this.tabPage17.Controls.Add(this.btnAgregarTarjeta);
             this.tabPage17.Location = new System.Drawing.Point(4, 25);
             this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Size = new System.Drawing.Size(867, 212);
+            this.tabPage17.Size = new System.Drawing.Size(867, 167);
             this.tabPage17.TabIndex = 9;
             this.tabPage17.Text = "Tarjetas";
             // 
@@ -1973,7 +1976,7 @@
             this.tabPage16.Controls.Add(this.txtImporteSenia);
             this.tabPage16.Location = new System.Drawing.Point(4, 25);
             this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Size = new System.Drawing.Size(867, 212);
+            this.tabPage16.Size = new System.Drawing.Size(867, 167);
             this.tabPage16.TabIndex = 8;
             this.tabPage16.Text = "Credito";
             // 
@@ -2010,7 +2013,7 @@
             this.GrillaBancoCredito.Name = "GrillaBancoCredito";
             this.GrillaBancoCredito.ReadOnly = true;
             this.GrillaBancoCredito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaBancoCredito.Size = new System.Drawing.Size(822, 145);
+            this.GrillaBancoCredito.Size = new System.Drawing.Size(822, 105);
             this.GrillaBancoCredito.TabIndex = 57;
             // 
             // txtImporteBancoCredito
@@ -2086,7 +2089,7 @@
             this.tabPage9.Controls.Add(this.btnAbrirCobranzas);
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(867, 212);
+            this.tabPage9.Size = new System.Drawing.Size(867, 167);
             this.tabPage9.TabIndex = 6;
             this.tabPage9.Text = "Cobranza";
             // 
@@ -2192,7 +2195,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(867, 212);
+            this.tabPage6.Size = new System.Drawing.Size(867, 167);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Vehículos";
             // 
@@ -2885,7 +2888,7 @@
             this.tabPage14.Controls.Add(this.btnNuevaBanco);
             this.tabPage14.Location = new System.Drawing.Point(4, 25);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(867, 212);
+            this.tabPage14.Size = new System.Drawing.Size(867, 167);
             this.tabPage14.TabIndex = 7;
             this.tabPage14.Text = "Cheques";
             // 
@@ -2917,7 +2920,7 @@
             this.GrillaCheques.Name = "GrillaCheques";
             this.GrillaCheques.ReadOnly = true;
             this.GrillaCheques.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaCheques.Size = new System.Drawing.Size(836, 114);
+            this.GrillaCheques.Size = new System.Drawing.Size(836, 85);
             this.GrillaCheques.TabIndex = 48;
             // 
             // CmbBanco
@@ -3016,6 +3019,8 @@
             // 
             this.groupBox55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.groupBox55.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox55.Controls.Add(this.txtTotalTranferencia);
+            this.groupBox55.Controls.Add(this.label32);
             this.groupBox55.Controls.Add(this.txtTotalCredito);
             this.groupBox55.Controls.Add(this.txtMontoCredito);
             this.groupBox55.Controls.Add(this.label50);
@@ -3033,9 +3038,9 @@
             this.groupBox55.Controls.Add(this.label26);
             this.groupBox55.Controls.Add(this.label24);
             this.groupBox55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.groupBox55.Location = new System.Drawing.Point(12, 553);
+            this.groupBox55.Location = new System.Drawing.Point(12, 508);
             this.groupBox55.Name = "groupBox55";
-            this.groupBox55.Size = new System.Drawing.Size(871, 75);
+            this.groupBox55.Size = new System.Drawing.Size(871, 120);
             this.groupBox55.TabIndex = 3;
             this.groupBox55.TabStop = false;
             this.groupBox55.Text = "Resumen";
@@ -3263,12 +3268,40 @@
             this.label9.TabIndex = 33;
             this.label9.Text = "Importe Transferencia";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(421, 328);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Efectivo";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(10, 69);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(109, 17);
+            this.label32.TabIndex = 62;
+            this.label32.Text = "Transferencia";
+            // 
+            // txtTotalTranferencia
+            // 
+            this.txtTotalTranferencia.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalTranferencia.Location = new System.Drawing.Point(14, 89);
+            this.txtTotalTranferencia.Name = "txtTotalTranferencia";
+            this.txtTotalTranferencia.ReadOnly = true;
+            this.txtTotalTranferencia.Size = new System.Drawing.Size(100, 23);
+            this.txtTotalTranferencia.TabIndex = 63;
+            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(888, 669);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnGrabarPreVenta);
             this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.btnGrabar);
@@ -3630,5 +3663,8 @@
         private System.Windows.Forms.TextBox txtCodigoPostal;
         private System.Windows.Forms.TextBox txtImporteTranferencia;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtTotalTranferencia;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label10;
     }
 }
