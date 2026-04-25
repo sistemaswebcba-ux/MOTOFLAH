@@ -20,7 +20,7 @@ namespace Concesionaria.Clases
 
         public DataTable GetClientexCodVenta(int CodVenta)
         {
-            string sql = "select c.CodCliente,c.Apellido,c.Nombre, c.NroDocumento,c.Telefono ";
+            string sql = "select c.CodCliente,c.Apellido,c.Nombre, c.NroDocumento,c.Celular ";
             sql = sql + " from cliente c,Ventaxcliente v ";
             sql = sql + " where c.CodCliente = v.CodCliente ";
             sql = sql + " and v.CodVenta =" + CodVenta.ToString();

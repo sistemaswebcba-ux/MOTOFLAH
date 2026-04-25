@@ -304,6 +304,7 @@ namespace Concesionaria
             double TotalCheques = 0;
             double EfectivoaPagar = 0;
             double Gastos = 0;
+            Double SubTotal = 0;
 
             if (txtTotal.Text != "")
                 Total = fun.ToDouble(txtTotal.Text);
@@ -405,6 +406,36 @@ namespace Concesionaria
 
             }
 
+        }
+
+        private void CalcularSubtotal()
+        {
+            cFunciones fun = new cFunciones();
+            double Efectivo = 0;
+            double Vehiculos = 0;
+            double TotalCheques = 0;
+            double EfectivoaPagar = 0;
+            double Gastos = 0;
+            Double SubTotal = 0;
+
+            if (txtTotalEfectivo.Text != "")
+                Efectivo = fun.ToDouble(txtTotalEfectivo.Text);
+
+            if (txtTotalVehiculo.Text != "")
+                Vehiculos = fun.ToDouble(txtTotalVehiculo.Text);
+
+            if (txtTotalCheque.Text != "")
+                TotalCheques = fun.ToDouble(txtTotalCheque.Text);
+
+            if (txtEfectivoaPagar.Text != "")
+                EfectivoaPagar = fun.ToDouble(txtEfectivoaPagar.Text);
+
+            if (txtTotalGasto.Text != "")
+                Gastos = fun.ToDouble(txtTotalGasto.Text);
+
+            SubTotal = Efectivo + Vehiculos + TotalCheques + EfectivoaPagar;
+            txtSubTotal.Text =fun.FormatoEnteroMiles (SubTotal.ToString());
+            
         }
         private void LimpiarTodos()
         {
@@ -662,7 +693,7 @@ namespace Concesionaria
             {
                 txtNombre.Text = trdo.Rows[0]["Nombre"].ToString();
                 txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
-                txtTelefono.Text = trdo.Rows[0]["Telefono"].ToString();
+             //   txtTelefono.Text = trdo.Rows[0]["Telefono"].ToString();
                 txtCelular.Text = trdo.Rows[0]["Celular"].ToString();
                 txtCalle.Text = trdo.Rows[0]["Calle"].ToString();
                 txtAltura.Text = trdo.Rows[0]["Numero"].ToString();
@@ -727,7 +758,7 @@ namespace Concesionaria
             txtCodCLiente.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
-            txtTelefono.Text = "";
+           
             txtCelular.Text = "";
             if (CmbBarrio.Items.Count > 0)
                 CmbBarrio.SelectedIndex = 0;
@@ -883,7 +914,7 @@ namespace Concesionaria
 
             string Nombre = txtNombre.Text;
             string Apellido = txtApellido.Text;
-            string Telefono = txtTelefono.Text;
+            string Telefono = "";
             string Celular = txtCelular.Text;
             string Calle = txtCalle.Text;
             string Altura = txtAltura.Text;
@@ -1091,7 +1122,7 @@ namespace Concesionaria
             {
                 txtNombre.Text = trdo.Rows[0]["Nombre"].ToString();
                 txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
-                txtTelefono.Text = trdo.Rows[0]["Telefono"].ToString();
+                //txtTelefono.Text = trdo.Rows[0]["Telefono"].ToString();
                 txtCelular.Text = trdo.Rows[0]["Celular"].ToString();
                 txtCalle.Text = trdo.Rows[0]["Calle"].ToString();
                 txtAltura.Text = trdo.Rows[0]["Numero"].ToString();
@@ -1457,6 +1488,7 @@ namespace Concesionaria
             Clases.cFunciones fun = new Clases.cFunciones();
             txtEfectivo.Text = fun.FormatoEnteroMiles(txtEfectivo.Text);
             txtTotalEfectivo.Text = txtEfectivo.Text;
+            CalcularSubtotal();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -1500,6 +1532,7 @@ namespace Concesionaria
             Clases.cFunciones fun = new Clases.cFunciones();
             txtImporteVehiculo2.Text = fun.FormatoEnteroMiles(txtImporteVehiculo2.Text);
             txtTotalVehiculo.Text = txtImporteVehiculo2.Text;
+            CalcularSubtotal();
         }
 
         private void BtnAgregarCheque_Click(object sender, EventArgs e)
@@ -1576,6 +1609,7 @@ namespace Concesionaria
             txtTotalCheque.Text = TotalCheques.ToString();
             //Clases.cFunciones fun = new Clases.cFunciones();
             txtTotalCheque.Text = fun.FormatoEnteroMiles(txtTotalCheque.Text);
+            CalcularSubtotal();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -1630,7 +1664,7 @@ namespace Concesionaria
             txtTotalCheque.Text = TotalCheques.ToString();
             //Clases.cFunciones fun = new Clases.cFunciones();
             txtTotalCheque.Text = fun.FormatoEnteroMiles(txtTotalCheque.Text);
-
+            CalcularSubtotal();
         }
 
         private void GrabarCheques(SqlConnection con, SqlTransaction Transaccion, Int32 CodCompra)
@@ -2105,7 +2139,7 @@ namespace Concesionaria
                 txtNroDoc.Text = trdo.Rows[0]["NroDocumento"].ToString();
                 txtNombre.Text = trdo.Rows[0]["Nombre"].ToString();
                 txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
-                txtTelefono.Text = trdo.Rows[0]["Telefono"].ToString();
+                //txtTelefono.Text = trdo.Rows[0]["Telefono"].ToString();
                 txtCelular.Text = trdo.Rows[0]["Celular"].ToString();
                 txtCalle.Text = trdo.Rows[0]["Calle"].ToString();
                 txtAltura.Text = trdo.Rows[0]["Numero"].ToString();
@@ -2485,7 +2519,7 @@ namespace Concesionaria
                     string CodCLi = txtCodCLiente.Text;
                     string Ape = txtApellido.Text;
                     string Nom = txtNombre.Text;
-                    string Telefono = txtTelefono.Text;
+                    string Telefono = txtCelular.Text;
           
                     if (fun.Buscar(tbCliente, "NroDocumento", NroDocumento) == false)
                     {

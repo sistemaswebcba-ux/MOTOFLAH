@@ -357,7 +357,7 @@ namespace Concesionaria
             {
                 txtNombre.Text = trdo.Rows[0]["Nombre"].ToString();
                 txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
-                txtTelefono.Text = trdo.Rows[0]["Telefono"].ToString();
+                //txtTelefono.Text = trdo.Rows[0]["Telefono"].ToString();
                 txtCelular.Text = trdo.Rows[0]["Celular"].ToString();
                 txtCalle.Text = trdo.Rows[0]["Calle"].ToString();
                 txtAltura.Text = trdo.Rows[0]["Numero"].ToString();
@@ -415,7 +415,7 @@ namespace Concesionaria
             txtCodCLiente.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
-            txtTelefono.Text = "";
+          
             txtCelular.Text = "";
             CmbBarrio.SelectedIndex = 0;
 
@@ -1265,7 +1265,7 @@ namespace Concesionaria
             }
             string Nombre = txtNombre.Text;
             string Apellido = txtApellido.Text;
-            string Telefono = txtTelefono.Text;
+            string Telefono = "";
             string Celular = txtCelular.Text;
             string Calle = txtCalle.Text;
             string Altura = txtAltura.Text;
@@ -1582,7 +1582,7 @@ namespace Concesionaria
             txtCodCLiente.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
-            txtTelefono.Text = "";
+            
             txtCelular.Text = "";
             txtTotalCredito.Text = "";
             if (cmbProvincia2.Items.Count > 0)
@@ -3325,7 +3325,7 @@ namespace Concesionaria
             cVentaxCliente ven = new cVentaxCliente();
             DataTable trdo = ven.GetClientexCodVenta(CodVenta);
             GrillaCliente.DataSource = trdo;
-            fun.AnchoColumnas(GrillaCliente, "0;30;30;20;20");
+            fun.AnchoColumnas(GrillaCliente, "0;0;60;20;20");
         }
 
         private void BuscarAutosPartePago(Int32 CodVenta)
@@ -3461,6 +3461,29 @@ namespace Concesionaria
 
             if (b == 0)
                 LimpiarAuto();
+
+            Clases.cStockAuto stock = new Clases.cStockAuto();
+            DataTable trdo2 = stock.GetStockAutosVigentes(Convert.ToInt32(txtCodAuto.Text));
+            if (trdo2.Rows.Count > 0)
+            {
+                txtCodStock.Text = trdo2.Rows[0]["CodStock"].ToString();
+                // GetExTitular(Convert.ToInt32(trdo2.Rows[0]["CodCliente"].ToString()));
+                GetCostos(Convert.ToInt32(txtCodStock.Text));
+                CargarGastosGeneralesxCodStoxk(Convert.ToInt32(txtCodStock.Text));
+                if (trdo2.Rows[0]["CodCliente"].ToString() != "")
+                {
+                    // txtCodCLiente.Text = trdo2.Rows[0]["CodCliente"].ToString();
+                    // GetClientesxCodigo(Convert.ToInt32(txtCodCLiente.Text));
+                }
+
+            }
+
+            if (txtCodStock.Text == "")
+            {
+                MessageBox.Show("El vehículo no se encuentra en el stock ", Clases.cMensaje.Mensaje());
+                LimpiarAuto();
+                txtPatente.Text = "";
+            }
         }
 
 
@@ -3473,7 +3496,7 @@ namespace Concesionaria
                 txtNroDoc.Text = trdo.Rows[0]["NroDocumento"].ToString();
                 txtNombre.Text = trdo.Rows[0]["Nombre"].ToString();
                 txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
-                txtTelefono.Text = trdo.Rows[0]["Telefono"].ToString();
+                //txtTelefono.Text = trdo.Rows[0]["Telefono"].ToString();
                 txtCelular.Text = trdo.Rows[0]["Celular"].ToString();
                 txtCalle.Text = trdo.Rows[0]["Calle"].ToString();
                 txtAltura.Text = trdo.Rows[0]["Numero"].ToString();
@@ -5196,8 +5219,6 @@ namespace Concesionaria
                 return;
             }
 
-
-
             if (txtNombre.Text == "")
             {
                 Mensaje("Debe ingresar un nombre");
@@ -5234,7 +5255,7 @@ namespace Concesionaria
                     string CodCLi = txtCodCLiente.Text;
                     string Ape = txtApellido.Text;
                     string Nom = txtNombre.Text;
-                    string Telefono = txtTelefono.Text;
+                    string Telefono = txtCelular.Text;
 
                     if (fun.Buscar(tbCliente, "NroDocumento", NroDocumento) == false)
                     {
@@ -5242,7 +5263,7 @@ namespace Concesionaria
                         tbCliente = fun.AgregarFilas(tbCliente, val);
 
                         GrillaCliente.DataSource = tbCliente;
-                        fun.AnchoColumnas(GrillaCliente, "0;30;30;20;20");
+                        fun.AnchoColumnas(GrillaCliente, "0;0;60;20;20");
                         GrillaCliente.Columns[0].Visible = false;
                     }
                     Transaccion.Commit();
@@ -5282,7 +5303,7 @@ namespace Concesionaria
 
             string Nombre = txtNombre.Text;
             string Apellido = txtApellido.Text;
-            string Telefono = txtTelefono.Text;
+            string Telefono = "";
             string Celular = txtCelular.Text;
             string Calle = txtCalle.Text;
             string Altura = txtAltura.Text;

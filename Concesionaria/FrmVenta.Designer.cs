@@ -81,6 +81,7 @@
             this.txtCodStock = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCodigoPostal = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
@@ -99,7 +100,6 @@
             this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.label73 = new System.Windows.Forms.Label();
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
-            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.txtCodCLiente = new System.Windows.Forms.TextBox();
             this.btnNuevoBarrio = new System.Windows.Forms.Button();
             this.CmbBarrio = new System.Windows.Forms.ComboBox();
@@ -109,7 +109,6 @@
             this.txtCalle = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.cmbDocumento = new System.Windows.Forms.ComboBox();
@@ -311,7 +310,6 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
-            this.txtCodigoPostal = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -904,7 +902,6 @@
             this.groupBox1.Controls.Add(this.txtFechaNacimiento);
             this.groupBox1.Controls.Add(this.label73);
             this.groupBox1.Controls.Add(this.txtCelular);
-            this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.txtCodCLiente);
             this.groupBox1.Controls.Add(this.btnNuevoBarrio);
             this.groupBox1.Controls.Add(this.CmbBarrio);
@@ -914,7 +911,6 @@
             this.groupBox1.Controls.Add(this.txtCalle);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.cmbDocumento);
@@ -928,6 +924,14 @@
             this.groupBox1.Size = new System.Drawing.Size(845, 225);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // txtCodigoPostal
+            // 
+            this.txtCodigoPostal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCodigoPostal.Location = new System.Drawing.Point(100, 125);
+            this.txtCodigoPostal.Name = "txtCodigoPostal";
+            this.txtCodigoPostal.Size = new System.Drawing.Size(287, 22);
+            this.txtCodigoPostal.TabIndex = 83;
             // 
             // txtEmail
             // 
@@ -1091,17 +1095,10 @@
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(100, 93);
+            this.txtCelular.Location = new System.Drawing.Point(100, 69);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(287, 22);
             this.txtCelular.TabIndex = 30;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(100, 67);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(287, 22);
-            this.txtTelefono.TabIndex = 22;
             // 
             // txtCodCLiente
             // 
@@ -1144,17 +1141,17 @@
             // 
             this.txtAltura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtAltura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAltura.Location = new System.Drawing.Point(0, 42);
+            this.txtAltura.Location = new System.Drawing.Point(-6, 50);
             this.txtAltura.MaxLength = 20;
             this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(31, 22);
+            this.txtAltura.Size = new System.Drawing.Size(22, 22);
             this.txtAltura.TabIndex = 18;
             this.txtAltura.Visible = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(262, 122);
+            this.label13.Location = new System.Drawing.Point(17, 125);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(77, 16);
             this.label13.TabIndex = 21;
@@ -1163,15 +1160,15 @@
             // txtCalle
             // 
             this.txtCalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCalle.Location = new System.Drawing.Point(100, 119);
+            this.txtCalle.Location = new System.Drawing.Point(100, 97);
             this.txtCalle.Name = "txtCalle";
-            this.txtCalle.Size = new System.Drawing.Size(156, 22);
+            this.txtCalle.Size = new System.Drawing.Size(287, 22);
             this.txtCalle.TabIndex = 17;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 119);
+            this.label12.Location = new System.Drawing.Point(14, 99);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 16);
             this.label12.TabIndex = 19;
@@ -1180,20 +1177,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 91);
+            this.label11.Location = new System.Drawing.Point(14, 69);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 16);
             this.label11.TabIndex = 16;
             this.label11.Text = "Celular";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(10, 67);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 16);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Teléfono";
             // 
             // txtNombre
             // 
@@ -3253,14 +3241,6 @@
             this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
             this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
-            // txtCodigoPostal
-            // 
-            this.txtCodigoPostal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCodigoPostal.Location = new System.Drawing.Point(340, 121);
-            this.txtCodigoPostal.Name = "txtCodigoPostal";
-            this.txtCodigoPostal.Size = new System.Drawing.Size(47, 22);
-            this.txtCodigoPostal.TabIndex = 83;
-            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3368,7 +3348,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox txtCelular;
-        private System.Windows.Forms.MaskedTextBox txtTelefono;
         private System.Windows.Forms.TextBox txtCodCLiente;
         private System.Windows.Forms.Button btnNuevoBarrio;
         private System.Windows.Forms.ComboBox CmbBarrio;
@@ -3378,7 +3357,6 @@
         private System.Windows.Forms.TextBox txtCalle;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.ComboBox cmbDocumento;

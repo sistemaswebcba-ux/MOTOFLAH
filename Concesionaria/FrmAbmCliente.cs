@@ -51,12 +51,6 @@ namespace Concesionaria
                 return false;
             }
 
-            if (txt_Apellido.Text == "")
-            {
-                MessageBox.Show("Debe ingresar un apellido para continuar", Clases.cMensaje.Mensaje());
-                return false;
-            }
-
             if (txt_Nombre.Text == "")
             {
                 MessageBox.Show("Debe ingresar un nombre para continuar", Clases.cMensaje.Mensaje());
@@ -124,11 +118,11 @@ namespace Concesionaria
           //  form.FormClosing += new FormClosingEventHandler(form_FormClosing);
           //  form.ShowDialog();
             //codigo generico
-            Principal.OpcionesdeBusqueda = "Nombre;Apellido;NroDocumento";
+            Principal.OpcionesdeBusqueda = "Nombre;NroDocumento";
             Principal.TablaPrincipal = "Cliente";
-            Principal.OpcionesColumnasGrilla = "CodCliente;Nombre;Apellido";
-            Principal.ColumnasVisibles = "0;1;1";
-            Principal.ColumnasAncho = "0;290;290";
+            Principal.OpcionesColumnasGrilla = "CodCliente;Nombre";
+            Principal.ColumnasVisibles = "0;1";
+            Principal.ColumnasAncho = "0;580";
             FrmBuscadorGenerico form = new FrmBuscadorGenerico();
             form.FormClosing += new FormClosingEventHandler(form_FormClosing);
             
