@@ -312,7 +312,6 @@
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
             this.txtImporteTranferencia = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.txtTotalTranferencia = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
@@ -3219,7 +3218,7 @@
             // btnGrabar
             // 
             this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(611, 634);
+            this.btnGrabar.Location = new System.Drawing.Point(752, 634);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(131, 36);
             this.btnGrabar.TabIndex = 4;
@@ -3242,7 +3241,7 @@
             // btnGrabarPreVenta
             // 
             this.btnGrabarPreVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabarPreVenta.Location = new System.Drawing.Point(752, 634);
+            this.btnGrabarPreVenta.Location = new System.Drawing.Point(615, 634);
             this.btnGrabarPreVenta.Name = "btnGrabarPreVenta";
             this.btnGrabarPreVenta.Size = new System.Drawing.Size(131, 36);
             this.btnGrabarPreVenta.TabIndex = 6;
@@ -3268,15 +3267,6 @@
             this.label9.TabIndex = 33;
             this.label9.Text = "Importe Transferencia";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(421, 328);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 13);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Efectivo";
-            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -3301,7 +3291,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(888, 669);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnGrabarPreVenta);
             this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.btnGrabar);
@@ -3665,6 +3654,5 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtTotalTranferencia;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label10;
     }
 }

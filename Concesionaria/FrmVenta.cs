@@ -1572,6 +1572,7 @@ namespace Concesionaria
             if (LimpiaPatente == true)
                 txtPatente.Text = "";
             txtTotalCheque.Text = "";
+            txtTotalTranferencia.Text = "";
             txtCodPreVenta.Text = "";
             GrillaVehiculos.DataSource = null;
             txtCodAuto.Text = "";
@@ -3242,6 +3243,7 @@ namespace Concesionaria
                     string sImporte = tVenta.Rows[0]["ImporteTranferencia"].ToString().Replace(",", ".");
                     vec = sImporte.Split('.');
                     txtImporteTranferencia.Text = fun.FormatoEnteroMiles(vec[0]);
+                    txtTotalTranferencia.Text = txtImporteTranferencia.Text;
                 }
                 else
                     txtImporteTranferencia.Text = tVenta.Rows[0]["ImporteTranferencia"].ToString();

@@ -43,5 +43,18 @@ namespace Concesionaria.Clases
             }
             return cDb.ExecuteDataTable(sql);
         }
+
+        public DataTable GetAutosxCodCompra(Int32 CodCompra)
+        {
+            string sql = " select a.CodAuto,a.Patente,";
+            sql = sql + " (select m.Nombre from marca m where m.CodMarca = a.CodMarca) as Marca ";
+            sql = sql + ", a.Descripcion ,";
+            sql = sql + " (select c.Nombre from Color c where c.CodColor = a.CodColor) as Color ";
+            sql = sql + ", a.Chasis , sa.ImporteCompra ";
+            sql = sql + "  from StockAuto sa,auto a ";
+            sql = sql + " where sa.CodAuto = a.CodAuto ";
+            sql = sql + " and sa.CodCompra =" + CodCompra.ToString();
+            return cDb.ExecuteDataTable(sql);
+        }
     }
 }

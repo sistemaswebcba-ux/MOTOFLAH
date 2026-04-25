@@ -304,6 +304,7 @@ namespace Concesionaria
             double TotalCheques = 0;
             double EfectivoaPagar = 0;
             double Gastos = 0;
+            double Transferencia = 0;
             Double SubTotal = 0;
 
             if (txtTotal.Text != "")
@@ -321,10 +322,13 @@ namespace Concesionaria
             if (txtEfectivoaPagar.Text != "")
                 EfectivoaPagar = fun.ToDouble(txtEfectivoaPagar.Text);
 
+            if (txtTotalTranferencia.Text != "")  
+                Transferencia = fun.ToDouble(txtTotalTranferencia.Text);
+
             if (txtTotalGasto.Text != "")
                 Gastos = fun.ToDouble(txtTotalGasto.Text);
 
-            double dif = Total - Efectivo - Vehiculos - TotalCheques - EfectivoaPagar;
+            double dif = Total - Efectivo - Vehiculos - TotalCheques - EfectivoaPagar - Transferencia;
             if (Concesion == 0)
                 if (dif != 0)
                 {
@@ -408,6 +412,14 @@ namespace Concesionaria
 
         }
 
+        public void GetAutosxCompra(int CodCompra)
+        {
+            cCompra compra = new cCompra();
+            DataTable trdo = compra.GetAutosxCodCompra(CodCompra);
+            GrillaAutos.DataSource = trdo;
+            AnchoGrillaAuto();
+        }
+
         private void CalcularSubtotal()
         {
             cFunciones fun = new cFunciones();
@@ -416,6 +428,7 @@ namespace Concesionaria
             double TotalCheques = 0;
             double EfectivoaPagar = 0;
             double Gastos = 0;
+            double Tranferencias = 0;
             Double SubTotal = 0;
 
             if (txtTotalEfectivo.Text != "")
@@ -433,7 +446,11 @@ namespace Concesionaria
             if (txtTotalGasto.Text != "")
                 Gastos = fun.ToDouble(txtTotalGasto.Text);
 
-            SubTotal = Efectivo + Vehiculos + TotalCheques + EfectivoaPagar;
+            if (txtTotalTranferencia.Text != "")
+                Tranferencias = fun.ToDouble(txtTotalTranferencia.Text);
+
+
+            SubTotal = Efectivo + Vehiculos + TotalCheques + EfectivoaPagar + Tranferencias;
             txtSubTotal.Text =fun.FormatoEnteroMiles (SubTotal.ToString());
             
         }
@@ -444,6 +461,8 @@ namespace Concesionaria
             txtPatente.Text = "";
             txtNroDoc.Text = "";
             txtEfectivo.Text = "";
+            txtImporteTranferencia.Text = "";
+            txtTotalTranferencia.Text = "";
             GrillaCheques.DataSource = null;
             // txtImporteGasto.Text = "";
             txtTotalGastosRecepcion.Text = "";
@@ -1723,6 +1742,7 @@ namespace Concesionaria
             Int32 CodStokIngreso = Convert.ToInt32(txtCodStock.Text);
             double ImporteEfectivo = 0;
             Double ImporteCompra = 0;
+            Double ImporteTranferencia = 0;
             Int32 CodCliente = 0;
             DateTime Fecha = DateTime.Now;
             if (txtCodCLiente.Text != "")
@@ -1732,6 +1752,9 @@ namespace Concesionaria
 
             if (txtEfectivo.Text != "")
                 ImporteEfectivo = fun.ToDouble(txtEfectivo.Text);
+             
+            if (txtImporteTranferencia.Text != "")
+                ImporteTranferencia = fun.ToDouble(txtImporteTranferencia.Text);
 
             if (txtTotal.Text != "")
                 ImporteCompra = fun.ToDouble(txtTotal.Text);
@@ -1747,6 +1770,7 @@ namespace Concesionaria
             sql = sql + ",CodCliente";
             sql = sql + ",ImporteCompra";
             sql = sql + ",Fecha";
+            sql = sql + ",ImporteTranferencia";
             sql = sql + ")";
             sql = sql + "Values(" + txtCodStock.Text;
             if (txtCodStock2.Text != "")
@@ -1759,6 +1783,7 @@ namespace Concesionaria
             sql = sql + "," + CodCliente.ToString();
             sql = sql + "," + ImporteCompra.ToString().Replace(",", ".");
             sql = sql + "," + "'" + Fecha.ToShortDateString() + "'";
+            sql = sql + "," + ImporteTranferencia.ToString().Replace(",", ".");
             sql = sql + ")";
 
             if (txtCodStock2.Text != "")
@@ -2056,12 +2081,21 @@ namespace Concesionaria
                     txtTotalEfectivo.Text = txtEfectivo.Text;
                 }
 
+                if (trdo.Rows[0]["ImporteTranferencia"].ToString() != "")
+                {  
+                    txtImporteTranferencia.Text = fun.TransformarEntero(trdo.Rows[0]["ImporteTranferencia"].ToString());
+                    txtImporteTranferencia.Text = fun.FormatoEnteroMiles(txtImporteTranferencia.Text);
+                    txtTotalTranferencia.Text = txtImporteTranferencia.Text;
+                }
+
                 if (trdo.Rows[0]["ImporteAutoPartePago"].ToString() != "")
                 {
                     txtTotalVehiculo.Text = fun.TransformarEntero(trdo.Rows[0]["ImporteAutoPartePago"].ToString());
                     txtTotalVehiculo.Text = fun.FormatoEnteroMiles(txtTotalVehiculo.Text);
                     txtImporteVehiculo2.Text = txtTotalVehiculo.Text;
                 }
+
+                GetAutosxCompra(CodCompra);
 
                 cCompraxCliente cc = new cCompraxCliente();
                 DataTable tresul = cc.GetClientexCodComrpa(CodCompra);
@@ -2806,6 +2840,14 @@ namespace Concesionaria
             CalcularTotal();
             LimpiarAuto();
             AnchoGrillaAuto();
+        }
+
+        private void txtImporteTranferencia_Leave(object sender, EventArgs e)
+        {    
+            Clases.cFunciones fun = new Clases.cFunciones();
+            txtImporteTranferencia.Text = fun.FormatoEnteroMiles(txtImporteTranferencia.Text);
+            txtTotalTranferencia.Text = txtImporteTranferencia.Text;
+            CalcularSubtotal();
         }
     }
 }
