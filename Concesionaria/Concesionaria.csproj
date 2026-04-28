@@ -236,6 +236,12 @@
     <Compile Include="FrmAbmTipoUtilitario.Designer.cs">
       <DependentUpon>FrmAbmTipoUtilitario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAbmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbmUsuario.Designer.cs">
+      <DependentUpon>FrmAbmUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAlertas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +295,12 @@
     </Compile>
     <Compile Include="FrmBuscarAuto.Designer.cs">
       <DependentUpon>FrmBuscarAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCambioClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCambioClave.Designer.cs">
+      <DependentUpon>FrmCambioClave.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCobroCheque.cs">
       <SubType>Form</SubType>
@@ -814,6 +826,9 @@
     <EmbeddedResource Include="FrmAbmTipoUtilitario.resx">
       <DependentUpon>FrmAbmTipoUtilitario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbmUsuario.resx">
+      <DependentUpon>FrmAbmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAlertas.resx">
       <DependentUpon>FrmAlertas.cs</DependentUpon>
     </EmbeddedResource>
@@ -840,6 +855,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBuscarAuto.resx">
       <DependentUpon>FrmBuscarAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCambioClave.resx">
+      <DependentUpon>FrmCambioClave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCobroCheque.resx">
       <DependentUpon>FrmCobroCheque.cs</DependentUpon>

@@ -367,3 +367,5 @@ D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\bin\Debug\zh-Hant\Microsoft.S
 D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\obj\x86\Debug\Concesionaria.csprojResolveAssemblyReference.cache
 D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\obj\x86\Debug\RdlCompile.cache
 D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\obj\x86\Debug\RdlCompile.compiled
+D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\obj\x86\Debug\Concesionaria.FrmAbmUsuario.resources
+D:\PROGRAMACION 3\MOTOFLASH\MOTOFLAH\Concesionaria\obj\x86\Debug\Concesionaria.FrmCambioClave.resources

@@ -1,6 +1,6 @@
 ﻿namespace Concesionaria
 {
-    partial class FrmAbmBanco
+    partial class FrmAbmUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmBanco));
-            this.Grupo = new System.Windows.Forms.GroupBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txt_Nombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmUsuario));
             this.BarraBotones = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
@@ -42,46 +38,19 @@
             this.btnAbrir = new System.Windows.Forms.ToolStripButton();
             this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.Grupo.SuspendLayout();
+            this.Grupo = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmb_CodRol = new System.Windows.Forms.ComboBox();
+            this.txtReingresarClave = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_Clave = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txt_Nombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.BarraBotones.SuspendLayout();
+            this.Grupo.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Grupo
-            // 
-            this.Grupo.Controls.Add(this.txtCodigo);
-            this.Grupo.Controls.Add(this.txt_Nombre);
-            this.Grupo.Controls.Add(this.label1);
-            this.Grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grupo.Location = new System.Drawing.Point(0, 41);
-            this.Grupo.Name = "Grupo";
-            this.Grupo.Size = new System.Drawing.Size(379, 76);
-            this.Grupo.TabIndex = 0;
-            this.Grupo.TabStop = false;
-            this.Grupo.Text = "Información del Banco";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(238, 0);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(57, 22);
-            this.txtCodigo.TabIndex = 2;
-            this.txtCodigo.Visible = false;
-            // 
-            // txt_Nombre
-            // 
-            this.txt_Nombre.Location = new System.Drawing.Point(59, 30);
-            this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(299, 22);
-            this.txt_Nombre.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Banco";
             // 
             // BarraBotones
             // 
@@ -97,8 +66,8 @@
             this.btnSalir});
             this.BarraBotones.Location = new System.Drawing.Point(0, 0);
             this.BarraBotones.Name = "BarraBotones";
-            this.BarraBotones.Size = new System.Drawing.Size(388, 39);
-            this.BarraBotones.TabIndex = 14;
+            this.BarraBotones.Size = new System.Drawing.Size(335, 39);
+            this.BarraBotones.TabIndex = 15;
             this.BarraBotones.Text = "toolStrip1";
             // 
             // btnNuevo
@@ -183,24 +152,113 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // FrmAbmBanco
+            // Grupo
+            // 
+            this.Grupo.Controls.Add(this.label4);
+            this.Grupo.Controls.Add(this.cmb_CodRol);
+            this.Grupo.Controls.Add(this.txtReingresarClave);
+            this.Grupo.Controls.Add(this.label3);
+            this.Grupo.Controls.Add(this.txt_Clave);
+            this.Grupo.Controls.Add(this.label2);
+            this.Grupo.Controls.Add(this.txtCodigo);
+            this.Grupo.Controls.Add(this.txt_Nombre);
+            this.Grupo.Controls.Add(this.label1);
+            this.Grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Grupo.Location = new System.Drawing.Point(12, 53);
+            this.Grupo.Name = "Grupo";
+            this.Grupo.Size = new System.Drawing.Size(323, 151);
+            this.Grupo.TabIndex = 16;
+            this.Grupo.TabStop = false;
+            this.Grupo.Text = "Información del Usuario";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Rol";
+            // 
+            // cmb_CodRol
+            // 
+            this.cmb_CodRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_CodRol.FormattingEnabled = true;
+            this.cmb_CodRol.Location = new System.Drawing.Point(123, 114);
+            this.cmb_CodRol.Name = "cmb_CodRol";
+            this.cmb_CodRol.Size = new System.Drawing.Size(188, 24);
+            this.cmb_CodRol.TabIndex = 7;
+            // 
+            // txtReingresarClave
+            // 
+            this.txtReingresarClave.Location = new System.Drawing.Point(124, 86);
+            this.txtReingresarClave.Name = "txtReingresarClave";
+            this.txtReingresarClave.Size = new System.Drawing.Size(187, 22);
+            this.txtReingresarClave.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Reingresar Clave";
+            // 
+            // txt_Clave
+            // 
+            this.txt_Clave.Location = new System.Drawing.Point(123, 58);
+            this.txt_Clave.Name = "txt_Clave";
+            this.txt_Clave.Size = new System.Drawing.Size(188, 22);
+            this.txt_Clave.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Clave";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(238, 0);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(57, 22);
+            this.txtCodigo.TabIndex = 2;
+            this.txtCodigo.Visible = false;
+            // 
+            // txt_Nombre
+            // 
+            this.txt_Nombre.Location = new System.Drawing.Point(123, 30);
+            this.txt_Nombre.Name = "txt_Nombre";
+            this.txt_Nombre.Size = new System.Drawing.Size(188, 22);
+            this.txt_Nombre.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre";
+            // 
+            // FrmAbmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(388, 124);
-            this.Controls.Add(this.BarraBotones);
+            this.ClientSize = new System.Drawing.Size(335, 202);
             this.Controls.Add(this.Grupo);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FrmAbmBanco";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Formulario de Bancos";
-            this.Load += new System.EventHandler(this.FrmAbmBanco_Load);
-            this.Grupo.ResumeLayout(false);
-            this.Grupo.PerformLayout();
+            this.Controls.Add(this.BarraBotones);
+            this.Name = "FrmAbmUsuario";
+            this.Text = "FrmAbmUsuario";
+            this.Load += new System.EventHandler(this.FrmAbmUsuario_Load);
             this.BarraBotones.ResumeLayout(false);
             this.BarraBotones.PerformLayout();
+            this.Grupo.ResumeLayout(false);
+            this.Grupo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,9 +266,6 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox Grupo;
-        private System.Windows.Forms.TextBox txt_Nombre;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip BarraBotones;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnEditar;
@@ -220,6 +275,15 @@
         private System.Windows.Forms.ToolStripButton btnAbrir;
         private System.Windows.Forms.ToolStripButton btnImprimir;
         private System.Windows.Forms.ToolStripButton btnSalir;
+        private System.Windows.Forms.GroupBox Grupo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmb_CodRol;
+        private System.Windows.Forms.TextBox txtReingresarClave;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_Clave;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txt_Nombre;
+        private System.Windows.Forms.Label label1;
     }
 }

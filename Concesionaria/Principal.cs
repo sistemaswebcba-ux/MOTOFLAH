@@ -760,5 +760,17 @@ namespace Concesionaria
             FrmAbmColor frm = new FrmAbmColor();
             frm.Show();
         }
+
+        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAbmUsuario frm = new Concesionaria.FrmAbmUsuario();
+            frm.Show();
+        }
+
+        private void actualizarClaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCambioClave frm = new FrmCambioClave();
+            frm.Show();
+        }
     }
 }

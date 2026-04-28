@@ -774,6 +774,7 @@ namespace Concesionaria
             {
                 return;
             }
+            txtCodCLiente.Text  = tbCliente.Rows[0]["CodCliente"].ToString();
             Clases.cVenta objVenta = new Clases.cVenta();
             double GastosTotalxAuto = objVenta.GetCostosTotalesxCodStock(Convert.ToInt32(txtCodStock.Text));
             SqlConnection con = new SqlConnection();
@@ -1247,6 +1248,7 @@ namespace Concesionaria
             {
                 Transaccion.Rollback();
                 MessageBox.Show("Hubo un error en el proceso de grabación", Clases.cMensaje.Mensaje());
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -3470,6 +3472,12 @@ namespace Concesionaria
                 {
                     GetCostos(Convert.ToInt32(txtCodStock.Text));
                     CargarGastosGeneralesxCodStoxk(Convert.ToInt32(txtCodStock.Text));
+                }
+
+                if (trdo.Rows[0]["CodColor"].ToString() != "")
+                { 
+                    Int32 CodColor = Convert.ToInt32(trdo.Rows[0]["CodColor"].ToString());
+                    cmbColor.SelectedValue = CodColor.ToString();
                 }
 
                 if (trdo.Rows[0]["CodMarca"].ToString() != "")

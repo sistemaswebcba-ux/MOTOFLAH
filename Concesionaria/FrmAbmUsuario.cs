@@ -6,25 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Concesionaria.Clases;
 
 namespace Concesionaria
 {
-    public partial class FrmAbmBanco : Form
+    public partial class FrmAbmUsuario : FrmBase
     {
-        public FrmAbmBanco()
+        public FrmAbmUsuario()
         {
             InitializeComponent();
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            Botonera(2);
-            Clases.cFunciones fun = new Clases.cFunciones();
-            fun.LimpiarGenerico(this);
-            txtCodigo.Text = "";
-            Grupo.Enabled = true;
-
-        }
         private void Botonera(int Jugada)
         {
             switch (Jugada)
@@ -53,33 +45,101 @@ namespace Concesionaria
                     btnEliminar.Enabled = true;
                     btnAceptar.Enabled = false;
                     btnCancelar.Enabled = false;
-
-
                     break;
             }
+        }
 
+        private void FrmAbmUsuario_Load(object sender, EventArgs e)
+        {
+            Botonera(1);
+            Grupo.Enabled = false;
+            CargarRol();
+        }
 
+        private void CargarRol()
+        {
+            cUsuario usuario = new Clases.cUsuario();
+            DataTable tb = usuario.GetRol();
+            cFunciones fun = new Clases.cFunciones();
+            fun.LlenarComboDatatable(cmb_CodRol, tb, "Nombre", "CodRol");
+        }
+
+        public Boolean Validar()
+        {
+            if (txt_Nombre.Text =="")
+            {
+                MessageBox.Show("Debe ingresar un nombre de usuario ");
+                return false;
+            }
+
+            if (txt_Clave.Text =="")
+            {
+                MessageBox.Show("Debe ingresar una Clave de usuario ");
+                return false;
+            }
+
+            if (txt_Clave.Text !=txtReingresarClave.Text)
+            {
+                MessageBox.Show("El reigreso de la clave debe ser igual a la clave ");
+                return false;
+            }
+
+          
+
+            return true;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Botonera(2);
+            Clases.cFunciones fun = new Clases.cFunciones();
+            fun.LimpiarGenerico(this);
+            txtCodigo.Text = "";
+            Grupo.Enabled = true;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Botonera(2);
+            Grupo.Enabled = true;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (Validar ()==false)
+            {
+                return;
+            }
+
+            if (txt_Nombre.Text.ToUpper ()=="ADMIN")
+            {
+                cmb_CodRol.SelectedValue = 1;
+            }
+
+            cUsuario usuario = new Clases.cUsuario();
             Clases.cFunciones fun = new Clases.cFunciones();
             if (txtCodigo.Text == "")
-                fun.GuardarNuevoGenerico(this, "Banco");
+            {
+                if (usuario.Buscar(txt_Nombre.Text) == true)
+                {
+                    MessageBox.Show("El usuario ya existe ");
+                    return;
+                }
+                fun.GuardarNuevoGenerico(this, "Usuario");
+            }
+               
             else
-                fun.ModificarGenerico(this, "Banco", "CodBanco", txtCodigo.Text);
+            {
+                fun.ModificarGenerico(this, "Usuario", "CodUsuario", txtCodigo.Text);
+            }
+                
             MessageBox.Show("Datos grabados Correctamente", Clases.cMensaje.Mensaje());
             Botonera(1);
             fun.LimpiarGenerico(this);
             txtCodigo.Text = "";
             Botonera(1);
             Grupo.Enabled = false;
-        }
-
-        private void FrmAbmBanco_Load(object sender, EventArgs e)
-        {
-            Botonera(1);
-            Grupo.Enabled = false;
+            txtReingresarClave.Text = "";
         }
 
         private void btnAbrir_Click(object sender, EventArgs e)
@@ -87,8 +147,8 @@ namespace Concesionaria
             //nombre de los camposa buscar, se llaman igual que en la base de datos
             Principal.OpcionesdeBusqueda = "Nombre";
             //nombre de la tabla, 
-            Principal.TablaPrincipal = "Banco";
-            Principal.OpcionesColumnasGrilla = "CodBanco; Nombre";
+            Principal.TablaPrincipal = "Usuario";
+            Principal.OpcionesColumnasGrilla = "CodUsuario; Nombre";
             Principal.ColumnasVisibles = "0;1";
             Principal.ColumnasAncho = "100;580";
             FrmBuscadorGenerico form = new FrmBuscadorGenerico();
@@ -108,19 +168,13 @@ namespace Concesionaria
                     txtCodigo.Text = Principal.CodigoPrincipalAbm.ToString();
 
                     if (Principal.CodigoPrincipalAbm != "")
-                        fun.CargarControles(this, "Banco", "CodBanco", txtCodigo.Text);
+                        fun.CargarControles(this, "Usuario", "CodUsuario", txtCodigo.Text);
                     Grupo.Enabled = false;
+                    txtReingresarClave.Text = txt_Clave.Text;
                     return;
                 }
 
             }
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            Botonera(2);
-            Grupo.Enabled = true;
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -130,7 +184,10 @@ namespace Concesionaria
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            Botonera(1);
+            Clases.cFunciones fun = new Clases.cFunciones();
+            fun.LimpiarGenerico(this);
+            txtCodigo.Text = "";
         }
     }
 }
