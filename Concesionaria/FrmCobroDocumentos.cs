@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Concesionaria.Clases;
 
 namespace Concesionaria
 {
@@ -63,7 +64,7 @@ namespace Concesionaria
                 {
                     ban = 1;
                     txtNombre.Text = trdo.Rows[0]["Nombre"].ToString();
-                    txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
+                  //  txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
                     txtDescripcion.Text = trdo.Rows[0]["Descripcion"].ToString();
                 }
             }
@@ -71,7 +72,7 @@ namespace Concesionaria
             if (ban == 0)
             {
                 txtNombre.Text = "";
-                txtApellido.Text = "";
+                //txtApellido.Text = "";
                 txtDescripcion.Text = "";
             }
             Grilla.Columns[0].Visible = false;
@@ -103,15 +104,24 @@ namespace Concesionaria
                 {
                     ban = 1;
                     txtNombre.Text = trdo.Rows[0]["Nombre"].ToString();
-                    txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
+                   // txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
                     txtDescripcion.Text = trdo.Rows[0]["Descripcion"].ToString();
                 }
+
+                if (trdo.Rows[0]["CodAuto"].ToString() != "")
+                {
+                    int CodAUTO = Convert.ToInt32(trdo.Rows[0]["CodAuto"].ToString());
+                    CargarAuto(CodAUTO);
+                }
+
+
+                //CargarAuto
             }
-                
+
             if (ban == 0)
             {
                 txtNombre.Text = "";
-                txtApellido.Text = "";
+             //   txtApellido.Text = "";
                 txtDescripcion.Text = "";
             }
             Grilla.Columns[0].Visible = false;
@@ -123,6 +133,19 @@ namespace Concesionaria
             Grilla.Columns[8].HeaderText = "Imp. pagado";
             Grilla.Columns[8].Width = 120; 
 
+        }
+
+        private void CargarAuto(Int32 CodAuto)
+        {
+            cAuto auto = new Clases.cAuto();
+            DataTable trdo = auto.GetAutoxCodigo(CodAuto);
+            if (trdo.Rows.Count >0)
+            {
+                if (trdo.Rows[0]["CodMarca"].ToString ()!="")
+                {
+                    cmbMarca.SelectedValue = trdo.Rows[0]["CodMarca"].ToString();
+                }
+            }
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -192,6 +215,8 @@ namespace Concesionaria
 
         private void FrmCobroDocumentos_Load(object sender, EventArgs e)
         {
+            cFunciones fun = new Clases.cFunciones();
+            fun.LlenarCombo(cmbMarca, "Marca", "Nombre","CodMarca");
             if (Principal.CodigoPrincipalAbm != null)
             {
                 txtCodCobranza.Text = Principal.CodigoPrincipalAbm.ToString();
@@ -296,7 +321,7 @@ namespace Concesionaria
         private void btnAlarma_Click(object sender, EventArgs e)
         {
             string Patente = txtPatente.Text;
-            string Nombre = txtNombre.Text + " " + txtApellido.Text;
+            string Nombre = txtNombre.Text + " ";
             string Union = Patente + "&" + Nombre;
             Principal.Comodin = Union;
             Principal.CodigoPrincipalAbm = null;

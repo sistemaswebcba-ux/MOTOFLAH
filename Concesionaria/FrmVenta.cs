@@ -35,7 +35,21 @@ namespace Concesionaria
 
         private void InicializarComponentes()
         {
-
+            if (Principal.CodRol !=null)
+            {
+                if (Principal.CodRol !=1)
+                {
+                    txtImporteCompra.Visible = false;
+                    BtnVerCostoAuto.Visible = false;
+                    lblImporteCompra.Visible = false;
+                }
+            }
+            else
+            {
+                txtImporteCompra.Visible = false;
+                BtnVerCostoAuto.Visible = false;
+                lblImporteCompra.Visible = false;
+            }
             tprenda = new DataTable();
             Clases.cFunciones fun = new Clases.cFunciones();
             string Lista = "CodEntidad;Nombre;Fecha;Importe;CodPrenda;FechaVencimiento";
@@ -1392,6 +1406,7 @@ namespace Concesionaria
             double ImporteBanco = 0;
             double PrecioSenia = 0;
             double ImporteTranferencia = 0;
+            string Observacion = "";
 
             Clases.cFunciones fun = new Clases.cFunciones();
             if (txtPrecioVenta.Text != "")
@@ -1409,7 +1424,7 @@ namespace Concesionaria
             if (txtImporteTranferencia.Text != "")
                 ImporteTranferencia = fun.ToDouble(txtImporteTranferencia.Text);
 
-
+            Observacion = txtObservacion.Text;
             CodCliente = Convert.ToInt32(tbCliente.Rows[0]["CodCliente"].ToString());
             /*
             if (txtCodCLiente.Text != "")
@@ -1431,7 +1446,7 @@ namespace Concesionaria
             //Principal.CodUsuarioLogueado 
             sql = "insert into Venta(Fecha,CodUsuario,CodCliente";
             sql = sql + ",CodAutoVendido,CodAutoPartePago,ImporteVenta,";
-            sql = sql + "ImporteAutoPartePago,ImporteCredito,ImporteEfectivo,ImportePrenda,ImporteCobranza,ImporteBanco,CodVendedor,CodStock,PrecioSenia,ImporteTranferencia)";
+            sql = sql + "ImporteAutoPartePago,ImporteCredito,ImporteEfectivo,ImportePrenda,ImporteCobranza,ImporteBanco,CodVendedor,CodStock,PrecioSenia,ImporteTranferencia,Observacion)";
             sql = sql + "values(" + "'" + Fecha.ToShortDateString() + "'";
             sql = sql + "," + Principal.CodUsuarioLogueado.ToString();
             sql = sql + "," + CodCliente.ToString();
@@ -1451,6 +1466,7 @@ namespace Concesionaria
             sql = sql + "," + CodStock.ToString();
             sql = sql + "," + PrecioSenia.ToString();
             sql = sql + "," + ImporteTranferencia.ToString();
+            sql = sql + "," + "'" + Observacion + "'";
             sql = sql + ")";
             return sql;
         }
@@ -3217,6 +3233,7 @@ namespace Concesionaria
                 BuscarVentaxClientes(CodVenta);
                 GetGastosdeRecepcionxCodVenta(CodVenta);
                 string Patente = tVenta.Rows[0]["Patente"].ToString();
+                txtObservacion.Text = tVenta.Rows[0]["Observacion"].ToString();
                 Int32 CodAuto = 0;
                 if (tVenta.Rows[0]["CodAutoVendido"].ToString() != "")
                 {
@@ -5350,7 +5367,7 @@ namespace Concesionaria
             if (fun.ValidarFecha(txtFechaNacimiento.Text) == true)
                 FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
             string Email = txtEmail.Text;
-            string Observacion = txtObservacion.Text;
+            string Observacion = "";
 
             if (txtCodigoPostal.Text != "")
                 CodigoPostal = txtCodigoPostal.Text;

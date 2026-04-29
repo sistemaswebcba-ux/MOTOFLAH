@@ -207,12 +207,10 @@ namespace Concesionaria.Clases
         }
 
         public DataTable GetDetalleCobranzaxCod(Int32 CodCobranza)
-        {  //GetDetalleCobranzaxCod
-            
-           
-            string sql = "select c.CodCobranza,c.CodVenta,c.Importe,c.Fecha,c.FechaPago,Cli.Apellido,Cli.Nombre,A.Descripcion,c.ImportePagado,c.Saldo";
+        {  //GetDetalleCobranzaxCod                
+            string sql = "select c.CodCobranza,c.CodVenta,c.Importe,c.Fecha,c.FechaPago,Cli.Nombre,Cli.Nombre,A.Descripcion,c.ImportePagado,c.Saldo";
             sql = sql + ",( select isnull(sum(pun.Importe),0)  from PunitorioCobranza pun where pun.CodCobranza =c.CodCobranza) as Punitorio ";
-            sql = sql + ",c.Cuota ";
+            sql = sql + ",c.Cuota , a.CodAuto ";
             sql = sql + " from Cobranza c,Venta v,Cliente Cli,Auto a";
             sql = sql + " where c.CodVenta = v.CodVenta ";
             sql = sql + " and v.CodCliente = cli.CodCliente ";

@@ -36,6 +36,10 @@ namespace Concesionaria
             {
                 Principal.CodUsuarioLogueado =Convert.ToInt32 (trdo.Rows[0]["CodUsuario"].ToString());
                 Principal.NombreUsuarioLogueado = txtUsuario.Text;
+                if (trdo.Rows[0]["CodRol"].ToString()!="")
+                {
+                    Principal.CodRol = Convert.ToInt32(trdo.Rows[0]["CodRol"].ToString());
+                }
                 txtUsuario.Text = "";
                 txtContraseña.Text = "";
                 Principal  p = new Principal();
