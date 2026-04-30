@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkImpago = new System.Windows.Forms.CheckBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPatente = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.txtFechaDesde = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.chkImpago = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +71,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de cobranzas";
             // 
+            // chkImpago
+            // 
+            this.chkImpago.AutoSize = true;
+            this.chkImpago.Location = new System.Drawing.Point(428, 30);
+            this.chkImpago.Name = "chkImpago";
+            this.chkImpago.Size = new System.Drawing.Size(80, 21);
+            this.chkImpago.TabIndex = 55;
+            this.chkImpago.Text = "Impagos";
+            this.chkImpago.UseVisualStyleBackColor = true;
+            // 
             // txtApellido
             // 
             this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -86,7 +96,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 17);
             this.label5.TabIndex = 53;
-            this.label5.Text = "Apellido";
+            this.label5.Text = "Nombre";
             // 
             // txtPatente
             // 
@@ -190,16 +200,6 @@
             this.label2.Size = new System.Drawing.Size(88, 17);
             this.label2.TabIndex = 40;
             this.label2.Text = "Fecha Hasta";
-            // 
-            // chkImpago
-            // 
-            this.chkImpago.AutoSize = true;
-            this.chkImpago.Location = new System.Drawing.Point(428, 30);
-            this.chkImpago.Name = "chkImpago";
-            this.chkImpago.Size = new System.Drawing.Size(80, 21);
-            this.chkImpago.TabIndex = 55;
-            this.chkImpago.Text = "Impagos";
-            this.chkImpago.UseVisualStyleBackColor = true;
             // 
             // FrmListadoCobranza
             // 

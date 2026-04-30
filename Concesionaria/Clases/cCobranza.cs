@@ -55,7 +55,7 @@ namespace Concesionaria.Clases
             sql = sql + "(select aa.patente from auto aa where aa.CodAuto = c.CodAuto) as Patente,";
             sql = sql + "(select aa.Descripcion from auto aa where aa.CodAuto = c.CodAuto) as Descripción";
             sql = sql + ",c.Fecha,c.FechaPago,";
-            sql = sql + "(select cli.apellido from cliente cli where cli.CodCliente = c.CodCliente ) as Apellido";
+            sql = sql + "(select cli.Nombre from cliente cli where cli.CodCliente = c.CodCliente ) as Nombre";
             sql = sql + ",c.FechaCompromiso,c.Saldo";
             sql = sql + ",c.CodCobranza";
             sql = sql + ",c.Cuota";
@@ -67,7 +67,7 @@ namespace Concesionaria.Clases
             if (Patente != "")
                 sql = sql + " and aut.Patente like" + "'%" + Patente  +"%'";
             if (Apellido != "")
-                sql = sql + " and cli.Apellido like" + "'%" + Apellido  + "%'" ;
+                sql = sql + " and cli.Nombre like" + "'%" + Apellido  + "%'" ;
             if (SoloImpago == 1)
                 sql = sql + " and c.Saldo>0";
             DataTable trdo = cDb.ExecuteDataTable(sql);

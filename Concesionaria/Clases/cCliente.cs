@@ -325,7 +325,7 @@ namespace Concesionaria.Clases
 
         public DataTable GetClientexApellido(string Ape)
         {
-            string sql = "select * from Cliente where Apellido like " + "'%" + Ape + "%'";
+            string sql = "select * from Cliente where Nombre like " + "'%" + Ape + "%'";
             return cDb.ExecuteDataTable(sql);
         }
 

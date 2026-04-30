@@ -30,6 +30,9 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.Grupo = new System.Windows.Forms.GroupBox();
+            this.lblVencidas = new System.Windows.Forms.Label();
+            this.ChkVencida = new System.Windows.Forms.CheckBox();
+            this.btnCobroPrenda = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtFecha = new System.Windows.Forms.MaskedTextBox();
             this.Grilla = new System.Windows.Forms.DataGridView();
@@ -38,9 +41,6 @@
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCobroPrenda = new System.Windows.Forms.Button();
-            this.ChkVencida = new System.Windows.Forms.CheckBox();
-            this.lblVencidas = new System.Windows.Forms.Label();
             this.Grupo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +76,37 @@
             this.Grupo.Size = new System.Drawing.Size(1067, 462);
             this.Grupo.TabIndex = 60;
             this.Grupo.TabStop = false;
+            // 
+            // lblVencidas
+            // 
+            this.lblVencidas.AutoSize = true;
+            this.lblVencidas.Location = new System.Drawing.Point(805, 13);
+            this.lblVencidas.Name = "lblVencidas";
+            this.lblVencidas.Size = new System.Drawing.Size(66, 17);
+            this.lblVencidas.TabIndex = 64;
+            this.lblVencidas.Text = "Vencidas";
+            // 
+            // ChkVencida
+            // 
+            this.ChkVencida.AutoSize = true;
+            this.ChkVencida.Checked = true;
+            this.ChkVencida.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkVencida.Location = new System.Drawing.Point(597, 13);
+            this.ChkVencida.Name = "ChkVencida";
+            this.ChkVencida.Size = new System.Drawing.Size(85, 21);
+            this.ChkVencida.TabIndex = 63;
+            this.ChkVencida.Text = "Vencidas";
+            this.ChkVencida.UseVisualStyleBackColor = true;
+            // 
+            // btnCobroPrenda
+            // 
+            this.btnCobroPrenda.Image = global::Concesionaria.Properties.Resources.money_euro;
+            this.btnCobroPrenda.Location = new System.Drawing.Point(758, 7);
+            this.btnCobroPrenda.Name = "btnCobroPrenda";
+            this.btnCobroPrenda.Size = new System.Drawing.Size(40, 26);
+            this.btnCobroPrenda.TabIndex = 62;
+            this.btnCobroPrenda.UseVisualStyleBackColor = true;
+            this.btnCobroPrenda.Click += new System.EventHandler(this.btnCobroPrenda_Click);
             // 
             // label4
             // 
@@ -138,7 +169,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Apellido";
+            this.label3.Text = "Nombre";
             // 
             // label1
             // 
@@ -148,37 +179,6 @@
             this.label1.Size = new System.Drawing.Size(57, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Patente";
-            // 
-            // btnCobroPrenda
-            // 
-            this.btnCobroPrenda.Image = global::Concesionaria.Properties.Resources.money_euro;
-            this.btnCobroPrenda.Location = new System.Drawing.Point(758, 7);
-            this.btnCobroPrenda.Name = "btnCobroPrenda";
-            this.btnCobroPrenda.Size = new System.Drawing.Size(40, 26);
-            this.btnCobroPrenda.TabIndex = 62;
-            this.btnCobroPrenda.UseVisualStyleBackColor = true;
-            this.btnCobroPrenda.Click += new System.EventHandler(this.btnCobroPrenda_Click);
-            // 
-            // ChkVencida
-            // 
-            this.ChkVencida.AutoSize = true;
-            this.ChkVencida.Checked = true;
-            this.ChkVencida.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkVencida.Location = new System.Drawing.Point(597, 13);
-            this.ChkVencida.Name = "ChkVencida";
-            this.ChkVencida.Size = new System.Drawing.Size(85, 21);
-            this.ChkVencida.TabIndex = 63;
-            this.ChkVencida.Text = "Vencidas";
-            this.ChkVencida.UseVisualStyleBackColor = true;
-            // 
-            // lblVencidas
-            // 
-            this.lblVencidas.AutoSize = true;
-            this.lblVencidas.Location = new System.Drawing.Point(805, 13);
-            this.lblVencidas.Name = "lblVencidas";
-            this.lblVencidas.Size = new System.Drawing.Size(66, 17);
-            this.lblVencidas.TabIndex = 64;
-            this.lblVencidas.Text = "Vencidas";
             // 
             // FrmControl
             // 

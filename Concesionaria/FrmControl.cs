@@ -51,7 +51,7 @@ namespace Concesionaria
                 Valor = Valor + ";" + trdo.Rows[i]["Cuota"].ToString();
                 Valor = Valor + ";" + trdo.Rows[i]["Patente"].ToString();
                 Valor = Valor + ";" + trdo.Rows[i]["Descripcion"].ToString();
-                Valor = Valor + ";" + trdo.Rows[i]["Apellido"].ToString();
+                Valor = Valor + ";" + trdo.Rows[i]["Nombre"].ToString();
                 Valor = Valor + ";" + trdo.Rows[i]["Telefono"].ToString();
                 Valor = Valor + ";" + trdo.Rows[i]["Celular"].ToString();
                 Valor = Valor + ";" + trdo.Rows[i]["Importe"].ToString();
@@ -69,7 +69,7 @@ namespace Concesionaria
                 Valor = Valor + ";" + tcuotasAnt.Rows[i]["Cuota"].ToString();
                 Valor = Valor + ";" + tcuotasAnt.Rows[i]["Patente"].ToString();
                 Valor = Valor + ";" + tcuotasAnt.Rows[i]["Descripcion"].ToString();
-                Valor = Valor + ";" + tcuotasAnt.Rows[i]["Apellido"].ToString();
+                Valor = Valor + ";" + tcuotasAnt.Rows[i]["Nombre"].ToString();
                 Valor = Valor + ";" + tcuotasAnt.Rows[i]["Telefono"].ToString();
                 Valor = Valor + ";" + tcuotasAnt.Rows[i]["Telefono"].ToString();
                 Valor = Valor + ";" + tcuotasAnt.Rows[i]["Importe"].ToString();
@@ -87,7 +87,7 @@ namespace Concesionaria
                 Valor = Valor + ";1";
                 Valor = Valor + ";" + tcob.Rows[i]["Patente"].ToString();
                 Valor = Valor + ";" + tcob.Rows[i]["Descripcion"].ToString();
-                Valor = Valor + ";" + tcob.Rows[i]["Apellido"].ToString();
+                Valor = Valor + ";" + tcob.Rows[i]["Nombre"].ToString();
                 Valor = Valor + ";" + tcob.Rows[i]["Telefono"].ToString();
                 Valor = Valor + ";" + tcob.Rows[i]["Celular"].ToString();
                 Valor = Valor + ";" + tcob.Rows[i]["Importe"].ToString();
@@ -104,7 +104,7 @@ namespace Concesionaria
                 Valor = Valor + ";1";
                 Valor = Valor + ";" + tcheque.Rows[i]["Patente"].ToString();
                 Valor = Valor + ";" + tcheque.Rows[i]["Descripcion"].ToString();
-                Valor = Valor + ";" + tcheque.Rows[i]["Apellido"].ToString();
+                Valor = Valor + ";" + tcheque.Rows[i]["Nombre"].ToString();
                 Valor = Valor + ";" + tcheque.Rows[i]["Telefono"].ToString();
                 Valor = Valor + ";" + tcheque.Rows[i]["Celular"].ToString();
                 Valor = Valor + ";" + tcheque.Rows[i]["Importe"].ToString();
@@ -121,7 +121,7 @@ namespace Concesionaria
                 Valor = Valor + ";1";
                 Valor = Valor + ";" + tPrenda.Rows[i]["Patente"].ToString();
                 Valor = Valor + ";" + tPrenda.Rows[i]["Descripcion"].ToString();
-                Valor = Valor + ";" + tPrenda.Rows[i]["Apellido"].ToString();
+                Valor = Valor + ";" + tPrenda.Rows[i]["Nombre"].ToString();
                 Valor = Valor + ";" + tPrenda.Rows[i]["Telefono"].ToString();
                 Valor = Valor + ";" + tPrenda.Rows[i]["Celular"].ToString();
                 Valor = Valor + ";" + tPrenda.Rows[i]["Importe"].ToString();
@@ -181,14 +181,20 @@ namespace Concesionaria
             tResul = fun.AgregarFilas(tResul, Valor);
             tResul = fun.TablaaMiles(tResul, "Importe");
             tResul = fun.TablaaMiles(tResul, "Saldo");
+          
             Grilla.DataSource = tResul;
-            Grilla.Columns[0].Visible = false;
+            //  Grilla.Columns[0].Visible = false;
+            Grilla.Columns[5].HeaderText = "Nombre";
+            Grilla.Columns[4].HeaderText = "Modelo";
             Pintar();
             for (int i = 0; i < Grilla.Rows.Count - 1; i++)
             {
                 if (i == (Grilla.Rows.Count - 2))
                     Grilla.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
             }
+
+            string col = "0;10;10;10;15;15;0;10;10;10;10";
+            fun.AnchoColumnas(Grilla, col);
         }
 
         private void btnCobroPrenda_Click(object sender, EventArgs e)
