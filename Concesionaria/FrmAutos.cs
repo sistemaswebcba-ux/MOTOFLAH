@@ -743,6 +743,7 @@ namespace Concesionaria
             txtMotor.Text = "";
             GetGastos(-1);
             txtColor.Text = "";
+            txtCertificado.Text = "";
             if (cmbTipoUtilitario.Items.Count > 0)
                 cmbTipoUtilitario.SelectedIndex = 0;
             if (cmbSucursal.Items.Count > 0)

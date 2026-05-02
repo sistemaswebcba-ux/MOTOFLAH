@@ -114,12 +114,12 @@ namespace Concesionaria
                 btnGrabar.Visible = false;
                 btnAnular.Visible = false;
                 btnGrabarPreVenta.Visible = false;
-                btnAgregarGarantias.Enabled = true;
+                //btnAgregarGarantias.Enabled = true;
                 CargarGarantias(Convert.ToInt32(Cod));
-                button3.Enabled = true;
-                btnAgregarImpuesto.Enabled = true;
-                btnQuitarImpuesto.Enabled = true;
-                btnQuitarImpuesto.Enabled = true;
+               // button3.Enabled = true;
+                //btnAgregarImpuesto.Enabled = true;
+               // btnQuitarImpuesto.Enabled = true;
+               // btnQuitarImpuesto.Enabled = true;
                 //  btnAbrircPrenda.Visible = true;
                 //  btnAbrirCuotas.Visible = true;
                 txtPatente.Enabled = false;
@@ -130,8 +130,8 @@ namespace Concesionaria
             }
             else
             {
-                btnQuitarImpuesto.Enabled = false;
-                btnQuitarImpuesto.Enabled = false;
+                //btnQuitarImpuesto.Enabled = false;
+               // btnQuitarImpuesto.Enabled = false;
             }
             if (Principal.CodigoSenia != null)
             {
@@ -3798,12 +3798,13 @@ namespace Concesionaria
 
         private void txtImporteGarantias_Leave(object sender, EventArgs e)
         {
-            Clases.cFunciones fun = new Clases.cFunciones();
-            txtImporteGarantias.Text = fun.FormatoEnteroMiles(txtImporteGarantias.Text);
+          //  Clases.cFunciones fun = new Clases.cFunciones();
+          //  txtImporteGarantias.Text = fun.FormatoEnteroMiles(txtImporteGarantias.Text);
         }
 
         private void btnAgregarGarantias_Click(object sender, EventArgs e)
         {
+            /*
             Clases.cFunciones fun = new Clases.cFunciones();
             if (fun.ValidarFecha(txtFechaGarantias.Text) == false)
             {
@@ -3835,10 +3836,12 @@ namespace Concesionaria
             mov.RegistrarMovimientoDescripcion(CodVenta, Principal.CodUsuarioLogueado, -1 * Importe, 0, 0, 0, 0, Fecha, DescripMov);
             CargarGarantias(CodVenta);
             MessageBox.Show("Datos grabados correctamente", Clases.cMensaje.Mensaje());
+            */
         }
 
         private void CargarGarantias(Int32 CodVenta)
         {
+            /*
             Clases.cGarantia garantia = new Clases.cGarantia();
             Clases.cFunciones fun = new Clases.cFunciones();
             DataTable trdo = garantia.GetGarantias(CodVenta);
@@ -3846,10 +3849,12 @@ namespace Concesionaria
             GrillaGarantias.DataSource = trdo;
             GrillaGarantias.Columns[2].Width = 500;
             GrillaGarantias.Columns[0].Visible = false;
+            */
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            /*
             if (GrillaGarantias.CurrentRow == null)
             {
                 MessageBox.Show("Debe seleccionar un registro", Clases.cMensaje.Mensaje());
@@ -3873,6 +3878,7 @@ namespace Concesionaria
             mov.RegistrarMovimientoDescripcion(CodVenta, Principal.CodUsuarioLogueado, Importe, 0, 0, 0, 0, Fecha, DescripMov);
             CargarGarantias(CodVenta);
             MessageBox.Show("Datos borrados correctamente", Clases.cMensaje.Mensaje());
+            */
         }
 
         private void txtImporteCheque_KeyPress(object sender, KeyPressEventArgs e)
@@ -3904,6 +3910,7 @@ namespace Concesionaria
 
         private void btnAgregarImpuesto_Click(object sender, EventArgs e)
         {
+            /*
             Clases.cFunciones fun = new Clases.cFunciones();
             if (fun.ValidarFecha(txtFechaImpuesto.Text) == false)
             {
@@ -3935,11 +3942,12 @@ namespace Concesionaria
             mov.RegistrarMovimientoDescripcion(CodVenta, Principal.CodUsuarioLogueado, -1 * Importe, 0, 0, 0, 0, Fecha, DescripMov);
             CargarImpuestos(CodVenta);
             MessageBox.Show("Datos grabados correctamente", Clases.cMensaje.Mensaje());
-
+            */
         }
 
         private void CargarImpuestos(Int32 CodVenta)
         {
+            /*
             Clases.cImpuesto impuesto = new Clases.cImpuesto();
             Clases.cFunciones fun = new Clases.cFunciones();
             DataTable trdo = impuesto.GetImpuestos(CodVenta);
@@ -3947,10 +3955,12 @@ namespace Concesionaria
             GrillaImpuestos.DataSource = trdo;
             GrillaImpuestos.Columns[2].Width = 500;
             GrillaImpuestos.Columns[0].Visible = false;
+            */
         }
 
         private void btnQuitarImpuesto_Click(object sender, EventArgs e)
         {
+            /*
             if (GrillaImpuestos.CurrentRow == null)
             {
                 MessageBox.Show("Debe seleccionar un registro", Clases.cMensaje.Mensaje());
@@ -3974,6 +3984,7 @@ namespace Concesionaria
             mov.RegistrarMovimientoDescripcion(CodVenta, Principal.CodUsuarioLogueado, Importe, 0, 0, 0, 0, Fecha, DescripMov);
             CargarImpuestos(CodVenta);
             MessageBox.Show("Datos borrados correctamente", Clases.cMensaje.Mensaje());
+            */
         }
 
         private void btnAbrircPrenda_Click(object sender, EventArgs e)
