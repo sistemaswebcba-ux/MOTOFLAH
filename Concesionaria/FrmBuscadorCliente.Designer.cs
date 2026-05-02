@@ -128,7 +128,7 @@
             this.ClientSize = new System.Drawing.Size(634, 366);
             this.Controls.Add(this.Grupo);
             this.Name = "FrmBuscadorCliente";
-            this.Text = "FrmBuscadorCliente";
+            this.Text = "Búsqueda de Clientes";
             this.Grupo.ResumeLayout(false);
             this.Grupo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).EndInit();

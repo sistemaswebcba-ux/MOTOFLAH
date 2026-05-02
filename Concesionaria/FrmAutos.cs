@@ -252,6 +252,8 @@ namespace Concesionaria
             }
             */
 
+          
+
             if (tbAuto.Rows.Count <1)
             {
                 Mensaje("Debe ingresar un vehiculo para continuar");
@@ -412,6 +414,73 @@ namespace Concesionaria
 
         }
 
+        public Boolean ValidarAuto()
+        {
+            Boolean op = true;
+            if (cmb_CodMarca.SelectedIndex <1)
+            {
+                MessageBox.Show("Debe seleccionar una marca ");
+                return false;
+            }
+
+            if (CmbModelo.SelectedIndex <1)
+            {
+                MessageBox.Show("Debe seleccionar un modelo ");
+                return false;
+            }
+
+            if (txtMotor.Text =="")
+            {
+                MessageBox.Show("Debe ingresar un motor ");
+                return false;
+            }
+            
+            if (txtChasis.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un chasis ");
+                return false;
+            }
+
+            if (txtCertificado.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un certificado ");
+                return false;
+            }
+
+            
+            if (cmbTipoUtilitario.SelectedIndex < 1)
+            {
+                MessageBox.Show("Debe seleccionar un tipo de utilitario ");
+                return false;
+            }
+
+            if (txtAnio.Text =="")
+            {
+                MessageBox.Show("Debe ingresar un año del vehículo ");
+                return false;
+            }
+             
+            if (txtKilometros.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un kilomeetraje del vehículo ");
+                return false;
+            }
+
+            if (cMBcOLOR.SelectedIndex < 1)
+            {
+                MessageBox.Show("Debe seleccionar un Color ");
+                return false;
+            }
+
+            if (txtImporte.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un importe del vehículo ");
+                return false;
+            }
+
+            
+            return op;
+        }
         public void GetAutosxCompra(int CodCompra)
         {
             cCompra compra = new cCompra();
@@ -2649,22 +2718,8 @@ namespace Concesionaria
 
         private void btnAgregarAuto_Click(object sender, EventArgs e)
         {
-            if (cmb_CodMarca.SelectedIndex<1)
+            if (ValidarAuto() == false)
             {
-                MessageBox.Show("Debe seleccionar una marca ");
-                return;
-            }
-
-            if (CmbModelo.SelectedIndex<1)
-            {
-                MessageBox.Show("Debe seleccionar un modelo");
-                return;
-
-            }
-
-            if (txtImporte.Text =="")
-            {
-                MessageBox.Show("Debe ingresar un importe");
                 return;
             }
 
