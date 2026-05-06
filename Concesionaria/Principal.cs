@@ -14,15 +14,15 @@ namespace Concesionaria
         //nombre del campo id
         public static string CampoIdSecundario;
         //nombre del campo descripcion
-        public static  string CampoNombreSecundario;
+        public static string CampoNombreSecundario;
         //nombre de la tabla donde se realiza el grabado
-        public static  string NombreTablaSecundario;
+        public static string NombreTablaSecundario;
         public static string NombreLabelSecundario;
         //valor del id que genera al insertar
         public static string CampoIdSecundarioGenerado;
         public static Int32 CodUsuarioLogueado;
         public static string NombreUsuarioLogueado;
-        public static string  CodigoPrincipalAbm;
+        public static string CodigoPrincipalAbm;
         public static string CodigoSenia;
         private int childFormNumber = 0;
         public static string OpcionesdeBusqueda;
@@ -53,7 +53,7 @@ namespace Concesionaria
         private void OpenFile(object sender, EventArgs e)
         {
             //FrmAbmAuto childForm = new FrmAbmAuto();
-            FrmStockAuto childForm =new FrmStockAuto();
+            FrmStockAuto childForm = new FrmStockAuto();
             childForm.MdiParent = this;
             childForm.Text = "Listado de vehículos";
             childForm.Show();
@@ -95,11 +95,11 @@ namespace Concesionaria
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                    }
+        }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -149,6 +149,14 @@ namespace Concesionaria
         private void Principal_Load(object sender, EventArgs e)
 
         {
+            if (Principal.CodRol ==2)
+            {
+                HabiliatMenu();
+            }
+
+            string Usuario = Principal.NombreUsuarioLogueado;
+            this.Text ="Usuario " + Usuario;
+           
             //CodUsuarioLogueado = "1";
             /*
             Clases.cAlarma alarma = new Clases.cAlarma();
@@ -170,24 +178,24 @@ namespace Concesionaria
             //busca los cumpleaños y vencimiento prendas
             GetInfo(Ant, Fut);
             */
-           
+
         }
 
         public void VerificarPablo()
         {
-            if (Principal.NombreUsuarioLogueado == "PabloZ" || Principal.NombreUsuarioLogueado.ToUpper () == "SERGIO")
+            if (Principal.NombreUsuarioLogueado == "PabloZ" || Principal.NombreUsuarioLogueado.ToUpper() == "SERGIO")
             {
                 btnAnularVenta.Visible = true;
                 BtnCopia.Visible = true;
             }
-                
+
         }
         private void mnuInformeCuentas_Click(object sender, EventArgs e)
         {
             FrmInformeCuentas childForm = new FrmInformeCuentas();
             childForm.MdiParent = this;
             childForm.Text = "Formulario de resumen de cuentas";
-            childForm.Show();          
+            childForm.Show();
         }
 
         private void mnuCobroCuotas_Click(object sender, EventArgs e)
@@ -196,7 +204,7 @@ namespace Concesionaria
             FrmCobroCuotas childForm = new FrmCobroCuotas();
             childForm.MdiParent = this;
             childForm.Text = "Cobro de documentos";
-            childForm.Show(); 
+            childForm.Show();
         }
 
         private void mnuInformeDeudas_Click(object sender, EventArgs e)
@@ -204,7 +212,7 @@ namespace Concesionaria
             FrmInformeDeuda childForm = new FrmInformeDeuda();
             childForm.MdiParent = this;
             childForm.Text = "Window " + childFormNumber++;
-            childForm.Show(); 
+            childForm.Show();
         }
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
@@ -213,7 +221,7 @@ namespace Concesionaria
             FrmVenta childForm = new FrmVenta();
             childForm.MdiParent = this;
             childForm.Text = "Formulario de ventas";
-            childForm.Show(); 
+            childForm.Show();
         }
 
         private void mnuMarcas_Click(object sender, EventArgs e)
@@ -285,7 +293,7 @@ namespace Concesionaria
             childForm.Show();
         }
 
-        
+
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -373,7 +381,7 @@ namespace Concesionaria
         }
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
-        {   
+        {
             Principal.CodigoPrincipalAbm = null;
             FrmListadoPrestamo childForm = new FrmListadoPrestamo();
             childForm.MdiParent = this;
@@ -391,7 +399,7 @@ namespace Concesionaria
         }
 
         private void comisionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {   
+        {
             Principal.CodigoPrincipalAbm = null;
             FrmListadoComisiones childForm = new FrmListadoComisiones();
             childForm.MdiParent = this;
@@ -400,7 +408,7 @@ namespace Concesionaria
         }
 
         private void gastpsToolStripMenuItem_Click(object sender, EventArgs e)
-        {   
+        {
             Principal.CodigoPrincipalAbm = null;
             FrmListadoGastos childForm = new FrmListadoGastos();
             childForm.MdiParent = this;
@@ -409,7 +417,7 @@ namespace Concesionaria
         }
 
         private void chequesAPagarToolStripMenuItem_Click(object sender, EventArgs e)
-        {  
+        {
             Principal.CodigoPrincipalAbm = null;
             FrmListadoChequesaPagar childForm = new FrmListadoChequesaPagar();
             childForm.Text = "Formulario de listados de Cheques a Pagar";
@@ -417,7 +425,7 @@ namespace Concesionaria
         }
 
         private void registrarDocumentosToolStripMenuItem_Click(object sender, EventArgs e)
-        {  
+        {
             Principal.CodigoPrincipalAbm = null;
             FrmDocumentosAnteriores childForm = new FrmDocumentosAnteriores();
             childForm.MdiParent = this;
@@ -426,7 +434,7 @@ namespace Concesionaria
         }
 
         private void cobroDeDocumentosAnterioresToolStripMenuItem_Click(object sender, EventArgs e)
-        {   
+        {
             Principal.CodigoPrincipalAbm = null;
             FrmCobroDocumentosAnteriores childForm = new FrmCobroDocumentosAnteriores();
             childForm.MdiParent = this;
@@ -435,7 +443,7 @@ namespace Concesionaria
         }
 
         private void documentosAnteriroesToolStripMenuItem_Click(object sender, EventArgs e)
-        {   
+        {
             Principal.CodigoPrincipalAbm = null;
             FrmListadoDocumentosAnteriores childForm = new FrmListadoDocumentosAnteriores();
             childForm.Text = "Formulario de Listado de documentos anteriores";
@@ -448,7 +456,7 @@ namespace Concesionaria
         }
 
         private void registrarGastosGeneralesToolStripMenuItem_Click(object sender, EventArgs e)
-        {  
+        {
             Principal.CodigoPrincipalAbm = null;
             FrmGastosGenerales childForm = new FrmGastosGenerales();
             childForm.MdiParent = this;
@@ -457,7 +465,7 @@ namespace Concesionaria
         }
 
         private void gastosGeneralesToolStripMenuItem_Click(object sender, EventArgs e)
-        {   
+        {
             Principal.CodigoPrincipalAbm = null;
             FrmListadoGastosGenerales childForm = new FrmListadoGastosGenerales();
             childForm.MdiParent = this;
@@ -466,7 +474,7 @@ namespace Concesionaria
         }
 
         private void helpToolStripButton_Click(object sender, EventArgs e)
-        {  
+        {
             Principal.Comodin = "";
             Principal.CodigoPrincipalAbm = null;
             FrmListadoAlertas form = new FrmListadoAlertas();
@@ -474,7 +482,7 @@ namespace Concesionaria
         }
 
         private void alertasToolStripMenuItem_Click(object sender, EventArgs e)
-        {  
+        {
             Principal.CodigoPrincipalAbm = null;
             FrmListadoAlertas childForm = new FrmListadoAlertas();
             childForm.MdiParent = this;
@@ -501,7 +509,7 @@ namespace Concesionaria
         private void registrarCobranzasGeneralesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmRegistrarCobranzaGeneral childForm = new FrmRegistrarCobranzaGeneral();
-            childForm.MdiParent = this; 
+            childForm.MdiParent = this;
             childForm.Text = "Formulario de Cobranzas Generales";
             childForm.Show();
 
@@ -530,7 +538,7 @@ namespace Concesionaria
             childForm.MdiParent = this;
             childForm.Text = "Listado de efectivos a pagar";
             childForm.Show();
-            
+
         }
 
         private void toolStripMenuItem8_Click(object sender, EventArgs e)
@@ -712,10 +720,10 @@ namespace Concesionaria
                     tbLista = fun.AgregarFilas(tbLista, Val);
                 }
             }
-           
+
             cPrenda pre = new Clases.cPrenda();
             DataTable tbCli2 = pre.GetPrendasFinalizadas(FechaDesde, FechaHasta);
-            if (tbCli2.Rows.Count >0)
+            if (tbCli2.Rows.Count > 0)
             {
                 for (int i = 0; i < tbCli2.Rows.Count; i++)
                 {
@@ -730,8 +738,8 @@ namespace Concesionaria
                     tbLista = fun.AgregarFilas(tbLista, Val);
                 }
             }
-            
-            if (tbLista.Rows.Count >0)
+
+            if (tbLista.Rows.Count > 0)
             {
                 FrmListadoAvisos foravso = new FrmListadoAvisos();
                 foravso.ShowDialog();
@@ -772,6 +780,60 @@ namespace Concesionaria
         {
             FrmCambioClave frm = new FrmCambioClave();
             frm.Show();
+        }
+
+        private void HabiliatMenu()
+        {
+            //  toolStripMenuItem8.Enabled = false;
+            RecorrerSubMenu(fileMenu);
+            RecorrerSubMenu(editMenu);
+            RecorrerSubMenu(viewMenu);
+            RecorrerSubMenu(mnuMovimientos);
+            toolStripMenuItem8.Enabled = true;
+            toolStripMenuItem8.Visible = true;
+            newToolStripMenuItem.Enabled = true;
+            newToolStripMenuItem.Visible = true;
+            exitToolStripMenuItem.Enabled = true;
+            exitToolStripMenuItem.Visible = true;
+            crearAlertaToolStripMenuItem.Enabled = true;
+            crearAlertaToolStripMenuItem.Visible = true;
+            controlDeOperacionesGeneralesToolStripMenuItem.Enabled = true;
+            controlDeOperacionesGeneralesToolStripMenuItem.Visible = true;
+            cutToolStripMenuItem.Enabled = true;
+            cutToolStripMenuItem.Visible = true;
+            anotacionesToolStripMenuItem.Enabled = true;
+            anotacionesToolStripMenuItem.Visible = true;
+            cobranzasToolStripMenuItem.Enabled = true;
+            cobranzasToolStripMenuItem.Visible = true;
+            toolStripMenuItem3.Enabled = true;
+            toolStripMenuItem3.Visible = true;
+            preVentasToolStripMenuItem.Enabled = true;
+            preVentasToolStripMenuItem.Visible = true;
+            salirToolStripMenuItem.Enabled = true;
+            salirToolStripMenuItem.Visible = true;
+            toolStrip.Enabled = false;
+            toolStrip.Visible = true;
+            mnuMovimientos.Visible = false;
+        }
+
+        private void RecorrerSubMenu(ToolStripMenuItem item)
+        {
+            // 1. Realiza aquí tu acción
+            // Ejemplo: MessageBox.Show("Procesando: " + item.Text);
+
+            // 2. Recorremos sus subelementos
+            foreach (ToolStripItem subItem in item.DropDownItems)
+            {
+                // Solo llamamos a la recursividad si el hijo es otro ToolStripMenuItem
+                // (esto ignora separadores que causarían error)
+                ToolStripMenuItem subMenu = subItem as ToolStripMenuItem;
+                if (subMenu != null)
+                {
+                    subMenu.Enabled = false;
+                    subMenu.Visible = false;
+                   // RecorrerSubMenu(subMenu);
+                }
+            }
         }
     }
 }
