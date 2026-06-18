@@ -1555,7 +1555,6 @@
             this.groupBox3.Size = new System.Drawing.Size(875, 224);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Formas de Pago";
             // 
             // tabControl2
             // 
@@ -1565,10 +1564,10 @@
             this.tabControl2.Controls.Add(this.tabPage9);
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage14);
-            this.tabControl2.Location = new System.Drawing.Point(0, 22);
+            this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(875, 196);
+            this.tabControl2.Size = new System.Drawing.Size(861, 251);
             this.tabControl2.TabIndex = 1;
             // 
             // tabPage4
@@ -1581,7 +1580,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(867, 167);
+            this.tabPage4.Size = new System.Drawing.Size(853, 222);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Efectivo";
             // 
@@ -1640,7 +1639,7 @@
             this.tabPage17.Controls.Add(this.btnAgregarTarjeta);
             this.tabPage17.Location = new System.Drawing.Point(4, 25);
             this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Size = new System.Drawing.Size(867, 167);
+            this.tabPage17.Size = new System.Drawing.Size(853, 222);
             this.tabPage17.TabIndex = 9;
             this.tabPage17.Text = "Tarjetas";
             // 
@@ -1760,7 +1759,7 @@
             this.tabPage16.Controls.Add(this.txtImporteSenia);
             this.tabPage16.Location = new System.Drawing.Point(4, 25);
             this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Size = new System.Drawing.Size(867, 167);
+            this.tabPage16.Size = new System.Drawing.Size(853, 222);
             this.tabPage16.TabIndex = 8;
             this.tabPage16.Text = "Credito";
             // 
@@ -1873,7 +1872,7 @@
             this.tabPage9.Controls.Add(this.btnAbrirCobranzas);
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(867, 167);
+            this.tabPage9.Size = new System.Drawing.Size(853, 222);
             this.tabPage9.TabIndex = 6;
             this.tabPage9.Text = "Cobranza";
             // 
@@ -1979,7 +1978,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(867, 167);
+            this.tabPage6.Size = new System.Drawing.Size(853, 222);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Vehículos";
             // 
@@ -1992,7 +1991,7 @@
             this.tabControl3.Location = new System.Drawing.Point(6, 6);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(937, 204);
+            this.tabControl3.Size = new System.Drawing.Size(865, 226);
             this.tabControl3.TabIndex = 4;
             // 
             // tabPage10
@@ -2001,7 +2000,7 @@
             this.tabPage10.Location = new System.Drawing.Point(4, 25);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(929, 175);
+            this.tabPage10.Size = new System.Drawing.Size(857, 197);
             this.tabPage10.TabIndex = 0;
             this.tabPage10.Text = "Información del vehículo";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -2048,9 +2047,9 @@
             this.groupBox4.Controls.Add(this.txtPatente2);
             this.groupBox4.Controls.Add(this.label23);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(-14, -5);
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(850, 174);
+            this.groupBox4.Size = new System.Drawing.Size(850, 185);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             // 
@@ -2093,7 +2092,7 @@
             // label86
             // 
             this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(24, 146);
+            this.label86.Location = new System.Drawing.Point(20, 149);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(36, 16);
             this.label86.TabIndex = 72;
@@ -2102,19 +2101,21 @@
             // txtCertificadoAutoPartePago
             // 
             this.txtCertificadoAutoPartePago.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCertificadoAutoPartePago.Location = new System.Drawing.Point(102, 121);
+            this.txtCertificadoAutoPartePago.Location = new System.Drawing.Point(351, 38);
             this.txtCertificadoAutoPartePago.Name = "txtCertificadoAutoPartePago";
-            this.txtCertificadoAutoPartePago.Size = new System.Drawing.Size(319, 22);
+            this.txtCertificadoAutoPartePago.Size = new System.Drawing.Size(70, 22);
             this.txtCertificadoAutoPartePago.TabIndex = 71;
+            this.txtCertificadoAutoPartePago.Visible = false;
             // 
             // label85
             // 
             this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(24, 118);
+            this.label85.Location = new System.Drawing.Point(280, 43);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(72, 16);
             this.label85.TabIndex = 70;
             this.label85.Text = "Certificado";
+            this.label85.Visible = false;
             // 
             // cmbModeloAutoPago
             // 
@@ -2175,7 +2176,7 @@
             // label59
             // 
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(24, 96);
+            this.label59.Location = new System.Drawing.Point(18, 96);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(42, 16);
             this.label59.TabIndex = 42;
@@ -2220,22 +2221,22 @@
             // 
             // txtChasis2
             // 
-            this.txtChasis2.Location = new System.Drawing.Point(324, 95);
+            this.txtChasis2.Location = new System.Drawing.Point(102, 118);
             this.txtChasis2.Name = "txtChasis2";
-            this.txtChasis2.Size = new System.Drawing.Size(97, 22);
+            this.txtChasis2.Size = new System.Drawing.Size(317, 22);
             this.txtChasis2.TabIndex = 37;
             // 
             // txtMotor2
             // 
             this.txtMotor2.Location = new System.Drawing.Point(102, 93);
             this.txtMotor2.Name = "txtMotor2";
-            this.txtMotor2.Size = new System.Drawing.Size(161, 22);
+            this.txtMotor2.Size = new System.Drawing.Size(319, 22);
             this.txtMotor2.TabIndex = 36;
             // 
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(269, 98);
+            this.label52.Location = new System.Drawing.Point(18, 121);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(49, 16);
             this.label52.TabIndex = 35;
@@ -2403,7 +2404,7 @@
             this.tabPage11.Location = new System.Drawing.Point(4, 25);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(929, 175);
+            this.tabPage11.Size = new System.Drawing.Size(857, 197);
             this.tabPage11.TabIndex = 1;
             this.tabPage11.Text = "Listado de vehículo en parte de pago";
             // 
@@ -2822,7 +2823,7 @@
             this.groupBox55.Controls.Add(this.label26);
             this.groupBox55.Controls.Add(this.label24);
             this.groupBox55.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.groupBox55.Location = new System.Drawing.Point(12, 508);
+            this.groupBox55.Location = new System.Drawing.Point(12, 544);
             this.groupBox55.Name = "groupBox55";
             this.groupBox55.Size = new System.Drawing.Size(871, 120);
             this.groupBox55.TabIndex = 3;
@@ -3000,7 +3001,7 @@
             // 
             this.txtTotalPrenda.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalPrenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.txtTotalPrenda.Location = new System.Drawing.Point(347, 634);
+            this.txtTotalPrenda.Location = new System.Drawing.Point(343, 684);
             this.txtTotalPrenda.Name = "txtTotalPrenda";
             this.txtTotalPrenda.ReadOnly = true;
             this.txtTotalPrenda.Size = new System.Drawing.Size(100, 23);
@@ -3011,7 +3012,7 @@
             // 
             this.txtTotalDocumentos.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.txtTotalDocumentos.Location = new System.Drawing.Point(241, 634);
+            this.txtTotalDocumentos.Location = new System.Drawing.Point(236, 684);
             this.txtTotalDocumentos.Name = "txtTotalDocumentos";
             this.txtTotalDocumentos.ReadOnly = true;
             this.txtTotalDocumentos.Size = new System.Drawing.Size(100, 23);
@@ -3021,7 +3022,7 @@
             // btnGrabar
             // 
             this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(752, 634);
+            this.btnGrabar.Location = new System.Drawing.Point(742, 677);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(131, 36);
             this.btnGrabar.TabIndex = 4;
@@ -3032,7 +3033,7 @@
             // btnAnular
             // 
             this.btnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.Location = new System.Drawing.Point(490, 634);
+            this.btnAnular.Location = new System.Drawing.Point(480, 677);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(119, 36);
             this.btnAnular.TabIndex = 5;
@@ -3044,7 +3045,7 @@
             // btnGrabarPreVenta
             // 
             this.btnGrabarPreVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabarPreVenta.Location = new System.Drawing.Point(615, 634);
+            this.btnGrabarPreVenta.Location = new System.Drawing.Point(605, 677);
             this.btnGrabarPreVenta.Name = "btnGrabarPreVenta";
             this.btnGrabarPreVenta.Size = new System.Drawing.Size(131, 36);
             this.btnGrabarPreVenta.TabIndex = 6;
@@ -3057,7 +3058,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(888, 669);
+            this.ClientSize = new System.Drawing.Size(888, 719);
             this.Controls.Add(this.btnGrabarPreVenta);
             this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.btnGrabar);

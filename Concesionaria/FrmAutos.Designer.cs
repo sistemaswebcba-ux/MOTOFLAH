@@ -137,6 +137,8 @@
             this.Imagen = new System.Windows.Forms.PictureBox();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.Efectivo = new System.Windows.Forms.TabPage();
+            this.txtImporteTranferencia = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtEfectivo = new System.Windows.Forms.MaskedTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -182,8 +184,6 @@
             this.GrillaAutos = new System.Windows.Forms.DataGridView();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtImporteTranferencia = new System.Windows.Forms.TextBox();
             this.txtTotalTranferencia = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
@@ -1323,6 +1323,24 @@
             this.Efectivo.TabIndex = 0;
             this.Efectivo.Text = "Efectivo";
             // 
+            // txtImporteTranferencia
+            // 
+            this.txtImporteTranferencia.BackColor = System.Drawing.SystemColors.Control;
+            this.txtImporteTranferencia.Location = new System.Drawing.Point(158, 48);
+            this.txtImporteTranferencia.Name = "txtImporteTranferencia";
+            this.txtImporteTranferencia.Size = new System.Drawing.Size(246, 23);
+            this.txtImporteTranferencia.TabIndex = 35;
+            this.txtImporteTranferencia.Leave += new System.EventHandler(this.txtImporteTranferencia_Leave);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 48);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(147, 17);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Importe Transferencia";
+            // 
             // txtEfectivo
             // 
             this.txtEfectivo.Location = new System.Drawing.Point(156, 19);
@@ -1773,24 +1791,6 @@
             this.label9.Size = new System.Drawing.Size(65, 17);
             this.label9.TabIndex = 60;
             this.label9.Text = "SubTotal";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 48);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(147, 17);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Importe Transferencia";
-            // 
-            // txtImporteTranferencia
-            // 
-            this.txtImporteTranferencia.BackColor = System.Drawing.SystemColors.Control;
-            this.txtImporteTranferencia.Location = new System.Drawing.Point(158, 48);
-            this.txtImporteTranferencia.Name = "txtImporteTranferencia";
-            this.txtImporteTranferencia.Size = new System.Drawing.Size(246, 23);
-            this.txtImporteTranferencia.TabIndex = 35;
-            this.txtImporteTranferencia.Leave += new System.EventHandler(this.txtImporteTranferencia_Leave);
             // 
             // txtTotalTranferencia
             // 

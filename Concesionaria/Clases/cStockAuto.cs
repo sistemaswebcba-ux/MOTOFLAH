@@ -267,6 +267,7 @@ namespace Concesionaria.Clases
             sql = sql + ",m.Nombre as Marca";
             sql = sql + ",a.Descripcion as Modelo ";
             sql = sql + ",a.Color ";
+            sql = sql + ",a.Anio ";
             sql = sql + ",a.Chasis ";
             sql = sql + ",a.Motor ";
             sql = sql + ",a.Certificado ";

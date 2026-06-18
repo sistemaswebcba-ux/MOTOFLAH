@@ -50,11 +50,7 @@ namespace Concesionaria
 
         private Boolean Validar()
         {
-            if (txt_Patente.Text == "")
-            {
-                MessageBox.Show("Debe ingresar una patente para continuar", Clases.cMensaje.Mensaje());
-                return false;
-            }
+           
 
             if (cmb_CodMarca.SelectedIndex<1)
             {
@@ -413,7 +409,8 @@ namespace Concesionaria
             {
                 //se usa por las dudas ingreso ya exista el deni
                 //y no grabe repetido el documento
-                UbicaAuto();
+                if (txt_Patente.Text !="")
+                    UbicaAuto();
 
                 // cargo el modelo del combo al txt
                 cModelo modelo = new cModelo();

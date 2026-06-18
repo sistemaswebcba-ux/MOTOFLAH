@@ -1814,7 +1814,7 @@ namespace Concesionaria
             Double ImporteCompra = 0;
             Double ImporteTranferencia = 0;
             Int32 CodCliente = 0;
-            DateTime Fecha = DateTime.Now;
+            DateTime Fecha = dpFecha.Value;
             if (txtCodCLiente.Text != "")
                 CodCliente = Convert.ToInt32(txtCodCLiente.Text);
 

@@ -2070,7 +2070,7 @@ namespace Concesionaria
             if (CmbCiudad2.SelectedIndex > 0)
                 CodCiudad = Convert.ToInt32(CmbCiudad2.SelectedValue);
 
-            Descripcion = txtDescripcion2.Text;
+            Descripcion = cmbModeloAutoPago.Text;
             Anio = txtAnio2.Text;
             if (txtKms2.Text != "")
                 Kilometros = Convert.ToInt32(txtKms2.Text.Replace(".", ""));
@@ -3451,7 +3451,8 @@ namespace Concesionaria
             DataTable trdo = auto.GetAutoxCodigo(CodAuto);
             if (trdo.Rows.Count > 0)
             {
-                b = 1;
+                b = 1; 
+                txtPatente.Text = trdo.Rows[0]["Patente"].ToString();
                 Clases.cFunciones fun = new Clases.cFunciones();
                 txtDescripcion.Text = trdo.Rows[0]["Descripcion"].ToString();
                 txtAnio.Text = trdo.Rows[0]["Anio"].ToString();
@@ -3464,6 +3465,10 @@ namespace Concesionaria
                     txtKms.Text = fun.FormatoEnteroMiles(txtKms.Text);
                 }
                 txtCodAuto.Text = trdo.Rows[0]["CodAuto"].ToString();
+                if (trdo.Rows[0]["CodTipoUtilitario"].ToString() != "")
+                {
+                    cmbTipoUtilitario.SelectedValue = trdo.Rows[0]["CodTipoUtilitario"].ToString();
+                }
                 if (trdo.Rows[0]["CodCiudad"].ToString() != "")
                 {
                     cmbCiudad.SelectedValue = trdo.Rows[0]["CodCiudad"].ToString();
