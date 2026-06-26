@@ -30,6 +30,12 @@
         {
             this.Grilla = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCertificado = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtChasis = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbModelo = new System.Windows.Forms.ComboBox();
             this.txtConcesion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -44,12 +50,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmbModelo = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtChasis = new System.Windows.Forms.TextBox();
-            this.txtCertificado = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +67,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.txtCertificado);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtChasis);
@@ -95,6 +97,56 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de Autos en Stock";
             // 
+            // txtCertificado
+            // 
+            this.txtCertificado.Location = new System.Drawing.Point(810, 26);
+            this.txtCertificado.Name = "txtCertificado";
+            this.txtCertificado.Size = new System.Drawing.Size(130, 23);
+            this.txtCertificado.TabIndex = 63;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(729, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 17);
+            this.label8.TabIndex = 62;
+            this.label8.Text = "Certificado";
+            // 
+            // txtChasis
+            // 
+            this.txtChasis.Location = new System.Drawing.Point(627, 28);
+            this.txtChasis.Name = "txtChasis";
+            this.txtChasis.Size = new System.Drawing.Size(100, 23);
+            this.txtChasis.TabIndex = 61;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(571, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 17);
+            this.label7.TabIndex = 60;
+            this.label7.Text = "Chasis";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(368, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 17);
+            this.label6.TabIndex = 59;
+            this.label6.Text = "Modelo";
+            // 
+            // cmbModelo
+            // 
+            this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbModelo.FormattingEnabled = true;
+            this.cmbModelo.Location = new System.Drawing.Point(428, 28);
+            this.cmbModelo.Name = "cmbModelo";
+            this.cmbModelo.Size = new System.Drawing.Size(137, 24);
+            this.cmbModelo.TabIndex = 58;
+            // 
             // txtConcesion
             // 
             this.txtConcesion.BackColor = System.Drawing.Color.LightGreen;
@@ -120,17 +172,16 @@
             // btnImprimir
             // 
             this.btnImprimir.Image = global::Concesionaria.Properties.Resources.printer1;
-            this.btnImprimir.Location = new System.Drawing.Point(732, 21);
+            this.btnImprimir.Location = new System.Drawing.Point(946, -10);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(34, 30);
             this.btnImprimir.TabIndex = 55;
             this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Visible = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnBajaStock
             // 
-            this.btnBajaStock.Location = new System.Drawing.Point(1026, 22);
+            this.btnBajaStock.Location = new System.Drawing.Point(1029, 24);
             this.btnBajaStock.Name = "btnBajaStock";
             this.btnBajaStock.Size = new System.Drawing.Size(108, 30);
             this.btnBajaStock.TabIndex = 29;
@@ -236,55 +287,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Patente";
             // 
-            // label6
+            // button2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(368, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 17);
-            this.label6.TabIndex = 59;
-            this.label6.Text = "Modelo";
-            // 
-            // cmbModelo
-            // 
-            this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbModelo.FormattingEnabled = true;
-            this.cmbModelo.Location = new System.Drawing.Point(428, 28);
-            this.cmbModelo.Name = "cmbModelo";
-            this.cmbModelo.Size = new System.Drawing.Size(137, 24);
-            this.cmbModelo.TabIndex = 58;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(571, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 17);
-            this.label7.TabIndex = 60;
-            this.label7.Text = "Chasis";
-            // 
-            // txtChasis
-            // 
-            this.txtChasis.Location = new System.Drawing.Point(627, 28);
-            this.txtChasis.Name = "txtChasis";
-            this.txtChasis.Size = new System.Drawing.Size(100, 23);
-            this.txtChasis.TabIndex = 61;
-            // 
-            // txtCertificado
-            // 
-            this.txtCertificado.Location = new System.Drawing.Point(810, 26);
-            this.txtCertificado.Name = "txtCertificado";
-            this.txtCertificado.Size = new System.Drawing.Size(130, 23);
-            this.txtCertificado.TabIndex = 63;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(729, 31);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 17);
-            this.label8.TabIndex = 62;
-            this.label8.Text = "Certificado";
+            this.button2.Image = global::Concesionaria.Properties.Resources.printer1;
+            this.button2.Location = new System.Drawing.Point(853, -10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(34, 30);
+            this.button2.TabIndex = 64;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmStockAuto
             // 
@@ -330,5 +340,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtChasis;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button2;
     }
 }

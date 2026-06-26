@@ -197,6 +197,12 @@ namespace Concesionaria
             string Combustible = "";
             string NumeroInterno = "";
             string Ubicacion ="";
+            string Color = "";
+            string ANio = "";
+            string Chasis = "";
+            string Motor = "";
+            string Certificado = "";
+            string Fecha = "";
             string sql = "";
            
             Clases.cFunciones fun = new Clases.cFunciones();
@@ -204,10 +210,19 @@ namespace Concesionaria
             for (int i = 0; i < Grilla.Rows.Count - 1; i++)
             {
                 CodStock = Convert.ToInt32(Grilla.Rows[i].Cells[0].Value.ToString());
-                Modelo = GetModeloxCodStock (CodStock);
+               // Modelo = GetModeloxCodStock (CodStock);
                 Precio = GetPrecioxCodStock(CodStock);
-                Kilometros = GetKilometrosxCodStock(CodStock);
-                Combustible = GetCombustiblexCodStock(CodStock);
+                Modelo = Grilla.Rows[i].Cells[3].Value.ToString();
+                Color = Grilla.Rows[i].Cells[4].Value.ToString();
+                ANio = Grilla.Rows[i].Cells[5].Value.ToString();
+                Chasis = Grilla.Rows[i].Cells[6].Value.ToString();
+                Motor = Grilla.Rows[i].Cells[7].Value.ToString();
+                Certificado = Grilla.Rows[i].Cells[8].Value.ToString();
+                Fecha = Grilla.Rows[i].Cells[9].Value.ToString();
+                if (Fecha.Length > 10)
+                    Fecha = Fecha.Substring(0, 10);
+                // Kilometros = GetKilometrosxCodStock(CodStock);
+                // Combustible = GetCombustiblexCodStock(CodStock);
                 if (Precio != "")
                 {
                     Precio = fun.SepararDecimales(Precio);
@@ -217,19 +232,19 @@ namespace Concesionaria
                 Patente = Grilla.Rows[i].Cells[1].Value.ToString();
                 NumeroInterno = GetNumeroInternoxPatente(Patente);
               //  Ubicacion = GetUbicacion (Patente);
-                Ubicacion = Grilla.Rows[i].Cells[10].Value.ToString();
+              //  Ubicacion = Grilla.Rows[i].Cells[10].Value.ToString();
                 Descripcion = Grilla.Rows[i].Cells[3].Value.ToString();
                 Marca = Grilla.Rows[i].Cells[2].Value.ToString();
-                sql = "Insert into ReporteAuto(Extra1,Descripcion,Marca,Modelo,Precio,Kilometros,Combustible,Extra2,Extra3)";
+                sql = "Insert into ReporteAuto(Extra1,Descripcion,Marca,Extra4,Precio,Kilometros,Combustible,Extra2,Extra3)";
                 sql = sql + "values(" + "'" + Patente + "'";
-                sql = sql + "," + "'" + Descripcion  +"'";
-                sql = sql + "," + "'" + Marca +"'";
-                sql = sql + "," + "'" + Modelo +"'";
-                sql = sql + "," + "'" + Precio +"'";
-                sql = sql + "," + "'" + Kilometros + "'";
-                sql = sql + "," + "'" + Combustible + "'";
-                sql = sql + "," + "'" + NumeroInterno + "'";
-                sql = sql + "," + "'" + Ubicacion + "'";
+                sql = sql + "," + "'" + Marca + "'";
+                sql = sql + "," + "'" + Modelo + "'";
+                sql = sql + "," + "'" + Color  +"'";
+                sql = sql + "," + "'" + ANio  +"'";
+                sql = sql + "," + "'" + Chasis  + "'";
+                sql = sql + "," + "'" + Motor  + "'";
+                sql = sql + "," + "'" + Certificado  + "'";
+                sql = sql + "," + "'" + Fecha  + "'";
                 sql = sql + ")";
                 Clases.cDb.ExecutarNonQuery(sql);
             }
