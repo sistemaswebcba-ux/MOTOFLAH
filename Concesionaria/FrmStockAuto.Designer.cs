@@ -30,6 +30,7 @@
         {
             this.Grilla = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtCertificado = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtChasis = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -97,9 +97,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de Autos en Stock";
             // 
+            // button2
+            // 
+            this.button2.Image = global::Concesionaria.Properties.Resources.printer1;
+            this.button2.Location = new System.Drawing.Point(853, -10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(34, 30);
+            this.button2.TabIndex = 64;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            // 
             // txtCertificado
             // 
-            this.txtCertificado.Location = new System.Drawing.Point(810, 26);
+            this.txtCertificado.Location = new System.Drawing.Point(798, 29);
             this.txtCertificado.Name = "txtCertificado";
             this.txtCertificado.Size = new System.Drawing.Size(130, 23);
             this.txtCertificado.TabIndex = 63;
@@ -171,8 +181,8 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Image = global::Concesionaria.Properties.Resources.printer1;
-            this.btnImprimir.Location = new System.Drawing.Point(946, -10);
+            this.btnImprimir.Image = global::Concesionaria.Properties.Resources.printer2;
+            this.btnImprimir.Location = new System.Drawing.Point(1014, 22);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(34, 30);
             this.btnImprimir.TabIndex = 55;
@@ -181,9 +191,9 @@
             // 
             // btnBajaStock
             // 
-            this.btnBajaStock.Location = new System.Drawing.Point(1029, 24);
+            this.btnBajaStock.Location = new System.Drawing.Point(1063, 22);
             this.btnBajaStock.Name = "btnBajaStock";
-            this.btnBajaStock.Size = new System.Drawing.Size(108, 30);
+            this.btnBajaStock.Size = new System.Drawing.Size(74, 30);
             this.btnBajaStock.TabIndex = 29;
             this.btnBajaStock.Text = "Baja stock";
             this.btnBajaStock.UseVisualStyleBackColor = true;
@@ -224,9 +234,9 @@
             // button1
             // 
             this.button1.Image = global::Concesionaria.Properties.Resources.CAR3;
-            this.button1.Location = new System.Drawing.Point(986, 21);
+            this.button1.Location = new System.Drawing.Point(974, 20);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 30);
+            this.button1.Size = new System.Drawing.Size(34, 32);
             this.button1.TabIndex = 26;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -263,7 +273,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Image = global::Concesionaria.Properties.Resources.zoom;
-            this.btnBuscar.Location = new System.Drawing.Point(946, 21);
+            this.btnBuscar.Location = new System.Drawing.Point(934, 22);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(34, 30);
             this.btnBuscar.TabIndex = 23;
@@ -286,15 +296,6 @@
             this.label1.Size = new System.Drawing.Size(57, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Patente";
-            // 
-            // button2
-            // 
-            this.button2.Image = global::Concesionaria.Properties.Resources.printer1;
-            this.button2.Location = new System.Drawing.Point(853, -10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(34, 30);
-            this.button2.TabIndex = 64;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmStockAuto
             // 
